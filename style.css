@@ -1,93 +1,60 @@
-:root {
-    --bg-main: #e0e5ec;
-    --glass-bg: rgba(255, 255, 255, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.5);
-    --vale-blue: #003366;
-    --accent-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #6a11cb 100%);
+const content = {
+    pt: {
+        tagline: "Inteligência de Dados | Logística Portuária | Poliglota",
+        summary: "Especialista em dados com experiência industrial na <b>Vale e ArcelorMittal</b>. Liderança técnica em IA e NLP aplicada à tradução.",
+        sections: { work: "Experiência Industrial", tech: "Liderança & Tecnologia" },
+        exp: [
+            { cat: "work", title: "ArcelorMittal | Engenharia de Dados", tags: ["Python", "SQL", "KPI"], desc: "Otimização de processos industriais e automação de fluxos de dados técnicos." },
+            { cat: "work", title: "Vale | Suporte em Dados Operacionais", tags: ["CCO", "Logística", "Analytics"], desc: "Análise de métricas ferroviárias de carga pesada e suporte à infraestrutura de dados." },
+            { cat: "tech", title: "CTecL IFES | Coordenação de Laboratório", tags: ["NLP", "IA", "Python"], desc: "Liderança de projetos de tradução assistida por IA e processamento de linguagem natural." }
+        ]
+    },
+    en: {
+        tagline: "Data Intelligence | Port Logistics | Polyglot",
+        summary: "Data specialist with industrial background at <b>Vale and ArcelorMittal</b>. Technical leadership in AI and NLP applied to translation.",
+        sections: { work: "Industrial Experience", tech: "Leadership & Technology" },
+        exp: [
+            { cat: "work", title: "ArcelorMittal | Data Engineering", tags: ["Python", "SQL", "KPI"], desc: "Industrial process optimization and technical data workflow automation." },
+            { cat: "work", title: "Vale | Operational Data Support", tags: ["CCO", "Logistics", "Analytics"], desc: "Analysis of heavy-haul railway metrics and data infrastructure support." },
+            { cat: "tech", title: "CTecL IFES | Lab Coordination", tags: ["NLP", "AI", "Python"], desc: "Leading AI-assisted translation projects and natural language processing." }
+        ]
+    },
+    es: {
+        tagline: "Inteligencia de Datos | Logística Portuaria | Políglota",
+        summary: "Especialista en datos con trayectoria industrial en <b>Vale y ArcelorMittal</b>. Liderazgo técnico en IA y NLP aplicada a la traducción.",
+        sections: { work: "Experiencia Industrial", tech: "Liderazgo y Tecnología" },
+        exp: [
+            { cat: "work", title: "ArcelorMittal | Ingeniería de Datos", tags: ["Python", "SQL", "KPI"], desc: "Optimización de procesos industriales y automatización de flujos de datos técnicos." },
+            { cat: "work", title: "Vale | Soporte de Datos Operativos", tags: ["CCO", "Logística", "Analytics"], desc: "Análisis de métricas ferroviarias de carga pesada y soporte de infraestructura de datos." },
+            { cat: "tech", title: "CTecL IFES | Coordinación de Laboratorio", tags: ["NLP", "IA", "Python"], desc: "Liderazgo de proyectos de traducción asistida por IA y procesamiento de lenguaje natural." }
+        ]
+    }
+};
+
+function changeLang(lang) {
+    const data = content[lang];
+    document.getElementById('user-tagline').innerText = data.tagline;
+    
+    document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`btn-${lang}`).classList.add('active');
+
+    let html = `<p style="text-align:center; margin-bottom:30px; color:#555;">${data.summary}</p>`;
+    
+    ['work', 'tech'].forEach(cat => {
+        html += `<div class="section-title">${data.sections[cat]}</div>`;
+        data.exp.filter(e => e.cat === cat).forEach(item => {
+            html += `
+                <div class="experience-box glass-panel" onclick="this.classList.toggle('active-box')">
+                    <div class="exp-header"><span>${item.title}</span></div>
+                    <div class="exp-content">
+                        <div style="margin-bottom:12px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                        <div style="color:#444; line-height:1.6;">${item.desc}</div>
+                    </div>
+                </div>`;
+        });
+    });
+    document.getElementById('main-content').innerHTML = html;
 }
 
-body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: var(--bg-main);
-    background-image: radial-gradient(circle at top, #f0f2f5 0%, #e0e5ec 100%);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.lang-nav { margin-top: 30px; z-index: 10; }
-
-.btn-lang {
-    background: var(--glass-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--glass-border);
-    padding: 8px 18px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.btn-lang.active {
-    background: var(--vale-blue);
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.container { width: 92%; max-width: 800px; margin: 40px 0; }
-
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-}
-
-header {
-    text-align: center;
-    padding: 45px;
-    margin-bottom: 30px;
-    border: 3px solid transparent !important;
-    background-clip: padding-box, border-box;
-    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), var(--accent-gradient);
-    background-origin: border-box;
-}
-
-h1 { margin: 0; color: var(--vale-blue); font-size: 2.2rem; }
-.tagline { margin-top: 10px; font-weight: 700; color: #555; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; }
-
-.social-links { margin-top: 20px; }
-.social-links a { text-decoration: none; color: var(--vale-blue); margin: 0 10px; font-weight: 800; font-size: 0.85rem; }
-
-.section-title { font-size: 1.1rem; color: var(--vale-blue); margin: 30px 0 15px 5px; font-weight: 800; text-transform: uppercase; }
-
-.experience-box {
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid transparent !important;
-    background-clip: padding-box, border-box;
-    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), var(--accent-gradient);
-    background-origin: border-box;
-}
-
-.experience-box:hover { transform: scale(1.02); }
-.exp-header { padding: 22px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-.exp-header::after { content: '▾'; opacity: 0.5; }
-.exp-content { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s; padding: 0 22px; }
-.active-box .exp-content { max-height: 600px; opacity: 1; padding-bottom: 25px; }
-
-.tag {
-    background: rgba(0, 114, 255, 0.1);
-    color: #0072ff;
-    padding: 3px 10px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    margin-right: 6px;
-    font-weight: 800;
-}
+// Inicialização garantindo que o DOM está pronto
+document.addEventListener('DOMContentLoaded', () => changeLang('pt'));
