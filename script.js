@@ -2,78 +2,74 @@ const dictionary = {
     en: {
         role: "Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO) | Former Intern at Vale & ArcelorMittal",
         xpTitle: "Professional Timeline",
-        eduTitle: "Academic Background",
         experiences: [
             {
                 company: "CTecL Lab - IFES",
                 position: "Lead Computational Linguist & AI Researcher",
                 period: "2024 – Present",
-                desc: "Coordinating an AI-assisted translation lab, exploring machine translation and natural language processing (NLP)."
+                desc: "Coordinating an AI-assisted translation lab at IFES.",
+                details: "Leading research on NLP and poetic translation metrics. Managing data strategies for large language models (LLMs) and computational linguistics projects."
+            },
+            {
+                company: "Freelance & Education",
+                position: "Translator & Educator",
+                period: "Ongoing",
+                desc: "Specialized multilingual instruction and technical translation.",
+                details: "Technical and literary translation in English, Spanish, and Italian. Currently developing proficiency in Japanese and Korean for global communication."
             },
             {
                 company: "Vale / ArcelorMittal",
-                position: "Logistics & Foreign Trade Analyst",
-                period: "Previous Roles",
-                desc: "Focused on operational metrics, data-driven decisions, and port logistics management."
-            }
-        ],
-        education: [
-            {
-                inst: "IFES Serra",
-                degree: "M.Sc. in Applied Computing (PPCOMP)",
-                period: "Starting 2027",
-                desc: "Focusing on advanced computational methods and data intelligence."
-            },
-            {
-                inst: "IFES Vitória",
-                degree: "BA in Letters / Language",
-                period: "Completed",
-                desc: "Foundation in linguistics and multilingual proficiency."
-            },
-            {
-                inst: "IFES Serra",
-                degree: "ICT Technician",
-                period: "Completed",
-                desc: "Technical background in information and communication technology."
+                position: "Industrial Logistics Analyst (Former Intern)",
+                period: "Previous",
+                desc: "Logistics and foreign trade data intelligence.",
+                details: "Port logistics workflow optimization and monitoring of heavy-haul railway operational metrics for global industrial leaders."
             }
         ]
     },
     pt: {
         role: "Cientista de Dados | Comércio Exterior e Logística Portuária | Multilíngue (PT/EN/ES/IT/JP/KO) | Ex-estagiária na Vale e ArcelorMittal",
         xpTitle: "Linha do Tempo Profissional",
-        eduTitle: "Formação Acadêmica",
         experiences: [
             {
                 company: "Lab CTecL - IFES",
                 position: "Pesquisadora Líder em Linguística Computacional e IA",
                 period: "2024 – Atual",
-                desc: "Coordenação de laboratório de tradução assistida por IA, explorando tradução automática e processamento de linguagem natural (NLP)."
+                desc: "Coordenação de laboratório de tradução assistida por IA no IFES.",
+                details: "Liderando pesquisas em NLP e métricas de tradução poética. Gestão de estratégias de dados para modelos de linguagem e projetos de linguística computacional."
+            },
+            {
+                company: "Freelance e Educação",
+                position: "Tradutora e Educadora",
+                period: "Em andamento",
+                desc: "Instrução multilíngue especializada e tradução técnica.",
+                details: "Tradução técnica e literária em Inglês, Espanhol e Italiano. Desenvolvimento contínuo de proficiência em Japonês e Coreano para comunicação global."
             },
             {
                 company: "Vale / ArcelorMittal",
-                position: "Analista de Logística e Comércio Exterior",
-                period: "Experiências Anteriores",
-                desc: "Foco em métricas operacionais, decisões baseadas em dados e gestão de logística portuária."
+                position: "Analista de Logística Industrial (Ex-estagiária)",
+                period: "Anterior",
+                desc: "Inteligência de dados em logística e comércio exterior.",
+                details: "Otimização de fluxos de logística portuária e monitoramento de métricas ferroviárias para gigantes do setor industrial."
             }
-        ],
-        education: [
+        ]
+    },
+    es: {
+        role: "Científica de Datos | Comercio Exterior y Logística Portuaria | Multilingüe (PT/EN/ES/IT/JP/KO) | Ex-pasante en Vale y ArcelorMittal",
+        xpTitle: "Línea de Tiempo Profesional",
+        experiences: [
             {
-                inst: "IFES Serra",
-                degree: "Mestrado em Computação Aplicada (PPCOMP)",
-                period: "Início em 2027",
-                desc: "Foco em métodos computacionais avançados e inteligência de dados."
+                company: "Lab CTecL - IFES",
+                position: "Investigadora Líder en Lingüística Computacional e IA",
+                period: "2024 – Actualidad",
+                desc: "Coordinación de laboratorio de traducción asistida por IA.",
+                details: "Liderazgo en investigaciones de NLP y métricas de traducción poética. Gestión de proyectos de lingüística computacional aplicada."
             },
             {
-                inst: "IFES Vitória",
-                degree: "Licenciatura em Letras",
-                period: "Concluído",
-                desc: "Base sólida em linguística e proficiência multilíngue."
-            },
-            {
-                inst: "IFES Serra",
-                degree: "Técnica em Informática",
-                period: "Concluído",
-                desc: "Formação técnica em tecnologia da informação e comunicação."
+                company: "Freelance y Educación",
+                position: "Traductora y Educadora",
+                period: "En curso",
+                desc: "Instrucción multilingüe especializada y traducción técnica.",
+                details: "Traducción técnica y literaria en varios idiomas. Especializada en la intersección entre lenguas y tecnología."
             }
         ]
     }
@@ -81,48 +77,45 @@ const dictionary = {
 
 function setLanguage(lang) {
     const data = dictionary[lang] || dictionary.en;
-    
-    // Atualiza Header
     document.getElementById('txt-role').innerText = data.role;
     
-    // Botões Ativos
     document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.getElementById(`btn-${lang}`);
-    if (activeBtn) activeBtn.classList.add('active');
+    const btn = document.getElementById(`btn-${lang}`);
+    if (btn) btn.classList.add('active');
 
-    // Renderiza Experiências
-    const xpContainer = document.getElementById('experience-container');
-    let xpHTML = `<h2 class="section-label">${data.xpTitle}</h2>`;
-    data.experiences.forEach(exp => {
-        xpHTML += `
-            <div class="glass-box experience-card">
+    const container = document.getElementById('experience-container');
+    let html = `<h2 class="section-label">${data.xpTitle}</h2>`;
+
+    data.experiences.forEach((exp, index) => {
+        html += `
+            <div class="glass-box experience-card dropdown" onclick="toggleDropdown(${index})">
                 <div class="exp-header">
                     <span class="exp-company">${exp.company}</span>
                     <span class="exp-period">${exp.period}</span>
                 </div>
                 <h3 class="exp-position">${exp.position}</h3>
                 <p class="exp-desc">${exp.desc}</p>
-            </div>
-        `;
-    });
-    xpContainer.innerHTML = xpHTML;
-
-    // Renderiza Educação
-    const eduContainer = document.getElementById('education-container');
-    let eduHTML = `<h2 class="section-label">${data.eduTitle}</h2>`;
-    data.education.forEach(edu => {
-        eduHTML += `
-            <div class="glass-box experience-card">
-                <div class="exp-header">
-                    <span class="exp-company">${edu.inst}</span>
-                    <span class="exp-period">${edu.period}</span>
+                <div id="details-${index}" class="exp-details">
+                    <hr class="pearl-divider">
+                    <p style="padding-bottom:15px; line-height:1.6;">${exp.details}</p>
                 </div>
-                <h3 class="exp-position">${edu.degree}</h3>
-                <p class="exp-desc">${edu.desc}</p>
             </div>
         `;
     });
-    eduContainer.innerHTML = eduHTML;
+    container.innerHTML = html;
 }
 
+function toggleDropdown(index) {
+    const details = document.getElementById(`details-${index}`);
+    const isOpen = details.style.maxHeight;
+    
+    // Fecha outros ao abrir um novo
+    document.querySelectorAll('.exp-details').forEach(el => el.style.maxHeight = null);
+    
+    if (!isOpen) {
+        details.style.maxHeight = details.scrollHeight + "px";
+    }
+}
+
+// Inicializa no idioma padrão (EN)
 document.addEventListener('DOMContentLoaded', () => setLanguage('en'));
