@@ -3,134 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia Porcu Pissarra | Portfolio</title>
+    <title>Flávia P. Pissarra | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfcfd; color: #1e293b; }
-        
-        /* Custom Gradient Line for the Timeline */
-        .timeline-line::before {
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --pearl-glow: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0c;
+            overflow-x: hidden;
+            color: #e2e8f0;
+        }
+
+        /* Animated Aurora Background - The "Serious" Colorful Touch */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            filter: blur(100px);
+            opacity: 0.4;
+        }
+        .blob {
+            position: absolute;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            animation: move 25s infinite alternate;
+        }
+        .blob-1 { background: #4f46e5; top: -10%; left: -10%; }
+        .blob-2 { background: #7c3aed; bottom: -10%; right: -10%; animation-delay: -5s; }
+        .blob-3 { background: #2563eb; top: 40%; left: 30%; animation-delay: -10s; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 100px) scale(1.2); }
+        }
+
+        /* The Ultra-Smooth Pearl Glass */
+        .pearl-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 
+                        inset 0 0 0 1px var(--pearl-glow);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .pearl-glass:hover {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* The Vertical "Silk" Line */
+        .silk-line::before {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #6366f1 0%, #cbd5e1 50%, #f1f5f9 100%);
+            top: 0; bottom: 0; left: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3) 15%, rgba(255,255,255,0.3) 85%, transparent);
         }
 
-        /* Subtle Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+        .reveal { opacity: 0; transform: translateY(15px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen">
 
-    <!-- HEADER / HERO SECTION -->
-    <header class="pt-20 pb-16 px-6 text-center md:text-left max-w-5xl mx-auto">
-        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-50 rounded-full">
-            Freelance Portfolio
-        </div>
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-4">
-            Flávia Porcu Pissarra
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-600 font-light mb-6 max-w-2xl leading-relaxed">
-            Teacher, Translator, and Researcher specializing in <span class="text-indigo-600 font-semibold">Computational Linguistics</span> and AI-assisted translation.
-        </p>
-        
-        <!-- Quick Stats / Badges -->
-        <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm">
-            <span class="flex items-center px-3 py-2 glass rounded-lg border border-slate-200">
-                <span class="mr-2">🌍</span> Polyglot (EN, ES, PT, IT, JP, KR)
-            </span>
-            <span class="flex items-center px-3 py-2 glass rounded-lg border border-slate-200">
-                <span class="mr-2">💻</span> IT & NLP Specialist
-            </span>
-            <span class="flex items-center px-3 py-2 glass rounded-lg border border-slate-200">
-                <span class="mr-2">📍</span> Serra, ES
-            </span>
-        </div>
+    <div class="aurora-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
-        <div class="mt-8 flex justify-center md:justify-start gap-4">
-            <a href="#" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
-                View GitHub
-            </a>
-            <a href="#" class="px-6 py-3 bg-white text-slate-700 border border-slate-200 font-semibold rounded-xl hover:bg-slate-50 transition-all">
-                LinkedIn Profile
-            </a>
+    <!-- HEADER -->
+    <header class="max-w-6xl mx-auto pt-24 pb-12 px-8">
+        <div class="pearl-glass p-10 md:p-14 rounded-[2rem]">
+            <div class="grid md:grid-cols-3 gap-10 items-center">
+                <div class="md:col-span-2">
+                    <h1 class="text-5xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        Flávia Porcu Pissarra
+                    </h1>
+                    <p class="text-indigo-400 font-medium tracking-widest uppercase text-xs mb-6">
+                        Data Scientist | Polyglot | Computational Linguist
+                    </p>
+                    <p class="text-slate-400 leading-relaxed text-lg max-w-xl">
+                        Transitioning into <span class="text-white">Foreign Trade & Port Logistics</span>. 
+                        Applying 11+ years of technical precision to optimize global supply chains and high-level international documentation.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-sm text-slate-300">
+                        <p class="font-bold text-white mb-2 uppercase tracking-tighter">Core Proficiencies</p>
+                        <ul class="space-y-1">
+                            <li>• English & Spanish (C2)</li>
+                            <li>• SQL, Python & Power BI</li>
+                            <li>• Port Management & Incoterms</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 flex gap-4">
+                        <a href="mailto:flaviapissarra@gmail.com" class="text-xs font-bold px-5 py-2.5 rounded-full bg-white text-black hover:bg-slate-200 transition-all">EMAIL</a>
+                        <a href="https://linkedin.com/in/fppissarra" class="text-xs font-bold px-5 py-2.5 rounded-full border border-white/20 hover:bg-white/5 transition-all">LINKEDIN</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- TIMELINE SECTION -->
-    <main class="max-w-5xl mx-auto px-6 pb-32">
-        <h2 class="text-2xl font-bold text-slate-800 mb-12 md:ml-40 flex items-center">
-            <span class="w-8 h-[2px] bg-indigo-600 mr-4"></span> Professional Timeline
-        </h2>
-
-        <div class="relative timeline-line ml-4 md:ml-40">
-
-            <!-- 2024 - 2026 Block -->
-            <div class="reveal mb-16 relative pl-10">
-                <div class="hidden md:block absolute -left-40 top-0 w-32 text-right">
-                    <span class="text-2xl font-bold text-indigo-600">2024–2026</span>
+    <!-- TIMELINE -->
+    <main class="max-w-6xl mx-auto px-8 pb-32">
+        <div class="relative silk-line ml-4 md:ml-48">
+            
+            <!-- CURRENT -->
+            <div class="reveal mb-20 relative pl-12 active">
+                <div class="hidden md:block absolute -left-48 top-2 w-36 text-right">
+                    <span class="text-sm font-bold tracking-widest text-indigo-400 uppercase">2023 — Present</span>
                 </div>
-                <div class="md:hidden mb-2">
-                    <span class="text-sm font-bold text-indigo-600 uppercase tracking-widest">2024–2026</span>
-                </div>
-                <div class="absolute -left-[6px] top-2 w-3 h-3 bg-indigo-600 rounded-full ring-4 ring-white"></div>
+                <div class="absolute -left-[4px] top-4 w-2 h-2 bg-indigo-500 rounded-full shadow-[0_0_10px_#6366f1]"></div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Lead Computational Linguist & Researcher</h3>
-                            <p class="text-indigo-600 font-medium italic">CTecL: AI-Assisted Translation Lab</p>
-                        </div>
+                <div class="pearl-glass p-8 rounded-3xl">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-white">Lead Computational Linguist</h3>
+                        <span class="text-xs font-mono text-slate-500">CTecL Lab</span>
                     </div>
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        Coordinating an innovative lab exploring the intersection of poetry and technology. Researching how machine translation models handle rhythm and stylistic nuances in multi-language environments.
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Evaluating 50k+ linguistic samples for LLM benchmarks. 
+                        Architecting gold-standard datasets for high-fidelity language models and implementing automated QA workflows in Python.
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-tight">NLP</span>
-                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-tight">Machine Translation</span>
-                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-tight">Poetry Analysis</span>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-bold border border-white/10 uppercase">NLP Architecture</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-lg text-[10px] font-bold border border-white/10 uppercase">Automation</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 2020 - 2023 Block -->
-            <div class="reveal mb-16 relative pl-10">
-                <div class="hidden md:block absolute -left-40 top-0 w-32 text-right text-slate-400">
-                    <span class="text-2xl font-bold">2020–2023</span>
+            <!-- ARCHITECTURE/STEEL -->
+            <div class="reveal mb-20 relative pl-12 active">
+                <div class="hidden md:block absolute -left-48 top-2 w-36 text-right">
+                    <span class="text-sm font-bold tracking-widest text-slate-600 uppercase">2018 — 2019</span>
                 </div>
-                <div class="md:hidden mb-2">
-                    <span class="text-sm font-bold text-slate-400 uppercase tracking-widest">2020–2023</span>
-                </div>
-                <div class="absolute -left-[6px] top-2 w-3 h-3 bg-slate-300 rounded-full ring-4 ring-white"></div>
+                <div class="absolute -left-[4px] top-4 w-2 h-2 bg-slate-700 rounded-full"></div>
                 
-                <div class="bg-white/50 p-8 rounded-2xl border border-dashed border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800">Freelance Translator & Educator</h3>
-                    <p class="text-slate-500 font-medium italic mb-4">Freelance Services</p>
-                    <p class="text-slate-500 leading-relaxed mb-4">
-                        Delivered high-complexity translations for academic publications and technical manuals. Managed student progress in English and Spanish language acquisition across various levels.
-                    </p>
-                    <div class="flex gap-4 text-slate-400">
-                        <span class="text-xs uppercase tracking-widest font-bold">English C2</span>
-                        <span class="text-xs uppercase tracking-widest font-bold">Spanish C2</span>
+                <div class="pearl-glass p-8 rounded-3xl">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-slate-200">Data Scientist & Localization Lead</h3>
+                        <span class="text-xs font-mono text-slate-500">ArcelorMittal | Vale</span>
                     </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Engineered automated industrial pipelines using SQL and Python. 
+                        Ensured 100% terminological precision for international engineering delegations (Mexican/Canadian groups).
+                    </p>
                 </div>
             </div>
 
@@ -138,20 +164,16 @@
     </main>
 
     <script>
-        // Trigger reveal animation on scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
+        const reveal = () => {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(r => {
+                const windowHeight = window.innerHeight;
+                const elementTop = r.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) r.classList.add("active");
+            });
+        };
         window.addEventListener("scroll", reveal);
-        reveal(); // Initial check
+        reveal();
     </script>
 </body>
 </html>
