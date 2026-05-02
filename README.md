@@ -1,6 +1,4 @@
-> 01101000 01100101 01101100 01101100 01101111 00100000 01110111 01101111 01110010 01101100 01100100 00100001
-
-> # "The limit of my language is the limit of my world." (Wittgenstein, 1922)
+> # 01101000 01100101 01101100 01101100 01101111 00100000 01110111 01101111 01110010 01101100 01100100 00100001
 
 # Flávia P. Pissarra
 Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO) | Former Intern at Vale & ArcelorMittal
@@ -16,3 +14,5 @@ Highlights:
 Curious about the details? Click the following link to see the interactive CV.
 
 🌐 https://fppissarra.github.io/
+
+> "The limit of my language is the limit of my world." (Wittgenstein, 1922)
