@@ -2,8 +2,8 @@
     --pearl-white: rgba(255, 255, 255, 0.45);
     --pearl-border: rgba(255, 255, 255, 0.6);
     --accent-blue: #0984e3;
-    --text-main: #1a1a1a;
-    --text-sub: #444444;
+    --text-main: #2d3436;
+    --text-sub: #636e72;
     --font-primary: 'Inter', sans-serif;
 }
 
@@ -12,67 +12,114 @@ body {
     font-family: var(--font-primary);
     color: var(--text-main);
     background: #fdfcfb;
-    line-height: 1.6;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Fundo com gradiente suave e desfoque para efeito perolado */
+/* Fundo com efeito perolado */
 .pearl-background {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     z-index: -1;
     background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 25%, #fbc2eb 50%, #a1c4fd 75%, #c2e9fb 100%);
-    opacity: 0.45; filter: blur(120px);
+    opacity: 0.4; filter: blur(100px);
 }
 
-.container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.container { max-width: 850px; margin: 40px auto; padding: 0 20px; }
 
-/* Caixas com efeito de vidro */
+/* Estrutura das caixas de vidro */
 .glass-box {
     background: var(--pearl-white);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(160%);
     border: 1px solid var(--pearl-border);
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    padding: 30px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 25px 40px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
 }
 
-/* Estilo do Header (Sem animação/clique) */
-.static-box { cursor: default; transition: none; }
-.main-header { text-align: center; position: relative; }
+/* Header - Ajuste de escala para o Nome e Bio */
+.static-box { cursor: default; }
+.main-header { text-align: center; position: relative; padding: 35px 20px; }
 
-h1 { font-weight: 900; font-size: 2.4rem; letter-spacing: -1.5px; margin: 10px 0; }
-.description { font-size: 0.95rem; color: var(--text-sub); font-weight: 600; max-width: 800px; margin: 0 auto 20px; }
+h1 { 
+    font-weight: 800; 
+    font-size: 1.8rem; /* Nome elegante e profissional */
+    letter-spacing: -0.8px; 
+    margin: 0 0 8px 0; 
+}
 
-/* Seleção de Idioma */
-.lang-selector { position: absolute; top: 15px; right: 20px; display: flex; gap: 5px; }
+.description { 
+    font-size: 0.88rem; /* Bio compacta e legível */
+    color: var(--text-sub); 
+    font-weight: 500; 
+    max-width: 650px; 
+    margin: 0 auto 15px; 
+    line-height: 1.4;
+}
+
+/* Seletor de Idiomas */
+.lang-selector { position: absolute; top: 15px; right: 20px; display: flex; gap: 4px; }
 .lang-selector button {
-    background: rgba(255, 255, 255, 0.5); border: 1px solid var(--pearl-border);
-    padding: 6px 10px; border-radius: 8px; cursor: pointer; font-weight: 800; font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.4); border: 1px solid var(--pearl-border);
+    padding: 4px 8px; border-radius: 6px; cursor: pointer; 
+    font-weight: 700; font-size: 0.6rem; color: var(--text-sub);
 }
-.lang-selector button.active { background: white; color: var(--accent-blue); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+.lang-selector button.active { background: white; color: var(--accent-blue); }
 
-.contact-links a { margin: 0 10px; text-decoration: none; font-weight: 700; color: var(--accent-blue); font-size: 0.9rem; }
+/* Links de Contato */
+.contact-links a { 
+    margin: 0 8px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    color: var(--accent-blue); 
+    font-size: 0.82rem; 
+}
 
-/* Títulos das Seções (DOCÊNCIA, PESQUISA, INDÚSTRIA) */
+/* Rótulos das Categorias (DOCÊNCIA, PESQUISA, INDÚSTRIA) */
 .section-label { 
-    text-align: left; font-weight: 800; margin: 40px 0 15px 10px; 
-    letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; color: rgba(0,0,0,0.4); 
+    font-weight: 800; 
+    margin: 35px 0 12px 5px; 
+    letter-spacing: 1.5px; 
+    text-transform: uppercase; 
+    font-size: 0.7rem; 
+    color: rgba(0,0,0,0.35); 
 }
 
 /* Dropdowns de Experiência */
-.dropdown { cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-.dropdown:hover { transform: scale(1.01); background: rgba(255, 255, 255, 0.6); }
+.dropdown { cursor: pointer; transition: transform 0.2s ease; }
+.dropdown:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.6); }
 
 .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
-.exp-title { font-weight: 900; font-size: 1.2rem; color: var(--text-main); }
-.exp-period { font-size: 0.8rem; font-weight: 700; opacity: 0.5; }
+.exp-title { 
+    font-weight: 800; 
+    font-size: 1.05rem; 
+    color: var(--text-main); 
+}
+.exp-period { 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    color: var(--text-sub); 
+    opacity: 0.8; 
+}
 
-/* Detalhes expansíveis */
-.exp-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
-.pearl-divider { border: 0; height: 1px; background: linear-gradient(to right, transparent, var(--pearl-border), transparent); margin: 15px 0; }
+/* Detalhes Expansíveis */
+.exp-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+.pearl-divider { border: 0; height: 1px; background: rgba(0,0,0,0.05); margin: 12px 0; }
 
-.company-tag { color: var(--accent-blue); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; display: block; margin-bottom: 8px; }
-.bullet-list { padding-left: 20px; margin: 0; font-size: 0.9rem; color: var(--text-sub); list-style-type: square; }
-.bullet-list li { margin-bottom: 6px; }
+.company-tag { 
+    color: var(--accent-blue); 
+    font-weight: 700; 
+    font-size: 0.78rem; 
+    text-transform: uppercase; 
+    display: block; 
+    margin: 10px 0 5px 0; 
+}
+
+.bullet-list { 
+    padding-left: 18px; 
+    margin: 0; 
+    font-size: 0.85rem; 
+    color: var(--text-sub); 
+}
+.bullet-list li { margin-bottom: 5px; }
