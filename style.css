@@ -1,106 +1,105 @@
 :root {
-    --glass: rgba(255, 255, 255, 0.45);
-    --glass-border: rgba(255, 255, 255, 0.6);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent: #3b82f6;
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --text-dark: #1a1a1a;
 }
 
 body {
-    font-family: var(--font-sans);
-    background: #f1f5f9;
     margin: 0;
-    color: var(--text-primary);
-    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Bolhas de fundo para dar profundidade ao vidro */
-.background-blobs {
+/* Fundo Holográfico / Iridescente */
+.holographic-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
-}
-.blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-}
-.blob-1 { width: 400px; height: 400px; background: #bfdbfe; top: -100px; right: -50px; }
-.blob-2 { width: 350px; height: 350px; background: #ddd6fe; bottom: -50px; left: -50px; }
-
-.container {
-    max-width: 800px;
-    margin: 100px auto;
-    padding: 0 20px;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(220,100%,10%,1) 0, transparent 50%),
+        linear-gradient(45deg, #b8c6db 0%, #f5f7fa 100%); /* Substituir por gradiente pastel iridescente */
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), 
+                      linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%),
+                      radial-gradient(circle at 10% 20%, rgba(216, 241, 230, 1) 10.2%, rgba(233, 226, 226, 1) 81.2%);
+    background-blend-mode: overlay;
 }
 
-/* Efeito Vidro Premium */
+.main-layout {
+    width: 95%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+/* Efeito Vidro Realista */
 .glass-card {
-    background: var(--glass);
-    backdrop-filter: blur(18px) saturate(160%);
-    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.header-card {
+.header-main {
+    padding: 40px;
     text-align: center;
-    padding: 60px 20px;
 }
 
-h1 { font-size: 2.4rem; font-weight: 800; margin: 0; letter-spacing: -1px; }
+h1 { font-size: 2.8rem; margin: 0; font-weight: 800; letter-spacing: -1.5px; }
+.role-desc { font-size: 1.1rem; color: #444; margin: 15px 0; }
 
-.tagline {
-    font-size: 0.9rem;
+/* Badges e Tags */
+.badge-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; align-items: center; }
+.badge, .tag {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.badge.special { background: white; color: #000; }
+
+/* Timeline Visual */
+.timeline-container { padding: 40px; position: relative; }
+.timeline-line {
+    position: absolute;
+    left: 185px; top: 120px; bottom: 60px;
+    width: 4px;
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb, #d8f1e6);
+    border-radius: 2px;
 }
 
-.social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
-.social-links a { text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; }
-.social-links a:hover { color: var(--accent); }
-
-/* Navegação Flutuante */
-.glass-nav {
-    position: fixed;
-    top: 20px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    padding: 6px;
-    border-radius: 16px;
-    z-index: 100;
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
-.btn-lang {
-    background: transparent; border: none; padding: 8px 16px; border-radius: 12px;
-    cursor: pointer; font-weight: 700; color: var(--text-secondary);
+
+.time-label { width: 150px; text-align: right; font-weight: 800; font-size: 1.2rem; margin-right: 60px; }
+.node {
+    width: 20px; height: 20px;
+    background: white;
+    border: 4px solid #a1c4fd;
+    border-radius: 50%;
+    margin-right: 30px;
 }
-.btn-lang.active { background: white; color: var(--text-primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
-/* Lista de Experiências */
-.section-title { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin: 40px 0 15px 10px; color: var(--text-secondary); }
-
-.experience-item { cursor: pointer; }
-.experience-item:hover { transform: translateY(-3px); box-shadow: 0 15px 45px rgba(0,0,0,0.06); }
-
-.exp-header { padding: 25px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
-
-.exp-content { 
-    max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; padding: 0 25px; 
+.item-card {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 0; /* Override */
 }
-.active-box .exp-content { max-height: 500px; opacity: 1; padding-bottom: 25px; }
 
-.tag {
-    background: rgba(255,255,255,0.5);
-    border: 1px solid var(--glass-border);
-    padding: 4px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); margin-right: 6px;
-}
+.item-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+.tags { display: flex; gap: 10px; }
