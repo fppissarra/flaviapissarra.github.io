@@ -1,1 +1,36 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra | CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pearl-background"></div>
+
+    <main class="container">
+        <header class="glass-box pearl-effect main-header">
+            <div class="lang-selector">
+                <button onclick="setLanguage('en')" id="btn-en" class="active">EN</button>
+                <button onclick="setLanguage('pt')" id="btn-pt">PT</button>
+                <button onclick="setLanguage('es')" id="btn-es">ES</button>
+            </div>
+
+            <h1 id="txt-name">Flávia P. Pissarra</h1>
+            <p id="txt-role" class="description"></p>
+
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
+                <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes</a>
+                <a href="mailto:flavia.pissarra@example.com">Email</a>
+            </div>
+        </header>
+
+        <section id="cv-content" class="cv-section"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
