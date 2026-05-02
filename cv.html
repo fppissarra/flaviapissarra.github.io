@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Curriculum Vitae</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Flávia Porcu Pissarra | CV</title>
+    <!-- O ./ é fundamental para o GitHub Pages localizar o arquivo na mesma pasta -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<nav>
-    <button class="btn-lang" id="btn-pt" onclick="changeLang('pt')">PT</button>
-    <button class="btn-lang active" id="btn-en" onclick="changeLang('en')">EN</button>
+<nav class="lang-nav">
+    <button class="btn-lang active" id="btn-pt" onclick="changeLang('pt')">PT</button>
+    <button class="btn-lang" id="btn-en" onclick="changeLang('en')">EN</button>
     <button class="btn-lang" id="btn-es" onclick="changeLang('es')">ES</button>
 </nav>
 
 <div class="container">
-    <!-- Cabeçalho Dinâmico -->
     <header class="glass-panel">
-        <h1 id="user-name"></h1>
+        <h1 id="user-name">Flávia Porcu Pissarra</h1>
         <div id="user-tagline" class="tagline"></div>
         <div class="social-links">
             <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
@@ -26,10 +26,11 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal Dinâmico -->
-    <div id="main-content"></div>
+    <div id="main-content">
+        <!-- O script.js preencherá este espaço -->
+    </div>
 </div>
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
