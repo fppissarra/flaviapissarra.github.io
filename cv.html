@@ -1,130 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Logística Portuária & Dados</title>
-    <style>
-        :root { --vale-blue: #003366; --gold: #b3a369; --bg: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: var(--bg); margin: 0; }
-        .container { max-width: 850px; margin: 30px auto; background: #fff; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 6px solid var(--vale-blue); }
-        nav { position: sticky; top: 0; background: #fff; padding: 15px 0; text-align: center; border-bottom: 1px solid #ddd; z-index: 1000; }
-        button { background: #fff; border: 1.5px solid var(--vale-blue); color: var(--vale-blue); padding: 8px 20px; margin: 0 5px; cursor: pointer; border-radius: 20px; font-weight: bold; transition: 0.3s; }
-        button.active { background: var(--vale-blue); color: #fff; }
-        .lang-section { display: none; }
-        .active-section { display: block; animation: fadeIn 0.4s ease-in-out; }
-        h1 { color: var(--vale-blue); margin: 0; font-size: 28px; }
-        .tagline { color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; }
-        h2 { border-bottom: 2px solid #eee; color: var(--vale-blue); padding-bottom: 5px; margin-top: 35px; font-size: 20px; }
-        .exp-item { margin-bottom: 25px; }
-        .exp-header { display: flex; justify-content: space-between; font-weight: bold; color: #444; }
-        .links { margin-top: 10px; font-size: 14px; }
-        .links a { color: var(--vale-blue); text-decoration: none; margin-right: 15px; font-weight: 500; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .exp-header { flex-direction: column; } }
-    </style>
-</head>
-<body>
-
-<nav>
-    <button onclick="show('pt')" id="b-pt" class="active">PT-BR</button>
-    <button onclick="show('en')" id="b-en">EN-US</button>
-    <button onclick="show('es')" id="b-es">ES-ES</button>
-</nav>
-
-<div class="container">
-    
-    <!-- PORTUGUÊS -->
-    <div id="pt" class="lang-section active-section">
-        <h1>Flávia Porcu Pissarra</h1>
-        <div class="tagline">Inteligência Operacional | Logística Portuária | Cientista de Dados</div>
-        <div class="links">
-            <a href="mailto:flaviapissarra@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
-            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes (Acadêmico)</a>
-            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
-        </div>
-
-        <h2>Resumo Profissional</h2>
-        <p>Especialista em processamento de dados e comunicação técnica trilingue com 11 anos de experiência. Transição de carreira para <strong>Logística Portuária e Comércio Exterior</strong>, fundamentada em passagens estratégicas pela <strong>Vale</strong> e <strong>ArcelorMittal</strong>. Expert em automação de fluxos operacionais (Python/SQL) e visualização de KPIs (Power BI). Atualmente cursando Técnico em Portos (IFES) para integrar inteligência de dados à eficiência marítima e ferroviária.</p>
-
-        <h2>Experiência Chave</h2>
-        
-        <div class="exp-item">
-            <div class="exp-header"><span>Vale | Data Scientist (Operational Support)</span> <span>2018</span></div>
-            <p>Atuação focada na análise de KPIs industriais e infraestrutura de dados para suporte logístico de carga pesada.</p>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header"><span>ArcelorMittal | Data Scientist & Technical Localization</span> <span>2019</span></div>
-            <p>• Engenharia de dados (SQL/Python) processando 10k+ linhas mensais para auditoria operacional.<br>
-            • Desenvolvimento de dashboards em Power BI, reduzindo o tempo de consolidação de dados em 30%.<br>
-            • Interface técnica internacional (EN/ES/PT) em protocolos de engenharia industrial.</p>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header"><span>IFES (CTecL) | Coordenação e Pesquisa de Dados (NLP)</span> <span>2020 - 2026</span></div>
-            <p>Liderança em automação de processos linguísticos e IA, reduzindo erros de processamento via Python.</p>
-        </div>
-
-        <h2>Formação</h2>
-        <ul>
-            <li><strong>Técnico em Portos</strong> - IFES (Em andamento)</li>
-            <li><strong>Técnico em Informática</strong> - IFES Serra</li>
-            <li><strong>Licenciatura em Letras</strong> - IFES Vitória</li>
-        </ul>
-    </div>
-
-    <!-- ENGLISH -->
-    <div id="en" class="lang-section">
-        <h1>Flávia Porcu Pissarra</h1>
-        <div class="tagline">Operational Intelligence | Port Logistics | Data Science</div>
-        
-        <h2>Summary</h2>
-        <p>Data-driven professional with 11 years of experience at the intersection of technical infrastructure and linguistic precision. Expert in <strong>Python, SQL, and Power BI</strong> for process optimization. Former Data Scientist at <strong>Vale and ArcelorMittal</strong>, currently pivoting to Maritime Logistics and Global Trade efficiency.</p>
-
-        <h2>Core Experience</h2>
-        <div class="exp-item">
-            <div class="exp-header"><span>ArcelorMittal | Data & Localization</span></div>
-            <p>• Automated industrial pipelines for 10k+ monthly rows using SQL and Python.<br>
-            • Reduced data consolidation time by 30% through Power BI implementation.</p>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header"><span>Vale | Data Analysis</span></div>
-            <p>Managed industrial KPIs and data infrastructure for large-scale operations.</p>
-        </div>
-
-        <h2>Skills & Languages</h2>
-        <p><strong>Technical:</strong> SQL, Python (Pandas/NumPy), Power BI, NLP.<br>
-        <strong>Languages:</strong> Portuguese (Native), English (C2), Spanish (C2), Italian, Japanese, Korean.</p>
-    </div>
-
-    <!-- ESPAÑOL -->
-    <div id="es" class="lang-section">
-        <h1>Flávia Porcu Pissarra</h1>
-        <div class="tagline">Inteligencia Operativa | Logística Portuaria | Datos</div>
-        
-        <h2>Resumen</h2>
-        <p>Especialista en <strong>Python, SQL y Power BI</strong> con sólida trayectoria en <strong>Vale y ArcelorMittal</strong>. Experta en automatización de procesos industriales y comunicación técnica trilingüe (C2). Enfocada en la eficiencia de la cadena de suministro internacional.</p>
-
-        <h2>Experiencia Destacada</h2>
-        <div class="exp-item">
-            <div class="exp-header"><span>ArcelorMittal | Datos & Localización Técnica</span></div>
-            <p>Optimización de procesos operativos mediante ingeniería de datos y soporte técnico bilingüe en protocolos industriales.</p>
-        </div>
-    </div>
-
+<!-- SEÇÃO DE EXPERIÊNCIA REORGANIZADA -->
+<h2>Experiência em Inteligência Operacional & Dados</h2>
+<div class="exp-item">
+    <div class="exp-header"><span>Vale & ArcelorMittal | Cientista de Dados e Operações</span></div>
+    <p>• Gestão de KPIs industriais e automação de dashboards (Power BI/DAX), reduzindo o tempo de consolidação de dados em 30%.<br>
+    • Engenharia de dados (SQL/Python) para monitoramento de fluxos logísticos e auditoria operacional (10k+ linhas/mês).<br>
+    • Vivência prática em infraestrutura ferroviária e suporte ao controle de tráfego.</p>
 </div>
 
-<script>
-    function show(l) {
-        document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active-section'));
-        document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-        document.getElementById(l).classList.add('active-section');
-        document.getElementById('b-' + l).classList.add('active');
-    }
-</script>
+<h2>Gestão de Projetos e Tecnologia (IA & NLP)</h2>
+<div class="exp-item">
+    <div class="exp-header"><span>CTecL | Coordenadora de Pesquisa e Automação</span></div>
+    <p>• Liderança de iniciativas de Processamento de Linguagem Natural (NLP) e Machine Learning.<br>
+    • Implementação de workflows automatizados de Quality Assurance (QA) via Python, otimizando a confiabilidade de grandes volumes de dados.</p>
+</div>
 
-</body>
-</html>
+<h2>Logística Portuária & Comércio Exterior</h2>
+<div class="exp-item">
+    <div class="exp-header"><span>IFES | Especialização Técnica (Em curso)</span></div>
+    <p>• Foco em Gestão Portuária, Incoterms 2020 e otimização de Supply Chain internacional.</p>
+</div>
