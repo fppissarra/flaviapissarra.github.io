@@ -1,199 +1,93 @@
-/* style.css - Design Glassmorphism Profissional */
-
 :root {
-    --bg-main: #e0e5ec; /* Cinza claro neutro para destacar o vidro */
-    --glass-bg: rgba(255, 255, 255, 0.35); /* Transparência crucial para o efeito */
-    --glass-border: rgba(255, 255, 255, 0.4);
+    --bg-main: #e0e5ec;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.5);
     --vale-blue: #003366;
-    /* Degradê inspirado na inovação tecnológica */
     --accent-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #6a11cb 100%);
-    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-main);
-    /* Um leve degradê no fundo ajuda a perceber o efeito de desfoque (blur) */
-    background-image: radial-gradient(circle at 50% 50%, #f0f2f5 0%, #e0e5ec 100%);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg-main);
+    background-image: radial-gradient(circle at top, #f0f2f5 0%, #e0e5ec 100%);
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    color: #2c3e50;
 }
 
-/* Container do CV */
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: 50px 0;
-    z-index: 1;
-}
-
-/* Efeito Vidro Fosco (Glassmorphism) */
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%); /* Suporte para Safari */
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow);
-    border-radius: 24px;
-}
-
-/* Cabeçalho com Borda em Degradê */
-header {
-    text-align: center;
-    padding: 50px 30px;
-    margin-bottom: 30px;
-    position: relative;
-    /* Técnica de borda degradê mantendo o fundo transparente */
-    border: 3px solid transparent !important;
-    background-clip: padding-box, border-box;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), var(--accent-gradient);
-    background-origin: border-box;
-}
-
-header h1 {
-    margin: 0;
-    color: var(--vale-blue);
-    font-size: 2.5rem;
-    letter-spacing: -0.5px;
-}
-
-.tagline {
-    margin-top: 15px;
-    font-weight: 700;
-    color: #5d6d7e;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-
-/* Botões de Idioma */
-nav {
-    margin-top: 30px;
-}
+.lang-nav { margin-top: 30px; z-index: 10; }
 
 .btn-lang {
     background: var(--glass-bg);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
-    padding: 10px 22px;
+    padding: 8px 18px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
-    margin: 0 8px;
-    transition: all 0.3s ease;
-    color: var(--vale-blue);
-}
-
-.btn-lang:hover {
-    background: rgba(255, 255, 255, 0.6);
-    transform: translateY(-2px);
+    transition: 0.3s ease;
 }
 
 .btn-lang.active {
     background: var(--vale-blue);
     color: white;
-    border-color: var(--vale-blue);
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Seções de Experiência */
-.section-title {
-    font-size: 1.1rem;
-    color: var(--vale-blue);
-    margin: 40px 0 20px 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
+.container { width: 92%; max-width: 800px; margin: 40px 0; }
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
 }
 
-.section-title::after {
-    content: "";
-    flex: 1;
-    height: 2px;
-    background: var(--accent-gradient);
-    margin-left: 15px;
-    opacity: 0.3;
-}
-
-.experience-box {
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 2px solid transparent !important;
+header {
+    text-align: center;
+    padding: 45px;
+    margin-bottom: 30px;
+    border: 3px solid transparent !important;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                      linear-gradient(to right, #00c6ff, #6a11cb);
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), var(--accent-gradient);
     background-origin: border-box;
 }
 
-.experience-box:hover {
-    transform: scale(1.02);
-    background-image: linear-gradient(white, white), var(--accent-gradient);
+h1 { margin: 0; color: var(--vale-blue); font-size: 2.2rem; }
+.tagline { margin-top: 10px; font-weight: 700; color: #555; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; }
+
+.social-links { margin-top: 20px; }
+.social-links a { text-decoration: none; color: var(--vale-blue); margin: 0 10px; font-weight: 800; font-size: 0.85rem; }
+
+.section-title { font-size: 1.1rem; color: var(--vale-blue); margin: 30px 0 15px 5px; font-weight: 800; text-transform: uppercase; }
+
+.experience-box {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent !important;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), var(--accent-gradient);
+    background-origin: border-box;
 }
 
-.exp-header {
-    padding: 25px;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-}
+.experience-box:hover { transform: scale(1.02); }
+.exp-header { padding: 22px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+.exp-header::after { content: '▾'; opacity: 0.5; }
+.exp-content { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s; padding: 0 22px; }
+.active-box .exp-content { max-height: 600px; opacity: 1; padding-bottom: 25px; }
 
-.exp-header span {
-    color: var(--vale-blue);
-}
-
-.exp-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    padding: 0 25px;
-}
-
-.active-box .exp-content {
-    max-height: 1000px;
-    opacity: 1;
-    padding-bottom: 30px;
-}
-
-/* Tags Técnicas */
 .tag {
-    background: rgba(0, 198, 255, 0.1);
+    background: rgba(0, 114, 255, 0.1);
     color: #0072ff;
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    margin-right: 8px;
-    margin-bottom: 8px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    margin-right: 6px;
     font-weight: 800;
-    display: inline-block;
-    border: 1px solid rgba(0, 114, 255, 0.1);
-}
-
-/* Links Sociais */
-.social-links a {
-    text-decoration: none;
-    color: var(--vale-blue);
-    margin: 0 15px;
-    font-weight: 700;
-    transition: 0.3s;
-    opacity: 0.8;
-}
-
-.social-links a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    header h1 { font-size: 1.8rem; }
-    .container { width: 95%; }
 }
