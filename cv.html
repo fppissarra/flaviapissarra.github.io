@@ -3,261 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Flávia P. Pissarra</title>
+    <title>Flávia Porcu Pissarra | Logística Portuária & Dados</title>
     <style>
-        :root {
-            --pearl: rgba(255, 255, 255, 0.7);
-            --pearl-border: rgba(255, 255, 255, 0.4);
-            --text: #2c3e50;
-            --accent: #6c5ce7; /* Um lilás/azul suave que combina com o perolado */
-            --bg-gradient: linear-gradient(-45deg, #e3e3e3, #fdfbfb, #ebedee, #f3f3f3);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-
-        body {
-            background: var(--bg-gradient);
-            background-size: 400% 400%;
-            animation: pearlFlow 15s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--text);
-            padding-bottom: 50px;
-        }
-
-        @keyframes pearlFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- HEADER FIXO (CARTÃO PÉROLA) --- */
-        header {
-            position: sticky;
-            top: 20px;
-            width: 90%;
-            max-width: 850px;
-            background: var(--pearl);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--pearl-border);
-            border-radius: 30px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            z-index: 1000;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            margin-top: 20px;
-        }
-
-        .profile-box {
-            width: 110px;
-            height: 110px;
-            border-radius: 25px;
-            background: #fff;
-            border: 4px solid #fff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .profile-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        .user-info h1 { font-size: 1.8rem; letter-spacing: -0.5px; color: #1a1a1a; }
-        .user-info .tagline { font-weight: 600; color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
-        
-        .social-nav { display: flex; gap: 10px; flex-wrap: wrap; }
-        .social-nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.75rem;
-            font-weight: bold;
-            background: rgba(255,255,255,0.5);
-            padding: 6px 15px;
-            border-radius: 50px;
-            border: 1px solid var(--pearl-border);
-            transition: 0.3s;
-        }
-        .social-nav a:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-
-        /* --- NAVEGAÇÃO DE ABAS --- */
-        .tabs-container {
-            width: 90%;
-            max-width: 850px;
-            margin: 30px 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .tab-btn {
-            background: var(--pearl);
-            border: 1px solid var(--pearl-border);
-            padding: 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 700;
-            color: var(--text);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            transition: 0.4s;
-        }
-
-        .tab-btn:hover { background: #fff; }
-        .tab-btn.active {
-            background: #fff;
-            color: var(--accent);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-color: #fff;
-        }
-
-        /* --- ÁREA DE CONTEÚDO --- */
-        main { width: 90%; max-width: 850px; }
-        .tab-content { display: none; }
-        .active-content { display: block; animation: fadeIn 0.6s ease; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .card {
-            background: var(--pearl);
-            border: 1px solid var(--pearl-border);
-            border-radius: 25px;
-            padding: 35px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        .card h3 { margin-bottom: 15px; color: #1a1a1a; font-size: 1.3rem; }
-        .card p { margin-bottom: 15px; line-height: 1.7; }
-        
-        ul { list-style: none; }
-        li { margin-bottom: 12px; padding-left: 25px; position: relative; }
-        li::before { 
-            content: ""; 
-            position: absolute; 
-            left: 0; 
-            top: 8px; 
-            width: 8px; 
-            height: 8px; 
-            background: var(--accent); 
-            border-radius: 50%; 
-        }
-
-        .badge {
-            background: #fff;
-            padding: 4px 12px;
-            border-radius: 8px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 10px;
-            display: inline-block;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        @media (max-width: 700px) {
-            header { flex-direction: column; text-align: center; }
-            .tabs-container { grid-template-columns: 1fr; }
-        }
+        :root { --vale-blue: #003366; --gold: #b3a369; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: var(--bg); margin: 0; }
+        .container { max-width: 850px; margin: 30px auto; background: #fff; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 6px solid var(--vale-blue); }
+        nav { position: sticky; top: 0; background: #fff; padding: 15px 0; text-align: center; border-bottom: 1px solid #ddd; z-index: 1000; }
+        button { background: #fff; border: 1.5px solid var(--vale-blue); color: var(--vale-blue); padding: 8px 20px; margin: 0 5px; cursor: pointer; border-radius: 20px; font-weight: bold; transition: 0.3s; }
+        button.active { background: var(--vale-blue); color: #fff; }
+        .lang-section { display: none; }
+        .active-section { display: block; animation: fadeIn 0.4s ease-in-out; }
+        h1 { color: var(--vale-blue); margin: 0; font-size: 28px; }
+        .tagline { color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; }
+        h2 { border-bottom: 2px solid #eee; color: var(--vale-blue); padding-bottom: 5px; margin-top: 35px; font-size: 20px; }
+        .exp-item { margin-bottom: 25px; }
+        .exp-header { display: flex; justify-content: space-between; font-weight: bold; color: #444; }
+        .links { margin-top: 10px; font-size: 14px; }
+        .links a { color: var(--vale-blue); text-decoration: none; margin-right: 15px; font-weight: 500; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (max-width: 600px) { .container { padding: 20px; margin: 10px; } .exp-header { flex-direction: column; } }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="profile-box">
-        <img src="https://via.placeholder.com/110/f3f3f3/6c5ce7?text=FP" alt="Flávia Pissarra">
-    </div>
-    <div class="user-info">
+<nav>
+    <button onclick="show('pt')" id="b-pt" class="active">PT-BR</button>
+    <button onclick="show('en')" id="b-en">EN-US</button>
+    <button onclick="show('es')" id="b-es">ES-ES</button>
+</nav>
+
+<div class="container">
+    
+    <!-- PORTUGUÊS -->
+    <div id="pt" class="lang-section active-section">
         <h1>Flávia Porcu Pissarra</h1>
-        <div class="tagline">Logística Portuária • Análise de Dados • Tradução Técnica</div>
-        <div class="social-nav">
+        <div class="tagline">Inteligência Operacional | Logística Portuária | Cientista de Dados</div>
+        <div class="links">
+            <a href="mailto:flaviapissarra@gmail.com">Email</a>
             <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
-            <a href="mailto:seuemail@exemplo.com">Email</a>
+            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes (Acadêmico)</a>
             <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
-            <a href="http://lattes.cnpq.br/..." target="_blank">Lattes</a>
+        </div>
+
+        <h2>Resumo Profissional</h2>
+        <p>Especialista em processamento de dados e comunicação técnica trilingue com 11 anos de experiência. Transição de carreira para <strong>Logística Portuária e Comércio Exterior</strong>, fundamentada em passagens estratégicas pela <strong>Vale</strong> e <strong>ArcelorMittal</strong>. Expert em automação de fluxos operacionais (Python/SQL) e visualização de KPIs (Power BI). Atualmente cursando Técnico em Portos (IFES) para integrar inteligência de dados à eficiência marítima e ferroviária.</p>
+
+        <h2>Experiência Chave</h2>
+        
+        <div class="exp-item">
+            <div class="exp-header"><span>Vale | Data Scientist (Operational Support)</span> <span>2018</span></div>
+            <p>Atuação focada na análise de KPIs industriais e infraestrutura de dados para suporte logístico de carga pesada.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header"><span>ArcelorMittal | Data Scientist & Technical Localization</span> <span>2019</span></div>
+            <p>• Engenharia de dados (SQL/Python) processando 10k+ linhas mensais para auditoria operacional.<br>
+            • Desenvolvimento de dashboards em Power BI, reduzindo o tempo de consolidação de dados em 30%.<br>
+            • Interface técnica internacional (EN/ES/PT) em protocolos de engenharia industrial.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header"><span>IFES (CTecL) | Coordenação e Pesquisa de Dados (NLP)</span> <span>2020 - 2026</span></div>
+            <p>Liderança em automação de processos linguísticos e IA, reduzindo erros de processamento via Python.</p>
+        </div>
+
+        <h2>Formação</h2>
+        <ul>
+            <li><strong>Técnico em Portos</strong> - IFES (Em andamento)</li>
+            <li><strong>Técnico em Informática</strong> - IFES Serra</li>
+            <li><strong>Licenciatura em Letras</strong> - IFES Vitória</li>
+        </ul>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="en" class="lang-section">
+        <h1>Flávia Porcu Pissarra</h1>
+        <div class="tagline">Operational Intelligence | Port Logistics | Data Science</div>
+        
+        <h2>Summary</h2>
+        <p>Data-driven professional with 11 years of experience at the intersection of technical infrastructure and linguistic precision. Expert in <strong>Python, SQL, and Power BI</strong> for process optimization. Former Data Scientist at <strong>Vale and ArcelorMittal</strong>, currently pivoting to Maritime Logistics and Global Trade efficiency.</p>
+
+        <h2>Core Experience</h2>
+        <div class="exp-item">
+            <div class="exp-header"><span>ArcelorMittal | Data & Localization</span></div>
+            <p>• Automated industrial pipelines for 10k+ monthly rows using SQL and Python.<br>
+            • Reduced data consolidation time by 30% through Power BI implementation.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header"><span>Vale | Data Analysis</span></div>
+            <p>Managed industrial KPIs and data infrastructure for large-scale operations.</p>
+        </div>
+
+        <h2>Skills & Languages</h2>
+        <p><strong>Technical:</strong> SQL, Python (Pandas/NumPy), Power BI, NLP.<br>
+        <strong>Languages:</strong> Portuguese (Native), English (C2), Spanish (C2), Italian, Japanese, Korean.</p>
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div id="es" class="lang-section">
+        <h1>Flávia Porcu Pissarra</h1>
+        <div class="tagline">Inteligencia Operativa | Logística Portuaria | Datos</div>
+        
+        <h2>Resumen</h2>
+        <p>Especialista en <strong>Python, SQL y Power BI</strong> con sólida trayectoria en <strong>Vale y ArcelorMittal</strong>. Experta en automatización de procesos industriales y comunicación técnica trilingüe (C2). Enfocada en la eficiencia de la cadena de suministro internacional.</p>
+
+        <h2>Experiencia Destacada</h2>
+        <div class="exp-item">
+            <div class="exp-header"><span>ArcelorMittal | Datos & Localización Técnica</span></div>
+            <p>Optimización de procesos operativos mediante ingeniería de datos y soporte técnico bilingüe en protocolos industriales.</p>
         </div>
     </div>
-</header>
 
-<div class="tabs-container">
-    <button class="tab-btn active" onclick="openTab(event, 'exp')">Experiências</button>
-    <button class="tab-btn" onclick="openTab(event, 'proj')">Projetos</button>
-    <button class="tab-btn" onclick="openTab(event, 'free')">Freelances</button>
 </div>
 
-<main>
-    <!-- EXPERIÊNCIAS -->
-    <div id="exp" class="tab-content active-content">
-        <div class="card">
-            <span class="badge">LOGÍSTICA & FERROVIA</span>
-            <h3>Vale S.A. | Centro de Controle Operacional</h3>
-            <ul>
-                <li>Monitoramento e regulação de tráfego ferroviário focado em <strong>eficiência de escoamento</strong>.</li>
-                <li>Familiaridade com infraestrutura de Máquinas de Via e segurança operacional.</li>
-                <li>Tomada de decisão baseada em dados de telemetria e fluxos sistêmicos.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <span class="badge">FORMAÇÃO TÉCNICA</span>
-            <h3>Portos e Terminais (IFES)</h3>
-            <p>Especialização em operações portuárias, logística de exportação e gestão de terminais intermodais.</p>
-        </div>
-    </div>
-
-    <!-- PROJETOS -->
-    <div id="proj" class="tab-content">
-        <div class="card">
-            <span class="badge">ACADÊMICO / UFES</span>
-            <h3>Pesquisa em Economia Criativa</h3>
-            <ul>
-                <li>Mapeamento estatístico de cadeias produtivas no Espírito Santo.</li>
-                <li>Processamento de dados regionais para identificação de gargalos logísticos e econômicos.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <span class="badge">IA & LINGUÍSTICA</span>
-            <h3>Laboratório CTecL (Coordenação)</h3>
-            <p>Liderança de pesquisa em Tradução Assistida por IA e modelos de linguagem aplicados ao ritmo poético.</p>
-        </div>
-    </div>
-
-    <!-- FREELANCES -->
-    <div id="free" class="tab-content">
-        <div class="card">
-            <span class="badge">TRADUÇÃO TÉCNICA</span>
-            <h3>Linguística Corporativa (EN/ES/IT)</h3>
-            <ul>
-                <li>Tradução e versão de documentos técnicos para Comércio Exterior.</li>
-                <li>Localização de softwares e conteúdos de tecnologia.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <span class="badge">EDUCAÇÃO</span>
-            <h3>Consultoria em Idiomas</h3>
-            <p>Treinamentos de idiomas para profissionais de áreas técnicas e executivas.</p>
-        </div>
-    </div>
-</main>
-
 <script>
-    function openTab(evt, tabName) {
-        let i, tabContent, tabBtns;
-        
-        tabContent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabContent.length; i++) {
-            tabContent[i].classList.remove("active-content");
-        }
-
-        tabBtns = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tabBtns.length; i++) {
-            tabBtns[i].classList.remove("active");
-        }
-
-        document.getElementById(tabName).classList.add("active-content");
-        evt.currentTarget.classList.add("active");
+    function show(l) {
+        document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active-section'));
+        document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        document.getElementById(l).classList.add('active-section');
+        document.getElementById('b-' + l).classList.add('active');
     }
 </script>
 
