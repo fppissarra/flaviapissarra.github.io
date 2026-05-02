@@ -1,60 +1,106 @@
-const content = {
-    pt: {
-        tagline: "Inteligência de Dados | Logística Portuária | Poliglota",
-        summary: "Especialista em dados com experiência industrial na <b>Vale e ArcelorMittal</b>. Liderança técnica em IA e NLP aplicada à tradução.",
-        sections: { work: "Experiência Industrial", tech: "Liderança & Tecnologia" },
-        exp: [
-            { cat: "work", title: "ArcelorMittal | Engenharia de Dados", tags: ["Python", "SQL", "KPI"], desc: "Otimização de processos industriais e automação de fluxos de dados técnicos." },
-            { cat: "work", title: "Vale | Suporte em Dados Operacionais", tags: ["CCO", "Logística", "Analytics"], desc: "Análise de métricas ferroviárias de carga pesada e suporte à infraestrutura de dados." },
-            { cat: "tech", title: "CTecL IFES | Coordenação de Laboratório", tags: ["NLP", "IA", "Python"], desc: "Liderança de projetos de tradução assistida por IA e processamento de linguagem natural." }
-        ]
-    },
-    en: {
-        tagline: "Data Intelligence | Port Logistics | Polyglot",
-        summary: "Data specialist with industrial background at <b>Vale and ArcelorMittal</b>. Technical leadership in AI and NLP applied to translation.",
-        sections: { work: "Industrial Experience", tech: "Leadership & Technology" },
-        exp: [
-            { cat: "work", title: "ArcelorMittal | Data Engineering", tags: ["Python", "SQL", "KPI"], desc: "Industrial process optimization and technical data workflow automation." },
-            { cat: "work", title: "Vale | Operational Data Support", tags: ["CCO", "Logistics", "Analytics"], desc: "Analysis of heavy-haul railway metrics and data infrastructure support." },
-            { cat: "tech", title: "CTecL IFES | Lab Coordination", tags: ["NLP", "AI", "Python"], desc: "Leading AI-assisted translation projects and natural language processing." }
-        ]
-    },
-    es: {
-        tagline: "Inteligencia de Datos | Logística Portuaria | Políglota",
-        summary: "Especialista en datos con trayectoria industrial en <b>Vale y ArcelorMittal</b>. Liderazgo técnico en IA y NLP aplicada a la traducción.",
-        sections: { work: "Experiencia Industrial", tech: "Liderazgo y Tecnología" },
-        exp: [
-            { cat: "work", title: "ArcelorMittal | Ingeniería de Datos", tags: ["Python", "SQL", "KPI"], desc: "Optimización de procesos industriales y automatización de flujos de datos técnicos." },
-            { cat: "work", title: "Vale | Soporte de Datos Operativos", tags: ["CCO", "Logística", "Analytics"], desc: "Análisis de métricas ferroviarias de carga pesada y soporte de infraestructura de datos." },
-            { cat: "tech", title: "CTecL IFES | Coordinación de Laboratorio", tags: ["NLP", "IA", "Python"], desc: "Liderazgo de proyectos de traducción asistida por IA y procesamiento de lenguaje natural." }
-        ]
-    }
-};
-
-function changeLang(lang) {
-    const data = content[lang];
-    document.getElementById('user-tagline').innerText = data.tagline;
-    
-    document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(`btn-${lang}`).classList.add('active');
-
-    let html = `<p style="text-align:center; margin-bottom:30px; color:#555;">${data.summary}</p>`;
-    
-    ['work', 'tech'].forEach(cat => {
-        html += `<div class="section-title">${data.sections[cat]}</div>`;
-        data.exp.filter(e => e.cat === cat).forEach(item => {
-            html += `
-                <div class="experience-box glass-panel" onclick="this.classList.toggle('active-box')">
-                    <div class="exp-header"><span>${item.title}</span></div>
-                    <div class="exp-content">
-                        <div style="margin-bottom:12px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-                        <div style="color:#444; line-height:1.6;">${item.desc}</div>
-                    </div>
-                </div>`;
-        });
-    });
-    document.getElementById('main-content').innerHTML = html;
+:root {
+    --glass: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #3b82f6;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-// Inicialização garantindo que o DOM está pronto
-document.addEventListener('DOMContentLoaded', () => changeLang('pt'));
+body {
+    font-family: var(--font-sans);
+    background: #f1f5f9;
+    margin: 0;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Bolhas de fundo para dar profundidade ao vidro */
+.background-blobs {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+}
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+.blob-1 { width: 400px; height: 400px; background: #bfdbfe; top: -100px; right: -50px; }
+.blob-2 { width: 350px; height: 350px; background: #ddd6fe; bottom: -50px; left: -50px; }
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+/* Efeito Vidro Premium */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-card {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 { font-size: 2.4rem; font-weight: 800; margin: 0; letter-spacing: -1px; }
+
+.tagline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
+.social-links a { text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; }
+.social-links a:hover { color: var(--accent); }
+
+/* Navegação Flutuante */
+.glass-nav {
+    position: fixed;
+    top: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 6px;
+    border-radius: 16px;
+    z-index: 100;
+}
+.btn-lang {
+    background: transparent; border: none; padding: 8px 16px; border-radius: 12px;
+    cursor: pointer; font-weight: 700; color: var(--text-secondary);
+}
+.btn-lang.active { background: white; color: var(--text-primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+/* Lista de Experiências */
+.section-title { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin: 40px 0 15px 10px; color: var(--text-secondary); }
+
+.experience-item { cursor: pointer; }
+.experience-item:hover { transform: translateY(-3px); box-shadow: 0 15px 45px rgba(0,0,0,0.06); }
+
+.exp-header { padding: 25px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+
+.exp-content { 
+    max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; padding: 0 25px; 
+}
+.active-box .exp-content { max-height: 500px; opacity: 1; padding-bottom: 25px; }
+
+.tag {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); margin-right: 6px;
+}
