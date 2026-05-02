@@ -4,105 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV | Flávia Porcu Pissarra</title>
-    <link rel="stylesheet" href="style.css"> <!-- Seus estilos aqui -->
     <style>
-        .lang-section { display: none; }
-        .active { display: block; }
-        .nav-buttons { text-align: center; margin-bottom: 30px; position: sticky; top: 0; background: white; padding: 10px; z-index: 100; border-bottom: 1px solid #ddd; }
-        button { padding: 10px 20px; cursor: pointer; margin: 5px; border-radius: 5px; border: 1px solid #0056b3; background: white; color: #0056b3; font-weight: bold; }
-        button.selected { background: #0056b3; color: white; }
+        :root { --vale-blue: #003366; --accent: #b3a369; --bg: #fdfdfd; }
+        body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.5; color: #2d3436; background: var(--bg); margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 6px solid var(--vale-blue); }
+        nav { position: sticky; top: 0; background: white; padding: 12px 0; text-align: center; border-bottom: 1px solid #eee; z-index: 100; }
+        button { background: white; border: 1.5px solid var(--vale-blue); color: var(--vale-blue); padding: 6px 18px; margin: 0 4px; cursor: pointer; font-weight: bold; border-radius: 20px; transition: 0.2s; font-size: 13px; }
+        button.active { background: var(--vale-blue); color: white; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; animation: fadeIn 0.3s ease; }
+        h1 { color: var(--vale-blue); margin: 0; font-size: 26px; letter-spacing: -0.5px; }
+        .tagline { color: var(--accent); font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 25px; display: block; }
+        h2 { border-left: 4px solid var(--accent); padding-left: 12px; color: var(--vale-blue); font-size: 18px; margin-top: 35px; background: #f8f9fa; }
+        .exp-box { margin-bottom: 20px; border-bottom: 1px solid #f1f1f1; padding-bottom: 15px; }
+        .exp-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 15px; }
+        .date { color: #636e72; font-size: 13px; }
+        ul { padding-left: 18px; }
+        li { margin-bottom: 5px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (max-width: 600px) { .container { padding: 20px; } .exp-header { flex-direction: column; } }
     </style>
 </head>
 <body>
 
-    <nav class="nav-buttons">
-        <button onclick="showLang('pt')" id="btn-pt" class="selected">Português</button>
-        <button onclick="showLang('en')" id="btn-en">English</button>
-        <button onclick="showLang('es')" id="btn-es">Español</button>
-    </nav>
+<nav>
+    <button onclick="changeLang('pt')" id="btn-pt" class="active">PORTUGUÊS</button>
+    <button onclick="changeLang('en')" id="btn-en">ENGLISH</button>
+    <button onclick="changeLang('es')" id="btn-es">ESPAÑOL</button>
+</nav>
 
-    <main class="container">
+<div class="container">
+    <!-- PORTUGUÊS -->
+    <div id="pt" class="lang-content active">
+        <h1>Flávia Porcu Pissarra</h1>
+        <span class="tagline">Logística Portuária | Inteligência de Dados | Operações Ferroviárias</span>
+        <p>Serra, ES | <a href="https://linkedin.com/in/fppissarra">LinkedIn</a> | <a href="http://lattes.cnpq.br/...">Currículo Lattes</a></p>
+
+        <h2>Perfil Profissional</h2>
+        <p>Profissional com sólida vivência em operações de larga escala no <strong>Centro de Controle de Operações (CCO) da Vale S.A.</strong> Aliando formação técnica em TI à especialização em Logística Portuária (IFES), foco na otimização de processos através da análise de dados e fluência trilingue (C2). Experiência prática em infraestrutura ferroviária e mapeamento de cadeias produtivas regionais.</p>
+
+        <h2>Experiência Chave</h2>
+        <div class="exp-box">
+            <div class="exp-header"><span>Vale S.A. | Operações e Infraestrutura Ferroviária</span> <span class="date">Vitória/Serra</span></div>
+            <ul>
+                <li><strong>Análise de Fluxos (CCO):</strong> Monitoramento de tráfego ferroviário em tempo real, garantindo segurança e eficiência no escoamento de carga pesada.</li>
+                <li><strong>Suporte à Via:</strong> Vivência prática em Máquinas de Via, compreendendo as variáveis operacionais e infraestrutura física da malha logística.</li>
+                <li><strong>Cultura de Segurança:</strong> Atuação rigorosa sob protocolos de mitigação de riscos e metas operacionais.</li>
+            </ul>
+        </div>
+
+        <div class="exp-box">
+            <div class="exp-header"><span>UFES | Pesquisa em Economia Regional</span> <span class="date">Espírito Santo</span></div>
+            <ul>
+                <li><strong>Inteligência de Dados:</strong> Mapeamento de cadeias produtivas e análise de viabilidade econômica regional no ES.</li>
+                <li><strong>Visão Sistêmica:</strong> Conexão entre indicadores estatísticos e o desenvolvimento econômico local.</li>
+            </ul>
+        </div>
+
+        <h2>Educação e Competências</h2>
+        <ul>
+            <li><strong>Técnico em Portos:</strong> IFES Centro-Serrano (Em curso)</li>
+            <li><strong>Técnico em Informática (TIC):</strong> IFES Campus Serra</li>
+            <li><strong>Idiomas:</strong> Inglês (C2 - Fluente), Espanhol (C2 - Fluente), Italiano, Japonês e Coreano.</li>
+            <li><strong>Skills Técnicas:</strong> Gestão de dados operacionais, Logística Integrada, Comunicação Técnica Internacional.</li>
+        </ul>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="en" class="lang-content">
+        <h1>Flávia Porcu Pissarra</h1>
+        <span class="tagline">Port Logistics | Data Intelligence | Railway Operations</span>
         
-        <!-- SEÇÃO PORTUGUÊS -->
-        <section id="pt" class="lang-section active">
-            <h1>Flávia Porcu Pissarra</h1>
-            <p><strong>Logística | Comércio Exterior | Operações Ferroviárias e Portuárias</strong></p>
-            <hr>
-            <h3>Resumo Profissional</h3>
-            <p>Transição de carreira focada em Logística e Comex. Experiência operacional no CCO da <strong>Vale S.A.</strong> e análise de cadeias produtivas (Economia Criativa) pela <strong>UFES</strong>. Unindo expertise técnica em TI e proficiência C2 em idiomas para otimização de fluxos internacionais.</p>
-            
-            <h3>Experiência Chave</h3>
-            <ul>
-                <li><strong>Vale S.A.:</strong> Monitoramento de tráfego ferroviário (CCO) e suporte operacional em Máquinas de Via.</li>
-                <li><strong>UFES:</strong> Pesquisa de impacto econômico e viabilidade regional no ES.</li>
-            </ul>
-            
-            <h3>Educação Técnica</h3>
-            <ul>
-                <li>Técnico em Portos - IFES (Em curso)</li>
-                <li>Técnico em Informática - IFES</li>
-            </ul>
-        </section>
+        <h2>Professional Summary</h2>
+        <p>Dynamic professional with hands-on experience in high-volume operations at <strong>Vale S.A. (Operations Control Center - CCO)</strong>. Merging an IT technical background with ongoing specialization in Port Logistics. Expert in data-driven process optimization and trilingual communication (C2 Level).</p>
 
-        <!-- SEÇÃO ENGLISH -->
-        <section id="en" class="lang-section">
-            <h1>Flávia Porcu Pissarra</h1>
-            <p><strong>Logistics | International Trade | Railway & Port Operations</strong></p>
-            <hr>
-            <h3>Professional Summary</h3>
-            <p>Transitioning into Logistics and Supply Chain. Background in railway traffic control at <strong>Vale S.A. (CCO)</strong> and regional economic analysis at <strong>UFES</strong>. Leveraging IT technical skills and C2 language proficiency for global trade efficiency.</p>
-            
-            <h3>Key Experience</h3>
+        <h2>Core Experience</h2>
+        <div class="exp-box">
+            <div class="exp-header"><span>Vale S.A. | Railway Operations & Infrastructure</span></div>
             <ul>
-                <li><strong>Vale S.A.:</strong> Heavy-haul railway traffic monitoring and track maintenance support.</li>
-                <li><strong>UFES:</strong> Economic research on supply chains and regional market viability.</li>
+                <li><strong>Traffic Analysis (CCO):</strong> Real-time monitoring of heavy-haul railway traffic to ensure safety and operational efficiency.</li>
+                <li><strong>Track Operations:</strong> Field experience with track maintenance machinery and physical logistics infrastructure.</li>
+                <li><strong>Safety-First Mindset:</strong> Strict adherence to risk mitigation protocols and operational performance targets.</li>
             </ul>
-            
-            <h3>Technical Education</h3>
-            <ul>
-                <li>Port Operations Technician - IFES (Ongoing)</li>
-                <li>ICT Technician - IFES</li>
-            </ul>
-        </section>
+        </div>
 
-        <!-- SEÇÃO ESPAÑOL -->
-        <section id="es" class="lang-section">
-            <h1>Flávia Porcu Pissarra</h1>
-            <p><strong>Logística | Comercio Exterior | Operaciones Ferroviarias y Portuarias</strong></p>
-            <hr>
-            <h3>Resumen Profesional</h3>
-            <p>En transición al sector de Logística y Comex. Experiencia operativa en el CCO de <strong>Vale S.A.</strong> e investigación de economía regional en la <strong>UFES</strong>. Combinando habilidades técnicas en informática con competencia bilingüe C2 para la optimización de procesos globales.</p>
-            
-            <h3>Experiencia Destacada</h3>
-            <ul>
-                <li><strong>Vale S.A.:</strong> Control de tráfico ferroviario de carga pesada y soporte en infraestructura de vía.</li>
-                <li><strong>UFES:</strong> Análisis de cadenas productivas y desarrollo económico regional.</li>
-            </ul>
-            
-            <h3>Educación Técnica</h3>
-            <ul>
-                <li>Técnico en Puertos - IFES (En curso)</li>
-                <li>Técnico en Informática - IFES</li>
-            </ul>
-        </section>
+        <h2>Education & Languages</h2>
+        <ul>
+            <li><strong>Port Operations Technician</strong> (IFES) - Ongoing</li>
+            <li><strong>ICT Technician</strong> (IFES)</li>
+            <li><strong>Languages:</strong> English (C2), Spanish (C2), Italian, Japanese, Korean.</li>
+        </ul>
+    </div>
 
-    </main>
+    <!-- ESPAÑOL -->
+    <div id="es" class="lang-content">
+        <h1>Flávia Porcu Pissarra</h1>
+        <span class="tagline">Logística Portuaria | Inteligencia de Datos | Operaciones Ferroviarias</span>
+        
+        <h2>Perfil Profesional</h2>
+        <p>Profesional con experiencia en operaciones de gran escala en el <strong>Centro de Control de Operaciones (CCO) de Vale S.A.</strong> Integrando formación técnica en informática con especialización en Logística Portuaria. Enfoque en la optimización de procesos mediante análisis de datos y comunicación trilingüe (C2).</p>
 
-    <script>
-        function showLang(lang) {
-            // Esconde todas as seções
-            document.querySelectorAll('.lang-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Remove classe 'selected' de todos os botões
-            document.querySelectorAll('button').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            
-            // Mostra a seção escolhida e marca o botão
-            document.getElementById(lang).classList.add('active');
-            document.getElementById('btn-' + lang).classList.add('selected');
-        }
-    </script>
+        <h2>Experiencia</h2>
+        <div class="exp-box">
+            <div class="exp-header"><span>Vale S.A. | Operaciones Ferroviarias e Infraestructura</span></div>
+            <ul>
+                <li><strong>Análisis de Flujos (CCO):</strong> Monitoreo de tráfico ferroviario en tiempo real para garantizar la seguridad y eficiencia logística.</li>
+                <li><strong>Soporte de Vía:</strong> Experiencia práctica con maquinaria de vía e infraestructura física ferroviaria.</li>
+            </ul>
+        </div>
+
+        <h2>Formación</h2>
+        <ul>
+            <li><strong>Técnico en Puertos</strong> (IFES) - En curso</li>
+            <li><strong>Técnico en Informática</strong> (IFES)</li>
+            <li><strong>Idiomas:</strong> Inglés (C2), Español (C2), Italiano, Japonés, Coreano.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function changeLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('button').forEach(el => el.classList.remove('active'));
+        document.getElementById(lang).classList.add('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+    }
+</script>
+
 </body>
 </html>
