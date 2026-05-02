@@ -8,37 +8,43 @@
 </head>
 <body>
 
-<div class="background-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-</div>
+<div class="holographic-bg"></div>
 
-<nav class="glass-nav">
-    <div class="nav-content">
-        <div class="lang-switcher">
-            <button class="btn-lang active" id="btn-pt" onclick="changeLang('pt')">PT</button>
-            <button class="btn-lang" id="btn-en" onclick="changeLang('en')">EN</button>
-            <button class="btn-lang" id="btn-es" onclick="changeLang('es')">ES</button>
+<main class="main-layout">
+    <section class="content-side">
+        <!-- Header Principal -->
+        <header class="glass-card header-main">
+            <h1>Flávia Porcu Pissarra</h1>
+            <p class="role-desc">Teacher, Translator, Researcher in Computational Linguistics and AI-assisted translation</p>
+            <div class="badge-row">
+                <span class="label">Polyglot:</span>
+                <span class="badge">EN</span> <span class="badge">ES</span> <span class="badge">PT</span> 
+                <span class="badge">IT</span> <span class="badge">JP</span> <span class="badge">KR</span>
+                <span class="badge special">IT & NLP Specialist</span>
+                <span class="badge">Serra, ES</span>
+            </div>
+        </header>
+
+        <!-- Timeline -->
+        <div class="timeline-container glass-card">
+            <h2 class="section-title">Professional Timeline</h2>
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="time-label">2024–2026</div>
+                <div class="node"></div>
+                <div class="glass-card item-card">
+                    <h3>Lead Computational Linguist & AI Researcher, CTecL Lab</h3>
+                    <div class="tags">
+                        <span class="tag">Computational Linguist</span>
+                        <span class="tag">AI & NLP Strategy</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Repetir itens conforme necessário -->
         </div>
-    </div>
-</nav>
-
-<main class="container">
-    <header class="glass-card header-card">
-        <h1 id="user-name">Flávia Porcu Pissarra</h1>
-        <p id="user-tagline" class="tagline"></p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
-            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes</a>
-            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
-        </div>
-    </header>
-
-    <div id="main-content">
-        <!-- Injetado via JS -->
-    </div>
+    </section>
 </main>
 
-<script src="./script.js"></script>
 </body>
 </html>
