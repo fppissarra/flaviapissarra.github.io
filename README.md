@@ -2,22 +2,17 @@
 
 # "The limit of my language is the limit of my world." (Wittgenstein, 1922)
 
-There are patterns hidden in the noise of global logistics. There are rhythms buried in the architecture of machine translation. Most see the data; few see the ghost in the machine.
+Flávia P. Pissarra
+Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO) | Former Intern at Vale & ArcelorMittal
 
-From the industrial giants of **Vale** and **ArcelorMittal** to the silent labs of **CTecL**, I have been decoding the intersection of human syntax and computational logic. 
+This repository is just the surface. To explore the full trajectory — from Industry to Research, and Teaching to Data Science — access the official link below:
 
-Six languages. One interface. A bridge between what is said and what is processed.
+Highlights:
+TESOL Certified
+Lead Researcher at CTecL (AI & NLP)
+Fluent in 6 Languages
+Experience at Vale & ArcelorMittal
 
-### 🔍 The Protocol
-*   **Status:** Decrypting 
-*   **Origin:** IFES Serra / Vitória
-*   **Fields:** Data Science | Port Logistics | Computational Linguistics
-*   **Cipher:** PT / EN / ES / IT / JP / KO
+Curious about the details? Click the following link to see the interactive CV.
 
-The full architecture cannot be rendered here. The truth of the data requires a different perspective.
-
-**Access the Node:**
-### 🌐 [fppissarra.github.io](https://fppissarra.github.io)
-
----
-*Disconnecting...*
+🌐 https://fppissarra.github.io/
