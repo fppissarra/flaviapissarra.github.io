@@ -3,210 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Flávia Porcu Pissarra</title>
+    <title>Dashboard | Flávia P. Pissarra</title>
     <style>
         :root {
             --vale-blue: #003366;
             --accent: #b3a369;
-            --glass: rgba(255, 255, 255, 0.7);
-            --border: rgba(255, 255, 255, 0.3);
+            --glass: rgba(255, 255, 255, 0.12);
+            --border: rgba(255, 255, 255, 0.2);
+            --text-main: #ffffff;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #1a1a1a;
-            /* Gradiente de fundo suave inspirado em tons industriais/tecnológicos */
-            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            background: radial-gradient(circle at top left, #001f3f, #000b18);
             background-attachment: fixed;
-            min-height: 100 vh;
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
         }
 
-        /* Efeito Glassy no Menu */
-        nav {
-            position: sticky;
+        /* HEADER FIXO E GLASSY */
+        header {
+            position: fixed;
             top: 0;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            width: 100%;
+            background: rgba(0, 11, 24, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 15px 0;
-            text-align: center;
+            padding: 25px 0;
             z-index: 1000;
+            text-align: center;
         }
 
-        button {
-            background: rgba(0, 51, 102, 0.1);
-            border: 1px solid var(--vale-blue);
-            color: var(--vale-blue);
-            padding: 8px 20px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
+        .header-content h1 { font-size: 1.8rem; letter-spacing: -1px; margin-bottom: 5px; }
+        .header-content p { font-size: 0.9rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .header-links { margin-top: 10px; font-size: 0.8rem; opacity: 0.8; }
+        .header-links a { color: #fff; text-decoration: none; margin: 0 10px; border-bottom: 1px solid var(--accent); }
 
-        button:hover {
-            background: var(--vale-blue);
-            color: white;
-        }
-
-        button.active {
-            background: var(--vale-blue);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
-        }
-
-        /* Container Glassmorphism */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-
-        h1 {
-            color: var(--vale-blue);
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: -1px;
-        }
-
-        .tagline {
-            color: var(--accent);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            color: var(--vale-blue);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-
-        .exp-box {
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .exp-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        .exp-header {
+        /* NAVEGAÇÃO DE FILTROS */
+        .filter-nav {
+            margin: 160px auto 30px;
             display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: var(--vale-blue);
-            margin-bottom: 10px;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            max-width: 800px;
         }
 
-        .lang-content { display: none; }
-        .active-content { display: block; animation: fadeIn 0.5s ease; }
+        .filter-nav button {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 0.85rem;
+        }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        .filter-nav button:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+        .filter-nav button.active {
+            background: var(--accent);
+            color: #000b18;
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(179, 163, 105, 0.3);
+        }
+
+        /* CONTAINER DE CONTEÚDO */
+        .content-area {
+            max-width: 850px;
+            margin: 0 auto 100px;
+            padding: 20px;
+        }
+
+        .section-pane { display: none; }
+        .active-pane { display: block; animation: fadeInUp 0.6s ease forwards; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--accent); background: rgba(255,255,255,0.15); }
+
+        .card h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.3rem; }
+        .card-meta { font-size: 0.85rem; opacity: 0.7; margin-bottom: 15px; display: flex; justify-content: space-between; }
+        
+        ul { list-style: none; }
+        li { margin-bottom: 12px; position: relative; padding-left: 20px; }
+        li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+        .tag { background: rgba(179, 163, 105, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; }
+
         @media (max-width: 600px) {
-            .container { padding: 25px; margin: 15px; }
-            .exp-header { flex-direction: column; }
+            .filter-nav { flex-direction: column; align-items: stretch; margin-top: 180px; }
+            header { padding: 15px 0; }
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-    <button onclick="setLang('en')" id="btn-en">EN</button>
-    <button onclick="setLang('es')" id="btn-es">ES</button>
+<header>
+    <div class="header-content">
+        <h1>Flávia Porcu Pissarra</h1>
+        <p>Logística Portuária • Inteligência de Dados</p>
+        <div class="header-links">
+            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
+            <a href="http://lattes.cnpq.br/..." target="_blank">Lattes</a>
+            <span>Serra, ES</span>
+        </div>
+    </div>
+</header>
+
+<nav class="filter-nav">
+    <button onclick="showTab('corporate')" id="btn-corporate" class="active">CORPORATIVO (VALE)</button>
+    <button onclick="showTab('academic')" id="btn-academic">ACADÊMICO (UFES)</button>
+    <button onclick="showTab('freelance')" id="btn-freelance">FREELANCE (TRADUÇÃO)</button>
 </nav>
 
-<div class="container">
-    <!-- PORTUGUÊS -->
-    <div id="pt" class="lang-content active-content">
-        <h1>Flávia Porcu Pissarra</h1>
-        <span class="tagline">Logística Portuária | Inteligência de Dados | Operações Ferroviárias</span>
-        
-        <p>Serra, ES | <a href="https://linkedin.com/in/fppissarra" style="color: var(--vale-blue); font-weight: bold;">LinkedIn</a></p>
-
-        <h2>Perfil Profissional</h2>
-        <p>Especialista em unir a vivência operacional do <strong>CCO (Vale S.A.)</strong> à inteligência de dados. Foco em <strong>Logística Portuária</strong> e otimização de fluxos intermodais através de sólida base técnica em TI e comunicação trilingue C2.</p>
-
-        <h2>Experiência de Impacto</h2>
-        <div class="exp-box">
-            <div class="exp-header"><span>Vale S.A. | Operações e Via</span> <span>CCO / Infraestrutura</span></div>
-            <p>Atuação estratégica no monitoramento de tráfego ferroviário de carga pesada e suporte operacional. Foco em eficiência sistêmica e segurança.</p>
+<main class="content-area">
+    
+    <!-- CONTEÚDO CORPORATIVO -->
+    <div id="corporate" class="section-pane active-pane">
+        <div class="card">
+            <div class="card-meta"><span>VALE S.A.</span> <span class="tag">FERROVIA / CCO</span></div>
+            <h3>Controle de Operações e Infraestrutura</h3>
+            <ul>
+                <li>Atuação estratégica no <strong>CCO (Centro de Controle de Operações)</strong>, monitorando o tráfego ferroviário em tempo real para otimização de fluxo e segurança.</li>
+                <li>Suporte técnico em <strong>Máquinas de Via</strong>, compreendendo a manutenção preventiva e corretiva dos ativos da malha.</li>
+                <li>Experiência em ambiente de alta criticidade e foco rigoroso em protocolos de segurança operacional.</li>
+            </ul>
         </div>
-
-        <div class="exp-box">
-            <div class="exp-header"><span>UFES | Pesquisa Econômica</span> <span>Dados Regionais</span></div>
-            <p>Análise de cadeias produtivas e viabilidade econômica regional no Espírito Santo. Transformação de dados em visão estratégica.</p>
-        </div>
-
-        <h2>Formação Técnica</h2>
-        <p>• Técnico em Portos (IFES - Em curso)<br>
-           • Técnico em Informática (IFES Serra)<br>
-           • Idiomas: Inglês e Espanhol (Fluência C2).</p>
-    </div>
-
-    <!-- ENGLISH (O conteúdo segue a mesma lógica do PT) -->
-    <div id="en" class="lang-content">
-        <h1>Flávia Porcu Pissarra</h1>
-        <span class="tagline">Port Logistics | Data Intelligence | Railway Operations</span>
-        
-        <h2>Professional Profile</h2>
-        <p>Bridging <strong>Vale S.A. CCO</strong> operational experience with data intelligence. Focus on <strong>Port Logistics</strong> and intermodal flow optimization using IT technical background and C2 trilingual proficiency.</p>
-
-        <h2>Core Experience</h2>
-        <div class="exp-box">
-            <div class="exp-header"><span>Vale S.A. | Railway Ops & Infrastructure</span></div>
-            <p>Strategic railway traffic monitoring and infrastructure support. Focused on safety and system efficiency.</p>
+        <div class="card">
+            <div class="card-meta"><span>FORMAÇÃO ATUAL</span> <span class="tag">IFES</span></div>
+            <h3>Técnico em Portos</h3>
+            <p>Especialização em gestão portuária, alfandegamento e logística intermodal Porto-Ferrovia.</p>
         </div>
     </div>
 
-    <!-- ESPAÑOL -->
-    <div id="es" class="lang-content">
-        <h1>Flávia Porcu Pissarra</h1>
-        <span class="tagline">Logística Portuaria | Inteligencia de Datos | Operaciones</span>
-        
-        <h2>Perfil</h2>
-        <p>Experiencia operativa en <strong>CCO (Vale S.A.)</strong> combinada con inteligencia de datos. Enfoque en <strong>Logística Portuaria</strong> y optimización de flujos internacionales.</p>
-
-        <h2>Experiencia</h2>
-        <div class="exp-box">
-            <div class="exp-header"><span>Vale S.A. | Operaciones y Vía</span></div>
-            <p>Monitoreo estratégico de tráfico ferroviario y soporte técnico en infraestructura.</p>
+    <!-- CONTEÚDO ACADÊMICO -->
+    <div id="academic" class="section-pane">
+        <div class="card">
+            <div class="card-meta"><span>UFES</span> <span class="tag">ECONOMIA CRIATIVA</span></div>
+            <h3>Pesquisa e Análise de Mercado Regional</h3>
+            <ul>
+                <li>Mapeamento das cadeias produtivas no Espírito Santo através de dados estruturados.</li>
+                <li>Estudo de viabilidade regional e suporte a indicadores de desenvolvimento econômico.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span>CTecL (IFES)</span> <span class="tag">IA / LINGUÍSTICA</span></div>
+            <h3>Coordenadora de Laboratório</h3>
+            <ul>
+                <li>Liderança em projetos de tradução assistida por IA e Processamento de Linguagem Natural (NLP).</li>
+                <li>Tratamento de dados em larga escala para aplicações tecnológicas.</li>
+            </ul>
         </div>
     </div>
-</div>
+
+    <!-- CONTEÚDO FREELANCE -->
+    <div id="freelance" class="section-pane">
+        <div class="card">
+            <div class="card-meta"><span>TRADUÇÃO TÉCNICA</span> <span class="tag">C2 PROFICIENCY</span></div>
+            <h3>Tradução e Comunicação Internacional</h3>
+            <ul>
+                <li>Tradução técnica de manuais e documentos industriais/portuários em Inglês e Espanhol.</li>
+                <li>Expertise em terminologia técnica para Comércio Exterior.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-meta"><span>DOCÊNCIA</span> <span class="tag">ESCOLA MUNDO LIVRE</span></div>
+            <h3>Ensino de Idiomas e Gestão Pedagógica</h3>
+            <ul>
+                <li>Atuação em projetos de ensino de línguas estrangeiras (Inglês/Espanhol) focados em comunicação corporativa.</li>
+            </ul>
+        </div>
+    </div>
+
+</main>
 
 <script>
-    function setLang(lang) {
-        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active-content'));
-        document.querySelectorAll('button').forEach(el => el.classList.remove('active'));
-        document.getElementById(lang).classList.add('active-content');
-        document.getElementById('btn-' + lang).classList.add('active');
+    function showTab(tabId) {
+        // Esconde todos
+        document.querySelectorAll('.section-pane').forEach(el => el.classList.remove('active-pane'));
+        document.querySelectorAll('.filter-nav button').forEach(el => el.classList.remove('active'));
+        
+        // Mostra o selecionado
+        document.getElementById(tabId).classList.add('active-pane');
+        document.getElementById('btn-' + tabId).classList.add('active');
+        
+        // Scroll suave para o início do conteúdo se estiver no mobile
+        if(window.innerWidth < 600) {
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
     }
 </script>
 
