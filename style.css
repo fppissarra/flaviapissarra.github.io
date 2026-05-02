@@ -1,0 +1,66 @@
+:root {
+    --bg-color: #f0f2f5;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --vale-blue: #003366;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0f2f5 0%, #e0e4e8 100%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Efeito Vidro Fosco (Glassmorphism) */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    border-radius: 15px;
+}
+
+.container { width: 90%; max-width: 850px; margin: 40px 0; }
+
+header {
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    border: 2px solid transparent !important;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                      linear-gradient(45deg, #00c6ff, #0072ff);
+    background-origin: border-box;
+}
+
+/* Bordas coloridas para as experiências */
+.experience-box {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent !important;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, #6a11cb, #2575fc);
+    background-origin: border-box;
+}
+
+.exp-header { padding: 20px; font-weight: bold; display: flex; justify-content: space-between; }
+.exp-content { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s; padding: 0 20px; }
+.active-box .exp-content { max-height: 500px; opacity: 1; padding-bottom: 20px; }
+
+.tag {
+    background: rgba(0, 51, 102, 0.1);
+    color: var(--vale-blue);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    font-weight: bold;
+}
