@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Curriculum Vitae</title>
+    <title>Flávia Porcu Pissarra | Curriculum Vitae</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav style="margin-top: 30px;">
-    <button class="btn-lang active" onclick="changeLang('pt')">PT</button>
-    <button class="btn-lang" onclick="changeLang('en')">EN</button>
-    <button class="btn-lang" onclick="changeLang('es')">ES</button>
+<nav>
+    <button class="btn-lang active" id="btn-pt" onclick="changeLang('pt')">PT</button>
+    <button class="btn-lang" id="btn-en" onclick="changeLang('en')">EN</button>
+    <button class="btn-lang" id="btn-es" onclick="changeLang('es')">ES</button>
 </nav>
 
 <div class="container">
+    <!-- Cabeçalho Dinâmico -->
     <header class="glass-panel">
         <h1 id="user-name"></h1>
         <div id="user-tagline" class="tagline"></div>
-        <div style="margin-top:20px; font-size: 0.9rem;">
-            <a href="https://linkedin.com/in/fppissarra" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">LinkedIn</a>
-            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">Lattes</a>
-            <a href="https://github.com/fppissarra" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">GitHub</a>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
+            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes</a>
+            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
         </div>
     </header>
 
-    <div id="main-content">
-        <!-- O conteúdo dinâmico entra aqui via script.js -->
-    </div>
+    <!-- Conteúdo Principal Dinâmico -->
+    <div id="main-content"></div>
 </div>
 
 <script src="script.js"></script>
