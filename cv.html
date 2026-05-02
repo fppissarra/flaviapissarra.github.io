@@ -3,246 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia Porcu Pissarra | CV Interativo</title>
-    <style>
-        :root {
-            --bg-color: #f4f6f8; 
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --vale-blue: #003366;
-            --accent-gradient: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Navegação Fixa */
-        nav {
-            width: 100%;
-            position: sticky;
-            top: 0;
-            background: rgba(244, 246, 248, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .btn-lang {
-            background: white;
-            border: 1.5px solid #ddd;
-            padding: 8px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            margin: 0 5px;
-            transition: 0.3s;
-        }
-
-        .btn-lang.active {
-            border-color: var(--vale-blue);
-            color: var(--vale-blue);
-            box-shadow: 0 2px 8px rgba(0,51,102,0.15);
-        }
-
-        .container {
-            max-width: 850px;
-            width: 90%;
-            margin: 40px 0;
-        }
-
-        /* Header com Borda Colorida */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 30px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            position: relative;
-            border: 3px solid transparent;
-            background-clip: padding-box, border-box;
-            background-image: linear-gradient(white, white), var(--accent-gradient);
-            background-origin: border-box;
-        }
-
-        h1 { margin: 0; color: var(--vale-blue); font-size: 2.4rem; }
-        .tagline { color: #666; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; margin-top: 12px; letter-spacing: 1.5px; }
-
-        .links { margin-top: 20px; }
-        .links a { text-decoration: none; color: var(--vale-blue); margin: 0 12px; font-weight: bold; font-size: 0.9rem; border-bottom: 2px solid transparent; transition: 0.3s; }
-        .links a:hover { border-bottom-color: var(--vale-blue); }
-
-        /* Acordeão Interativo */
-        .experience-box {
-            margin-bottom: 18px;
-            border-radius: 15px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            border: 2px solid transparent;
-            background-clip: padding-box, border-box;
-            background-image: linear-gradient(white, white), linear-gradient(to right, #6a11cb, #2575fc);
-            background-origin: border-box;
-        }
-
-        .experience-box:hover { transform: scale(1.01); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-
-        .exp-header {
-            padding: 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.15rem;
-            color: #222;
-        }
-
-        .exp-header::after { content: '＋'; font-size: 1.1rem; color: #777; transition: 0.3s; }
-        .active-box .exp-header::after { content: '－'; transform: rotate(180deg); }
-
-        .exp-content {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
-            padding: 0 22px;
-        }
-
-        .active-box .exp-content {
-            max-height: 1000px;
-            opacity: 1;
-            padding: 10px 22px 30px 22px;
-        }
-
-        .tag {
-            background: rgba(0, 51, 102, 0.08);
-            color: var(--vale-blue);
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            margin-right: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .exp-header { font-size: 1rem; } }
-    </style>
+    <title>Flávia P. Pissarra | Curriculum Vitae</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <button class="btn-lang active" onclick="changeLang('pt')">Português</button>
-    <button class="btn-lang" onclick="changeLang('en')">English</button>
+<nav style="margin-top: 30px;">
+    <button class="btn-lang active" onclick="changeLang('pt')">PT</button>
+    <button class="btn-lang" onclick="changeLang('en')">EN</button>
+    <button class="btn-lang" onclick="changeLang('es')">ES</button>
 </nav>
 
 <div class="container">
-    <header>
-        <h1>Flávia Porcu Pissarra</h1>
-        <div class="tagline">Inteligência de Dados | Logística Portuária | Poliglota</div>
-        <div class="links">
-            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
-            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes</a>
-            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
+    <header class="glass-panel">
+        <h1 id="user-name"></h1>
+        <div id="user-tagline" class="tagline"></div>
+        <div style="margin-top:20px; font-size: 0.9rem;">
+            <a href="https://linkedin.com/in/fppissarra" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">LinkedIn</a>
+            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">Lattes</a>
+            <a href="https://github.com/fppissarra" target="_blank" style="color:var(--vale-blue); text-decoration:none; margin:0 10px; font-weight:bold;">GitHub</a>
         </div>
     </header>
 
-    <div id="content-area">
-        <!-- O JS preencherá aqui -->
+    <div id="main-content">
+        <!-- O conteúdo dinâmico entra aqui via script.js -->
     </div>
 </div>
 
-<script>
-    const data = {
-        pt: {
-            summary: "Especialista em processamento de dados e comunicação técnica trilingue com vivência industrial na <b>Vale e ArcelorMittal</b>. Integrando conhecimentos de TI à eficiência da Logística Portuária.",
-            experiences: [
-                {
-                    title: "ArcelorMittal | Engenharia de Dados & KPIs",
-                    tags: ["Python", "SQL", "Power BI"],
-                    desc: "Otimização de pipelines industriais com processamento de 10k+ linhas mensais. Redução comprovada de 30% no tempo de consolidação de dados operacionais."
-                },
-                {
-                    title: "Vale | Suporte em Dados Operacionais",
-                    tags: ["Ferrovia", "CCO", "Analytics"],
-                    desc: "Análise de KPIs e suporte à infraestrutura de dados para logística de carga pesada. Foco em segurança e eficiência de fluxos ferroviários."
-                },
-                {
-                    title: "IFES CTecL | Liderança em IA & NLP",
-                    tags: ["Machine Learning", "Automação", "QA"],
-                    desc: "Coordenação de laboratório focado em Processamento de Linguagem Natural e Machine Translation. Automação de workflows reduzindo erros sistêmicos via Python."
-                },
-                {
-                    title: "Técnica em Portos | IFES (Em curso)",
-                    tags: ["Logística Marítima", "Comex", "Gestão"],
-                    desc: "Especialização em operações portuárias, multimodalidade e fluxos de comércio exterior para integração com análise de dados."
-                }
-            ]
-        },
-        en: {
-            summary: "Data processing specialist and trilingual technical communicator with industrial experience at <b>Vale and ArcelorMittal</b>. Bridging IT expertise with Port Logistics efficiency.",
-            experiences: [
-                {
-                    title: "ArcelorMittal | Data Engineering & KPIs",
-                    tags: ["Python", "SQL", "Power BI"],
-                    desc: "Industrial pipeline optimization processing 10k+ monthly rows. 30% reduction in operational data consolidation time."
-                },
-                {
-                    title: "Vale | Operational Data Support",
-                    tags: ["Railway", "CCO", "Analytics"],
-                    desc: "KPI analysis and data infrastructure support for heavy-haul logistics. Focused on railway flow safety and efficiency."
-                }
-            ]
-        }
-    };
-
-    function render(lang) {
-        const area = document.getElementById('content-area');
-        const langData = data[lang] || data['pt'];
-        let html = `<p style="text-align:center; margin-bottom:35px; font-size:1.15rem; color:#444; line-height:1.6;">${langData.summary}</p>`;
-        
-        langData.experiences.forEach((exp) => {
-            html += `
-                <div class="experience-box" onclick="toggleBox(this)">
-                    <div class="exp-header">
-                        <span>${exp.title}</span>
-                    </div>
-                    <div class="exp-content">
-                        <div style="margin-bottom:15px;">
-                            ${exp.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-                        </div>
-                        <p style="margin:0; color:#555; line-height:1.7;">${exp.desc}</p>
-                    </div>
-                </div>
-            `;
-        });
-        area.innerHTML = html;
-    }
-
-    function toggleBox(el) {
-        const isActive = el.classList.contains('active-box');
-        document.querySelectorAll('.experience-box').forEach(b => b.classList.remove('active-box'));
-        if (!isActive) el.classList.add('active-box');
-    }
-
-    function changeLang(lang) {
-        document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
-        event.target.classList.add('active');
-        render(lang);
-    }
-
-    render('pt');
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
