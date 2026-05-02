@@ -10,7 +10,7 @@
 Highlights:
 - TESOL Certified
 - Lead Researcher at CTecL (AI & NLP)
-- Different levels of fluence in 6 languages
+- Different levels of fluence in 6 languages (EN - ES - PT - IT - JP - KO)
 - Experience at Vale & ArcelorMittal
 
 Curious about the details? Click the link to see the interactive CV.
