@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flávia P. Pissarra | Data Scientist</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="pearl-background"></div>
 
     <main class="container">
-        <header class="glass-box pearl-effect main-header">
+        <!-- Header Principal -->
+        <header class="glass-box main-header">
             <div class="lang-selector">
-                <button onclick="setLanguage('en')" id="btn-en" class="active">EN</button>
+                <button onclick="setLanguage('en')" id="btn-en">EN</button>
                 <button onclick="setLanguage('pt')" id="btn-pt">PT</button>
                 <button onclick="setLanguage('es')" id="btn-es">ES</button>
             </div>
 
             <h1 id="txt-name">Flávia P. Pissarra</h1>
-            <p id="txt-role" class="description">
-                <!-- Injetado via JS -->
-            </p>
+            <p id="txt-role" class="description"></p>
 
             <div class="contact-links">
                 <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
@@ -30,7 +29,11 @@
             </div>
         </header>
 
-        <section id="cv-content" class="cv-section"></section>
+        <!-- Seção de Experiências Profissionais -->
+        <div id="experience-container"></div>
+
+        <!-- Seção de Formação Acadêmica -->
+        <div id="education-container"></div>
     </main>
 
     <script src="script.js"></script>
