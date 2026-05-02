@@ -1,37 +1,34 @@
 const dictionary = {
     en: {
-        role: "Teacher, Translator, Researcher in Computational Linguistics and AI-assisted translation",
-        summary: "Lead Computational Linguist and AI Data Researcher (CTecL: AI-Assisted Poetic Translation Lab).",
-        xpTitle: "Professional Timeline"
+        role: "Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO) | Former Intern at Vale & ArcelorMittal",
+        summary: "Polyglot professional with a multidisciplinary background in IT and Humanities. Experienced in data-driven decision making and logistics optimization.",
+        sectionTitle: "Professional Profile"
     },
     pt: {
-        role: "Professora, Tradutora e Pesquisadora em Linguística Computacional e Tradução assistida por IA",
-        summary: "Líder de Pesquisa em Linguística Computacional e Dados de IA (CTecL: Laboratório de Tradução Poética Assistida por IA).",
-        xpTitle: "Linha do Tempo Profissional"
+        role: "Cientista de Dados | Comércio Exterior e Logística Portuária | Multilíngue (PT/EN/ES/IT/JP/KO) | Ex-estagiária na Vale e ArcelorMittal",
+        summary: "Profissional poliglota com formação multidisciplinar em TI e Letras. Experiência em tomada de decisão baseada em dados e otimização logística.",
+        sectionTitle: "Perfil Profissional"
     },
     es: {
-        role: "Profesora, Traductora e Investigadora en Lingüística Computacional y Traducción asistida por IA",
-        summary: "Líder de Investigación en Lingüística Computacional y Datos de IA (CTecL: Laboratorio de Traducción Poética Asistida por IA).",
-        xpTitle: "Línea de Tiempo Profesional"
+        role: "Científica de Datos | Comercio Exterior y Logística Portuaria | Multilingüe (PT/EN/ES/IT/JP/KO) | Ex-pasante en Vale y ArcelorMittal",
+        summary: "Profesional poliglota con formación multidisciplinar en TI y Letras. Experiencia en toma de decisiones basada en datos y optimización logística.",
+        sectionTitle: "Perfil Profesional"
     }
 };
 
 function setLanguage(lang) {
     const data = dictionary[lang];
     
-    // Atualiza o cargo/descrição
     document.getElementById('txt-role').innerText = data.role;
     
-    // Atualiza estados dos botões
     document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
     document.getElementById(`btn-${lang}`).classList.add('active');
 
-    // Atualiza a caixa de conteúdo
     const cvSection = document.getElementById('cv-content');
     cvSection.innerHTML = `
         <div class="glass-box">
-            <h2 style="margin-top:0; font-weight:800; letter-spacing:-1px;">${data.xpTitle}</h2>
-            <p style="line-height:1.7; font-size:1.05rem; color:#4a4a4a;">${data.summary}</p>
+            <h2 style="margin-top:0; font-weight:800;">${data.sectionTitle}</h2>
+            <p style="color:#555; line-height:1.8;">${data.summary}</p>
         </div>
     `;
 }
