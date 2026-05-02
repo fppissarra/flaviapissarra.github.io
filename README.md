@@ -8,10 +8,10 @@ Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/K
 This repository is just the surface. To explore the full trajectory — from Industry to Research, and Teaching to Data Science — access the official link below:
 
 Highlights:
-TESOL Certified
-Lead Researcher at CTecL (AI & NLP)
-Fluent in 6 Languages
-Experience at Vale & ArcelorMittal
+- TESOL Certified
+- Lead Researcher at CTecL (AI & NLP)
+- Fluent in 6 Languages
+- Experience at Vale & ArcelorMittal
 
 Curious about the details? Click the following link to see the interactive CV.
 
