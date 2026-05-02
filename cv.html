@@ -1,21 +1,238 @@
-<!-- SEÇÃO DE EXPERIÊNCIA REORGANIZADA -->
-<h2>Experiência em Inteligência Operacional & Dados</h2>
-<div class="exp-item">
-    <div class="exp-header"><span>Vale & ArcelorMittal | Cientista de Dados e Operações</span></div>
-    <p>• Gestão de KPIs industriais e automação de dashboards (Power BI/DAX), reduzindo o tempo de consolidação de dados em 30%.<br>
-    • Engenharia de dados (SQL/Python) para monitoramento de fluxos logísticos e auditoria operacional (10k+ linhas/mês).<br>
-    • Vivência prática em infraestrutura ferroviária e suporte ao controle de tráfego.</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra | CV</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5; /* Cinza bem claro */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --vale-blue: #003366;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background: rgba(240, 242, 245, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .btn-lang {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 6px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+
+        .btn-lang.active {
+            border-color: var(--vale-blue);
+            color: var(--vale-blue);
+            box-shadow: 0 0 10px rgba(0,51,102,0.1);
+        }
+
+        .container {
+            max-width: 850px;
+            width: 90%;
+            margin: 40px 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            position: relative;
+            /* Borda colorida em degradê */
+            border: 2px solid transparent;
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(to right, white, white), 
+                              linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff);
+            background-origin: border-box;
+        }
+
+        h1 { margin: 0; color: var(--vale-blue); font-size: 2.2rem; }
+        .tagline { color: #666; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin-top: 10px; letter-spacing: 1px; }
+
+        .links { margin-top: 15px; }
+        .links a { text-decoration: none; color: var(--vale-blue); margin: 0 10px; font-weight: bold; font-size: 0.9rem; }
+
+        /* Acordeão com Borda Colorida */
+        .experience-box {
+            margin-bottom: 15px;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(white, white), 
+                              linear-gradient(to right, #6a11cb, #2575fc); /* Degradê roxo/azul */
+            background-origin: border-box;
+        }
+
+        .experience-box:hover { transform: translateY(-2px); }
+
+        .exp-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .exp-header::after { content: '▾'; font-size: 1.2rem; color: #999; }
+        .active-box .exp-header::after { content: '▴'; }
+
+        .exp-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            padding: 0 20px;
+        }
+
+        .active-box .exp-content {
+            max-height: 500px;
+            opacity: 1;
+            padding: 10px 20px 25px 20px;
+        }
+
+        .tag {
+            background: rgba(0, 51, 102, 0.05);
+            color: var(--vale-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) { h1 { font-size: 1.6rem; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <button class="btn-lang active" onclick="changeLang('pt')">PT-BR</button>
+    <button class="btn-lang" onclick="changeLang('en')">EN-US</button>
+    <button class="btn-lang" onclick="changeLang('es')">ES-ES</button>
+</nav>
+
+<div class="container">
+    <header>
+        <h1>Flávia Porcu Pissarra</h1>
+        <div class="tagline">Inteligência de Dados | Logística Portuária | Intermodalidade</div>
+        <div class="links">
+            <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
+            <a href="https://lattes.cnpq.br/7945109731847519" target="_blank">Lattes</a>
+            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <div id="content-area"></div>
 </div>
 
-<h2>Gestão de Projetos e Tecnologia (IA & NLP)</h2>
-<div class="exp-item">
-    <div class="exp-header"><span>CTecL | Coordenadora de Pesquisa e Automação</span></div>
-    <p>• Liderança de iniciativas de Processamento de Linguagem Natural (NLP) e Machine Learning.<br>
-    • Implementação de workflows automatizados de Quality Assurance (QA) via Python, otimizando a confiabilidade de grandes volumes de dados.</p>
-</div>
+<script>
+    const data = {
+        pt: {
+            summary: "Cientista de dados com vivência industrial na <b>Vale e ArcelorMittal</b>. Foco em otimização de fluxos operacionais e KPI através de TI e Logística Portuária.",
+            experiences: [
+                {
+                    title: "ArcelorMittal | Engenharia de Dados",
+                    tags: ["SQL", "Power BI", "Python"],
+                    desc: "Automação de pipelines processando 10k+ linhas/mês. Redução de 30% no tempo de consolidação de KPIs e suporte técnico internacional."
+                },
+                {
+                    title: "Vale | Suporte em Dados Industriais",
+                    tags: ["CCO", "Ferrovia", "KPI"],
+                    desc: "Monitoramento de métricas operacionais e suporte à infraestrutura de dados para logística ferroviária de carga pesada."
+                },
+                {
+                    title: "IFES CTecL | Liderança em IA & NLP",
+                    tags: ["Python", "Automação", "QA"],
+                    desc: "Coordenação de laboratório focado em Machine Learning e Processamento de Linguagem Natural. Redução de erros via fluxos de QA automatizados."
+                }
+            ]
+        },
+        en: {
+            summary: "Data Scientist with industrial background at <b>Vale and ArcelorMittal</b>. Focus on optimizing operational flows and KPIs via IT and Port Logistics.",
+            experiences: [
+                {
+                    title: "ArcelorMittal | Data Engineering",
+                    tags: ["SQL", "Power BI", "Python"],
+                    desc: "Automated pipelines processing 10k+ rows/month. Reduced KPI consolidation time by 30%."
+                },
+                {
+                    title: "Vale | Industrial Data Support",
+                    tags: ["CCO", "Railway", "KPI"],
+                    desc: "Monitoring operational metrics and data infrastructure support for heavy-haul railway logistics."
+                }
+            ]
+        }
+    };
 
-<h2>Logística Portuária & Comércio Exterior</h2>
-<div class="exp-item">
-    <div class="exp-header"><span>IFES | Especialização Técnica (Em curso)</span></div>
-    <p>• Foco em Gestão Portuária, Incoterms 2020 e otimização de Supply Chain internacional.</p>
-</div>
+    function render(lang) {
+        const area = document.getElementById('content-area');
+        const langData = data[lang] || data['pt'];
+        let html = `<p style="text-align:center; margin-bottom:30px; font-size:1.1rem; color:#555;">${langData.summary}</p>`;
+        
+        langData.experiences.forEach((exp) => {
+            html += `
+                <div class="experience-box" onclick="toggleBox(this)">
+                    <div class="exp-header">
+                        <span>${exp.title}</span>
+                    </div>
+                    <div class="exp-content">
+                        <div style="margin-bottom:12px;">
+                            ${exp.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                        <p style="margin:0; color:#444;">${exp.desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+        area.innerHTML = html;
+    }
+
+    function toggleBox(el) {
+        const isActive = el.classList.contains('active-box');
+        document.querySelectorAll('.experience-box').forEach(b => b.classList.remove('active-box'));
+        if (!isActive) el.classList.add('active-box');
+    }
+
+    function changeLang(lang) {
+        document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        render(lang);
+    }
+
+    render('pt');
+</script>
+
+</body>
+</html>
