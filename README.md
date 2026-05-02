@@ -17,7 +17,7 @@ Six languages. One interface. A bridge between what is said and what is processe
 The full architecture cannot be rendered here. The truth of the data requires a different perspective.
 
 **Access the Node:**
-### 🌐 [fppissarra.github.io/index.html](https://fppissarra.github.io)
+### 🌐 [fppissarra.github.io](https://fppissarra.github.io)
 
 ---
 *Disconnecting...*
