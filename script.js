@@ -1,48 +1,106 @@
 const content = {
     pt: {
-        tagline: "Dados | Logística Portuária | Poliglota",
-        sections: { work: "Trajetória Profissional", acad: "Formação & Pesquisa" },
-        exp: [
-            { cat: "work", title: "ArcelorMittal | Inteligência de Dados", tags: ["SQL", "Python", "KPI"], desc: "Especialista técnica na automação de dados e KPIs industriais." },
-            { cat: "work", title: "Vale | Suporte Operacional", tags: ["Logística", "Ferrovia"], desc: "Análise de métricas operacionais para logística de carga pesada." },
-            { cat: "acad", title: "CTecL IFES | Coordenação de IA", tags: ["NLP", "Tradução"], desc: "Liderança em laboratório de IA aplicada ao processamento de linguagem natural." },
-            { cat: "acad", title: "Técnica em Portos | IFES", tags: ["Logística", "Comex"], desc: "Formação técnica voltada à gestão portuária e intermodalidade." }
+        role: "Professora, Tradutora e Pesquisadora em Linguística Computacional e Tradução assistida por IA",
+        badges: ["EN", "ES", "PT", "IT", "JP", "KR", "Especialista em TI & NLP", "Serra, ES"],
+        timelineTitle: "Linha do Tempo Profissional",
+        experiences: [
+            {
+                period: "2024–2026",
+                title: "Pesquisadora Principal & Líder em IA, Lab CTecL",
+                tags: ["Linguística Computacional", "Estratégia de IA & NLP"],
+                details: "Coordenação do laboratório CTecL no IFES, explorando modelos de linguagem e tradução automática."
+            },
+            {
+                period: "2020–2023",
+                title: "Tradutora Freelancer & Educadora",
+                tags: ["Inglês", "Espanhol", "Tradução Técnica"],
+                details: "Serviços de tradução e ensino de idiomas com foco em proficiência C2."
+            }
         ]
     },
     en: {
-        tagline: "Data | Port Logistics | Polyglot",
-        sections: { work: "Professional Path", acad: "Education & Research" },
-        exp: [
-            { cat: "work", title: "ArcelorMittal | Data Intelligence", tags: ["SQL", "Python", "KPI"], desc: "Technical specialist in industrial data and KPI automation." },
-            { cat: "work", title: "Vale | Operational Support", tags: ["Logistics", "Railway"], desc: "Operational metrics analysis for heavy-haul logistics." },
-            { cat: "acad", title: "CTecL IFES | AI Coordination", tags: ["NLP", "Translation"], desc: "Leading the AI lab focused on Natural Language Processing." },
-            { cat: "acad", title: "Port Technician | IFES", tags: ["Logistics", "Trade"], desc: "Technical education focused on port management." }
+        role: "Teacher, Translator, Researcher in Computational Linguistics and AI-assisted translation",
+        badges: ["EN", "ES", "PT", "IT", "JP", "KR", "IT & NLP Specialist", "Serra, ES"],
+        timelineTitle: "Professional Timeline",
+        experiences: [
+            {
+                period: "2024–2026",
+                title: "Lead Computational Linguist & AI Researcher, CTecL Lab",
+                tags: ["Computational Linguistics", "AI & NLP Strategy"],
+                details: "Coordinating CTecL lab at IFES, exploring language models and machine translation."
+            },
+            {
+                period: "2020–2023",
+                title: "Freelance Translator & Educator",
+                tags: ["English", "Spanish", "Technical Translation"],
+                details: "Translation services and language teaching with a focus on C2 proficiency."
+            }
         ]
     }
 };
 
-function changeLang(lang) {
-    const data = content[lang] || content.pt;
-    document.getElementById('user-tagline').innerText = data.tagline;
+function renderTimeline(lang) {
+    const data = content[lang];
     
-    document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(`btn-${lang}`).classList.add('active');
+    // Atualiza cabeçalho e descrição
+    document.querySelector('.role-desc').innerText = data.role;
+    document.querySelector('.section-title').innerText = data.timelineTitle;
 
-    let html = '';
-    ['work', 'acad'].forEach(cat => {
-        html += `<div class="section-title">${data.sections[cat]}</div>`;
-        data.exp.filter(e => e.cat === cat).forEach(item => {
-            html += `
-                <div class="glass-card experience-item" onclick="this.classList.toggle('active-box')">
-                    <div class="exp-header">${item.title}</div>
-                    <div class="exp-content">
-                        <div style="margin-bottom:12px;">${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-                        <p style="color:#64748b; line-height:1.6; margin:0;">${item.desc}</p>
+    // Atualiza os Badges (Idiomas e Especialidades)
+    const badgeContainer = document.querySelector('.badge-row');
+    badgeContainer.innerHTML = `<span class="label">Polyglot:</span>`;
+    data.badges.forEach((text, index) => {
+        const isSpecial = text.includes("Specialist") || text.includes("Especialista");
+        badgeContainer.innerHTML += `<span class="badge ${isSpecial ? 'special' : ''}">${text}</span>`;
+    });
+
+    // Renderiza os itens da Timeline
+    const timelineContainer = document.querySelector('.timeline-items-wrapper');
+    timelineContainer.innerHTML = ''; // Limpa antes de renderizar
+
+    data.experiences.forEach(exp => {
+        const itemHtml = `
+            <div class="timeline-item">
+                <div class="time-label">${exp.period}</div>
+                <div class="node"></div>
+                <div class="glass-card item-card">
+                    <h3>${exp.title}</h3>
+                    <div class="tags">
+                        ${exp.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
-                </div>`;
+                    <p class="exp-details" style="display:none; margin-top:15px; font-size:0.9rem; color:#444;">
+                        ${exp.details}
+                    </p>
+                </div>
+            </div>
+        `;
+        timelineContainer.insertAdjacentHTML('beforeend', itemHtml);
+    });
+
+    // Adiciona evento de clique para expandir detalhes (Interatividade)
+    document.querySelectorAll('.item-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const details = card.querySelector('.exp-details');
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
         });
     });
-    document.getElementById('main-content').innerHTML = html;
 }
 
-document.addEventListener('DOMContentLoaded', () => changeLang('pt'));
+function changeLang(lang) {
+    // Gerencia as classes ativas nos botões
+    document.querySelectorAll('.btn-lang').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    renderTimeline(lang);
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+    // Cria um wrapper para os itens se não existir
+    if(!document.querySelector('.timeline-items-wrapper')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'timeline-items-wrapper';
+        document.querySelector('.timeline-container').appendChild(wrapper);
+    }
+    renderTimeline('pt');
+});
