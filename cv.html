@@ -1,214 +1,263 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Flávia P. Pissarra</title>
+    <title>Portfolio | Flávia P. Pissarra</title>
     <style>
         :root {
-            --vale-blue: #003366;
-            --accent: #b3a369;
-            --glass: rgba(255, 255, 255, 0.12);
-            --border: rgba(255, 255, 255, 0.2);
-            --text-main: #ffffff;
+            --pearl: rgba(255, 255, 255, 0.7);
+            --pearl-border: rgba(255, 255, 255, 0.4);
+            --text: #2c3e50;
+            --accent: #6c5ce7; /* Um lilás/azul suave que combina com o perolado */
+            --bg-gradient: linear-gradient(-45deg, #e3e3e3, #fdfbfb, #ebedee, #f3f3f3);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
 
         body {
-            background: radial-gradient(circle at top left, #001f3f, #000b18);
-            background-attachment: fixed;
-            color: var(--text-main);
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            animation: pearlFlow 15s ease infinite;
             min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        /* HEADER FIXO E GLASSY */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 11, 24, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 25px 0;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        .header-content h1 { font-size: 1.8rem; letter-spacing: -1px; margin-bottom: 5px; }
-        .header-content p { font-size: 0.9rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
-        .header-links { margin-top: 10px; font-size: 0.8rem; opacity: 0.8; }
-        .header-links a { color: #fff; text-decoration: none; margin: 0 10px; border-bottom: 1px solid var(--accent); }
-
-        /* NAVEGAÇÃO DE FILTROS */
-        .filter-nav {
-            margin: 160px auto 30px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 10px;
-            max-width: 800px;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text);
+            padding-bottom: 50px;
         }
 
-        .filter-nav button {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-size: 0.85rem;
+        @keyframes pearlFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .filter-nav button:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
-        .filter-nav button.active {
-            background: var(--accent);
-            color: #000b18;
-            border-color: var(--accent);
-            box-shadow: 0 10px 20px rgba(179, 163, 105, 0.3);
-        }
-
-        /* CONTAINER DE CONTEÚDO */
-        .content-area {
+        /* --- HEADER FIXO (CARTÃO PÉROLA) --- */
+        header {
+            position: sticky;
+            top: 20px;
+            width: 90%;
             max-width: 850px;
-            margin: 0 auto 100px;
-            padding: 20px;
+            background: var(--pearl);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--pearl-border);
+            border-radius: 30px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            margin-top: 20px;
         }
 
-        .section-pane { display: none; }
-        .active-pane { display: block; animation: fadeInUp 0.6s ease forwards; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        .profile-box {
+            width: 110px;
+            height: 110px;
+            border-radius: 25px;
+            background: #fff;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 25px;
+        .profile-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .user-info h1 { font-size: 1.8rem; letter-spacing: -0.5px; color: #1a1a1a; }
+        .user-info .tagline { font-weight: 600; color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
+        
+        .social-nav { display: flex; gap: 10px; flex-wrap: wrap; }
+        .social-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.75rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.5);
+            padding: 6px 15px;
+            border-radius: 50px;
+            border: 1px solid var(--pearl-border);
             transition: 0.3s;
         }
+        .social-nav a:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        .card:hover { border-color: var(--accent); background: rgba(255,255,255,0.15); }
+        /* --- NAVEGAÇÃO DE ABAS --- */
+        .tabs-container {
+            width: 90%;
+            max-width: 850px;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
 
-        .card h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.3rem; }
-        .card-meta { font-size: 0.85rem; opacity: 0.7; margin-bottom: 15px; display: flex; justify-content: space-between; }
+        .tab-btn {
+            background: var(--pearl);
+            border: 1px solid var(--pearl-border);
+            padding: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--text);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+
+        .tab-btn:hover { background: #fff; }
+        .tab-btn.active {
+            background: #fff;
+            color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: #fff;
+        }
+
+        /* --- ÁREA DE CONTEÚDO --- */
+        main { width: 90%; max-width: 850px; }
+        .tab-content { display: none; }
+        .active-content { display: block; animation: fadeIn 0.6s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card {
+            background: var(--pearl);
+            border: 1px solid var(--pearl-border);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .card h3 { margin-bottom: 15px; color: #1a1a1a; font-size: 1.3rem; }
+        .card p { margin-bottom: 15px; line-height: 1.7; }
         
         ul { list-style: none; }
-        li { margin-bottom: 12px; position: relative; padding-left: 20px; }
-        li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; }
+        li::before { 
+            content: ""; 
+            position: absolute; 
+            left: 0; 
+            top: 8px; 
+            width: 8px; 
+            height: 8px; 
+            background: var(--accent); 
+            border-radius: 50%; 
+        }
 
-        .tag { background: rgba(179, 163, 105, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; }
+        .badge {
+            background: #fff;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-        @media (max-width: 600px) {
-            .filter-nav { flex-direction: column; align-items: stretch; margin-top: 180px; }
-            header { padding: 15px 0; }
+        @media (max-width: 700px) {
+            header { flex-direction: column; text-align: center; }
+            .tabs-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-content">
+    <div class="profile-box">
+        <img src="https://via.placeholder.com/110/f3f3f3/6c5ce7?text=FP" alt="Flávia Pissarra">
+    </div>
+    <div class="user-info">
         <h1>Flávia Porcu Pissarra</h1>
-        <p>Logística Portuária • Inteligência de Dados</p>
-        <div class="header-links">
+        <div class="tagline">Logística Portuária • Análise de Dados • Tradução Técnica</div>
+        <div class="social-nav">
             <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
+            <a href="mailto:seuemail@exemplo.com">Email</a>
+            <a href="https://github.com/fppissarra" target="_blank">GitHub</a>
             <a href="http://lattes.cnpq.br/..." target="_blank">Lattes</a>
-            <span>Serra, ES</span>
         </div>
     </div>
 </header>
 
-<nav class="filter-nav">
-    <button onclick="showTab('corporate')" id="btn-corporate" class="active">CORPORATIVO (VALE)</button>
-    <button onclick="showTab('academic')" id="btn-academic">ACADÊMICO (UFES)</button>
-    <button onclick="showTab('freelance')" id="btn-freelance">FREELANCE (TRADUÇÃO)</button>
-</nav>
+<div class="tabs-container">
+    <button class="tab-btn active" onclick="openTab(event, 'exp')">Experiências</button>
+    <button class="tab-btn" onclick="openTab(event, 'proj')">Projetos</button>
+    <button class="tab-btn" onclick="openTab(event, 'free')">Freelances</button>
+</div>
 
-<main class="content-area">
-    
-    <!-- CONTEÚDO CORPORATIVO -->
-    <div id="corporate" class="section-pane active-pane">
+<main>
+    <!-- EXPERIÊNCIAS -->
+    <div id="exp" class="tab-content active-content">
         <div class="card">
-            <div class="card-meta"><span>VALE S.A.</span> <span class="tag">FERROVIA / CCO</span></div>
-            <h3>Controle de Operações e Infraestrutura</h3>
+            <span class="badge">LOGÍSTICA & FERROVIA</span>
+            <h3>Vale S.A. | Centro de Controle Operacional</h3>
             <ul>
-                <li>Atuação estratégica no <strong>CCO (Centro de Controle de Operações)</strong>, monitorando o tráfego ferroviário em tempo real para otimização de fluxo e segurança.</li>
-                <li>Suporte técnico em <strong>Máquinas de Via</strong>, compreendendo a manutenção preventiva e corretiva dos ativos da malha.</li>
-                <li>Experiência em ambiente de alta criticidade e foco rigoroso em protocolos de segurança operacional.</li>
+                <li>Monitoramento e regulação de tráfego ferroviário focado em <strong>eficiência de escoamento</strong>.</li>
+                <li>Familiaridade com infraestrutura de Máquinas de Via e segurança operacional.</li>
+                <li>Tomada de decisão baseada em dados de telemetria e fluxos sistêmicos.</li>
             </ul>
         </div>
         <div class="card">
-            <div class="card-meta"><span>FORMAÇÃO ATUAL</span> <span class="tag">IFES</span></div>
-            <h3>Técnico em Portos</h3>
-            <p>Especialização em gestão portuária, alfandegamento e logística intermodal Porto-Ferrovia.</p>
+            <span class="badge">FORMAÇÃO TÉCNICA</span>
+            <h3>Portos e Terminais (IFES)</h3>
+            <p>Especialização em operações portuárias, logística de exportação e gestão de terminais intermodais.</p>
         </div>
     </div>
 
-    <!-- CONTEÚDO ACADÊMICO -->
-    <div id="academic" class="section-pane">
+    <!-- PROJETOS -->
+    <div id="proj" class="tab-content">
         <div class="card">
-            <div class="card-meta"><span>UFES</span> <span class="tag">ECONOMIA CRIATIVA</span></div>
-            <h3>Pesquisa e Análise de Mercado Regional</h3>
+            <span class="badge">ACADÊMICO / UFES</span>
+            <h3>Pesquisa em Economia Criativa</h3>
             <ul>
-                <li>Mapeamento das cadeias produtivas no Espírito Santo através de dados estruturados.</li>
-                <li>Estudo de viabilidade regional e suporte a indicadores de desenvolvimento econômico.</li>
+                <li>Mapeamento estatístico de cadeias produtivas no Espírito Santo.</li>
+                <li>Processamento de dados regionais para identificação de gargalos logísticos e econômicos.</li>
             </ul>
         </div>
         <div class="card">
-            <div class="card-meta"><span>CTecL (IFES)</span> <span class="tag">IA / LINGUÍSTICA</span></div>
-            <h3>Coordenadora de Laboratório</h3>
-            <ul>
-                <li>Liderança em projetos de tradução assistida por IA e Processamento de Linguagem Natural (NLP).</li>
-                <li>Tratamento de dados em larga escala para aplicações tecnológicas.</li>
-            </ul>
+            <span class="badge">IA & LINGUÍSTICA</span>
+            <h3>Laboratório CTecL (Coordenação)</h3>
+            <p>Liderança de pesquisa em Tradução Assistida por IA e modelos de linguagem aplicados ao ritmo poético.</p>
         </div>
     </div>
 
-    <!-- CONTEÚDO FREELANCE -->
-    <div id="freelance" class="section-pane">
+    <!-- FREELANCES -->
+    <div id="free" class="tab-content">
         <div class="card">
-            <div class="card-meta"><span>TRADUÇÃO TÉCNICA</span> <span class="tag">C2 PROFICIENCY</span></div>
-            <h3>Tradução e Comunicação Internacional</h3>
+            <span class="badge">TRADUÇÃO TÉCNICA</span>
+            <h3>Linguística Corporativa (EN/ES/IT)</h3>
             <ul>
-                <li>Tradução técnica de manuais e documentos industriais/portuários em Inglês e Espanhol.</li>
-                <li>Expertise em terminologia técnica para Comércio Exterior.</li>
+                <li>Tradução e versão de documentos técnicos para Comércio Exterior.</li>
+                <li>Localização de softwares e conteúdos de tecnologia.</li>
             </ul>
         </div>
         <div class="card">
-            <div class="card-meta"><span>DOCÊNCIA</span> <span class="tag">ESCOLA MUNDO LIVRE</span></div>
-            <h3>Ensino de Idiomas e Gestão Pedagógica</h3>
-            <ul>
-                <li>Atuação em projetos de ensino de línguas estrangeiras (Inglês/Espanhol) focados em comunicação corporativa.</li>
-            </ul>
+            <span class="badge">EDUCAÇÃO</span>
+            <h3>Consultoria em Idiomas</h3>
+            <p>Treinamentos de idiomas para profissionais de áreas técnicas e executivas.</p>
         </div>
     </div>
-
 </main>
 
 <script>
-    function showTab(tabId) {
-        // Esconde todos
-        document.querySelectorAll('.section-pane').forEach(el => el.classList.remove('active-pane'));
-        document.querySelectorAll('.filter-nav button').forEach(el => el.classList.remove('active'));
+    function openTab(evt, tabName) {
+        let i, tabContent, tabBtns;
         
-        // Mostra o selecionado
-        document.getElementById(tabId).classList.add('active-pane');
-        document.getElementById('btn-' + tabId).classList.add('active');
-        
-        // Scroll suave para o início do conteúdo se estiver no mobile
-        if(window.innerWidth < 600) {
-            window.scrollTo({ top: 150, behavior: 'smooth' });
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active-content");
         }
+
+        tabBtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+
+        document.getElementById(tabName).classList.add("active-content");
+        evt.currentTarget.classList.add("active");
     }
 </script>
 
