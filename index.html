@@ -1,33 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-    <!-- Seletor de Idiomas -->
+    <!-- Seletor de Idiomas (Ativa a Tradução por IA) -->
     <nav class="lang-selector">
-        <button onclick="translateContent('en')">English</button>
-        <button onclick="translateContent('pt')">Português</button>
-        <button onclick="translateContent('es')">Español</button>
-        <button onclick="translateContent('ja')">日本語</button>
-        <button onclick="translateContent('ko')">한국어</button>
+        <button id="btn-en" onclick="updatePortfolio('en')">English</button>
+        <button id="btn-pt" onclick="updatePortfolio('pt')">Português</button>
+        <button id="btn-es" onclick="updatePortfolio('es')">Español</button>
+        <button id="btn-ja" onclick="updatePortfolio('ja')">日本語</button>
+        <button id="btn-ko" onclick="updatePortfolio('ko')">한국어</button>
     </nav>
 
     <header>
-        <!-- O ID txt-role será preenchido pelo script -->
+        <!-- Título principal com atributo de tradução -->
         <h1 id="txt-role" data-translate>
             Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO) | Former Intern at Vale & ArcelorMittal
         </h1>
     </header>
 
+    <!-- O "Coração" do Portfólio: Onde os dados aparecem -->
     <main id="experience-container">
-        <!-- O JavaScript irá gerar as seções de Indústria, Pesquisa e Docência aqui dentro -->
+        <!-- O script.js irá preencher este espaço automaticamente com:
+             - Industry (Vale/ArcelorMittal)
+             - Research (Lab CTecL/Ifes)
+             - Communication (Japanese Platform/Teaching)
+        -->
     </main>
+
+    <!-- Rodapé Minimalista -->
+    <footer>
+        <p>© 2026 Flávia P. Pissarra - <span data-translate>Powered by AI & MTPE Research</span></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
