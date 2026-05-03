@@ -1,146 +1,73 @@
 :root {
-    --primary-color: #007bff;
-    --text-main: #f8f9fa;
-    --text-muted: #ced4da;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --blur-effect: blur(12px);
+    --primary: #007bff;
+    --bg: #000814;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    background: radial-gradient(circle at top right, #0d1b2a, #000814);
-    color: var(--text-main);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    background: radial-gradient(circle at top right, #0d1b2a, var(--bg));
+    color: #f8f9fa;
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Seletor de Idiomas Minimalista */
 .lang-selector {
     display: flex;
     gap: 10px;
-    margin-bottom: 40px;
-    background: var(--glass-bg);
-    padding: 8px;
+    margin-bottom: 50px;
+    background: var(--glass);
+    padding: 10px;
     border-radius: 50px;
-    backdrop-filter: var(--blur-effect);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
 }
 
 .lang-selector button {
     background: transparent;
     border: none;
-    color: var(--text-muted);
+    color: #ced4da;
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 8px 15px;
     border-radius: 20px;
-    transition: 0.3s ease;
-    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.lang-selector button:hover, .lang-selector button.active {
-    background: var(--primary-color);
+.lang-selector button:hover {
+    background: var(--primary);
     color: white;
 }
 
-/* Header de Impacto */
-header {
-    text-align: center;
-    max-width: 800px;
-    margin-bottom: 50px;
-}
+header { text-align: center; max-width: 800px; margin-bottom: 60px; }
 
-#txt-role {
-    font-weight: 300;
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+#txt-role { font-weight: 300; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; color: #adb5bd; }
 
-/* Containers de Experiência (Glassmorphism) */
 .glass-box {
-    background: var(--glass-bg);
-    backdrop-filter: var(--blur-effect);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    padding: 25px;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
     width: 100%;
-    max-width: 700px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    max-width: 750px;
+    margin-bottom: 25px;
+    transition: 0.3s;
 }
 
-.glass-box:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-}
+.section-label { color: var(--primary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
 
-.section-label {
-    color: var(--primary-color);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    display: block;
-}
+.exp-header { display: flex; justify-content: space-between; margin: 15px 0; }
 
-.exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 10px;
-}
+.exp-title { font-size: 1.4rem; font-weight: 600; }
 
-.exp-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
+.exp-period { font-size: 0.9rem; color: #6c757d; }
 
-.exp-period {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
+.company-tag { background: rgba(0, 123, 255, 0.2); color: var(--primary); padding: 5px 12px; border-radius: 5px; font-size: 0.85rem; font-weight: 600; }
 
-.company-tag {
-    display: inline-block;
-    background: rgba(0, 123, 255, 0.15);
-    color: var(--primary-color);
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
+.details-text { color: #dee2e6; margin-top: 20px; font-size: 1rem; line-height: 1.6; }
 
-/* Listas e Detalhes */
-.bullet-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.bullet-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.bullet-list li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .exp-header {
-        flex-direction: column;
-    }
-}
+footer { margin-top: 50px; font-size: 0.8rem; color: #495057; }
