@@ -1,73 +1,155 @@
 :root {
-    --primary: #007bff;
-    --bg: #000814;
-    --glass: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.1);
+    --primary: #007bff; /* Azul corporativo e tecnológico */
+    --bg: #000814; /* Fundo azul-noite profundo */
+    --glass: rgba(255, 255, 255, 0.05); /* Efeito de transparência */
+    --border: rgba(255, 255, 255, 0.1); /* Bordas sutis */
+    --text: #f8f9fa;
+    --subtext: #adb5bd;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     background: radial-gradient(circle at top right, #0d1b2a, var(--bg));
-    color: #f8f9fa;
-    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
-    padding: 40px 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
+/* Seletor de Idiomas Multilíngue (PT/EN/ES/IT/JP/KO) */
 .lang-selector {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 50px;
     background: var(--glass);
-    padding: 10px;
+    padding: 12px 24px;
     border-radius: 50px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid var(--border);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .lang-selector button {
     background: transparent;
     border: none;
-    color: #ced4da;
+    color: var(--subtext);
     cursor: pointer;
-    padding: 8px 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 12px;
     border-radius: 20px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .lang-selector button:hover {
-    background: var(--primary);
-    color: white;
+    color: var(--primary);
+    background: rgba(0, 123, 255, 0.1);
 }
 
-header { text-align: center; max-width: 800px; margin-bottom: 60px; }
+header {
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 60px;
+}
 
-#txt-role { font-weight: 300; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; color: #adb5bd; }
+#txt-role {
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--subtext);
+    line-height: 1.6;
+}
+
+/* Container das Experiências (Logística, NLP, Maritime Support) */
+#experience-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 .glass-box {
     background: var(--glass);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 30px;
-    width: 100%;
-    max-width: 750px;
-    margin-bottom: 25px;
-    transition: 0.3s;
+    padding: 35px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.section-label { color: var(--primary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+.glass-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
-.exp-header { display: flex; justify-content: space-between; margin: 15px 0; }
+.section-label {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
 
-.exp-title { font-size: 1.4rem; font-weight: 600; }
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 15px 0 10px 0;
+}
 
-.exp-period { font-size: 0.9rem; color: #6c757d; }
+.exp-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
 
-.company-tag { background: rgba(0, 123, 255, 0.2); color: var(--primary); padding: 5px 12px; border-radius: 5px; font-size: 0.85rem; font-weight: 600; }
+.exp-period {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
 
-.details-text { color: #dee2e6; margin-top: 20px; font-size: 1rem; line-height: 1.6; }
+.company-tag {
+    background: rgba(0, 123, 255, 0.15);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
 
-footer { margin-top: 50px; font-size: 0.8rem; color: #495057; }
+.details-text {
+    color: #dee2e6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+footer {
+    margin-top: 80px;
+    font-size: 0.85rem;
+    color: #495057;
+    text-align: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .exp-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .exp-title {
+        font-size: 1.2rem;
+    }
+}
