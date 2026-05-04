@@ -1,18 +1,25 @@
 <header class="fixed-header">
+    <!-- Seletor de Idiomas -->
     <div class="lang-switcher">
         <button onclick="setLanguage('pt')">PT</button> | 
         <button onclick="setLanguage('en')">EN</button>
     </div>
     
+    <!-- Nome Fixo (visto que não muda com o idioma) -->
     <h1 class="user-name">Flávia P. Pissarra</h1>
-    <!-- O texto abaixo será substituído pelo JS -->
-    <p class="user-role" data-i18n="role">DATA SCIENTIST | SPECIALIZED IN INDUSTRIAL DATA | FOREIGN TRADE & PORT LOGISTICS</p>
+    
+    <!-- O cargo (user-role) será preenchido dinamicamente pelo main.js -->
+    <p class="user-role"></p>
     
     <div class="user-contact">
-        <a href="/" data-i18n="nav_home">home</a>
-        <a href="/bi" data-i18n="nav_bi">bi projects</a>
+        <a href="/" id="nav-home">home</a>
+        <a href="/bi" id="nav-bi">bi projects</a>
         <a href="mailto:fppissarra+githubio@gmail.com">e-mail</a>
         <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a>
-        <a href="javascript:void(0)" onclick="downloadCV()" class="cv-button"><strong data-i18n="nav_cv">[ Download CV ]</strong></a>
+        
+        <!-- Botão que aciona a formatação de currículo para impressão -->
+        <a href="javascript:void(0)" onclick="downloadCV()" class="cv-button">
+            <strong id="nav-cv">[ Download CV ]</strong>
+        </a>
     </div>
 </header>
