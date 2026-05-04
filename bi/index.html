@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Hub | Flávia P. Pissarra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-pearl: #d8d4cf;
+            --text-main: #2c1e1a;
+            --mother-of-pearl: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        body {
+            background-color: var(--bg-pearl);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fixed-header {
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+            background: rgba(216, 212, 207, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .user-name { font-weight: 300; letter-spacing: 2px; margin: 0; font-size: 1.8rem; }
+        .user-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #8d807a; margin-top: 10px; }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 0;
+        }
+
+        .project-card {
+            background: var(--mother-of-pearl);
+            border-radius: 25px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .category-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8d807a;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-card h2 { margin: 0; font-size: 1.1rem; color: #5d4037; }
+        .project-card p { font-size: 0.85rem; line-height: 1.5; color: #5d5752; margin: 15px 0; }
+        
+        .view-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #5d4037; align-self: flex-end; }
+    </style>
+</head>
+<body>
+
+    <header class="fixed-header">
+        <h1 class="user-name">Flávia P. Pissarra</h1>
+        <p class="user-role">Business Intelligence Portfolio</p>
+        <div style="margin-top: 15px; font-size: 0.8rem;">
+            <a href="../index.html" style="text-decoration: none; color: #8d807a; font-weight: 600;">BACK TO PORTFOLIO</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Card 1: PortoVix -->
+        <a href="portovix/index.html" class="project-card">
+            <div>
+                <span class="category-tag">Maritime Logistics</span>
+                <h2>PortoVix Dashboard</h2>
+                <p>Maritime intelligence and cargo flow analysis for the Port of Vitória operations.</p>
+            </div>
+            <span class="view-link">View Dashboard →</span>
+        </a>
+
+        <!-- Card 2: NLP Analytics (Exemplo de futura expansão) -->
+        <a href="#" class="project-card" style="opacity: 0.7; cursor: not-allowed;">
+            <div>
+                <span class="category-tag">Computational Linguistics</span>
+                <h2>NLP Metrics Hub</h2>
+                <p>Performance tracking of machine translation and language model evaluations.</p>
+            </div>
+            <span class="view-link">Coming Soon</span>
+        </a>
+    </main>
+
+</body>
+</html>
