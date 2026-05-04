@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia Pissarra | Portfólio</title>
+    <title>Flávia P. Pissarra | Portfólio</title>
+    <!-- CSS Otimizado na pasta core -->
     <link rel="stylesheet" href="core/style.css">
+    <!-- Fonte leve via Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="app-layout">
-        <aside class="identity-col" id="header-placeholder">
-            <!-- Dinâmico: Nome, Contatos, LinkedIn -->
+        <!-- Coluna de Identidade (25%) - Contém Nome, Contatos e Botão -->
+        <aside class="identity-col">
+            <div id="header-placeholder">
+                <!-- Injetado via main.js: Nome, Cargo e Links -->
+            </div>
+            
+            <!-- Botão de Ação Principal posicionado na Sidebar -->
+            <div class="sidebar-action print-hide">
+                <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
+            </div>
         </aside>
 
+        <!-- Coluna de Trajetória (75%) - Organizada em Bento Grid -->
         <main class="experience-col">
             <div class="bento-grid">
+                <!-- Ordem de Injeção: Port -> Languages -> Data -> Education -->
                 <section class="pearl-card" id="port-content"></section>
                 <section class="pearl-card" id="languages-content"></section>
                 <section class="pearl-card" id="data-content"></section>
                 <section class="pearl-card" id="education-content"></section>
             </div>
-            
-            <footer class="print-hide">
-                <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
-            </footer>
         </main>
     </div>
 
+    <!-- Script de Injeção de Dados -->
     <script src="core/main.js"></script>
 </body>
 </html>
