@@ -18,7 +18,7 @@ const experiences = [
         title: "Specialized Training & Intercultural Mediation",
         period: "2019 — 2026",
         company: "Maritime Sector | JUCEES",
-        details: "Provided specialized Business English training for offshore professionals and crew members. Managing technical translation and intercultural mediation, while preparing for Sworn Translator certification (JUCEES)."
+        details: "Provided specialized Business English training for offshore professionals and ship crews. Managing technical translation and intercultural mediation, while preparing for Sworn Translator certification (JUCEES)."
     }
 ];
 
@@ -39,5 +39,4 @@ function render() {
     `).join('');
 }
 
-// Inicializa a renderização assim que o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', render);
