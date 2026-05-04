@@ -5,35 +5,32 @@
       "role": "Operação Portuária | Logística & Dados",
       "email": "fppissarra@gmail.com",
       "linkedin": "linkedin.com/in/fppissarra",
-      "objective": "Candidata ao PFP da Vale. Foco na integração ferrovia-navio e fluxo logístico no Porto de Tubarão.",
+      "objective": "Candidata ao PFP da Vale com foco em integração ferrovia-navio e monitoramento via SAP.",
       "sections": {
         "port": {
           "title": "Operação & Logística",
           "items": [
-            { "h": "Logística Ferrovia-Navio", "s": "Porto de Tubarão", "d": "2026", "p": "Foco em carga, descarga e fluxos logísticos operacionais via CCO." },
-            { "h": "Sistemas Industriais", "s": "Domínio SAP", "d": "Ativo", "p": "Gestão de indicadores, SAP (módulos operacionais) e monitoramento de ativos." }
+            { "h": "Logística Ferrovia-Navio", "s": "Porto de Tubarão", "d": "Ativo", "p": "Foco em carga, descarga e fluxos logísticos via CCO." }
           ]
         },
         "languages": {
           "title": "Interface Técnica (C2)",
           "items": [
-            { "h": "Apoio à Atracação", "s": "Inglês/Espanhol Fluentes", "d": "Certificada", "p": "Interface técnica com tripulações estrangeiras e suporte em procedimentos portuários." },
-            { "h": "Instrutora Técnica", "s": "ESL Industrial", "d": "2024-2026", "p": "Capacitação de supervisores da Vale/Arcelor em vocabulário de operação e segurança." }
+            { "h": "Apoio à Atracação", "s": "Inglês e Espanhol", "d": "Certificada", "p": "Interface técnica com tripulações estrangeiras em procedimentos portuários." }
           ]
         },
         "data": {
           "title": "Vivência Industrial",
           "items": [
-            { "h": "Vale (Estágio)", "s": "Máquinas de Via & Vagões", "d": "2018", "p": "Acompanhamento técnico em oficina e monitoramento de carga/descarga no Porto." },
-            { "h": "ArcelorMittal", "s": "Pátio de Bobinas", "d": "2019", "p": "Atuação na Gerência de Controle da Produção e conferência de movimentação de carga." }
+            { "h": "Vale (Estágio)", "s": "Oficina de Máquinas", "d": "2018", "p": "Monitoramento de fluxos e procedimentos de carga via SAP." },
+            { "h": "ArcelorMittal", "s": "Pátio de Bobinas", "d": "2019", "p": "Análise de dados para conferência de movimentação de carga." }
           ]
         },
         "education": {
-          "title": "Formação & Certificações",
+          "title": "Formação Técnica",
           "items": [
-            { "h": "Técnico em Portos", "s": "IFES Cariacica", "d": "Início 2026.2", "p": "Foco em infraestrutura e gestão portuária." },
-            { "h": "Técnico em Informática", "s": "IFES Serra", "d": "Concluído", "p": "Sólida base em análise de dados e sistemas." },
-            { "h": "Brigada Vale", "s": "Bombeiros Vale", "d": "Certificada", "p": "Rigorosa observância às normas de segurança (SSMA)." }
+            { "h": "Técnico em Portos", "s": "IFES Cariacica", "d": "2026.2", "p": "Especialização em infraestrutura portuária." },
+            { "h": "Técnico em Informática", "s": "IFES Serra", "d": "Concluído", "p": "Análise de sistemas e tratamento de dados." }
           ]
         }
       }
