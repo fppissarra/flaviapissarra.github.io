@@ -1,14 +1,15 @@
 :root {
-    --primary: #007bff;
-    --bg: #000814;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.1);
-    --text: #f8f9fa;
-    --subtext: #adb5bd;
+    --primary: #8e8d8a;
+    --bg: #f4f1ea; 
+    --glass: rgba(255, 255, 255, 0.6);
+    --border: rgba(255, 255, 255, 0.8);
+    --text: #463f3a;
+    --subtext: #8a817c;
+    --accent: #d8c3a5;
 }
 
 body {
-    background: radial-gradient(circle at top right, #0d1b2a, var(--bg));
+    background: linear-gradient(135deg, #f4f1ea 0%, #eae7dc 100%);
     color: var(--text);
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -21,22 +22,24 @@ body {
     left: 0;
     width: 100%;
     z-index: 9999;
-    background: rgba(0, 8, 20, 0.85);
-    backdrop-filter: blur(25px);
+    background: rgba(244, 241, 234, 0.8);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border);
     padding: 30px 0;
     text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
 .user-name {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 0 10px 0;
-    color: var(--primary);
+    color: #463f3a;
     font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 #txt-role {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -64,17 +67,18 @@ body {
     padding: 40px;
     width: 100%;
     max-width: 750px;
+    box-shadow: 0 8px 32px rgba(184, 172, 160, 0.1);
     transition: all 0.4s ease;
 }
 
 .glass-box:hover {
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.8);
     transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(184, 172, 160, 0.2);
 }
 
 .section-label {
-    color: var(--primary);
+    color: var(--accent);
     font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -88,12 +92,21 @@ body {
     margin: 20px 0 10px 0;
 }
 
-.exp-title { font-size: 1.5rem; font-weight: 600; }
-.exp-period { color: #555e69; font-size: 0.9rem; font-weight: 600; }
+.exp-title { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #463f3a;
+}
+
+.exp-period { 
+    color: #bcb8b1; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+}
 
 .company-tag {
-    color: var(--primary);
-    background: rgba(0, 123, 255, 0.1);
+    color: #8a817c;
+    background: rgba(216, 195, 165, 0.3);
     padding: 5px 12px;
     border-radius: 5px;
     font-size: 0.8rem;
@@ -104,6 +117,6 @@ body {
 
 .details-text {
     line-height: 1.8;
-    color: #ced4da;
+    color: #706661;
     font-size: 1.05rem;
 }
