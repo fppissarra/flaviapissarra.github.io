@@ -1,44 +1,47 @@
-async function renderSite() {
-    const response = await fetch('/core/data.json');
-    const data = await response.json();
-    const lang = localStorage.getItem('selectedLang') || 'pt';
-    const content = data.translations[lang];
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('core/data.json')
+        .then(response => response.json())
+        .then(data => {
+            const resume = data.translations.pt;
+            
+            // Injeção da Sidebar (Nome e Contatos)
+            const sidebar = document.querySelector('.identity-col');
+            sidebar.innerHTML = `
+                <div class="profile-info">
+                    <h1>${resume.name}</h1>
+                    <p class="role-text">${resume.role}</p>
+                    <nav class="links">
+                        <a href="mailto:${resume.email}">E-mail</a>
+                        <a href="https://${resume.linkedin}" target="_blank">LinkedIn</a>
+                    </nav>
+                </div>
+                <div class="sidebar-action print-hide">
+                    <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
+                </div>
+            `;
 
-    // 1. Injetar Header Modular
-    const hResp = await fetch('/core/header.html');
-    const hHtml = await hResp.text();
-    document.getElementById('header-placeholder').innerHTML = hHtml;
+            // Injeção dos Cards (Ordem: Porto, Idiomas, Data, Education)
+            renderSection('port-content', resume.sections.port);
+            renderSection('languages-content', resume.sections.languages);
+            renderSection('data-content', resume.sections.data);
+            renderSection('education-content', resume.sections.education);
+        })
+        .catch(error => console.error('Erro ao carregar dados:', error));
+});
 
-    // 2. Preencher Dados Pessoais e Role
-    document.querySelector('.user-role').innerText = content.role;
+function renderSection(containerId, sectionData) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-    // 3. Gerar Cards de Experiência dinamicamente
-    const container = document.querySelector('.container');
-    container.innerHTML = ''; // Limpa antes de renderizar
-
-    content.sections.forEach(section => {
-        let sectionHtml = `
-            <section class="project-card">
-                <span class="category-label">${section.category}</span>
-                ${section.items.map(item => `
-                    <div class="exp-item">
-                        <small>${item.date}</small>
-                        <h2>${item.title}</h2>
-                        <p><strong>${item.sub}</strong></p>
-                        <p>${item.desc}</p>
-                    </div>
-                `).join('<div class="spacer"></div>')}
-            </section>
+    let html = `<h3>${sectionData.title}</h3>`;
+    sectionData.items.forEach(item => {
+        html += `
+            <div class="exp-item">
+                <small>${item.d} — ${item.s}</small>
+                <h4>${item.h}</h4>
+                <p>${item.p}</p>
+            </div>
         `;
-        container.innerHTML += sectionHtml;
     });
+    container.innerHTML = html;
 }
-
-function setLanguage(lang) {
-    localStorage.setItem('selectedLang', lang);
-    renderSite(); // Re-renderiza tudo com o novo idioma
-}
-
-function downloadCV() { window.print(); }
-
-window.onload = renderSite;
