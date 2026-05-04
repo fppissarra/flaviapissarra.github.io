@@ -1,0 +1,47 @@
+{
+  "personal": {
+    "name": "Flávia P. Pissarra",
+    "email": "fppissarra+githubio@gmail.com",
+    "linkedin": "https://linkedin.com/in/fppissarra"
+  },
+  "translations": {
+    "pt": {
+      "role": "CIENTISTA DE DADOS | COMÉRCIO EXTERIOR & LOGÍSTICA PORTUÁRIA",
+      "sections": [
+        {
+          "category": "Logística & Dados Industriais",
+          "items": [
+            { "title": "VALE", "sub": "Estagiária de Dados", "desc": "Inteligência de dados aplicada à logística ferroviária e portuária.", "date": "2018-2019" },
+            { "title": "ARCELORMITTAL", "sub": "Estagiária de Dados (CPGC)", "desc": "Pipelines de dados e tradução técnica no Centro de Pesquisa.", "date": "2019" }
+          ]
+        },
+        {
+          "category": "Operações Portuárias & Comex",
+          "items": [
+            { "title": "IFES / PORTO DE VITÓRIA", "sub": "Técnico em Portos", "desc": "Gestão de terminais e logística portuária.", "date": "2026" },
+            { "title": "JUCEES", "sub": "Tradutora Juramentada", "desc": "Certificação oficial para tradução técnica de Espanhol.", "date": "2026" }
+          ]
+        }
+      ]
+    },
+    "en": {
+      "role": "DATA SCIENTIST | FOREIGN TRADE & PORT LOGISTICS",
+      "sections": [
+        {
+          "category": "Data & Industrial Logistics",
+          "items": [
+            { "title": "VALE", "sub": "Data Analyst Intern", "desc": "Data intelligence for railway and port logistics.", "date": "2018-2019" },
+            { "title": "ARCELORMITTAL", "sub": "Data Intern (CPGC)", "desc": "Data pipelines and technical translation at R&D Center.", "date": "2019" }
+          ]
+        },
+        {
+          "category": "Port Operations & Global Trade",
+          "items": [
+            { "title": "PORT OF VITÓRIA", "sub": "Port Technician", "desc": "Terminal management and port logistics training.", "date": "2026" },
+            { "title": "JUCEES", "sub": "Sworn Translator", "desc": "Official certification for Spanish technical translation.", "date": "2026" }
+          ]
+        }
+      ]
+    }
+  }
+}
