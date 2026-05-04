@@ -15,24 +15,31 @@ body {
     overflow-x: hidden;
 }
 
-/* Header Fixo com Efeito Glass */
 .fixed-header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
-    background: rgba(0, 8, 20, 0.7);
+    z-index: 9999;
+    background: rgba(0, 8, 20, 0.85);
     backdrop-filter: blur(25px);
     border-bottom: 1px solid var(--border);
-    padding: 40px 20px;
+    padding: 30px 0;
     text-align: center;
+}
+
+.user-name {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    color: var(--primary);
+    font-weight: 600;
 }
 
 #txt-role {
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: var(--subtext);
     margin: 0;
     max-width: 900px;
@@ -40,10 +47,9 @@ body {
     line-height: 1.6;
 }
 
-/* Scroll de Conteúdo */
 .content-scroll {
-    margin-top: 200px; /* Compensa o header fixo */
-    padding: 60px 20px;
+    margin-top: 200px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
