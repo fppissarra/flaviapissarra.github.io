@@ -1,38 +1,39 @@
 {
   "translations": {
     "pt": {
-      "name": "Flávia Porcu Pissarra",
-      "role": "Data Scientist | Comércio Exterior & Logística Portuária",
-      "email": "flavia.pissarra@email.com",
-      "linkedin": "linkedin.com/in/fpissarra",
+      "name": "Flávia P. Pissarra",
+      "role": "Operação Portuária | Logística & Dados",
+      "email": "fppissarra@gmail.com",
+      "linkedin": "linkedin.com/in/fppissarra",
+      "objective": "Candidata ao PFP da Vale. Foco na integração ferrovia-navio e fluxo logístico no Porto de Tubarão.",
       "sections": {
         "port": {
-          "title": "Logística Portuária & Comex",
+          "title": "Operação & Logística",
           "items": [
-            { "h": "Transição de Carreira", "s": "Logística e Portos", "d": "2026", "p": "Foco em operações portuárias em Vitória/Serra, Incoterms e otimização de fluxos de exportação." },
-            { "h": "JUCEES", "s": "Tradutora Juramentada (Espanhol)", "d": "2026", "p": "Preparação para certificação oficial em documentação internacional e trâmites alfandegários." }
+            { "h": "Logística Ferrovia-Navio", "s": "Porto de Tubarão", "d": "2026", "p": "Foco em carga, descarga e fluxos logísticos operacionais via CCO." },
+            { "h": "Sistemas Industriais", "s": "Domínio SAP", "d": "Ativo", "p": "Gestão de indicadores, SAP (módulos operacionais) e monitoramento de ativos." }
           ]
         },
         "languages": {
-          "title": "Idiomas & LQA",
+          "title": "Interface Técnica (C2)",
           "items": [
-            { "h": "CTecL: Lab de Tradução", "s": "Coordenadora / Lead Linguist", "d": "2023 - Atualmente", "p": "Gestão de pesquisa em IA e Tradução Poética. Avaliação de 50k+ amostras para benchmarks de LLMs." },
-            { "h": "Proficiência C2", "s": "Inglês & Espanhol", "d": "Certificada", "p": "Fluência avançada para negociações técnicas e comunicação intercultural de alto nível." }
+            { "h": "Apoio à Atracação", "s": "Inglês/Espanhol Fluentes", "d": "Certificada", "p": "Interface técnica com tripulações estrangeiras e suporte em procedimentos portuários." },
+            { "h": "Instrutora Técnica", "s": "ESL Industrial", "d": "2024-2026", "p": "Capacitação de supervisores da Vale/Arcelor em vocabulário de operação e segurança." }
           ]
         },
         "data": {
-          "title": "Ciência de Dados & Tech",
+          "title": "Vivência Industrial",
           "items": [
-            { "h": "ArcelorMittal", "s": "Cientista de Dados", "d": "2019", "p": "Engenharia de dados industriais e criação de dashboards estratégicos para logística de aço." },
-            { "h": "Vale", "s": "Cientista de Dados", "d": "2018", "p": "Análise estatística para otimização de operações ferroviárias e integração de dados portuários." }
+            { "h": "Vale (Estágio)", "s": "Máquinas de Via & Vagões", "d": "2018", "p": "Acompanhamento técnico em oficina e monitoramento de carga/descarga no Porto." },
+            { "h": "ArcelorMittal", "s": "Pátio de Bobinas", "d": "2019", "p": "Atuação na Gerência de Controle da Produção e conferência de movimentação de carga." }
           ]
         },
         "education": {
-          "title": "Formação Acadêmica",
+          "title": "Formação & Certificações",
           "items": [
-            { "h": "Pós-Graduação em Gestão", "s": "IFES Cefor", "d": "2025", "p": "Especialização em Gestão em Educação Especial na Perspectiva Inclusiva." },
-            { "h": "Licenciatura em Letras", "s": "IFES Vitória", "d": "2023", "p": "Formação em linguística aplicada e processos comunicativos." },
-            { "h": "Técnico em Informática", "s": "IFES Serra", "d": "2018", "p": "Base técnica sólida em desenvolvimento de sistemas e lógica de programação." }
+            { "h": "Técnico em Portos", "s": "IFES Cariacica", "d": "Início 2026.2", "p": "Foco em infraestrutura e gestão portuária." },
+            { "h": "Técnico em Informática", "s": "IFES Serra", "d": "Concluído", "p": "Sólida base em análise de dados e sistemas." },
+            { "h": "Brigada Vale", "s": "Bombeiros Vale", "d": "Certificada", "p": "Rigorosa observância às normas de segurança (SSMA)." }
           ]
         }
       }
