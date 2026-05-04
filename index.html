@@ -3,77 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Portfólio</title>
-    <!-- Carregamento do estilo perolado centralizado no core -->
+    <title>Flávia Pissarra | Portfólio</title>
     <link rel="stylesheet" href="core/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Local onde o header modular será injetado -->
-    <div id="header-placeholder"></div>
-    
-    <!-- Script que controla a tradução, a injeção do header e o PDF -->
+    <div class="app-layout">
+        <aside class="identity-col" id="header-placeholder">
+            <!-- Dinâmico: Nome, Contatos, LinkedIn -->
+        </aside>
+
+        <main class="experience-col">
+            <div class="bento-grid">
+                <section class="pearl-card" id="port-content"></section>
+                <section class="pearl-card" id="languages-content"></section>
+                <section class="pearl-card" id="data-content"></section>
+                <section class="pearl-card" id="education-content"></section>
+            </div>
+            
+            <footer class="print-hide">
+                <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
+            </footer>
+        </main>
+    </div>
+
     <script src="core/main.js"></script>
-
-    <main class="container">
-        
-        <!-- Coluna 1: Histórico Industrial (Vale e Arcelor) -->
-        <section class="project-card">
-            <span class="category-label" data-i18n="cat_logistics">Logística & Dados Industriais</span>
-            
-            <div class="exp-item">
-                <small>2018 — 2019</small>
-                <h2>VALE</h2>
-                <p><strong data-i18n="vale_title">Estagiária de Análise de Dados</strong></p>
-                <p data-i18n="vale_desc">Suporte à inteligência de dados aplicada à logística ferroviária e operações portuárias.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 25px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 15px;">
-                <small>2019</small>
-                <h2>ARCELORMITTAL</h2>
-                <p><strong data-i18n="arcelor_title">Estagiária de Dados (CPGC)</strong></p>
-                <p data-i18n="arcelor_desc">Atuação no Centro de Pesquisa com foco em pipelines de dados e tradução técnica.</p>
-            </div>
-        </section>
-
-        <!-- Coluna 2: Linguística e IA -->
-        <section class="project-card">
-            <span class="category-label" data-i18n="cat_nlp">Tecnologia de Linguagem & NLP</span>
-            <div class="exp-item">
-                <small>2020 — 2024</small>
-                <h2>IFES (LAB CTECL)</h2>
-                <p><strong data-i18n="nlp_title">Pesquisadora de Dados de IA</strong></p>
-                <p data-i18n="nlp_desc">Curadoria de datasets para LLMs e pesquisa em Linguística Computacional.</p>
-            </div>
-        </section>
-
-        <!-- Coluna 3: Objetivos 2026 (Portos, Comex e JUCEES) -->
-        <section class="project-card">
-            <span class="category-label" data-i18n="cat_maritime">Operações Portuárias & Comex</span>
-            
-            <div class="exp-item">
-                <small>2026</small>
-                <h2>IFES / PORTO DE VITÓRIA</h2>
-                <p><strong data-i18n="port_title">Curso Técnico em Portos</strong></p>
-                <p data-i18n="port_desc">Capacitação para atuação direta em logística e gestão de terminais.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 20px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 10px;">
-                <small>2026</small>
-                <h2>COMEX SPECIALIZATION</h2>
-                <p><strong data-i18n="comex_title">Formação em Comércio Exterior</strong></p>
-                <p data-i18n="comex_desc">Estudo de fluxos aduaneiros e regulamentações de importação/exportação.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 20px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 10px;">
-                <small>LATE 2026</small>
-                <h2>JUCEES (EXAME)</h2>
-                <p><strong data-i18n="jucees_title">Tradutora Juramentada</strong></p>
-                <p data-i18n="jucees_desc">Certificação oficial para tradução técnica e legal de Espanhol.</p>
-            </div>
-        </section>
-
-    </main>
 </body>
 </html>
