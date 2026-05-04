@@ -3,3 +3,10 @@
     border-top: 1px dotted rgba(0,0,0,0.1); 
     padding-top: 15px; 
 }
+
+@media print {
+    body { background: white !important; color: black !important; font-family: Arial, sans-serif; }
+    .container { display: block !important; }
+    .project-card { border: none !important; box-shadow: none !important; margin-bottom: 20px; }
+    .lang-switcher, .cv-button { display: none !important; } /* Esconde o que não é dado técnico */
+}
