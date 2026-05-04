@@ -2,20 +2,61 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>BI Hub | Flávia P. Pissarra</title>
-    <link rel="stylesheet" href="/core/style.css">
-    <script src="/core/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Flávia P. Pissarra</title>
+    <link rel="stylesheet" href="core/style.css?v=2026">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .hub-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            border-top: 6px solid #006666;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 350px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-card h2 { color: #006666; margin-bottom: 15px; }
+        .project-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 25px; }
+    </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <div class="app-layout" style="flex-direction: column; align-items: center; justify-content: center;">
+        <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color:#006666; font-size: 2.5rem;">Flávia P. Pissarra</h1>
+            <p style="font-weight: 600; color: #1e293b;">Selecione o módulo para visualização</p>
+        </header>
 
-    <main class="container">
-        <!-- Card PortoVix -->
-        <a href="portovix/index.html" class="project-card">
-            <span class="category-label">MARITIME LOGISTICS</span>
-            <h2>PortoVix Dashboard</h2>
-            <p>Inteligência de dados aplicada à movimentação portuária e logística marítima.</p>
-        </a>
-    </main>
+        <div class="hub-container">
+            <!-- Link para o Projeto de Currículo Portuário -->
+            <a href="curriculo.html" class="project-card">
+                <h2>Operação Portuária</h2>
+                <p>Currículo estratégico focado em Logística, SAP e fluxo ferrovia-navio no Porto de Tubarão.</p>
+                <span class="mop-btn" style="display:inline-block; width: auto; padding: 10px 25px;">Acessar Módulo</span>
+            </a>
+
+            <!-- Link para o Projeto de BI -->
+            <a href="bi.html" class="project-card">
+                <h2>BI & Data Analytics</h2>
+                <p>Dashboards operacionais, análise de KPIs industriais e tratamento de dados complexos.</p>
+                <span class="mop-btn" style="display:inline-block; width: auto; padding: 10px 25px;">Acessar Módulo</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
