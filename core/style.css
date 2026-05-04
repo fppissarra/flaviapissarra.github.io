@@ -1,12 +1,84 @@
-.spacer { 
-    margin-top: 20px; 
-    border-top: 1px dotted rgba(0,0,0,0.1); 
-    padding-top: 15px; 
+/* --- 1. ESTILO DO SITE (VISUAL PEROLADO) --- */
+body {
+    background-color: #f4f1ef; /* Fundo perolado/creme */
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 100px 40px 40px; /* Espaço para o header fixo */
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(244, 241, 239, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.project-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.category-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    border-bottom: 1px solid #eee;
+    display: block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* --- 2. ESTILO DE IMPRESSÃO (O CURRÍCULO ATS) --- */
 @media print {
-    body { background: white !important; color: black !important; font-family: Arial, sans-serif; }
-    .container { display: block !important; }
-    .project-card { border: none !important; box-shadow: none !important; margin-bottom: 20px; }
-    .lang-switcher, .cv-button { display: none !important; } /* Esconde o que não é dado técnico */
+    @page { margin: 1.5cm; size: A4; }
+    
+    /* Remove o estilo perolado para economizar tinta e ser lido por robôs */
+    body { background: white !important; color: black !important; font-size: 11pt; }
+    
+    .fixed-header { position: static; border-bottom: 2px solid #000; padding: 0 0 10px 0; }
+    
+    /* Esconde botões e links de navegação no PDF */
+    .lang-switcher, .cv-button, .user-contact a:not([href^="mailto"]):not([href*="linkedin"]) {
+        display: none !important;
+    }
+
+    .container {
+        display: block !important; /* ATS precisa de leitura vertical/linear */
+        padding: 0 !important;
+    }
+
+    .project-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 10px 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .category-label {
+        color: black !important;
+        font-weight: bold;
+        border-bottom: 1px solid #000 !important;
+        margin-top: 20px !important;
+    }
+    
+    /* Organização de Experiência: Empresa na esquerda, Data na direita */
+    .exp-item { display: block; margin-bottom: 15px; }
+    .exp-item h2 { font-size: 12pt; display: inline; }
+    .exp-item small { float: right; font-weight: bold; }
 }
