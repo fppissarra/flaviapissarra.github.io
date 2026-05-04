@@ -22,8 +22,11 @@ const experiences = [
     }
 ];
 
+// Função para renderizar o conteúdo original (em Inglês)
 function render() {
     const container = document.getElementById('experience-container');
+    if (!container) return;
+
     container.innerHTML = experiences.map(exp => `
         <div class="glass-box">
             <span class="section-label" data-translate>${exp.category}</span>
@@ -37,22 +40,37 @@ function render() {
     `).join('');
 }
 
+// Função de tradução que lida com erros de API
 async function translateAll(lang) {
     const elements = document.querySelectorAll('[data-translate]');
+    
+    // Mostra um feedback visual simples se quiser, ou apenas processa
     for (let el of elements) {
         const text = el.innerText;
         if (lang === 'en') continue; 
+
         try {
-            const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${lang}&dt=t&q=${encodeURI(text)}`);
+            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${lang}&dt=t&q=${encodeURIComponent(text)}`;
+            const response = await fetch(url);
             const json = await response.json();
-            el.innerText = json[0][0][0];
-        } catch (e) { console.error("Error:", e); }
+            if (json && json[0] && json[0][0]) {
+                el.innerText = json[0][0][0];
+            }
+        } catch (e) {
+            console.warn("Translation service unavailable. Staying in English.", e);
+        }
     }
 }
 
+// Função chamada pelos botões
 async function updatePortfolio(lang) {
-    render(); 
-    if (lang !== 'en') await translateAll(lang);
+    render(); // Reseta para o original antes de traduzir
+    if (lang === 'pt') {
+        await translateAll('pt');
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => render());
+// Inicializa a página
+document.addEventListener('DOMContentLoaded', () => {
+    render();
+});
