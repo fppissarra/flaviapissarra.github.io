@@ -1,114 +1,40 @@
 {
-  "personal": {
-    "name": "Flávia Pissarra",
-    "email": "flaviapissarra@gmail.com",
-    "linkedin": "linkedin.com/in/fppissarra",
-    "github": "github.com/fppissarra",
-    "location": "Serra, ES - Brasil"
-  },
   "translations": {
     "pt": {
-      "role": "Cientista de Dados | Comércio Exterior & Logística Portuária",
-      "summary": "Profissional com sólida base tecnológica em análise de dados (Python/SQL) e 11 anos de experiência em precisão linguística. Transição focada em otimização de fluxos logísticos, Comex e documentação técnica internacional. Candidata ao exame de Tradutora Juramentada (JUCEES) em 2026.",
-      "sections": [
-        {
-          "category": "Experiência em Dados & Indústria",
-          "items": [
-            {
-              "title": "ArcelorMittal",
-              "sub": "Cientista de Dados / Tradutora Técnica",
-              "date": "2019",
-              "desc": "Automação de pipelines de dados industriais (SQL/Python) e dashboards em Power BI. Atuação como tradutora líder para delegações técnicas do México e Canadá, garantindo precisão em protocolos de engenharia."
-            },
-            {
-              "title": "Vale",
-              "sub": "Cientista de Dados",
-              "date": "2018",
-              "desc": "Suporte à inteligência de dados aplicada à logística ferroviária e operações portuárias, com foco em KPIs operacionais e integridade de dados."
-            }
-          ]
-        },
-        {
-          "category": "Tecnologia de Linguagem & IA",
-          "items": [
-            {
-              "title": "CTecL (Lab de Tradução Assistida por IA)",
-              "sub": "Linguista Computacional Líder",
-              "date": "2023 - Presente",
-              "desc": "Coordenação de pesquisa em NLP e LLMs. Otimização de +50k amostras linguísticas para tradução automática e criação de datasets EN/ES/PT de alta fidelidade."
-            },
-            {
-              "title": "Number One Inglês Completo",
-              "sub": "Tradutora Sênior & MTPE",
-              "date": "2015 - Presente",
-              "desc": "Especialista em Pós-Edição de Tradução Automática (MTPE) e Garantia de Qualidade Linguística (LQA) para setores industriais de larga escala."
-            }
-          ]
-        },
-        {
-          "category": "Educação & Certificações",
-          "items": [
-            { "title": "IFES", "sub": "Pós-Graduação em Gestão de Educação Especial", "date": "2025", "desc": "" },
-            { "title": "IFES", "sub": "Licenciatura em Letras (Português/Inglês)", "date": "2023", "desc": "" },
-            { "title": "IFES", "sub": "Técnico em Informática", "date": "2018", "desc": "" }
-          ]
-        }
-      ],
-      "skills": {
-        "tech": "Python (Pandas, NumPy), SQL, Power BI (DAX), NLP, Automação de Processos.",
-        "languages": "Português (Nativo); Inglês (C2 - TESOL); Espanhol (C2); Italiano (A2); Japonês (N5); Coreano (TOPIK 1)."
-      }
-    },
-    "en": {
+      "name": "Flávia Pissarra",
       "role": "Data Scientist | Foreign Trade & Port Logistics",
-      "summary": "Data-driven professional with a strong background in technical infrastructure and 11 years of linguistic precision. Pivoting toward maritime logistics and international trade. Preparing for the Spanish Sworn Translator (JUCEES) exam in late 2026.",
-      "sections": [
-        {
-          "category": "Data & Industrial Experience",
+      "linkedin": "linkedin.com/in/fpissarra",
+      "email": "flavia.pissarra@email.com",
+      "sections": {
+        "port": {
+          "title": "Port Logistics & Comex",
           "items": [
-            {
-              "title": "ArcelorMittal",
-              "sub": "Data Scientist / Technical Translator",
-              "date": "2019",
-              "desc": "Engineered automated industrial data pipelines (SQL/Python) and Power BI dashboards. Lead translator for Mexican and Canadian technical delegations."
-            },
-            {
-              "title": "Vale",
-              "sub": "Data Scientist",
-              "date": "2018",
-              "desc": "Data intelligence support for railway logistics and port operations, focusing on operational KPIs and data integrity."
-            }
+            { "h": "Transição de Carreira", "s": "Logística & Comércio Exterior", "d": "2026", "p": "Foco em operações portuárias (Vitória/Serra), Incoterms 2020 e otimização de fluxo de carga." },
+            { "h": "JUCEES", "s": "Tradutora Juramentada (em preparação)", "d": "2026", "p": "Especialização em documentação internacional e trâmites alfandegários para o mercado global." }
           ]
         },
-        {
-          "category": "Language Tech & AI",
+        "languages": {
+          "title": "Languages & Localization",
           "items": [
-            {
-              "title": "CTecL (AI-Assisted Translation Lab)",
-              "sub": "Lead Computational Linguist",
-              "date": "2023 - Present",
-              "desc": "Coordinating NLP and LLM research. Optimized 50k+ linguistic samples for machine translation and architected high-fidelity EN/ES/PT datasets."
-            },
-            {
-              "title": "Number One Inglês Completo",
-              "sub": "Senior Translator & MTPE",
-              "date": "2015 - Present",
-              "desc": "Expert in Machine Translation Post-Editing (MTPE) and Linguistic Quality Assurance (LQA) for large-scale industrial sectors."
-            }
+            { "h": "CTecL Lab", "s": "Lead Computational Linguist", "d": "2023 - Pres.", "p": "Coordenação de pesquisa em IA e Tradução Poética. Avaliação de 50k+ amostras linguísticas para benchmarks de LLMs." },
+            { "h": "Proficiência C2", "s": "EN / ES / PT", "d": "Certificada", "p": "Fluência avançada comprovada para negociações técnicas e comunicação intercultural de alto nível." }
           ]
         },
-        {
-          "category": "Education & Certifications",
+        "data": {
+          "title": "Data Science & Tech",
           "items": [
-            { "title": "IFES", "sub": "Postgraduate in Special Education Management", "date": "2025", "desc": "" },
-            { "title": "IFES", "sub": "Licentiate Degree, Letters", "date": "2023", "desc": "" },
-            { "title": "IFES", "sub": "Technical Diploma, Computer Science", "date": "2018", "desc": "" }
+            { "h": "ArcelorMittal", "s": "Data Scientist", "d": "2019", "p": "Desenvolvimento de dashboards estratégicos em Power BI e engenharia de dados aplicada à logística de aço." },
+            { "h": "Vale", "s": "Data Scientist", "d": "2018", "p": "Análise estatística para otimização de operações ferroviárias e integração de dados portuários." }
+          ]
+        },
+        "education": {
+          "title": "Education",
+          "items": [
+            { "h": "IFES", "s": "Pós-Graduação em Gestão Especial", "d": "2025", "p": "Foco em práticas inclusivas e gestão educacional." },
+            { "h": "IFES", "s": "Licenciatura em Letras", "d": "2023", "p": "Formação em linguística aplicada e comunicação." },
+            { "h": "IFES", "s": "Técnico em Informática", "d": "2018", "p": "Base sólida em lógica de programação e infraestrutura." }
           ]
         }
-      ],
-      "skills": {
-        "tech": "Python (Pandas, NumPy), SQL, Power BI (DAX), NLP, Process Automation.",
-        "languages": "Portuguese (Native); English (C2 - TESOL); Spanish (C2); Italian (A2); Japanese (N5); Korean (TOPIK 1)."
       }
     }
   }
