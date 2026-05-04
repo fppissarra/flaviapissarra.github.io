@@ -1,78 +1,66 @@
 :root {
-    --vale-teal: #006666;
-    --industrial-gray: #f1f5f9;
-    --navy: #1e293b;
+    --vale-teal: #006666; /* Identidade industrial portuária */
+    --bg-gray: #f1f5f9;
+    --text-navy: #1e293b;
+    --slate: #64748b;
     --white: #ffffff;
 }
 
 * { box-sizing: border-box; }
+
 body { 
     font-family: 'Inter', sans-serif; 
-    background-color: var(--industrial-gray); 
-    color: var(--navy); 
+    background-color: var(--bg-gray); 
+    color: var(--text-navy); 
     margin: 0; 
     line-height: 1.6;
 }
 
-.app-layout { display: flex; min-height: 100vh; }
-
-/* Sidebar Industrial */
-.identity-col {
-    width: 25%;
-    min-width: 300px;
-    background: var(--white);
-    padding: 60px 40px;
-    border-right: 4px solid var(--vale-teal);
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 0;
-    height: 100vh;
+/* Estrutura do Hub e Cards */
+.hub-body { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 60px 20px; 
 }
 
-.identity-col h1 { font-size: 1.8rem; color: var(--vale-teal); margin-bottom: 5px; }
-.tagline { font-weight: 600; font-size: 0.9rem; color: #64748b; margin-bottom: 30px; }
-.contacts p { font-size: 0.85rem; margin: 10px 0; }
-.contacts a { color: inherit; text-decoration: none; font-weight: 600; }
-
-/* Grid de Conteúdo */
-.experience-col { flex: 1; padding: 60px 5%; }
-.bento-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 30px; 
+.projects-stack {
+    display: grid;
+    grid-template-columns: 1fr; /* Empilhamento vertical */
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
 }
 
-.pearl-card {
+.project-card {
     background: var(--white);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     border-top: 5px solid var(--vale-teal);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
 }
 
-.pearl-card h3 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.project-card h2 {
     color: var(--vale-teal);
-    margin-bottom: 25px;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 10px;
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
 }
 
-.exp-item { margin-bottom: 20px; }
-.exp-item h4 { margin: 5px 0; font-size: 1.1rem; color: var(--navy); }
-.exp-item small { color: #94a3b8; font-weight: 700; font-size: 0.75rem; }
-.exp-item p { font-size: 0.85rem; color: #475569; }
-
-/* Botão Operacional */
+/* Botões e Ações */
 .mop-btn {
-    margin-top: auto;
     background: var(--vale-teal);
-    color: white;
+    color: var(--white);
     border: none;
-    padding: 15px;
+    padding: 12px 25px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
@@ -80,10 +68,5 @@ body {
 }
 
 .mop-btn:hover { background: #004d4d; }
-
-@media (max-width: 1024px) {
-    .app-layout { flex-direction: column; }
-    .identity-col { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 4px solid var(--vale-teal); }
-}
 
 @media print { .print-hide { display: none; } }
