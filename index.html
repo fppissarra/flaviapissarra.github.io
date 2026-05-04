@@ -7,20 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-pearl: #fdfcf9;
-            --pearl-gradient: linear-gradient(135deg, #fdfcf9 0%, #f5f2ed 100%);
-            --glass-white: rgba(255, 255, 255, 0.4);
-            --border-pearl: rgba(255, 255, 255, 0.8);
-            --text-main: #4a4540;
-            --text-sub: #8c857e;
+            --bg-deep-pearl: #d4d0c9; 
+            --text-main: #2c1e1a;
+            --text-sub: #5d5752;
+            --iridescent: linear-gradient(45deg, #b2ebf2, #f8bbd0, #fff59d, #b3e5fc);
         }
 
         body {
-            background: var(--pearl-gradient) !important; /* Força o fundo perolado */
+            background: radial-gradient(circle at center, #ece9e4, var(--bg-deep-pearl)) !important;
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             margin: 0;
-            overflow-x: hidden;
             min-height: 100vh;
         }
 
@@ -30,118 +27,147 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            background: rgba(253, 252, 249, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-pearl);
-            padding: 40px 0;
+            background: rgba(236, 233, 228, 0.92);
+            backdrop-filter: blur(25px);
+            border-bottom: 2px solid;
+            border-image: var(--iridescent) 1;
+            padding: 45px 0;
             text-align: center;
         }
 
         .user-name {
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
+            font-size: 2.4rem;
+            margin: 0 0 12px 0;
             color: var(--text-main);
             font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
         #txt-role {
             font-weight: 400;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
             color: var(--text-sub);
             margin: 0;
-            max-width: 850px;
+            max-width: 900px;
             display: inline-block;
+            line-height: 1.6;
         }
 
-        .content-scroll {
-            margin-top: 240px;
-            padding: 20px;
+        .content-wrapper {
+            margin-top: 280px;
+            padding: 0 50px 80px 50px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+        }
+
+        #experience-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 35px;
+            width: 100%;
+            max-width: 1250px;
         }
 
         .glass-box {
-            background: var(--glass-white);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-pearl);
-            border-radius: 24px;
-            padding: 40px;
-            width: 100%;
-            max-width: 720px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(15px);
+            border: 2px solid; 
+            border-image: var(--iridescent) 1;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+
+        .glass-box:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
         }
 
         .section-label {
-            color: var(--text-sub);
+            color: #8d807a;
             font-size: 0.7rem;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
         }
 
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            margin: 15px 0 5px 0;
+        .exp-title { 
+            font-size: 1.35rem; 
+            font-weight: 600; 
+            margin-bottom: 8px;
+            color: #1a1210;
         }
 
-        .exp-title { font-size: 1.4rem; font-weight: 600; }
-        .exp-period { color: #b0aaa3; font-size: 0.85rem; }
-
-        .company-tag {
-            color: #8c857e;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .exp-period { 
+            color: #7d756f; 
+            font-size: 0.85rem; 
             margin-bottom: 20px;
             display: block;
         }
 
+        .company-tag {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #4a4541;
+            border-left: 4px solid #f8bbd0;
+            padding-left: 12px;
+        }
+
         .details-text {
             line-height: 1.8;
-            color: #5e5852;
-            font-size: 1.05rem;
+            color: #2c1e1a;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 1000px) {
+            #experience-container { grid-template-columns: 1fr; }
+            .content-wrapper { margin-top: 350px; }
         }
     </style>
 </head>
 <body>
 
     <header class="fixed-header">
-        <div class="header-content">
-            <h1 class="user-name">Flávia P. Pissarra</h1>
-            <p id="txt-role">
-                Data Scientist | Foreign Trade & Port Logistics | Multilingual | Specialized in Industrial Data & Technical Translation
-            </p>
-        </div>
+        <h1 class="user-name">Flávia Porcu Pissarra</h1>
+        <p id="txt-role">
+            Data Scientist | Foreign Trade & Port Logistics | Multilingual | Specialized in Industrial Data & Technical Translation
+        </p>
     </header>
 
-    <main id="experience-container" class="content-scroll"></main>
+    <div class="content-wrapper">
+        <main id="experience-container"></main>
+    </div>
 
     <script>
         const experiences = [
             {
-                category: "Industry, Logistics & Data Intelligence",
+                category: "Logistics & Data",
                 title: "Data Analyst & Technical Interpreter",
                 period: "2018 — 2019",
                 company: "Vale | ArcelorMittal (CPGC)",
-                details: "Optimized industrial logistics at ArcelorMittal's CPGC through automated SQL/Python pipelines. Acted as a technical interpreter, ensuring precise communication of engineering and safety protocols between international teams."
+                details: "Optimized industrial logistics at ArcelorMittal through automated SQL/Python pipelines. Ensured technical precision in engineering protocols between international teams."
             },
             {
-                category: "Research & Language Technology (NLP)",
-                title: "Computational Linguistics & MTPE Lead",
+                category: "NLP & Research",
+                title: "Computational Linguistics Lead",
                 period: "2020 — 2023",
                 company: "Ifes / Lab CTecL (FAPES)",
-                details: "Directed research in Machine Translation Post-Editing (MTPE) to ensure technical and contractual accuracy. Developed Python scripts for processing large-scale technical and port documentation for global markets."
+                details: "Directed MTPE research for technical and contractual accuracy. Developed Python-based tools for processing large-scale maritime and industrial documentation."
             },
             {
-                category: "Global Communication & Maritime Support",
-                title: "Specialized Training & Intercultural Mediation",
+                category: "Maritime Support",
+                title: "Specialized Training & Mediation",
                 period: "2019 — 2026",
                 company: "Maritime Sector | JUCEES",
-                details: "Provided specialized Business English training for offshore professionals and ship crews. Managing technical translation and intercultural mediation, while preparing for Sworn Translator certification (JUCEES)."
+                details: "Specialized Business English training for offshore professionals and crew members. Managing technical translation and preparing for Sworn Translator certification."
             }
         ];
 
@@ -150,10 +176,8 @@
             container.innerHTML = experiences.map(exp => `
                 <article class="glass-box">
                     <span class="section-label">${exp.category}</span>
-                    <div class="exp-header">
-                        <span class="exp-title">${exp.title}</span>
-                        <span class="exp-period">${exp.period}</span>
-                    </div>
+                    <span class="exp-title">${exp.title}</span>
+                    <span class="exp-period">${exp.period}</span>
                     <span class="company-tag">${exp.company}</span>
                     <p class="details-text">${exp.details}</p>
                 </article>
