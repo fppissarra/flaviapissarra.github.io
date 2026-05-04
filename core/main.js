@@ -1,47 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetch('core/data.json')
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             const resume = data.translations.pt;
             
-            // Injeção da Sidebar (Nome e Contatos)
-            const sidebar = document.querySelector('.identity-col');
-            sidebar.innerHTML = `
-                <div class="profile-info">
-                    <h1>${resume.name}</h1>
-                    <p class="role-text">${resume.role}</p>
-                    <nav class="links">
-                        <a href="mailto:${resume.email}">E-mail</a>
-                        <a href="https://${resume.linkedin}" target="_blank">LinkedIn</a>
-                    </nav>
-                </div>
-                <div class="sidebar-action print-hide">
-                    <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
+            // Renderiza Sidebar
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            headerPlaceholder.innerHTML = `
+                <h1 style="font-weight:200; font-size:2.5rem; margin-bottom:10px;">${resume.name}</h1>
+                <p style="color:#64748b; margin-bottom:30px;">${resume.role}</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <a href="mailto:${resume.email}" style="text-decoration:none; color:var(--navy); font-size:0.9rem;">E-mail</a>
+                    <a href="https://${resume.linkedin}" target="_blank" style="text-decoration:none; color:var(--navy); font-size:0.9rem;">LinkedIn</a>
                 </div>
             `;
 
-            // Injeção dos Cards (Ordem: Porto, Idiomas, Data, Education)
+            // Renderiza Seções na ordem PORT - LANGUAGES - DATA
             renderSection('port-content', resume.sections.port);
             renderSection('languages-content', resume.sections.languages);
             renderSection('data-content', resume.sections.data);
             renderSection('education-content', resume.sections.education);
-        })
-        .catch(error => console.error('Erro ao carregar dados:', error));
+        });
 });
 
-function renderSection(containerId, sectionData) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    let html = `<h3>${sectionData.title}</h3>`;
-    sectionData.items.forEach(item => {
-        html += `
-            <div class="exp-item">
-                <small>${item.d} — ${item.s}</small>
-                <h4>${item.h}</h4>
-                <p>${item.p}</p>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
+function renderSection(id, section) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let itemsHtml = section.items.map(i => `
+        <div class="exp-item">
+            <small>${i.d} — ${i.s}</small>
+            <h4>${i.h}</h4>
+            <p>${i.p}</p>
+        </div>
+    `).join('');
+    el.innerHTML = `<h3>${section.title}</h3>${itemsHtml}`;
 }
