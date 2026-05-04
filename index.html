@@ -4,76 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flávia P. Pissarra | Portfólio</title>
-    <!-- Carregamento prioritário do CSS Perolado -->
+    <!-- Carregamento do estilo perolado centralizado no core -->
     <link rel="stylesheet" href="/core/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Local onde o header modular será injetado -->
     <div id="header-placeholder"></div>
-    <!-- Injeção ultra-rápida do Header -->
+    
+    <!-- Script que controla a tradução, a injeção do header e o PDF -->
     <script src="/core/main.js"></script>
 
     <main class="container">
         
-        <!-- Coluna 1: Experiência em Dados e Indústria -->
+        <!-- Coluna 1: Histórico Industrial (Vale e Arcelor) -->
         <section class="project-card">
-            <span class="category-label">Data & Industrial Logistics</span>
+            <span class="category-label" data-i18n="cat_logistics">Logística & Dados Industriais</span>
             
-            <!-- Experiência na Vale -->
             <div class="exp-item">
                 <small>2018 — 2019</small>
                 <h2>VALE</h2>
-                <p><strong>Estagiária de Análise de Dados</strong></p>
-                <p>Suporte à inteligência de dados aplicada à logística ferroviária e operações portuárias, focando na otimização de fluxos.</p>
+                <p><strong data-i18n="vale_title">Estagiária de Análise de Dados</strong></p>
+                <p data-i18n="vale_desc">Suporte à inteligência de dados aplicada à logística ferroviária e operações portuárias.</p>
             </div>
-        
-            <!-- Experiência na ArcelorMittal -->
+
             <div class="exp-item" style="margin-top: 25px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 15px;">
                 <small>2019</small>
                 <h2>ARCELORMITTAL</h2>
-                <p><strong>Estagiária de Análise de Dados (CPGC)</strong></p>
-                <p>Atuação no Centro de Pesquisa e Desenvolvimento (CPGC) com foco em pipelines de dados industriais e tradução técnica.</p>
+                <p><strong data-i18n="arcelor_title">Estagiária de Dados (CPGC)</strong></p>
+                <p data-i18n="arcelor_desc">Atuação no Centro de Pesquisa com foco em pipelines de dados e tradução técnica.</p>
             </div>
         </section>
 
-        <!-- Coluna 2: Linguagem e Tecnologia -->
+        <!-- Coluna 2: Linguística e IA -->
         <section class="project-card">
-            <span class="category-label">NLP & Technical Communication</span>
+            <span class="category-label" data-i18n="cat_nlp">Tecnologia de Linguagem & NLP</span>
             <div class="exp-item">
                 <small>2020 — 2024</small>
                 <h2>IFES (LAB CTECL)</h2>
-                <p><strong>Pesquisadora de Dados de IA</strong></p>
-                <p>Pesquisa em Linguística Computacional e curadoria de dados para LLMs.</p>
+                <p><strong data-i18n="nlp_title">Pesquisadora de Dados de IA</strong></p>
+                <p data-i18n="nlp_desc">Curadoria de datasets para LLMs e pesquisa em Linguística Computacional.</p>
             </div>
         </section>
 
-        <!-- Coluna 3: Visão de Futuro -->
+        <!-- Coluna 3: Objetivos 2026 (Portos, Comex e JUCEES) -->
         <section class="project-card">
-            <span class="category-label">Port Operations & Global Trade</span>
+            <span class="category-label" data-i18n="cat_maritime">Operações Portuárias & Comex</span>
             
-            <!-- Operações Portuárias -->
             <div class="exp-item">
                 <small>2026</small>
                 <h2>IFES / PORTO DE VITÓRIA</h2>
-                <p><strong>Curso Técnico em Portos</strong></p>
-                <p>Capacitação técnica para atuação direta em operações portuárias, logística e gestão de terminais.</p>
+                <p><strong data-i18n="port_title">Curso Técnico em Portos</strong></p>
+                <p data-i18n="port_desc">Capacitação para atuação direta em logística e gestão de terminais.</p>
             </div>
-        
-            <!-- Comércio Exterior -->
-            <div class="exp-item" style="margin-top: 25px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 15px;">
+
+            <div class="exp-item" style="margin-top: 20px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 10px;">
                 <small>2026</small>
                 <h2>COMEX SPECIALIZATION</h2>
-                <p><strong>Formação em Comércio Exterior</strong></p>
-                <p>Estudo de fluxos de importação/exportação e regulamentações aduaneiras para otimização logística.</p>
+                <p><strong data-i18n="comex_title">Formação em Comércio Exterior</strong></p>
+                <p data-i18n="comex_desc">Estudo de fluxos aduaneiros e regulamentações de importação/exportação.</p>
             </div>
-        
-            <!-- Tradução Juramentada -->
-            <div class="exp-item" style="margin-top: 25px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 15px;">
+
+            <div class="exp-item" style="margin-top: 20px; border-top: 1px dotted rgba(0,0,0,0.1); padding-top: 10px;">
                 <small>LATE 2026</small>
                 <h2>JUCEES (EXAME)</h2>
-                <p><strong>Tradutora Juramentada de Espanhol</strong></p>
-                <p>Certificação oficial para tradução de documentos internacionais, unindo a fluência C2 à documentação técnica portuária.</p>
+                <p><strong data-i18n="jucees_title">Tradutora Juramentada</strong></p>
+                <p data-i18n="jucees_desc">Certificação oficial para tradução técnica e legal de Espanhol.</p>
             </div>
         </section>
 
