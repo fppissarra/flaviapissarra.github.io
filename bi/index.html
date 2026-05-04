@@ -3,60 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Flávia P. Pissarra</title>
-    <link rel="stylesheet" href="core/style.css?v=2026">
+    <title>BI & Analytics | Flávia P. Pissarra</title>
+    <!-- Reaproveitando seu CSS core para manter o design -->
+    <link rel="stylesheet" href="../core/style.css?v=2026">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        .hub-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 50px;
-            flex-wrap: wrap;
-        }
+        /* Estilos específicos para manter o design do print */
+        .hub-body { background: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; }
+        .hub-container { display: flex; justify-content: center; gap: 40px; padding: 20px; flex-wrap: wrap; }
+        
         .project-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            border-top: 6px solid #006666;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-            width: 350px;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
+            background: white; padding: 60px 40px; border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); text-align: center;
+            transition: all 0.3s ease; width: 450px; cursor: pointer; border: none;
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        .project-card h2 { color: #006666; margin-bottom: 15px; }
-        .project-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 25px; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 45px rgba(0,0,0,0.1); }
+        .project-card h2 { color: #006666; font-size: 2rem; margin-bottom: 20px; }
+        .project-card p { color: #64748b; font-size: 1rem; line-height: 1.6; margin-bottom: 30px; }
+        .mop-btn-outline { color: #1e293b; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
+        .project-card:hover .mop-btn-outline { border-bottom: 2px solid #006666; }
+
+        /* Container do PowerBI (Escondido inicialmente) */
+        #bi-viewer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999; }
+        #bi-viewer iframe { width: 100%; height: 100%; border: none; }
+        .back-btn { position: absolute; top: 20px; left: 20px; z-index: 10000; background: #006666; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; border: none; font-weight: bold; }
     </style>
 </head>
-<body>
-    <div class="app-layout" style="flex-direction: column; align-items: center; justify-content: center;">
-        <header style="text-align: center; margin-bottom: 40px;">
-            <h1 style="color:#006666; font-size: 2.5rem;">Flávia P. Pissarra</h1>
-            <p style="font-weight: 600; color: #1e293b;">Selecione o módulo para visualização</p>
+<body class="hub-body">
+
+    <!-- Seção do HUB (O que aparece primeiro) -->
+    <div id="hub-selection">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 style="color: #006666; font-size: 3rem; margin-bottom: 10px;">Flávia P. Pissarra</h1>
+            <p style="color: #1e293b; font-weight: 600; font-size: 1.2rem;">Selecione o módulo para visualização</p>
         </header>
 
         <div class="hub-container">
-            <!-- Link para o Projeto de Currículo Portuário -->
-            <a href="curriculo.html" class="project-card">
-                <h2>Operação Portuária</h2>
-                <p>Currículo estratégico focado em Logística, SAP e fluxo ferrovia-navio no Porto de Tubarão.</p>
-                <span class="mop-btn" style="display:inline-block; width: auto; padding: 10px 25px;">Acessar Módulo</span>
-            </a>
+            <!-- Projeto 1 -->
+            <div class="project-card" onclick="openBI('SEU_LINK_DO_POWERBI_1')">
+                <h2>Logística Portuária</h2>
+                <p>Dashboard de monitoramento de fluxo ferrovia-navio e performance de pátio.</p>
+                <span class="mop-btn-outline">Acessar Módulo</span>
+            </div>
 
-            <!-- Link para o Projeto de BI -->
-            <a href="bi.html" class="project-card">
-                <h2>BI & Data Analytics</h2>
-                <p>Dashboards operacionais, análise de KPIs industriais e tratamento de dados complexos.</p>
-                <span class="mop-btn" style="display:inline-block; width: auto; padding: 10px 25px;">Acessar Módulo</span>
-            </a>
+            <!-- Projeto 2 -->
+            <div class="project-card" onclick="openBI('SEU_LINK_DO_POWERBI_2')">
+                <h2>Análise de Dados SAP</h2>
+                <p>Otimização de processos e KPIs industriais baseados em dados extraídos do SAP.</p>
+                <span class="mop-btn-outline">Acessar Módulo</span>
+            </div>
         </div>
     </div>
+
+    <!-- Container do Iframe (Só aparece no clique) -->
+    <div id="bi-viewer">
+        <button class="back-btn" onclick="closeBI()">← Voltar</button>
+        <iframe id="powerbi-frame" src="" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+
+    <script>
+        function openBI(url) {
+            document.getElementById('hub-selection').style.display = 'none';
+            const viewer = document.getElementById('bi-viewer');
+            const frame = document.getElementById('powerbi-frame');
+            
+            viewer.style.display = 'block';
+            frame.src = url;
+        }
+
+        function closeBI() {
+            document.getElementById('hub-selection').style.display = 'flex';
+            document.getElementById('bi-viewer').style.display = 'none';
+            document.getElementById('powerbi-frame').src = '';
+        }
+    </script>
 </body>
 </html>
