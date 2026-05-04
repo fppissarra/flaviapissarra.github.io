@@ -1,14 +1,17 @@
 :root {
     --vale-teal: #006666;
-    --industrial-gray: #f4f7f6;
-    --navy: #1a2a3a;
+    --industrial-gray: #f1f5f9;
+    --navy: #1e293b;
+    --white: #ffffff;
 }
 
-body {
-    background-color: var(--industrial-gray);
-    font-family: 'Inter', sans-serif;
-    color: var(--navy);
-    margin: 0;
+* { box-sizing: border-box; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--industrial-gray); 
+    color: var(--navy); 
+    margin: 0; 
+    line-height: 1.6;
 }
 
 .app-layout { display: flex; min-height: 100vh; }
@@ -17,50 +20,70 @@ body {
 .identity-col {
     width: 25%;
     min-width: 300px;
-    padding: 50px 30px;
-    background: white;
-    border-right: 3px solid var(--vale-teal);
+    background: var(--white);
+    padding: 60px 40px;
+    border-right: 4px solid var(--vale-teal);
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
-.identity-col h1 { font-size: 2rem; color: var(--vale-teal); margin-bottom: 5px; }
-.objective-text { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 20px 0; font-style: italic; }
+.identity-col h1 { font-size: 1.8rem; color: var(--vale-teal); margin-bottom: 5px; }
+.tagline { font-weight: 600; font-size: 0.9rem; color: #64748b; margin-bottom: 30px; }
+.contacts p { font-size: 0.85rem; margin: 10px 0; }
+.contacts a { color: inherit; text-decoration: none; font-weight: 600; }
 
-/* Cards de Operação */
-.experience-col { flex: 1; padding: 50px 5%; }
-.bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+/* Grid de Conteúdo */
+.experience-col { flex: 1; padding: 60px 5%; }
+.bento-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px; 
+}
 
 .pearl-card {
-    background: white;
-    border-radius: 8px;
+    background: var(--white);
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--vale-teal);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    border-top: 5px solid var(--vale-teal);
 }
 
 .pearl-card h3 {
-    text-transform: uppercase;
     font-size: 0.75rem;
+    text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--vale-teal);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
 }
 
-.exp-item { margin-bottom: 15px; }
-.exp-item h4 { margin: 2px 0; color: var(--navy); }
-.exp-item small { color: #94a3b8; font-weight: bold; }
-.exp-item p { font-size: 0.85rem; line-height: 1.4; color: #444; }
+.exp-item { margin-bottom: 20px; }
+.exp-item h4 { margin: 5px 0; font-size: 1.1rem; color: var(--navy); }
+.exp-item small { color: #94a3b8; font-weight: 700; font-size: 0.75rem; }
+.exp-item p { font-size: 0.85rem; color: #475569; }
 
+/* Botão Operacional */
 .mop-btn {
+    margin-top: auto;
     background: var(--vale-teal);
     color: white;
     border: none;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: auto;
+    transition: background 0.3s;
+}
+
+.mop-btn:hover { background: #004d4d; }
+
+@media (max-width: 1024px) {
+    .app-layout { flex-direction: column; }
+    .identity-col { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 4px solid var(--vale-teal); }
 }
 
 @media print { .print-hide { display: none; } }
