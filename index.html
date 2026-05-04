@@ -4,96 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flávia P. Pissarra | Portfólio</title>
-    <!-- Referências ao seu sistema modular na pasta /core -->
+    <!-- Carregamento prioritário do CSS Perolado -->
     <link rel="stylesheet" href="/core/style.css">
-    <script src="/core/main.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- O cabeçalho será injetado aqui pelo core/main.js -->
     <div id="header-placeholder"></div>
+    <!-- Injeção ultra-rápida do Header -->
+    <script src="/core/main.js"></script>
 
     <main class="container">
         
-        <!-- Coluna 1: Logística e Dados -->
+        <!-- Coluna 1: Experiência em Dados e Indústria -->
         <section class="project-card">
-            <span class="category-label">Logistics & Data Intelligence</span>
-            
+            <span class="category-label">Data & Industrial Logistics</span>
             <div class="exp-item">
-                <small>2018</small>
-                <h2>VALE</h2>
-                <p><strong>Data Analyst (Internship)</strong></p>
-                <p>Suporte em inteligência de dados aplicada à logística ferroviária e portuária.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 30px; border-top: 1px dotted #d4d0c9; padding-top: 20px;">
-                <small>2019</small>
-                <h2>ARCELORMITTAL (CPGC)</h2>
-                <p><strong>Data Analyst (Internship)</strong></p>
-                <p>Desenvolvimento de pipelines SQL/Python e tradução técnica para protocolos de engenharia.</p>
+                <small>2018 — 2019</small>
+                <h2>VALE / ARCELORMITTAL</h2>
+                <p><strong>Analista de Dados (Estágio)</strong></p>
+                <p>Aplicação de inteligência de dados em processos de logística ferroviária e portuária.</p>
             </div>
         </section>
 
-        <!-- Coluna 2: Linguística e Tecnologia -->
+        <!-- Coluna 2: Linguagem e Tecnologia -->
         <section class="project-card">
-            <span class="category-label">Language Technology & NLP</span>
-            
+            <span class="category-label">NLP & Technical Communication</span>
             <div class="exp-item">
-                <small>2020 — 2023</small>
-                <h2>FAPES/IFES (LAB CTECL)</h2>
-                <p><strong>Research & Outreach Fellow</strong></p>
-                <p>Pesquisa em Linguística Computacional e MTPE, unindo literatura e tecnologia.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 30px; border-top: 1px dotted #d4d0c9; padding-top: 20px;">
-                <small>2024</small>
-                <h2>IFES VITÓRIA</h2>
-                <p><strong>Linguista Computacional</strong></p>
-                <p>Foco no refinamento de modelos de linguagem (LLMs) para documentação industrial.</p>
+                <small>2020 — 2024</small>
+                <h2>IFES (LAB CTECL)</h2>
+                <p><strong>Pesquisadora de Dados de IA</strong></p>
+                <p>Pesquisa em Linguística Computacional e curadoria de dados para LLMs.</p>
             </div>
         </section>
 
-        <!-- Coluna 3: Setor Marítimo e Planos Futuros -->
+        <!-- Coluna 3: Visão de Futuro -->
         <section class="project-card">
-            <span class="category-label">Maritime Sector & Mediation</span>
-            
+            <span class="category-label">Port Strategy & Global Trade</span>
             <div class="exp-item">
-                <small>2026</small>
-                <h2>IFES CARACICA</h2>
-                <p><strong>Especialista em Operações Portuárias (Candidata)</strong></p>
-                <p>Busca de especialização em Gestão Portuária para aplicar análise de dados em operações marítimas.</p>
-            </div>
-
-            <div class="exp-item" style="margin-top: 30px; border-top: 1px dotted #d4d0c9; padding-top: 20px;">
-                <small>2019 — 2026</small>
-                <h2>SETOR MARÍTIMO</h2>
-                <p><strong>Treinamento Especializado e Mediação</strong></p>
-                <p>Mediação técnica intercultural e treinamento de inglês para profissionais offshore.</p>
+                <small>2026 — 2027</small>
+                <h2>PPCOMP / JUCEES</h2>
+                <p><strong>Mestrado e Tradução Juramentada</strong></p>
+                <p>Transição focada em Comércio Exterior e Operações Portuárias baseadas em dados.</p>
             </div>
         </section>
 
     </main>
-
-    <style>
-        /* Estilos específicos para os itens de experiência dentro dos cards */
-        .exp-item small { 
-            font-size: 0.7rem; 
-            color: #8d807a; 
-            font-weight: 600; 
-        }
-        .exp-item h2 { 
-            font-size: 1rem; 
-            margin: 5px 0; 
-            letter-spacing: 1px;
-        }
-        .exp-item p { 
-            font-size: 0.85rem; 
-            line-height: 1.5; 
-            margin: 5px 0; 
-            color: #5d5752;
-        }
-    </style>
-
 </body>
 </html>
