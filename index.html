@@ -10,9 +10,8 @@
             --bg-pearl: #d8d4cf; 
             --text-main: #2c1e1a;
             --text-sub: #5d5752;
-            /* Gradiente madrepérola iridescente */
             --mother-of-pearl: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%), 
-                               linear-gradient(45deg, rgba(178, 235, 242, 0.2), rgba(248, 187, 208, 0.2), rgba(255, 245, 157, 0.2));
+                               linear-gradient(45deg, rgba(178, 235, 242, 0.15), rgba(248, 187, 208, 0.15), rgba(255, 245, 157, 0.15));
         }
 
         @keyframes pearl-shimmer {
@@ -41,41 +40,15 @@
             border-bottom: 2px solid rgba(255, 255, 255, 0.5);
             padding: 15px 0;
             text-align: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
-        .user-name {
-            font-size: 1.4rem; /* Linha 1: Nome */
-            margin: 0;
-            color: var(--text-main);
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .user-role {
-            font-size: 0.75rem; /* Linha 2: Descrição */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-sub);
-            margin: 4px 0;
-        }
-
-        .user-contact {
-            font-size: 0.8rem; /* Linha 3: Links */
-            margin-top: 5px;
-        }
-
-        .user-contact a {
-            color: #8d807a;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .user-contact a:hover { color: #f8bbd0; }
+        .user-name { font-size: 1.4rem; margin: 0; font-weight: 600; }
+        .user-role { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-sub); margin: 4px 0; }
+        .user-contact { font-size: 0.75rem; margin-top: 5px; }
+        .user-contact a { color: #8d807a; text-decoration: none; margin: 0 10px; font-weight: 400; }
 
         .content-wrapper {
-            margin-top: 150px;
+            margin-top: 140px;
             padding: 0 40px 60px 40px;
             display: flex;
             justify-content: center;
@@ -84,7 +57,7 @@
         #experience-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
             width: 100%;
             max-width: 1200px;
         }
@@ -92,61 +65,67 @@
         .glass-box {
             background: var(--mother-of-pearl);
             background-size: 200% 200%;
-            animation: pearl-shimmer 10s ease infinite;
+            animation: pearl-shimmer 12s ease infinite;
             backdrop-filter: blur(15px);
-            border-radius: 45px; /* Bordas bem arredondadas */
-            padding: 35px;
+            border-radius: 40px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            transition: all 0.4s ease;
         }
 
-        .glass-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.07);
-        }
-
-        .section-label {
+        .category-label {
             color: #8d807a;
             font-size: 0.65rem;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1.5px;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 5px;
         }
 
-        .exp-title { 
-            font-size: 1.2rem; 
-            font-weight: 600; 
-            margin-bottom: 5px;
-            color: #1a1210;
+        /* Estilo para cada item individual dentro do quadrado */
+        .exp-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(0,0,0,0.05);
         }
 
-        .exp-period { 
-            color: #8c857e; 
-            font-size: 0.8rem; 
-            margin-bottom: 15px;
+        .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .exp-year {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #bcaaa4;
             display: block;
+            margin-bottom: 4px;
         }
 
-        .company-tag {
+        .exp-company {
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #5d5752;
-            background: rgba(255, 255, 255, 0.4);
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
+            color: var(--text-main);
+            text-transform: uppercase;
         }
 
-        .details-text {
-            line-height: 1.7;
-            color: #3e2723;
-            font-size: 0.95rem;
-            margin-top: auto;
+        .exp-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #5d4037;
+            display: block;
+            margin: 2px 0;
+        }
+
+        .exp-details {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #5d5752;
+            margin: 8px 0 0 0;
         }
 
         @media (max-width: 950px) {
@@ -158,7 +137,7 @@
 <body>
 
     <header class="fixed-header">
-        <h1 class="user-name">Flávia P. Pissarra</h1>
+        <h1 class="user-name">Flávia Porcu Pissarra</h1>
         <p class="user-role">Data Scientist | Foreign Trade & Port Logistics | Specialized in Industrial Data</p>
         <div class="user-contact">
             <a href="mailto:fppissarra@gmail.com">e-mail</a>
@@ -172,39 +151,73 @@
     </div>
 
     <script>
-        const experiences = [
+        const categories = [
             {
-                category: "Logistics & Data",
-                title: "Data Analyst & Interpreter",
-                period: "2018 — 2019",
-                company: "Vale | ArcelorMittal (CPGC)",
-                details: "Otimização de logística industrial via Python/SQL. Tradução técnica e protocolos de engenharia entre equipes globais."
+                name: "Logistics & Data Intelligence",
+                items: [
+                    {
+                        year: "2018",
+                        company: "VALE",
+                        role: "Analista de Dados (Estágio)",
+                        desc: "Suporte à inteligência de dados aplicada à logística ferroviária e portuária, com foco em automação de relatórios."
+                    },
+                    {
+                        year: "2019",
+                        company: "ARCELORMITTAL (CPGC)",
+                        role: "Analista de Dados (Estágio)",
+                        desc: "Desenvolvimento de pipelines SQL/Python e atuação como intérprete técnica para protocolos de engenharia e logística."
+                    }
+                ]
             },
             {
-                category: "NLP & Research",
-                title: "Computational Linguistics Lead",
-                period: "2020 — 2023",
-                company: "Ifes / Lab CTecL (FAPES)",
-                details: "Liderança em pesquisa de MTPE e processamento de documentos técnicos e contratuais para mercados globais."
+                name: "NLP & Language Technology",
+                items: [
+                    {
+                        year: "2020 a 2023",
+                        company: "FAPES/IFES",
+                        role: "Pesquisadora e Extensionista",
+                        desc: "Pesquisa em Linguística Computacional e Tradução Automática (MTPE), unindo literatura e tecnologia no Lab CTecL."
+                    },
+                    {
+                        year: "2024",
+                        company: "IFES Vitória",
+                        role: "Computational Linguist (Researcher)",
+                        desc: "Refinamento de modelos de linguagem e tradução técnica assistida por IA para documentação industrial."
+                    }
+                ]
             },
             {
-                category: "Maritime Support",
-                title: "Maritime Training & Mediation",
-                period: "2019 — 2026",
-                company: "Maritime Sector | JUCEES",
-                details: "Treinamento em Business English para crews offshore e preparação para certificação JUCEES."
+                name: "Maritime & Specialized Support",
+                items: [
+                    {
+                        year: "2019 a 2026",
+                        company: "Maritime Sector",
+                        role: "Specialized Training & Mediation",
+                        desc: "Treinamento em Business English para profissionais offshore e mediação técnica intercultural."
+                    },
+                    {
+                        year: "2026",
+                        company: "JUCEES",
+                        role: "Sworn Translator Candidate",
+                        desc: "Preparação avançada para exames de tradução juramentada e certificações internacionais."
+                    }
+                ]
             }
         ];
 
         function render() {
             const container = document.getElementById('experience-container');
-            container.innerHTML = experiences.map(exp => `
+            container.innerHTML = categories.map(cat => `
                 <article class="glass-box">
-                    <span class="section-label">${exp.category}</span>
-                    <span class="exp-title">${exp.title}</span>
-                    <span class="exp-period">${exp.period}</span>
-                    <span class="company-tag">${exp.company}</span>
-                    <p class="details-text">${exp.details}</p>
+                    <span class="category-label">${cat.name}</span>
+                    ${cat.items.map(item => `
+                        <div class="exp-item">
+                            <span class="exp-year">${item.year}</span>
+                            <div class="exp-company">${item.company}</div>
+                            <span class="exp-title">${item.role}</span>
+                            <p class="exp-details">${item.desc}</p>
+                        </div>
+                    `).join('')}
                 </article>
             `).join('');
         }
