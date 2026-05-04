@@ -1,38 +1,38 @@
 {
   "translations": {
     "pt": {
-      "name": "Flávia Pissarra",
-      "role": "Data Scientist | Foreign Trade & Port Logistics",
-      "linkedin": "linkedin.com/in/fpissarra",
+      "name": "Flávia Porcu Pissarra",
+      "role": "Data Scientist | Comércio Exterior & Logística Portuária",
       "email": "flavia.pissarra@email.com",
+      "linkedin": "linkedin.com/in/fpissarra",
       "sections": {
         "port": {
-          "title": "Port Logistics & Comex",
+          "title": "Logística Portuária & Comex",
           "items": [
-            { "h": "Transição de Carreira", "s": "Logística & Comércio Exterior", "d": "2026", "p": "Foco em operações portuárias (Vitória/Serra), Incoterms 2020 e otimização de fluxo de carga." },
-            { "h": "JUCEES", "s": "Tradutora Juramentada (em preparação)", "d": "2026", "p": "Especialização em documentação internacional e trâmites alfandegários para o mercado global." }
+            { "h": "Transição de Carreira", "s": "Logística e Portos", "d": "2026", "p": "Foco em operações portuárias em Vitória/Serra, Incoterms e otimização de fluxos de exportação." },
+            { "h": "JUCEES", "s": "Tradutora Juramentada (Espanhol)", "d": "2026", "p": "Preparação para certificação oficial em documentação internacional e trâmites alfandegários." }
           ]
         },
         "languages": {
-          "title": "Languages & Localization",
+          "title": "Idiomas & LQA",
           "items": [
-            { "h": "CTecL Lab", "s": "Lead Computational Linguist", "d": "2023 - Pres.", "p": "Coordenação de pesquisa em IA e Tradução Poética. Avaliação de 50k+ amostras linguísticas para benchmarks de LLMs." },
-            { "h": "Proficiência C2", "s": "EN / ES / PT", "d": "Certificada", "p": "Fluência avançada comprovada para negociações técnicas e comunicação intercultural de alto nível." }
+            { "h": "CTecL: Lab de Tradução", "s": "Coordenadora / Lead Linguist", "d": "2023 - Atualmente", "p": "Gestão de pesquisa em IA e Tradução Poética. Avaliação de 50k+ amostras para benchmarks de LLMs." },
+            { "h": "Proficiência C2", "s": "Inglês & Espanhol", "d": "Certificada", "p": "Fluência avançada para negociações técnicas e comunicação intercultural de alto nível." }
           ]
         },
         "data": {
-          "title": "Data Science & Tech",
+          "title": "Ciência de Dados & Tech",
           "items": [
-            { "h": "ArcelorMittal", "s": "Data Scientist", "d": "2019", "p": "Desenvolvimento de dashboards estratégicos em Power BI e engenharia de dados aplicada à logística de aço." },
-            { "h": "Vale", "s": "Data Scientist", "d": "2018", "p": "Análise estatística para otimização de operações ferroviárias e integração de dados portuários." }
+            { "h": "ArcelorMittal", "s": "Cientista de Dados", "d": "2019", "p": "Engenharia de dados industriais e criação de dashboards estratégicos para logística de aço." },
+            { "h": "Vale", "s": "Cientista de Dados", "d": "2018", "p": "Análise estatística para otimização de operações ferroviárias e integração de dados portuários." }
           ]
         },
         "education": {
-          "title": "Education",
+          "title": "Formação Acadêmica",
           "items": [
-            { "h": "IFES", "s": "Pós-Graduação em Gestão Especial", "d": "2025", "p": "Foco em práticas inclusivas e gestão educacional." },
-            { "h": "IFES", "s": "Licenciatura em Letras", "d": "2023", "p": "Formação em linguística aplicada e comunicação." },
-            { "h": "IFES", "s": "Técnico em Informática", "d": "2018", "p": "Base sólida em lógica de programação e infraestrutura." }
+            { "h": "Pós-Graduação em Gestão", "s": "IFES Cefor", "d": "2025", "p": "Especialização em Gestão em Educação Especial na Perspectiva Inclusiva." },
+            { "h": "Licenciatura em Letras", "s": "IFES Vitória", "d": "2023", "p": "Formação em linguística aplicada e processos comunicativos." },
+            { "h": "Técnico em Informática", "s": "IFES Serra", "d": "2018", "p": "Base técnica sólida em desenvolvimento de sistemas e lógica de programação." }
           ]
         }
       }
