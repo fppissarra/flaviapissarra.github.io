@@ -10,7 +10,14 @@
             --bg-deep-pearl: #d4d0c9; 
             --text-main: #2c1e1a;
             --text-sub: #5d5752;
-            --iridescent: linear-gradient(45deg, #b2ebf2, #f8bbd0, #fff59d, #b3e5fc);
+            /* Cores solares e prismáticas para o efeito de micro cores */
+            --sun-prism: linear-gradient(90deg, #e0f7fa, #fce4ec, #fff9c4, #e1f5fe, #f3e5f5, #e0f7fa);
+        }
+
+        @keyframes prism-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         body {
@@ -27,12 +34,13 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            background: rgba(236, 233, 228, 0.92);
-            backdrop-filter: blur(25px);
-            border-bottom: 2px solid;
-            border-image: var(--iridescent) 1;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(30px);
             padding: 45px 0;
             text-align: center;
+            border-bottom: 3px solid transparent;
+            /* Borda animada para o header */
+            border-image: var(--sun-prism) 1;
         }
 
         .user-name {
@@ -71,21 +79,30 @@
         }
 
         .glass-box {
-            background: rgba(255, 255, 255, 0.45);
-            backdrop-filter: blur(15px);
-            border: 2px solid; 
-            border-image: var(--iridescent) 1;
-            padding: 35px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            /* Bordas muito arredondadas */
+            border-radius: 40px; 
+            padding: 40px;
             display: flex;
             flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            position: relative;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+            border: 2px solid transparent;
+            /* O segredo do brilho solar nas bordas arredondadas: */
+            background-clip: padding-box, border-box;
+            background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), var(--sun-prism);
+            background-origin: border-box;
+            background-size: 200% 200%;
+            animation: prism-flow 8s ease infinite;
         }
 
         .glass-box:hover {
-            transform: translateY(-12px);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            transform: translateY(-15px) scale(1.02);
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), var(--sun-prism);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            animation-duration: 3s; /* Acelera o brilho no hover */
         }
 
         .section-label {
@@ -116,8 +133,11 @@
             font-weight: 600;
             margin-bottom: 25px;
             color: #4a4541;
-            border-left: 4px solid #f8bbd0;
-            padding-left: 12px;
+            padding: 5px 15px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 20px;
+            display: inline-block;
+            align-self: flex-start;
         }
 
         .details-text {
@@ -129,7 +149,7 @@
 
         @media (max-width: 1000px) {
             #experience-container { grid-template-columns: 1fr; }
-            .content-wrapper { margin-top: 350px; }
+            .content-wrapper { margin-top: 380px; }
         }
     </style>
 </head>
