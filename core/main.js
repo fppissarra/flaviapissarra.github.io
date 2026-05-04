@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('./core/data.json?v=' + Date.now());
-        if (!response.ok) throw new Error("Erro ao carregar dados.");
-        
         const data = await response.json();
         const r = data.translations.pt;
 
-        // Mapeamento das seções do Bento Grid
+        // Injeção para seções de currículo (se houver containers no HTML)
         const sections = [
             { id: 'port-content', content: r.sections.port },
-            { id: 'languages-content', content: r.sections.languages },
             { id: 'data-content', content: r.sections.data },
             { id: 'education-content', content: r.sections.education }
         ];
@@ -24,14 +21,36 @@ document.addEventListener('DOMContentLoaded', async () => {
                             <small>${item.d} | ${item.s}</small>
                             <h4>${item.h}</h4>
                             <p>${item.p}</p>
-                        </div>
-                    `;
+                        </div>`;
                 });
                 container.innerHTML = html;
             }
         });
-
     } catch (err) {
-        console.error("Falha técnica no carregamento operacional:", err);
+        console.error("Erro ao carregar dados operacionais:", err);
     }
 });
+
+// Lógica Global para o Viewer de BI
+window.openBI = function(url) {
+    const viewer = document.getElementById('bi-viewer');
+    const frame = document.getElementById('powerbi-frame');
+    const hub = document.getElementById('hub-content');
+    
+    if(viewer && frame) {
+        hub.style.display = 'none';
+        viewer.style.display = 'block';
+        frame.src = url;
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeBI = function() {
+    const viewer = document.getElementById('bi-viewer');
+    const hub = document.getElementById('hub-content');
+    
+    viewer.style.display = 'none';
+    hub.style.display = 'block';
+    document.getElementById('powerbi-frame').src = '';
+    document.body.style.overflow = 'auto';
+};
