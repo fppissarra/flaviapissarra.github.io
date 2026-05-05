@@ -1,17 +1,18 @@
-<!-- bi/project-1/index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>Dashboard | Operações</title>
+    <link rel="stylesheet" href="../../core/style.css">
     <style>
-        body { margin: 0; overflow: hidden; }
+        body { padding: 0; overflow: hidden; background: #000; }
         iframe { width: 100vw; height: 100vh; border: none; }
-        .back-link { position: fixed; top: 10px; left: 10px; background: #006666; color: white; padding: 5px 15px; text-decoration: none; border-radius: 5px; font-family: sans-serif; }
+        .back-btn { position: fixed; top: 15px; left: 15px; z-index: 100; width: auto; padding: 10px 20px; }
     </style>
 </head>
 <body>
-    <a href="../../bi.html" class="back-link">← Voltar</a>
-    <!-- Insira o link de "Publicar na Web" do seu Power BI no src -->
-    <iframe src="URL_DO_SEU_DASHBOARD_1"></iframe>
+    <button class="mop-btn back-btn" onclick="window.location.href='../index.html'">← Voltar</button>
+    <!-- Insira seu link de incorporação do Power BI no src abaixo -->
+    <iframe src="SEU_LINK_DO_POWER_BI_AQUI"></iframe>
 </body>
 </html>
