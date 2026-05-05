@@ -2,108 +2,71 @@
 
 :root {
     --vale-teal: #006666;
-    --bg-darker: #e2e8f0; /* Tom de cinza mais definido */
-    --bg-light: #f1f5f9;  /* Tom principal das páginas */
+    --bg-darker: #e2e8f0;
+    --bg-light: #f1f5f9;
     --text-main: #1e293b;
     --text-muted: #475569;
     --white: #ffffff;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset e Fonte Global */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Inter', sans-serif; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
 body { 
-    /* Cria um leve degradê no fundo para não ficar chapado */
     background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-light) 100%);
     color: var(--text-main); 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
     min-height: 100vh; 
     padding: 60px 20px; 
+    display: flex;
+    justify-content: center;
 }
 
-/* Container principal (Cartão) */
+/* Container que segura as duas colunas */
+.columns-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Ajuste para telas menores (celulares) */
+@media (max-width: 850px) {
+    .columns-container { flex-direction: column; }
+}
+
+.left-col { flex: 1.2; } /* Coluna da Bio um pouco mais larga */
+.right-col { flex: 1; }
+
 .profile-card { 
     background: var(--white); 
-    padding: 45px; 
+    padding: 40px; 
     border-radius: 16px; 
     box-shadow: var(--shadow); 
-    /* Borda lateral técnica */
     border-left: 10px solid var(--vale-teal); 
-    max-width: 750px; 
-    width: 100%; 
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
+    height: 100%;
 }
 
-/* Detalhe estético sutil no canto do card */
-.profile-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, transparent 80%, rgba(0,102,102,0.05) 100%);
-}
+h1 { color: var(--vale-teal); font-size: 1.8rem; margin-bottom: 12px; }
+h2 { color: var(--vale-teal); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--bg-darker); padding-bottom: 5px; }
 
-h1 { color: var(--vale-teal); font-size: 2.2rem; margin-bottom: 12px; letter-spacing: -0.5px; }
-.tagline { color: var(--text-muted); font-weight: 500; margin-bottom: 25px; line-height: 1.4; }
+.tagline { color: var(--text-muted); font-weight: 600; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.info-list { list-style: none; margin-bottom: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
-.info-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.info-list a { color: var(--vale-teal); text-decoration: none; font-weight: 600; transition: 0.2s; }
-.info-list a:hover { opacity: 0.7; }
+.info-list { list-style: none; }
+.info-list li { margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; }
+.info-list a { color: var(--vale-teal); text-decoration: none; font-weight: 600; }
 
-/* Grid de Projetos */
-.projects-stack { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 750px; }
-
-.project-card { 
-    background: var(--white); 
-    padding: 28px; 
-    border-radius: 12px; 
-    text-decoration: none; 
-    color: inherit; 
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
-    border: 1px solid #e2e8f0;
-    border-top: 5px solid var(--vale-teal); 
-    transition: all 0.3s ease; 
-}
-
-.project-card:hover { 
-    transform: translateY(-5px); 
-    box-shadow: var(--shadow);
-    border-color: var(--vale-teal);
-}
-
-.project-card h2 { color: var(--vale-teal); margin-bottom: 8px; }
-
-/* Botão Estilizado */
 .mop-btn { 
     background: var(--vale-teal); 
     color: var(--white); 
     border: none; 
-    padding: 16px; 
+    padding: 14px; 
     border-radius: 8px; 
     font-weight: 600; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
     cursor: pointer; 
     width: 100%; 
-    transition: filter 0.2s;
+    margin-top: 15px;
+    transition: 0.3s;
 }
-
 .mop-btn:hover { filter: brightness(1.2); }
-
-/* Para os frames de BI */
-.bi-view { padding: 0; background: #0f172a; } /* Fundo escuro para destacar o Dashboard */
 
 @media print { .no-print { display: none; } }
