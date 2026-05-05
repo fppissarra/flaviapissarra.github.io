@@ -1,77 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-    --vale-teal: #006666;
-    --bg-darker: #e2e8f0;
-    --bg-light: #f1f5f9;
-    --text-main: #1e293b;
-    --text-muted: #475569;
-    --white: #ffffff;
-    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-
-body { 
-    background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-light) 100%);
-    color: var(--text-main); 
-    min-height: 100vh; 
-    padding: 40px 20px; 
+/* Container da direita não precisa de fundo, pois os cards serão brancos */
+.right-col { 
+    flex: 1.2; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os quadradinhos */
 }
 
-.columns-container {
-    display: flex;
-    gap: 25px;
-    max-width: 1100px;
-    width: 100%;
-}
-
-@media (max-width: 850px) {
-    .columns-container { flex-direction: column; }
-}
-
-/* Coluna de Apresentação (Fixa/Bio) */
-.left-col { flex: 0.8; } 
-
-/* Coluna de Conteúdo (Experiências) */
-.right-col { flex: 1.2; }
-
-.profile-card { 
-    background: var(--white); 
-    padding: 30px; 
-    border-radius: 16px; 
-    box-shadow: var(--shadow); 
-    border-top: 8px solid var(--vale-teal); 
-    height: fit-content;
-}
-
-h1 { color: var(--vale-teal); font-size: 1.6rem; margin-bottom: 8px; }
-h2 { color: var(--vale-teal); font-size: 1.2rem; margin-bottom: 15px; border-bottom: 2px solid var(--bg-darker); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-h3 { font-size: 1rem; color: var(--text-main); margin-bottom: 4px; }
-
-.tagline { color: var(--text-muted); font-weight: 600; margin-bottom: 20px; font-size: 0.85rem; }
-
-.info-list { list-style: none; margin-bottom: 20px; }
-.info-list li { margin-bottom: 12px; font-size: 0.9rem; line-height: 1.4; }
-.info-list a { color: var(--vale-teal); text-decoration: none; font-weight: 600; }
-
-.exp-box { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0; }
-.exp-box:last-child { border: none; }
-.date-tag { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; display: block; margin-bottom: 5px; }
-
-.mop-btn { 
-    background: var(--vale-teal); 
-    color: var(--white); 
-    border: none; 
-    padding: 12px; 
-    border-radius: 8px; 
-    font-weight: 600; 
-    cursor: pointer; 
-    width: 100%; 
+/* Título da seção fora dos cards para organizar */
+.section-title {
+    color: var(--vale-teal);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
     margin-top: 10px;
-    transition: 0.3s;
 }
 
-@media print { .no-print { display: none; } body { background: white; padding: 0; } .profile-card { box-shadow: none; border: 1px solid #eee; } }
+/* O "Quadradinho Branco" para cada experiência */
+.exp-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra leve */
+    border-left: 5px solid var(--vale-teal); /* Detalhe lateral técnico */
+    transition: transform 0.2s ease;
+}
+
+.exp-card:hover {
+    transform: translateX(5px); /* Efeito sutil ao passar o mouse */
+}
+
+.exp-card h3 { 
+    font-size: 1.1rem; 
+    color: var(--text-main); 
+    margin-bottom: 4px; 
+}
+
+.exp-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.date-tag { 
+    font-size: 0.8rem; 
+    color: var(--vale-teal); 
+    font-weight: 700; 
+    display: block; 
+    margin-bottom: 8px; 
+}
