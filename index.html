@@ -3,78 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Portfólio Portuário</title>
-    <!-- Referência ao CSS na pasta core -->
-    <link rel="stylesheet" href="./core/style.css?v=2026">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        .hub-body { background: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 60px 20px; margin: 0; font-family: 'Inter', sans-serif; }
-        
-        .profile-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border-left: 6px solid #006666; /* Vale Teal */
-            max-width: 700px;
-            width: 100%;
-            margin-bottom: 30px;
-        }
-
-        .profile-card h1 { color: #006666; font-size: 2.2rem; margin: 0; }
-        .tagline { color: #475569; font-weight: 500; font-size: 1rem; margin: 15px 0; line-height: 1.5; }
-        
-        .info-list { list-style: none; padding: 0; margin: 20px 0; font-size: 0.9rem; color: #1e293b; }
-        .info-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .info-list a { color: inherit; text-decoration: none; font-weight: 600; transition: color 0.2s; }
-        .info-list a:hover { color: #006666; }
-
-        .projects-stack { display: grid; grid-template-columns: 1fr; gap: 15px; width: 100%; max-width: 700px; }
-
-        .mop-btn {
-            background: #006666;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-        .mop-btn:hover { background: #004d4d; }
-    </style>
+    <title>Flávia P. Pissarra | Portfólio</title>
+    <link rel="stylesheet" href="./core/style.css">
 </head>
-<body class="hub-body">
-
+<body>
     <main class="profile-card">
-        <h1>Flávia P. Pissarra</h1>
-        <p class="tagline">
-            Dados | Especializando em Operação e Logística Portuária, <br>
-            Comércio Exterior e Relações Internacionais
-        </p>
-
+        <h1>Flávia Porcu Pissarra</h1>
+        <p class="tagline">Cientista de Dados | Logística Portuária | Poliglota (PT/EN/ES/IT/JP/KO)</p>
+        
         <ul class="info-list">
-            <li>📍 ES, Brasil</li>
-            <li>📧 <a href="mailto:fppissarra@gmail.com">fppissarra@gmail.com</a></li>
+            <li>🎓 Pós-graduanda em Gestão em Educação Especial (IFES)</li>
+            <li>📜 Licenciada em Letras & Técnica em Informática (IFES)</li>
+            <li>🌍 Fluência C2 em Inglês e Espanhol</li>
             <li>🔗 <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a></li>
-            <li>💻 <a href="./bi.html">Projetos de PowerBI</a></li> <!-- Link para a página de BI -->
         </ul>
 
-        <!-- Botão para gerar o PDF via impressão do navegador -->
-        <button class="mop-btn" onclick="window.print()">Gerar PDF do Currículo</button>
+        <button class="mop-btn no-print" onclick="window.location.href='./bi/index.html'">Visualizar Dashboards de BI</button>
+        <button class="mop-btn no-print" style="margin-top: 10px; background: #475569;" onclick="window.print()">Exportar Currículo PDF</button>
     </main>
-
-    <!-- Estrutura de Módulos (Opcional, caso queira manter o hub visual abaixo da bio) -->
-    <div class="projects-stack">
-        <a href="./bi.html" style="text-decoration: none;">
-            <div class="profile-card" style="margin-bottom: 0; padding: 25px; border-left: none; border-top: 4px solid #006666;">
-                <h3 style="color: #006666; margin: 0; font-size: 1.1rem; text-transform: uppercase;">Acessar Projetos de BI</h3>
-                <p style="color: #64748b; font-size: 0.85rem; margin-top: 5px;">Visualização de dashboards e KPIs operacionais.</p>
-            </div>
-        </a>
-    </div>
-
 </body>
 </html>
