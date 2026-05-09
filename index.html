@@ -3,63 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Tradutora & Data Science</title>
+    <title>Flávia P. Pissarra | Tradutora & Port Logistics</title>
     <link rel="stylesheet" href="c/s.css">
 </head>
 <body>
     <div class="col-c">
         <aside class="l-col">
             <div class="card">
-                <h1>Flávia P. Pissarra</h1>
-                <p class="tag">Tradutora C2 | Data Science<br>Transição: Comércio Exterior & Portos</p>
-                <span class="s-title">Contato</span>
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <h1>Flávia P. Pissarra</h1>
+                    <button onclick="toggleLang()" id="langBtn" class="btn-lang">EN-UK 🇬🇧</button>
+                </div>
+                <p class="tag" data-pt="Tradutora & Cientista de Dados" data-en="Translator & Data Scientist"></p>
+                <span class="s-title" data-pt="Contato" data-en="Contact"></span>
                 <ul class="list">
                     <li>📧 <a href="mailto:fppissarra@gmail.com">fppissarra@gmail.com</a></li>
                     <li>🔗 <a href="https://linkedin.com/in/fppissarra" target="_blank">LinkedIn</a></li>
                 </ul>
-                <a href="p/bi.html" class="btn">Dashboards & Projetos</a>
+                <a href="p/bi.html" class="btn" data-pt="Ver Dashboards BI" data-en="View BI Dashboards"></a>
             </div>
 
             <div class="card">
-                <span class="s-title">🌎 Idiomas / Expertise Global</span>
+                <span class="s-title" data-pt="Idiomas" data-en="Languages"></span>
                 <ul class="list">
-                    <li>🇬🇧 <strong>Inglês:</strong> fluente (C2)</li>
-                    <li>🇪🇸 <strong>Espanhol (C2):</strong> fluente (C2)</li>
-                    <li>🇮🇹 <strong>Italiano:</strong>  básico (A2)</li>
-                    <li>🇯🇵 <strong>Japonês (N5):</strong> iniciante (JLPT N5)</li>
-                    <li>🇰🇷 <strong>Coreano:</strong> iniciante (TOPIK I-1)</li>
+                    <li>🌎 <strong>EN | ES:</strong> Native (C2)</li>
+                    <li>🇮🇹 <strong>IT:</strong> Intermediate</li>
+                    <li>🇯🇵 <strong>JP:</strong> Basic (N5)</li>
+                    <li>🇰🇷 <strong>KO:</strong> Learning</li>
+                    <li style="margin-top:15px; font-style: italic; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+                        "The limit of my language is the limit of my world." <br>— Wittgenstein
+                    </li>
                 </ul>
             </div>
         </aside>
 
         <main class="r-col">
-            <span class="s-title">Experiência Profissional</span>
-            <div class="card">
-                <span class="d-tag">TRADUÇÃO & PESQUISA</span>
-                <h3>Tradutora & Líder de Pesquisa em IA</h3>
-                <p>Especialista em Tradução e MTPE (Post-Editing). Coordenação no laboratório CTecL (IFES) com foco em curadoria de dados (50k+ amostras) e NLP.</p>
-            </div>
-            <div class="card">
-                <span class="d-tag">ANÁLISE DE DADOS</span>
-                <h3>Data Science Intern - Vale & ArcelorMittal</h3>
-                <p>Experiência em análise de dados operacionais e suporte tecnológico em grandes complexos industriais e logísticos.</p>
+            <div class="card" style="border-top: 4px solid var(--v);">
+                <span class="s-title" data-pt="Visão Geral" data-en="Overview"></span>
+                <p style="margin-bottom: 15px;" 
+                   data-pt="<strong>Comércio Exterior & Logística Portuária</strong> apaixonada por dados. Da indústria ao laboratório de pesquisa, utilizo a linguagem como ponte para soluções tecnológicas."
+                   data-en="<strong>Foreign Trade & Port Logistics</strong> enthusiast powered by data. From industry to research labs, I use language as a bridge for technological solutions.">
+                </p>
+                <ul class="list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <li data-pt="✅ Certificação TESOL" data-en="✅ TESOL Certified"></li>
+                    <li data-pt="✅ Líder de Pesquisa (IA)" data-en="✅ Lead Researcher (AI)"></li>
+                    <li data-pt="✅ Ex-Vale & ArcelorMittal" data-en="✅ Former Vale & ArcelorMittal"></li>
+                    <li data-pt="✅ Tradutora Juramentada (Prep)" data-en="✅ Sworn Translator (Prep)"></li>
+                </ul>
             </div>
 
-            <span class="s-title">Educação & Transição Portuária</span>
+            <span class="s-title" data-pt="Experiência Profissional" data-en="Professional Experience"></span>
             <div class="card">
-                <span class="d-tag">PORTOS & COMEX</span>
-                <h3>Técnico em Portos - IFES</h3>
-                <p>Formação estratégica em gestão de operações portuárias, logística internacional e comércio exterior (Previsão 2026.2).</p>
+                <span class="d-tag" data-pt="PESQUISA & NLP" data-en="RESEARCH & NLP"></span>
+                <h3 data-pt="Líder de Pesquisa - CTecL (IFES)" data-en="Lead Researcher - CTecL (IFES)"></h3>
+                <p data-pt="Curadoria de 50.000+ amostras para benchmarks de LLM. Foco em mitigação de viés algorítmico em modelos multilingues."
+                   data-en="Curating 50,000+ samples for LLM benchmarks. Focus on algorithmic bias mitigation in multilingual models."></p>
             </div>
+
+            <span class="s-title" data-pt="Transição Portuária & Educação" data-en="Port Transition & Education"></span>
             <div class="card">
-                <span class="d-tag">PÓS-GRADUAÇÃO</span>
-                <h3>Gestão da Educação Especial - IFES</h3>
-                <p>Especialização em práticas inclusivas e tecnologias assistivas (IFES Cefor).</p>
-            </div>
-            <div class="card">
-                <span class="d-tag">GRADUAÇÃO</span>
-                <h3>Letras (Português/Inglês) - IFES</h3>
-                <p>Base acadêmica em linguística aplicada, essencial para inteligência de dados e relações internacionais.</p>
+                <span class="d-tag" data-pt="EM FORMAÇÃO" data-en="IN TRAINING"></span>
+                <h3 data-pt="Técnico em Portos - IFES Cariacica" data-en="Port Logistics Technician - IFES"></h3>
+                <p data-pt="Foco em Comércio Exterior e Logística Internacional. Início previsto: 2026.2."
+                   data-en="Focus on Foreign Trade and International Logistics. Expected start: 2026.2."></p>
             </div>
         </main>
     </div>
