@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --v: #2dd4bf; /* Teal Neon */
-    --t: #f8fafc;
+    --v: #2dd4bf; 
+    --t: #f1f5f9;
     --m: #94a3b8;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
 body { 
-    /* Fundo escuro profundo para destacar o perolado */
-    background: radial-gradient(circle at top right, #111827, #030712);
+    background: radial-gradient(circle at top right, #1e293b, #0f172a, #020617);
     background-attachment: fixed;
     min-height: 100vh;
-    padding: 3vh 5vw;
+    padding: 20px;
     display: flex;
     justify-content: center;
     color: var(--t);
@@ -23,73 +22,66 @@ body {
 
 .col-c { 
     display: flex; 
-    gap: 3%; 
+    gap: 20px; 
     width: 100%; 
-    max-width: 1200px; 
+    max-width: 1300px; /* Um pouco mais largo para aproveitar os 75% */
 }
 
-/* PROPORÇÕES EM PORCENTAGEM */
+/* COLUNAS PROPORCIONAIS */
 .l-col { width: 25%; min-width: 280px; }
-.r-col { width: 72%; }
+.r-col { width: 75%; }
 
-/* O CARD PEROLADO (GLASS) */
+/* EFEITO MADREPÉROLA (GLASSMORPISM) */
 .card { 
-    background: rgba(255, 255, 255, 0.03); /* Transparência super leve */
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-radius: 24px;
-    padding: 2rem;
-    /* Borda que dá o efeito de cristal/pérola */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(45, 212, 191, 0.3);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
 }
 
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 30px rgba(45, 212, 191, 0.15);
-    margin: 0 auto 1.5rem auto;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.2);
+    margin: 0 auto 15px auto;
     display: block;
 }
 
-h1 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 800; color: #fff; letter-spacing: -0.02em; }
-.s-title { color: var(--v); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 1.5rem; display: block; }
-.tag { color: var(--m); font-size: 0.85rem; margin-top: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
+h1 { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1.1; }
+.s-title { color: var(--v); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; margin: 15px 0 8px 0; display: block; }
+.tag { color: var(--m); font-size: 0.8rem; margin: 5px 0 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
 
-.list { list-style: none; font-size: 0.9rem; color: var(--m); }
-.list li { margin-bottom: 0.6rem; }
+.list { list-style: none; font-size: 0.8rem; color: var(--m); }
+.list li { margin-bottom: 6px; }
 .list a { color: var(--v); text-decoration: none; font-weight: 600; }
 
 .btn { 
     background: rgba(45, 212, 191, 0.1); 
-    border: 1px solid rgba(45, 212, 191, 0.4); 
+    border: 1px solid var(--v); 
     color: var(--v) !important; 
-    padding: 1rem; 
-    border-radius: 15px; 
+    padding: 10px; 
+    border-radius: 12px; 
     display: block; 
     text-align: center;
     text-decoration: none; 
-    font-size: 0.8rem; 
+    font-size: 0.75rem; 
     font-weight: 700;
-    margin-top: 1.5rem;
-    transition: 0.4s;
+    margin-top: 15px;
+    transition: 0.3s;
 }
-.btn:hover { background: var(--v); color: #000 !important; box-shadow: 0 0 20px rgba(45, 212, 191, 0.4); }
+.btn:hover { background: var(--v); color: #020617 !important; transform: translateY(-2px); }
 
-.btn-lang { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 5px 10px; border-radius: 10px; cursor: pointer; font-size: 0.7rem; font-weight: 800; }
+.btn-lang { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 8px; border-radius: 8px; cursor: pointer; font-size: 0.65rem; font-weight: 800; }
 
-/* AJUSTE PARA MOBILE */
-@media (max-width: 850px) { 
+/* RESPONSIVIDADE */
+@media (max-width: 900px) { 
     .col-c { flex-direction: column; } 
     .l-col, .r-col { width: 100%; } 
 }
