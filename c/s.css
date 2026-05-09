@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --v: #2dd4bf; /* Teal Neon para contraste */
-    --pearl: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --v: #2dd4bf; /* Teal/Verde água neon */
+    --pearl: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
     --t: #f8fafc;
     --m: #94a3b8;
 }
@@ -17,39 +17,44 @@ body {
     display: flex;
     justify-content: center;
     color: var(--t);
+    opacity: 0; /* Controlado pelo JS para evitar flash de cor */
+    transition: opacity 0.5s ease;
     overflow-x: hidden;
 }
 
 .col-c { display: flex; gap: 30px; max-width: 1100px; width: 100%; z-index: 1; }
 .l-col, .r-col { display: flex; flex-direction: column; gap: 20px; }
-.l-col { flex: 0 0 300px; }
+.l-col { flex: 0 0 320px; }
 .r-col { flex: 1; }
 
 .card { 
     background: var(--pearl);
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-radius: 24px;
     padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05);
-    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card:hover { transform: translateY(-5px); border-color: rgba(45, 212, 191, 0.4); background: rgba(255, 255, 255, 0.22); }
+.card:hover { transform: translateY(-5px); border-color: rgba(45, 212, 191, 0.4); background: rgba(255, 255, 255, 0.18); }
 
 .s-title { color: var(--v); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 10px; display: block; }
-h1 { font-size: 1.5rem; color: #fff; font-weight: 800; margin-bottom: 5px; }
-h3 { color: #fff; font-size: 1rem; margin-bottom: 5px; }
-.tag { color: var(--m); font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px; }
+h1 { font-size: 1.6rem; color: #fff; font-weight: 800; margin-bottom: 5px; }
+h3 { color: #fff; font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+.tag { color: var(--m); font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 15px; }
 
-.list { list-style: none; font-size: 0.85rem; }
-.list li { margin-bottom: 8px; color: var(--m); }
+.list { list-style: none; font-size: 0.85rem; line-height: 1.6; }
+.list li { margin-bottom: 10px; color: var(--m); }
 .list a { color: var(--v); text-decoration: none; font-weight: 600; }
 
-.d-tag { font-size: 0.6rem; color: var(--v); border: 1px solid rgba(45, 212, 191, 0.3); padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; display: inline-block; background: rgba(45, 212, 191, 0.1); }
+.d-tag { font-size: 0.6rem; color: var(--v); border: 1px solid rgba(45, 212, 191, 0.3); padding: 3px 10px; border-radius: 6px; margin-bottom: 12px; display: inline-block; background: rgba(45, 212, 191, 0.1); font-weight: 700; }
 
-.btn { background: rgba(45, 212, 191, 0.15); border: 1px solid var(--v); color: var(--v) !important; text-align: center; padding: 12px; border-radius: 12px; display: block; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.3s; }
-.btn:hover { background: var(--v); color: #020617 !important; }
+.btn { background: rgba(45, 212, 191, 0.1); border: 1px solid var(--v); color: var(--v) !important; text-align: center; padding: 14px; border-radius: 14px; display: block; text-decoration: none; font-size: 0.8rem; font-weight: 700; transition: 0.3s; margin-top: 15px; }
+.btn:hover { background: var(--v); color: #020617 !important; box-shadow: 0 0 20px rgba(45, 212, 191, 0.4); }
+
+.btn-lang { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 6px 12px; border-radius: 10px; cursor: pointer; font-size: 0.7rem; font-weight: 800; transition: 0.3s; }
+.btn-lang:hover { border-color: var(--v); color: var(--v); }
 
 @media (max-width: 850px) { .col-c { flex-direction: column; } .l-col { width: 100%; } }
