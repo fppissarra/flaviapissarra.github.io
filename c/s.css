@@ -64,3 +64,7 @@ h3 { font-size: 0.95rem; font-weight: 600; color: var(--t); }
 }
 
 @media (max-width: 800px) { .col-c { flex-direction: column; } .l-col { width: 100%; } }
+
+body {
+    opacity: 0;
+}
