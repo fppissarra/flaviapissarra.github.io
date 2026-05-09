@@ -1,10 +1,9 @@
-// Se quiser adicionar mais línguas no futuro, basta incluir aqui e no HTML (ex: 'es')
+// Para adicionar mais línguas depois, lembrar de incluir aqui usando o modelo data-es, data-jp, etc no HTML
 const langCycle = ['pt', 'en']; 
-const labels = { pt: 'EN', en: 'PT' };
+const labels = { pt: 'EN-UK 🇬🇧', en: 'PT-BR 🇧🇷' };
 
 function updateContent(lang) {
     document.querySelectorAll('[data-pt]').forEach(el => {
-        // Busca o atributo dinâmico (data-pt ou data-en)
         const text = el.getAttribute(`data-${lang}`) || el.getAttribute('data-pt');
         el.innerHTML = text;
     });
