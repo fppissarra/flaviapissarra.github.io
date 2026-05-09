@@ -1,17 +1,23 @@
+// Se quiser adicionar mais línguas no futuro, basta incluir aqui e no HTML (ex: 'es')
+const langCycle = ['pt', 'en']; 
+const labels = { pt: 'EN', en: 'PT' };
+
 function updateContent(lang) {
-    // Busca todos os elementos que possuem a tradução definida
     document.querySelectorAll('[data-pt]').forEach(el => {
-        const text = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-pt');
+        // Busca o atributo dinâmico (data-pt ou data-en)
+        const text = el.getAttribute(`data-${lang}`) || el.getAttribute('data-pt');
         el.innerHTML = text;
     });
     
-    // Atualiza o texto do botão de idioma
     const btn = document.getElementById('langBtn');
-    if (btn) btn.innerText = lang === 'en' ? 'PT-BR 🇧🇷' : 'EN-UK 🇬🇧';
+    if (btn) btn.innerText = labels[lang];
 }
 
 function toggleLang() {
-    const newLang = localStorage.getItem('prefLang') === 'pt' ? 'en' : 'pt';
+    let currentIndex = langCycle.indexOf(localStorage.getItem('prefLang') || 'pt');
+    let nextIndex = (currentIndex + 1) % langCycle.length;
+    let newLang = langCycle[nextIndex];
+
     localStorage.setItem('prefLang', newLang);
     updateContent(newLang);
 }
@@ -19,6 +25,5 @@ function toggleLang() {
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('prefLang') || 'pt';
     updateContent(savedLang);
-    // Mostra o site suavemente após carregar o idioma correto
     document.body.style.opacity = '1';
 });
