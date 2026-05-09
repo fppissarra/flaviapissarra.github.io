@@ -3,71 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BI & Dashboards | Flávia P. Pissarra</title>
+    <title>BI | Flávia P. Pissarra</title>
     <link rel="stylesheet" href="../c/s.css">
 </head>
 <body>
     <div class="col-c">
         <aside class="l-col">
             <div class="card">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <h1 data-pt="Projetos de BI" data-en="BI Projects"></h1>
-                    <button onclick="toggleLang()" id="langBtn" class="btn-lang">EN-UK 🇬🇧</button>
-                </div>
-                <p class="tag" data-pt="Inteligência de Dados" data-en="Data Intelligence"></p>
-                
-                <span class="s-title" data-pt="Status do Lab" data-en="Lab Status"></span>
-                <ul class="list">
-                    <li data-pt="📊 Dashboards: Ativos" data-en="📊 Dashboards: Active"></li>
-                    <li data-pt="🧪 Pesquisa: Em curso" data-en="🧪 Research: Ongoing"></li>
-                </ul>
-
-                <a href="../index.html" class="btn" data-pt="← Voltar ao Início" data-en="← Back to Home"></a>
-            </div>
-
-            <div class="card">
-                <span class="s-title" data-pt="Tecnologias" data-en="Tech Stack"></span>
-                <ul class="list">
-                    <li>🔹 Power BI / Tableau</li>
-                    <li>🔹 Python (Pandas/NumPy)</li>
-                    <li>🔹 SQL & NoSQL</li>
-                    <li>🔹 NLP Frameworks</li>
-                </ul>
+                <h1 data-pt="BI & Dados" data-en="BI & Data"></h1>
+                <p class="tag" data-pt="Inteligência de Negócio" data-en="Business Intelligence"></p>
+                <button onclick="toggleLang()" id="langBtn" class="btn-lang" style="width: 100%; margin-bottom: 15px;"></button>
+                <a href="../index.html" class="btn" data-pt="← Voltar" data-en="← Back"></a>
             </div>
         </aside>
-
         <main class="r-col">
-            
-            <span class="s-title" data-pt="Logística & Portos" data-en="Logistics & Ports"></span>
-            <div class="card" style="border-top: 4px solid var(--v);">
-                <span class="d-tag" data-pt="EM DESENVOLVIMENTO" data-en="UNDER DEVELOPMENT"></span>
-                <h3 data-pt="Análise de Fluxo Portuário" data-en="Port Flow Analysis"></h3>
-                <p data-pt="Estudo sobre eficiência de atracação e movimentação de carga conteinerizada." 
-                   data-en="Study on berthing efficiency and containerised cargo movement."></p>
-                
-                <div style="background: rgba(0,0,0,0.2); border-radius: 12px; height: 300px; display: flex; align-items: center; justify-content: center; margin-top: 15px; border: 1px dashed var(--m);">
-                    <span style="color: var(--m); font-size: 0.8rem;" data-pt="[ Espaço para Dashboard Interativo ]" data-en="[ Space for Interactive Dashboard ]"></span>
+            <div class="card">
+                <span class="d-tag">DASHBOARD</span>
+                <h3 data-pt="Eficiência Portuária" data-en="Port Efficiency"></h3>
+                <div style="height: 200px; border: 1px dashed var(--m); display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-top: 10px;">
+                    <span data-pt="[ Espaço para Iframe ]" data-en="[ Iframe Space ]"></span>
                 </div>
             </div>
-
-            <span class="s-title" data-pt="Linguística Computacional" data-en="Computational Linguistics"></span>
-            <div class="card">
-                <span class="d-tag">NLP / IA</span>
-                <h3 data-pt="Monitoramento de MTPE (CTecL)" data-en="MTPE Monitoring (CTecL)"></h3>
-                <p data-pt="Visualização de métricas de qualidade (BLEU/TER) em pós-edição de tradução automática." 
-                   data-en="Visualisation of quality metrics (BLEU/TER) in machine translation post-editing."></p>
-                
-                <a href="https://github.com/fppissarra" target="_blank" class="btn" style="width: fit-content; padding: 10px 20px;" 
-                   data-pt="Ver Repositórios de Dados" data-en="View Data Repositories"></a>
-            </div>
-
-            <div style="text-align: center; padding: 20px; color: var(--m); font-size: 0.75rem; font-style: italic;">
-                <p data-pt="Processando dados para conectar o mundo." data-en="Processing data to connect the world."></p>
-            </div>
-
         </main>
     </div>
-
     <script src="../c/j.js"></script>
 </body>
 </html>
