@@ -45,6 +45,25 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* Nome na Home - Grande e imponente */
+.brand-main {
+    font-weight: 200;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+}
+
+/* Nome nas Subpáginas - Pequeno e discreto */
+.brand-sub {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
 h1 {
     font-weight: 200;
     letter-spacing: 4px;
@@ -105,5 +124,4 @@ h1 {
     .container { padding: 10px 0; }
     .profile-img { width: 18vmin; height: 18vmin; }
     .subtitle { margin-bottom: 15px; }
-    .btn { padding: 10px 5%; }
 }
