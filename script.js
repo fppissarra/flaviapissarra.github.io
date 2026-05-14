@@ -1,3 +1,5 @@
+// script
+
 function toggleLanguage() {
     const currentLang = localStorage.getItem('lang') === 'en' ? 'pt' : 'en';
     localStorage.setItem('lang', currentLang);
