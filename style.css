@@ -57,11 +57,14 @@ body {
 /* Nome nas Subpáginas - Pequeno e discreto */
 .brand-sub {
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    opacity: 0.5;
-    margin: 0 0 5px 0;
-    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: clamp(1rem, 4vw, 1.3rem); /* Aumentado para dar mais presença */
+    opacity: 0.8;
+    margin: 0 0 15px 0;
+    font-weight: 200; /* Mais fino e elegante por ser maior */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linha sutil para separar */
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 h1 {
