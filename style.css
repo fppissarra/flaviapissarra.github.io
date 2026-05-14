@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
+
+:root {
+    --pearl-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --pearl-btn: rgba(255, 255, 255, 0.7);
+    --text-color: #2d3436;
+    --radius: 40px; 
+    --font: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--pearl-bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    opacity: 0.7;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--pearl-btn);
+    padding: 22px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Estilo do Botão de Idioma */
+.lang-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--pearl-btn);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font);
+    backdrop-filter: blur(10px);
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.lang-btn:hover { background: #fff; }
