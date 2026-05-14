@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-    --pearl-bg: #fdf5e6; 
-    --pearl-btn: #f5edda;
+    --pearl-bg: #d9e8fb; 
+    --pearl-btn: #c2d9f7;
     --text-color: #1a1a1a;
     --radius: 8px;
     --font: 'Inter', sans-serif;
@@ -101,7 +101,7 @@ h1 {
 
 .cv-download {
     background-color: #1a1a1a !important;
-    color: #fdf5e6 !important;
+    color: #d9e8fb !important;
 }
 
 .lang-btn {
@@ -109,7 +109,7 @@ h1 {
     top: 20px;
     right: 20px;
     background: #1a1a1a;
-    color: #fdf5e6;
+    color: #d9e8fb;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
