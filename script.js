@@ -1,28 +1,19 @@
 function toggleLanguage() {
-    const currentLang = localStorage.getItem('lang') === 'pt' ? 'en' : 'pt';
-    localStorage.setItem('lang', currentLang);
-    applyLanguage(currentLang);
-}
-
-function applyLanguage(lang) {
-    const elements = document.querySelectorAll('[data-en]');
-    
-    elements.forEach(el => {
-        const translation = el.getAttribute(`data-${lang}`);
-        if (translation) {
-            el.innerText = translation;
-        }
-    });
-    
     const btn = document.getElementById('lang-btn');
-    if (btn) {
-        btn.innerText = lang === 'en' ? 'Português' : 'English';
-    }
+    // Verifica qual é o idioma atual baseado no texto do botão
+    const currentLang = btn.innerText === 'Português' ? 'en' : 'pt';
     
-    document.documentElement.lang = lang;
+    if (currentLang === 'en') {
+        btn.innerText = 'Português';
+        // Procura e traduz todos os elementos que possuem o atributo data-en
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.innerText = el.getAttribute('data-en');
+        });
+    } else {
+        btn.innerText = 'English';
+        // Procura e traduz todos os elementos que possuem o atributo data-pt
+        document.querySelectorAll('[data-pt]').forEach(el => {
+            el.innerText = el.getAttribute('data-pt');
+        });
+    }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('lang') || 'en';
-    applyLanguage(savedLang);
-});
