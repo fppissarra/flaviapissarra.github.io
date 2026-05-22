@@ -39,6 +39,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Estrutura interna do painel esquerdo da página de tradução */
@@ -50,6 +51,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 3px solid var(--text-dark);
 }
 
 /* ==========================================================================
@@ -96,7 +106,7 @@ h1 {
 }
 
 /* ==========================================================================
-   BOTÕES E SELETOR DE IDIOMA MODERNIZADOS
+   BOTÕES PRINCIPAIS
    ========================================================================== */
 a.btn, .btn {
     display: block;
@@ -121,30 +131,35 @@ a.btn:hover, .btn:hover {
     transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   BOTÃO DE IDIOMAS FIXED (CORREÇÃO DO BUG FLUTUANTE)
+   ========================================================================== */
 .lang-btn {
-    position: absolute;
+    position: fixed; /* Fixa o botão nos cantos da janela do navegador */
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     color: var(--text-dark);
-    border: 1px solid var(--text-dark);
-    padding: 8px 16px;
+    border: 2px solid var(--text-dark);
+    padding: 8px 18px;
     border-radius: var(--radius-pill);
     cursor: pointer;
     font-family: var(--font);
     font-weight: 700;
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
-    z-index: 100;
+    font-size: 0.85rem;
+    transition: all 0.2s ease-in-out;
+    z-index: 9999; /* Garante que fica sempre na camada mais alta de todas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .lang-btn:hover {
     background: var(--text-dark);
     color: #ffffff;
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
-   SISTEMA DE CORTE MECÂNICO (SPLIT SCREEN LAYOUT)
+   SISTEMA DE DIVISÃO DINÂMICA (SPLIT SCREEN LAYOUT)
    ========================================================================== */
 .split-wrapper {
     display: flex;
@@ -178,7 +193,7 @@ a.btn:hover, .btn:hover {
     box-sizing: border-box;
 }
 
-/* Gatilhos Dinâmicos disparados pelo JS */
+/* Transições de estados ativos disparadas via JavaScript */
 .active-split .menu-side {
     flex: 0 0 25%;
 }
@@ -195,13 +210,14 @@ a.btn:hover, .btn:hover {
     width: 100%;
 }
 
+/* Feedback visual do botão ativo no menu lateral */
 .active-btn-highlight {
     background-color: var(--text-dark) !important;
     color: #c4dbb7 !important;
     transform: scale(1.02);
 }
 
-/* Botão Fechar (X) fixado no canto superior esquerdo do painel interno */
+/* Botão Elegante de Fechar (X) */
 .close-panel-btn {
     position: absolute;
     top: 25px;
@@ -222,7 +238,7 @@ a.btn:hover, .btn:hover {
 }
 
 /* ==========================================================================
-   TIMELINE / CARDS DO PORTFÓLIO
+   CONTEÚDO INTERNO: PORTFÓLIO / CARDS DA TIMELINE
    ========================================================================== */
 .portfolio-container {
     width: 100%;
@@ -278,7 +294,7 @@ a.btn:hover, .btn:hover {
 }
 
 /* ==========================================================================
-   MEDIA QUERY: AJUSTE ADAPTATIVO PARA CELULARES
+   RESPONSIVIDADE ADAPTATIVA (Dispositivos Móveis)
    ========================================================================== */
 @media (max-width: 768px) {
     .split-wrapper {
