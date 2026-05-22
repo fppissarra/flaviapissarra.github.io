@@ -1,16 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-    /* Fundo perolado verde: mistura suave de menta com reflexos sutis */
     --pearl-bg: linear-gradient(135deg, #e3eedb 0%, #c4dbb7 50%, #b5cf9e 100%);
-    
-    /* Botões escuros e translúcidos (Glassmorphism de alto contraste) */
-    --btn-bg: rgba(40, 44, 52, 0.75);
-    --btn-hover: rgba(20, 22, 26, 0.9);
+    --btn-bg: #282c34;
+    --btn-hover: #14161a;
     --text-light: #ffffff;
     --text-dark: #1a1a1a;
-    
-    /* Cantos bem arredondados para os botões compridinhos */
     --radius-pill: 50px;
     --font: 'Inter', sans-serif;
 }
@@ -32,7 +27,7 @@ body {
 .container {
     text-align: center;
     width: 90%;
-    max-width: 540px;
+    max-width: 500px;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -46,7 +41,6 @@ body {
     object-fit: cover;
     margin-bottom: 25px;
     border: 3px solid var(--text-dark);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .brand-main {
@@ -54,7 +48,7 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 0 0 10px 0;
-    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
     color: var(--text-dark);
 }
 
@@ -74,10 +68,66 @@ h1 {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 10px 0;
-    font-size: clamp(1.3rem, 5vw, 1.9rem);
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
 }
 
 .subtitle {
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 35px
+    margin-bottom: 35px;
+    color: var(--text-dark);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+a.btn, .btn {
+    display: block;
+    text-decoration: none !important;
+    color: var(--text-light) !important;
+    background-color: var(--btn-bg) !important;
+    padding: 18px 30px;
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--text-dark);
+    transition: all 0.2s ease-in-out;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+a.btn:hover, .btn:hover {
+    background-color: var(--btn-hover) !important;
+    transform: translateY(-2px);
+}
+
+.cv-download {
+    background-color: var(--text-dark) !important;
+    color: #e2ecd8 !important;
+}
+
+/* Botão de Idiomas Posicionado Corretamente */
+.lang-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-dark);
+    border: 1px solid var(--text-dark);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    background: var(--text-dark);
+    color: #ffffff;
+}
