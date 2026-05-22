@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
     <button onclick="toggleLanguage()" id="lang-btn" class="lang-btn">Português</button>
 
     <div class="split-wrapper" id="split-container">
         
         <div class="menu-side">
-            <div class="container">
+            <div class="menu-inner-content">
                 <p class="brand-sub">Flávia P. Pissarra</p>
                 <h1 data-en="Translation & Academic" data-pt="Tradução & Acadêmico">Translation & Academic</h1>
                 <p class="subtitle" data-en="CTecL Lab & Content" data-pt="Laboratório CTecL & Conteúdo">CTecL Lab & Content</p>
@@ -32,15 +33,45 @@
                 <div class="portfolio-container">
                     <h2 data-en="Translation Portfolio" data-pt="Portfólio de Tradução">Translation Portfolio</h2>
                     <div class="portfolio-list">
-                        
                         <div class="portfolio-item">
                             <span class="project-date">2026</span>
                             <h3 class="project-title" data-en="Project Title One" data-pt="Título do Projeto Um">Project Title One</h3>
                             <p class="project-desc" data-en="Detailed description of your translation work." data-pt="Descrição detalhada do seu trabalho de tradução.">Detailed description of your translation work.</p>
                         </div>
-
                     </div>
                 </div>
             </div>
 
             <div class="tab-content" id="tab-ctecl">
+                <div class="portfolio-container">
+                    <h2 data-en="CTecL Lab" data-pt="Laboratório CTecL">CTecL Lab</h2>
+                    <div class="portfolio-list">
+                        <div class="portfolio-item">
+                            <span class="project-date">Research</span>
+                            <h3 class="project-title">AI-Assisted Poetic Translation</h3>
+                            <p class="project-desc" data-en="Overview of the independent research initiative regarding language models and poetic rhythm." data-pt="Visão geral da iniciativa de pesquisa independente sobre modelos de linguagem e ritmo poético.">Overview of the independent research initiative regarding language models and poetic rhythm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        function openTab(tabId) {
+            document.getElementById('split-container').classList.add('active-split');
+            
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none'; 
+            });
+            
+            document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+                btn.classList.remove('active-btn-highlight');
+            });
+
+            const targetTab = document.getElementById('tab-' + tabId);
+            if (targetTab) {
+                targetTab.style.display = 'block';
+            }
