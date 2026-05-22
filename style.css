@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS E CORES (Estilo Perolado Verde & Vidro)
+   ========================================================================== */
 :root {
     --pearl-bg: linear-gradient(135deg, #e3eedb 0%, #c4dbb7 50%, #b5cf9e 100%);
     --btn-bg: #282c34;
@@ -10,6 +13,9 @@
     --font: 'Inter', sans-serif;
 }
 
+/* ==========================================================================
+   ESTILOS BASE DO SITE
+   ========================================================================== */
 body {
     margin: 0;
     padding: 0;
@@ -85,6 +91,9 @@ h1 {
     width: 100%;
 }
 
+/* ==========================================================================
+   BOTÕES COMPRIDINHOS E SELETOR DE IDIOMAS
+   ========================================================================== */
 a.btn, .btn {
     display: block;
     text-decoration: none !important;
@@ -98,36 +107,4 @@ a.btn, .btn {
     font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-}
-
-a.btn:hover, .btn:hover {
-    background-color: var(--btn-hover) !important;
-    transform: translateY(-2px);
-}
-
-.cv-download {
-    background-color: var(--text-dark) !important;
-    color: #e2ecd8 !important;
-}
-
-/* Botão de Idiomas Posicionado Corretamente */
-.lang-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.5);
-    color: var(--text-dark);
-    border: 1px solid var(--text-dark);
-    padding: 8px 16px;
-    border-radius: var(--radius-pill);
-    cursor: pointer;
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
-}
-
-.lang-btn:hover {
-    background: var(--text-dark);
-    color: #ffffff;
-}
+    cursor:
