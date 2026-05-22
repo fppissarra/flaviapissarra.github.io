@@ -9,18 +9,48 @@
 <body>
     <button onclick="toggleLanguage()" id="lang-btn" class="lang-btn">Português</button>
 
-    <div class="container">
-        <p class="brand-sub">Flávia P. Pissarra</p>
+    <div class="split-wrapper" id="split-container">
         
-        <h1 data-en="Translation & Academic" data-pt="Tradução & Acadêmico">Translation & Academic</h1>
-        
-        <nav class="nav-links">
-            <a href="#" class="btn" data-en="Translation Portfolio" data-pt="Portfólio de Tradução">Translation Portfolio</a>
-            <a href="#" class="btn" data-en="CTecL Lab" data-pt="Laboratório CTecL">CTecL Lab</a>
-            <a href="../index.html" class="btn" style="opacity: 0.8;" data-en="← Back" data-pt="← Voltar">← Back</a>
-        </nav>
+        <div class="menu-side">
+            <div class="container">
+                <p class="brand-sub">Flávia P. Pissarra</p>
+                <h1 data-en="Translation & Academic" data-pt="Tradução & Acadêmico">Translation & Academic</h1>
+                <p class="subtitle" data-en="CTecL Lab & Content" data-pt="Laboratório CTecL & Conteúdo">CTecL Lab & Content</p>
+                
+                <nav class="nav-links">
+                    <button class="btn" onclick="showPortfolio()" data-en="Translation Portfolio" data-pt="Portfólio de Tradução">Translation Portfolio</button>
+                    <a href="https://ctecl.github.io" target="_blank" class="btn">CTecL Lab</a>
+                    <a href="../index.html" class="btn" style="opacity: 0.8;" data-en="← Back" data-pt="← Voltar">← Back</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="content-side" id="portfolio-panel">
+            <div class="portfolio-container">
+                <h2 data-en="Translation Portfolio" data-pt="Portfólio de Tradução">Translation Portfolio</h2>
+                
+                <div class="portfolio-list">
+                    <div class="portfolio-item">
+                        <span class="project-date">2026</span>
+                        <h3 class="project-title" data-en="Project Title One" data-pt="Título do Projeto Um">Project Title One</h3>
+                        <p class="project-desc" data-en="Detailed description of your translation work." data-pt="Descrição detalhada do seu trabalho de tradução.">Detailed description of your translation work.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <span class="project-date">2025</span>
+                        <h3 class="project-title" data-en="Project Title Two" data-pt="Título do Projeto Dois">Project Title Two</h3>
+                        <p class="project-desc" data-en="Another project description." data-pt="Outra descrição de projeto.">Another project description.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="../script.js"></script>
+    <script>
+        function showPortfolio() {
+            document.getElementById('split-container').classList.add('active-split');
+        }
+    </script>
 </body>
 </html>
