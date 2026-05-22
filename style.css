@@ -1,10 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    --pearl-bg: #adc197; 
-    --pearl-btn: #97ad81;
-    --text-color: #1a1a1a;
-    --radius: 8px;
+    /* Fundo perolado verde: mistura suave de menta com reflexos sutis */
+    --pearl-bg: linear-gradient(135deg, #e3eedb 0%, #c4dbb7 50%, #b5cf9e 100%);
+    
+    /* Botões escuros e translúcidos (Glassmorphism de alto contraste) */
+    --btn-bg: rgba(40, 44, 52, 0.75);
+    --btn-hover: rgba(20, 22, 26, 0.9);
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+    
+    /* Cantos bem arredondados para os botões compridinhos */
+    --radius-pill: 50px;
     --font: 'Inter', sans-serif;
 }
 
@@ -12,19 +19,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font);
-    background-color: var(--pearl-bg);
+    background: var(--pearl-bg);
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-color);
+    color: var(--text-dark);
     overflow-x: hidden;
 }
 
 .container {
     text-align: center;
     width: 90%;
-    max-width: 500px;
+    max-width: 540px;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -36,8 +44,9 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #1a1a1a;
+    margin-bottom: 25px;
+    border: 3px solid var(--text-dark);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .brand-main {
@@ -45,16 +54,17 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 0 0 10px 0;
-    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    color: var(--text-dark);
 }
 
 .brand-sub {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 1.2rem;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
     font-weight: 700;
-    border-bottom: 3px solid #1a1a1a;
+    border-bottom: 3px solid var(--text-dark);
     padding-bottom: 10px;
     width: 100%;
 }
@@ -64,46 +74,10 @@ h1 {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 10px 0;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    font-size: clamp(1.3rem, 5vw, 1.9rem);
 }
 
 .subtitle {
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 30px;
-    color: #1a1a1a;
-}
-
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.btn {
-    text-decoration: none;
-    color: var(--text-color);
-    background-color: var(--pearl-btn);
-    padding: 18px 20px;
-    border-radius: var(--radius);
-    border: 2px solid #1a1a1a;
-    transition: all 0.2s ease-in-out;
-    font-weight: 700;
-    font-size: 1rem;
-    display: block;
-}
-
-.btn:hover {
-    background-color: #1a1a1a;
-    color: var(--pearl-bg);
-}
-
-.cv-download {
-    background-color: #1a1a1a !important;
-    color: #adc197 !important;
-}
-
-.lang-btn {
-    position: absolute;
-    top: 20px
+    margin-bottom: 35px
