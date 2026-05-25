@@ -59,14 +59,15 @@
     </div>
 
     <script src="../script.js"></script>
+
     <script>
         function openTab(tabId) {
             document.getElementById('split-container').classList.add('active-split');
-            
+        
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.style.display = 'none'; 
             });
-            
+        
             document.querySelectorAll('.nav-tab-btn').forEach(btn => {
                 btn.classList.remove('active-btn-highlight');
             });
@@ -75,3 +76,27 @@
             if (targetTab) {
                 targetTab.style.display = 'block';
             }
+            
+            document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+                if (btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('active-btn-highlight');
+                }
+            });
+        }
+    
+        function closeAllTabs() {
+            document.getElementById('split-container').classList.remove('active-split');
+            
+            document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+                btn.classList.remove('active-btn-highlight');
+            });
+            
+            setTimeout(() => {
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = 'none';
+                });
+            }, 600); 
+        }
+    </script>
+</body>
+</html>
