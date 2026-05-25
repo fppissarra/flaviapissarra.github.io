@@ -4,15 +4,14 @@ function toggleLanguage() {
 
     const currentText = btn.innerText.trim();
     
-    const nextLang = (currentText === 'Português' || currentText === 'Português') ? 'en' : 'pt';
-    
-    if (nextLang === 'en') {
-        btn.innerText = 'English';
+    if (currentText === 'English') {
+        btn.innerText = 'Português';
         document.querySelectorAll('[data-en]').forEach(el => {
             el.innerText = el.getAttribute('data-en');
         });
     } else {
-        btn.innerText = 'Português';
+        
+        btn.innerText = 'English';
         document.querySelectorAll('[data-pt]').forEach(el => {
             el.innerText = el.getAttribute('data-pt');
         });
