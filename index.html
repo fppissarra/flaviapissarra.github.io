@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flávia P. Pissarra - Portfólio</title>
-    <link rel="stylesheet" href="../core/style.css">
+    <!-- Verifique se este arquivo está na mesma pasta que o index.html -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="app-container">
         
-        <!-- menu lateral -->
+        <!-- BARRA LATERAL (MENU) -->
         <aside class="sidebar">
             <div class="profile-section">
                 <h1 class="profile-name">Flávia P. Pissarra</h1>
@@ -23,7 +24,7 @@
                 <button class="nav-btn">Sobre mim</button>
             </nav>
 
-            <!-- seletores de idioma -->
+            <!-- Seletores de Idioma Customizados (5 Idiomas) -->
             <div class="language-picker">
                 <button class="lang-btn">PTBR</button>
                 <button class="lang-btn">ENG</button>
@@ -32,10 +33,11 @@
                 <button class="lang-btn">JAP</button>
             </div>
         </aside>
-      
+
+        <!-- CONTEÚDO PRINCIPAL (PAINÉIS) -->
         <main class="main-content">
             
-            <!-- PowerBI -->
+            <!-- Painel: BI (Inicia Ativo) -->
             <div id="panel-bi" class="content-panel active">
                 <h2 class="section-title">Inteligência de Negócios e Análise</h2>
                 <p class="section-intro">Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
@@ -47,7 +49,7 @@
                     </div>
                     <div class="project-card">
                         <h3>NLP & Ciência de Dados</h3>
-                        <p>Projetos com linguagem natural, organization de dados e automação de análises.</p>
+                        <p>Projetos com linguagem natural, organização de dados e automação de análises.</p>
                     </div>
                     <div class="project-card">
                         <h3>Painéis do Power BI</h3>
@@ -56,13 +58,13 @@
                 </div>
             </div>
 
-            <!-- tradução -->
+            <!-- Painel: Tradução -->
             <div id="panel-traducao" class="content-panel">
                 <h2 class="section-title">Tradução</h2>
                 <p class="section-intro">Serviços de tradução técnica, versão e localização de software.</p>
             </div>
 
-            <!-- sobre mim -->
+            <!-- Painel: Sobre Mim -->
             <div id="panel-sobre" class="content-panel">
                 <h2 class="section-title">Sobre mim</h2>
                 <p class="section-intro">Conheça mais sobre minha trajetória profissional e acadêmica.</p>
@@ -71,9 +73,9 @@
         </main>
     </div>
 
-    <!-- elemento base invisível necessário para o funcionamento do motor google -->
+    <!-- Elemento base invisível necessário para o funcionamento do motor do Google -->
     <div id="google_translate_element" style="display:none;"></div>
 
-    <script src="../core/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
