@@ -1,54 +1,54 @@
 {
-  "headline": "Data Scientist & Translator",
+  "headline": "Data Scientist & Technical Translator",
   "nav_bi": "Business Intelligence",
   "nav_translation": "Translation",
   "nav_about": "About me",
-  "title_bi": "Business Intelligence & Analytics",
-  "intro_bi": "Data exploration, feature engineering, and strategic dashboard architecture.",
-  "title_translation": "Translation & Localization",
-  "intro_translation": "Technical translation, software localization, and cross-cultural versioning.",
-  "title_about": "About me",
-  "intro_about": "Discover my professional background, technical stack, and academic trajectory.",
+  "title_bi": "Business Intelligence & Analytics Solutions",
+  "intro_bi": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry.",
+  "title_translation": "Technical Translation & Software Localization",
+  "intro_translation": "High-precision translation, software internationalization, and cross-cultural versioning for technology enterprises.",
+  "title_about": "About Flávia P. Pissarra",
+  "intro_about": "Discover my professional background, technical core stack, and academic trajectory operating at the intersection of data and language.",
   "projects_bi": [
     {
-      "title": "Port Logistics Analysis",
-      "desc": "Vessel flow optimization and intelligent cargo tracking systems developed to monitor maritime operations in real time."
+      "title": "Port Logistics & Maritime Supply Chain Analysis",
+      "desc": "Vessel flow optimization models and intelligent cargo tracking systems developed to monitor complex port operations, reduce queue bottlenecks, and stream telemetry in real time."
     },
     {
-      "title": "NLP & Data Science",
-      "desc": "Natural language processing models, advanced data curation pipelines, and automated text analysis diagnostics."
+      "title": "Natural Language Processing (NLP) Diagnostics",
+      "desc": "Advanced linguistic algorithms, data curation pipelines, and automated text analysis diagnostics deployed to parse unstructured global data repositories."
     },
     {
-      "title": "Power BI Dashboards",
-      "desc": "Strategic enterprise telemetry visualizations deployed for high-level corporate decision support and performance monitoring."
+      "title": "Strategic Executive Telemetry Visualization",
+      "desc": "Interactive Power BI architecture and advanced DAX modeling built to provide high-level corporate decision support, revenue monitoring, and KPI auditing."
     }
   ],
   "projects_translation": [
     {
-      "title": "Software & UI Localization",
-      "desc": "Adapting digital interfaces, software documentation, and platform strings for absolute regional accuracy and a seamless user experience."
+      "title": "Software, UI & Product Localization",
+      "desc": "Adapting digital applications, software documentation, and interface strings for absolute regional compliance, linguistic fluency, and a native user experience (UX)."
     },
     {
-      "title": "Technical & Scientific Versioning",
-      "desc": "High-precision translation of technical literature, academic papers, engineering schemas, and complex data science research documents."
+      "title": "Linguistic Curation & Technical Versioning",
+      "desc": "High-precision conversion of engineering blueprints, data science literature, scientific publications, and legal data privacy frameworks."
     },
     {
-      "title": "Glossary & Terminology Curation",
-      "desc": "Building comprehensive translation memories, structured linguistic databases, and domain-specific glossaries to secure corporate brand consistency."
+      "title": "Terminology Management & Translation Memories",
+      "desc": "Building structured translation memories, comprehensive enterprise databases, and domain-specific glossaries to enforce global brand consistency."
     }
   ],
   "projects_about": [
     {
-      "title": "Core Expertise",
-      "desc": "Operating gracefully at the precise intersection of data engineering and human language. Leveraging statistical computing to extract hidden insights while breaking complex communication barriers in global engineering environments."
+      "title": "Core Multi-Disciplinary Expertise",
+      "desc": "Operating gracefully where computational data engineering meets human language. Leveraging statistical models to decode hidden patterns while eliminating complex communication friction in global corporate environments."
     },
     {
-      "title": "Technical Stack",
-      "desc": "Expert processing in Python, SQL databases, Power BI architecture, Data Wrangling pipelines, NLP toolkits, Git orchestration, and Advanced Computer-Assisted Translation (CAT) software."
+      "title": "Advanced Technology Core Stack",
+      "desc": "Expert data orchestration leveraging Python, SQL databases, Git version control, tailored NLP pipelines, advanced Power BI modeling, and state-of-the-art Computer-Assisted Translation (CAT) suites."
     },
     {
-      "title": "Academic & Professional Path",
-      "desc": "Continuous specialized development in Data Science, Information Engineering, and Linguistic Localization targeted at delivering robust, end-to-end strategic technological solutions."
+      "title": "Academic Trajectory & Vision",
+      "desc": "Continuous research and development in Information Systems, Advanced Data Analytics, and Translation Technologies to design end-to-end strategic solutions for international markets."
     }
   ]
 }
