@@ -1,4 +1,5 @@
-// gerenciamento de nav e paineis
+// --- 1. GERENCIAMENTO DE NAVEGAÇÃO E PAINÉIS ---
+
 function setActiveButton(clickedButton) {
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
   if (clickedButton) clickedButton.classList.add('active');
@@ -15,7 +16,8 @@ function openPanel(panelId, clickedButton = null) {
   setActiveButton(clickedButton);
 }
 
-// tradução silenciosa
+// --- 2. TRADUÇÃO SILENCIOSA ("POR BAIXO DOS PANOS") ---
+
 function changeLanguage(lang) {
   const combo = document.querySelector('.goog-te-combo');
   if (!combo) {
@@ -30,7 +32,7 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     { 
       pageLanguage: 'pt', 
-      includedLanguages: 'en,pt,es,ko,ja',
+      includedLanguages: 'en,pt,es,ko,ja', // Todos os 5 idiomas ativados aqui
       autoDisplay: false 
     },
     'google_translate_element'
@@ -46,7 +48,8 @@ function loadGoogleTranslate() {
   document.body.appendChild(script);
 }
 
-// inicialização de eventos
+// --- 3. INICIALIZAÇÃO DE EVENTOS ---
+
 document.addEventListener('DOMContentLoaded', () => {
   loadGoogleTranslate();
 
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'sobre mim': 'sobre'
   };
 
-  // cliques dos paineis do menu
+  // cliques dos painéis do menu lateral
   document.querySelectorAll('.nav-btn').forEach(button => {
     button.addEventListener('click', () => {
       const text = button.textContent.trim().toLowerCase();
@@ -66,30 +69,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // cliques no seletor dinâmico de idiomas
+  // cliques no seletor dinâmico de idiomas (PTBR / ENG / ESP / KOR / JAP)
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
       const langSelected = button.textContent.trim().toLowerCase();
       
       let targetLang = 'pt';
-      if (langSelected.includes('en')) {
-        targetLang = 'en'; // rota para Inglês
-      } else if (langSelected.includes('es')) {
-        targetLang = 'es'; // rota para Espanhol
-      } else if (langSelected.includes('pt')) {
-        targetLang = 'pt'; // rota para Português
-      } else if (langSelected.includes('ko')) {
-        targetLang = 'ko'; // rota para Coreano
-      } else if (langSelected.includes('ja')) {
-        targetLang = 'ja'; // rota para Japonês
-      }
       
+      if (langSelected.includes('en')) {
+        targetLang = 'en'; // ENG
+      } else if (langSelected.includes('es')) {
+        targetLang = 'es'; // ESP
+      } else if (langSelected.includes('ko')) {
+        targetLang = 'ko'; // KOR
+      } else if (langSelected.includes('ja')) {
+        targetLang = 'ja'; // JAP
+      } else if (langSelected.includes('pt')) {
+        targetLang = 'pt'; // PTBR
+      }
+
       changeLanguage(targetLang);
     });
   });
 
-  // ativa a primeira aba configurada
+  // ativa a primeira aba configurada automaticamente ao iniciar
   const firstActiveButton = document.querySelector('.nav-btn.active');
   if (firstActiveButton) {
     const text = firstActiveButton.textContent.trim().toLowerCase();
