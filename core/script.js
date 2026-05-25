@@ -19,14 +19,12 @@ function openPanel(panelId) {
     }
 
     // 4. Adiciona a classe ativa ao botão que disparou o evento
-    // Encontra o botão baseado no atributo onclick correspondente
     const clickedButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(panelId));
     if (clickedButton) {
         clickedButton.classList.add('active');
     }
 }
 
-// INJEÇÃO DA FUNÇÃO DO IDIOMA (Para posterior configuração se você desejar)
 function toggleLanguage() {
-    console.log("Mecanismo de alternância multilíngue pronto para receber o seu dicionário de tradução.");
+    console.log("Mecanismo pronto para receber o dicionário.");
 }
