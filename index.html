@@ -1,78 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra - Portfólio</title>
+    <title>Flávia P. Pissarra - Portfolio</title>
     <link rel="stylesheet" href="../core/style.css">
 </head>
 <body>
 
     <div class="app-container">
         
-        <!-- BARRA LATERAL (MENU) -->
         <aside class="sidebar">
             <div class="profile-section">
+                <img src="https://github.com" alt="Flávia P. Pissarra" class="profile-avatar">
                 <h1 class="profile-name">Flávia P. Pissarra</h1>
-                <p class="profile-headline">Cientista de Dados e Tradutora</p>
+                <p class="profile-headline">Data Scientist & Translator</p>
             </div>
 
             <nav class="sidebar-nav">
-                <button class="nav-btn active">Inteligência de Negócios</button>
-                <button class="nav-btn">Tradução</button>
-                <button class="nav-btn">Sobre mim</button>
+                <button class="nav-btn active">Business Intelligence</button>
+                <button class="nav-btn">Translation</button>
+                <button class="nav-btn">About me</button>
             </nav>
 
-            <!-- Seletores de Idioma Customizados (5 Idiomas) -->
             <div class="language-picker">
-                <button class="lang-btn">PTBR</button>
                 <button class="lang-btn">ENG</button>
+                <button class="lang-btn">PTBR</button>
                 <button class="lang-btn">ESP</button>
                 <button class="lang-btn">KOR</button>
                 <button class="lang-btn">JAP</button>
             </div>
         </aside>
 
-        <!-- CONTEÚDO PRINCIPAL (PAINÉIS) -->
         <main class="main-content">
             
-            <!-- Painel: BI (Inicia Ativo) -->
             <div id="panel-bi" class="content-panel active">
-                <h2 class="section-title">Inteligência de Negócios e Análise</h2>
-                <p class="section-intro">Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
+                <h2 class="section-title">Business Intelligence & Analytics</h2>
+                <p class="section-intro">Data exploration, feature engineering, and strategic dashboard architecture.</p>
                 
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3>Análise de Logística Portuária</h3>
-                        <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
+                        <h3>Port Logistics Analysis</h3>
+                        <p>Vessel flow optimization and intelligent cargo tracking systems.</p>
                     </div>
                     <div class="project-card">
-                        <h3>NLP & Ciência de Dados</h3>
-                        <p>Projetos com linguagem natural, organização de dados e automação de análises.</p>
+                        <h3>NLP & Data Science</h3>
+                        <p>Natural language processing models, data curation, and automated pipelines.</p>
                     </div>
                     <div class="project-card">
-                        <h3>Painéis do Power BI</h3>
-                        <p>Visualizações para acompanhamento estratégico e apoio à tomada de decisão.</p>
+                        <h3>Power BI Dashboards</h3>
+                        <p>Strategic telemetry visualizations deployed for corporate decision support.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Painel: Tradução -->
-            <div id="panel-traducao" class="content-panel">
-                <h2 class="section-title">Tradução</h2>
-                <p class="section-intro">Serviços de tradução técnica, versão e localização de software.</p>
+            <div id="panel-translation" class="content-panel">
+                <h2 class="section-title">Translation</h2>
+                <p class="section-intro">Technical translation, software localization, and cross-cultural versioning.</p>
             </div>
 
-            <!-- Painel: Sobre Mim -->
-            <div id="panel-sobre" class="content-panel">
-                <h2 class="section-title">Sobre mim</h2>
-                <p class="section-intro">Conheça mais sobre minha trajetória profissional e acadêmica.</p>
+            <div id="panel-about" class="content-panel">
+                <h2 class="section-title">About me</h2>
+                <p class="section-intro">Discover my professional background, technical stack, and academic trajectory.</p>
             </div>
 
         </main>
     </div>
 
-    <!-- Elemento base invisível necessário para o funcionamento do motor do Google -->
     <div id="google_translate_element" style="display:none;"></div>
 
     <script src="../core/script.js"></script>
