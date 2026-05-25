@@ -1,7 +1,6 @@
 @import url('https://googleapis.com');
 
 :root {
-  --bg-gradient: linear-gradient(-45deg, #6366f1, #f43f5e, #10b981, #f59e0b);
   --font-heading: 'Bebas Neue', sans-serif;
   --font-main: 'Roboto', sans-serif;
   --glass-bg: rgba(255, 255, 255, 0.22);
@@ -19,7 +18,7 @@
 
 body {
     font-family: var(--font-main);
-    background: var(--bg-gradient);
+    background: linear-gradient(-45deg, #6366f1, #f43f5e, #10b981, #f59e0b);
     background-size: 400% 400%;
     animation: gradientAnimation 12s ease infinite;
     color: var(--text-dark);
@@ -96,12 +95,13 @@ body {
     flex-direction: column;
     gap: 8px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
+/* 🎯 TÓPICOS 1, 2, 3: Agora usam o design retangular sólido com borda suave */
 .nav-btn {
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     text-align: center;
     padding: 12px;
     font-size: 0.9rem;
@@ -114,11 +114,12 @@ body {
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .nav-btn.active {
     background: #ffffff;
+    border-color: #ffffff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     font-weight: 500;
 }
@@ -128,24 +129,26 @@ body {
     flex-direction: column;
     gap: 8px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
+/* 🎯 TÓPICOS 4, 5, 6: Agora limpos, sem bordas ou fundo, apenas texto plano */
 .social-link {
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: var(--text-dark);
     padding: 10px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
     text-align: center;
-    transition: background 0.2s;
+    background: transparent;
+    border: none;
+    transition: color 0.2s, opacity 0.2s;
 }
 
 .social-link:hover {
-    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    text-decoration: underline;
 }
 
 .language-dropdown-wrapper {
