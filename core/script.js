@@ -56,9 +56,18 @@ function loadGoogleTranslate() {
 document.addEventListener('DOMContentLoaded', () => {
   loadGoogleTranslate();
 
-  const firstButton = document.querySelector('.nav-btn.active');
-  if (firstButton) {
-    const activePanel = firstButton.getAttribute('onclick')?.match(/openPanel\('([^']+)'\)/)?.[1];
-    if (activePanel) openPanel(activePanel, firstButton);
+  const firstActiveButton = document.querySelector('.nav-btn.active');
+  if (firstActiveButton) {
+    const text = firstActiveButton.textContent.trim().toLowerCase();
+    const map = {
+      'business intelligence': 'bi',
+      'tradução': 'traducao',
+      'sobre mim': 'sobre'
+    };
+
+    const panelId = map[text];
+    if (panelId) {
+      openPanel(panelId, firstActiveButton);
+    }
   }
 });
