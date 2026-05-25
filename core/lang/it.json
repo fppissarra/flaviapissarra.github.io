@@ -1,0 +1,54 @@
+{
+  "headline": "Data Scientist & Traduttrice",
+  "nav_bi": "Business Intelligence",
+  "nav_translation": "Traduzione",
+  "nav_about": "Su di me",
+  "title_bi": "Business Intelligence & Analytics",
+  "intro_bi": "Esplorazione dei dati, ingegneria delle caratteristiche e architettura di dashboard strategiche.",
+  "title_translation": "Traduzione & Localizzazione",
+  "intro_translation": "Traduzione tecnica, localizzazione di software e versionamento cross-culturale.",
+  "title_about": "Su di me",
+  "intro_about": "Scopri il mio percorso professionale, il mio stack tecnico e la mia traiettoria accademica.",
+  "projects_bi": [
+    {
+      "title": "Analisi della Logistica Portuale",
+      "desc": "Ottimizzazione del flusso delle navi e sistemi intelligenti di tracciamento delle merci sviluppati per monitorare le operazioni marittime in tempo reale."
+    },
+    {
+      "title": "NLP & Data Science",
+      "desc": "Modelli di elaborazione del linguaggio naturale, pipeline avanzate di cura dei dati e diagnostica automatizzata per l'analisi dei testi."
+    },
+    {
+      "title": "Dashboard Power BI",
+      "desc": "Visualizzazioni strategiche della telemetria aziendale implementate per il supporto alle decisioni aziendali di alto livello e il monitoramento delle prestazioni."
+    }
+  ],
+  "projects_translation": [
+    {
+      "title": "Localizzazione di Software & UI",
+      "desc": "Adattamento di interfacce digitali, documentazione software e stringhe di piattaforma per un'assoluta precisione locale e un'esperienza utente fluida."
+    },
+    {
+      "title": "Versione Tecnica & Scientifica",
+      "desc": "Traduzione ad alta precisione di letteratura tecnica, articoli accademici, schemi ingegneristici e documenti complessi di ricerca in scienza dei dati."
+    },
+    {
+      "title": "Curatela di Glossari & Terminologia",
+      "desc": "Costruzione di memorie di traduzione complete, database linguistici strutturati e glossari specifici del dominio per garantire la coerenza del marchio aziendale."
+    }
+  ],
+  "projects_about": [
+    {
+      "title": "Competenze Chiave",
+      "desc": "Opero con precisione all'intersezione esatta tra ingegneria dei dati e linguaggio umano. Utilizzo il calcolo statistico per estrarre insight nascosti, abbattendo al contempo complesse barriere comunicative in ambienti ingegneristici globali."
+    },
+    {
+      "title": "Stack Tecnico",
+      "desc": "Elaborazione esperta in Python, database SQL, architettura Power BI, pipeline di Data Wrangling, toolkit NLP, orchestrazione Git e software avanzati di Traduzione Assistita dall'Elaboratore (CAT)."
+    },
+    {
+      "title": "Percorso Accademico & Professionale",
+      "desc": "Sviluppo specialistico continuo in Data Science, Ingegneria dell'Informazione e Localizzazione Linguistica mirato a fornire soluzioni tecnologiche strategiche end-to-end solide."
+    }
+  ]
+}
