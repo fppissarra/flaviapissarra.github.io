@@ -1,0 +1,54 @@
+{
+  "headline": "Cientista de Dados e Tradutora",
+  "nav_bi": "Inteligência de Negócios",
+  "nav_translation": "Tradução",
+  "nav_about": "Sobre mim",
+  "title_bi": "Inteligência de Negócios e Análise",
+  "intro_bi": "Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.",
+  "title_translation": "Tradução e Localização",
+  "intro_translation": "Tradução técnica, localização de software e versionamento multicultural.",
+  "title_about": "Sobre mim",
+  "intro_about": "Descubra minha trajetória profissional, ferramentas técnicas e jornada acadêmica.",
+  "projects_bi": [
+    {
+      "title": "Análise de Logística Portuária",
+      "desc": "Otimização do fluxo de navios e sistemas inteligentes de rastreamento de carga desenvolvidos para monitorar operações marítimas em tempo real."
+    },
+    {
+      "title": "NLP & Ciência de Dados",
+      "desc": "Modelos de processamento de linguagem natural, pipelines avançados de curadoria de dados e diagnósticos automatizados de análise de texto."
+    },
+    {
+      "title": "Painéis do Power BI",
+      "desc": "Visualizações estratégicas de telemetria corporativa implantadas para suporte a decisões de alto nível e monitoramento de desempenho."
+    }
+  ],
+  "projects_translation": [
+    {
+      "title": "Localização de Software e UI",
+      "desc": "Adaptação de interfaces digital, documentação de software e strings de plataforma para precisão regional absoluta e uma experiência de usuário perfeita."
+    },
+    {
+      "title": "Versão Técnica e Científica",
+      "desc": "Tradução de alta precisão de literatura técnica, artigos acadêmicos, esquemas de engenharia e documentos complexos de pesquisa em ciência de dados."
+    },
+    {
+      "title": "Curadoria de Glossário e Terminologia",
+      "desc": "Construção de memórias de tradução abrangentes, bancos de dados linguísticos estruturados e glossários específicos do domínio para garantir a consistência da marca corporativa."
+    }
+  ],
+  "projects_about": [
+    {
+      "title": "Experiência Principal",
+      "desc": "Operando com maestria na interseção precisa entre engenharia de dados e linguagem humana. Aproveitando a computação estatística para extrair insights ocultos enquanto quebra barreiras de comunicação complexas em ambientes globais de engenharia."
+    },
+    {
+      "title": "Stack Técnico",
+      "desc": "Processamento avançado em Python, bancos de dados SQL, arquitetura Power BI, pipelines de Data Wrangling, toolkits de NLP, orquestração Git e softwares avançados de Tradução Assistida por Computador (CAT)."
+    },
+    {
+      "title": "Trajetória Acadêmica e Profissional",
+      "desc": "Desenvolvimento especializado contínuo em Ciência de Dados, Engenharia da Informação e Localização Linguística focado na entrega de soluções tecnológicas estratégicas ponta a ponta."
+    }
+  ]
+}
