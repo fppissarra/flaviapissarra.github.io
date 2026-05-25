@@ -53,7 +53,7 @@ const localTranslations = {
     navTrad: "翻訳",
     navAbout: "プロフィール",
     titleBi: "ビジネスインテリジェンス & アナリティクス",
-    introBi: "データ探索, フィーチャーエンジニアリング, および戦略的ダッシュボードアーキテクチャ.",
+    introBi: "データ探索, フィーチャーエンジニアリング, および戦略적ダッシュボードアーキテクチャ.",
     titleTrad: "翻訳 & ローカライズ",
     introTrad: "技術翻訳, ソフトウェアローカライズ, および異文化間バージョン管理.",
     titleAbout: "プロフィール",
@@ -91,15 +91,16 @@ function applyLocalFallback(langCode) {
 
 function triggerGoogleTranslate(langCode) {
   localStorage.setItem('user-portfolio-lang', langCode);
+  applyLocalFallback(langCode);
+
   const selectElement = document.querySelector('.goog-te-combo');
-  
   if (selectElement) {
     selectElement.value = langCode;
-    selectElement.dispatchEvent(new Event('change'));
-  } else {
-    if (window.location.protocol === 'file:') {
-      applyLocalFallback(langCode);
-    }
+    
+    // Simulação completa de eventos humanos para forçar a execução do Google
+    selectElement.dispatchEvent(new Event('focus', { bubbles: true }));
+    selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+    selectElement.dispatchEvent(new Event('blur', { bubbles: true }));
   }
 }
 
@@ -131,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const langSelect = document.getElementById('custom-lang-select');
   if (langSelect) {
     langSelect.value = savedLang;
-    if (window.location.protocol === 'file:' && savedLang !== 'en') {
+    if (savedLang !== 'en') {
       applyLocalFallback(savedLang);
     }
   }
