@@ -37,9 +37,9 @@ function renderCards(panelId, projectsArray) {
       </div>
     `;
 
-    if (panelId === 'bi') {
+    if (proj.link) {
       gridElement.innerHTML += `
-        <a href="https://github.com" target="_blank" class="project-card">
+        <a href="${proj.link}" target="_blank" class="project-card">
           ${cardContent}
         </a>`;
     } else {
@@ -60,6 +60,11 @@ function fetchAndApplyLanguage(langCode) {
       return response.json();
     })
     .then(data => {
+      const avatarImg = document.querySelector('.profile-avatar');
+      if (avatarImg && data.profile_image) {
+        avatarImg.src = data.profile_image;
+      }
+
       document.querySelector('.profile-headline').textContent = data.headline;
       document.querySelector('[data-panel="bi"]').textContent = data.nav_bi;
       document.querySelector('[data-panel="translation"]').textContent = data.nav_translation;
@@ -74,7 +79,6 @@ function fetchAndApplyLanguage(langCode) {
       document.querySelector('#panel-about .section-title').textContent = data.title_about;
       document.querySelector('#panel-about .section-intro').textContent = data.intro_about;
 
-      /* Injeta os textos traduzidos dinamicamente nos links sociais */
       document.getElementById('link-gh').textContent = data.link_github || "GitHub";
       document.getElementById('link-ln').textContent = data.link_linkedin || "LinkedIn";
       document.getElementById('link-em').textContent = data.link_email || "Mail me";
@@ -84,51 +88,16 @@ function fetchAndApplyLanguage(langCode) {
       renderCards('about', data.projects_about);
     })
     .catch(error => console.error('Erro na requisição do idioma:', error));
-
-  const selectElement = document.querySelector('.goog-te-combo');
-  if (selectElement) {
-    selectElement.value = langCode;
-    selectElement.dispatchEvent(new Event('focus', { bubbles: true }));
-    selectElement.dispatchEvent(new Event('change', { bubbles: true }));
-    selectElement.dispatchEvent(new Event('blur', { bubbles: true }));
-  }
-}
-
-function googleTranslateElementInit() {
-  const langSelect = document.getElementById('custom-lang-select');
-  let allowedLanguages = 'en,pt,es,ko,ja,it';
-  
-  if (langSelect) {
-    const options = Array.from(langSelect.options).map(opt => opt.value);
-    allowedLanguages = options.join(',');
-  }
-
-  new google.translate.TranslateElement(
-    { pageLanguage: 'en', includedLanguages: allowedLanguages, autoDisplay: false },
-    'google_translate_element'
-  );
-  
-  setTimeout(() => {
-    const savedLang = localStorage.getItem('user-portfolio-lang') || 'en';
-    if (savedLang !== 'en') fetchAndApplyLanguage(savedLang);
-  }, 800);
-}
-
-function loadGoogleScript() {
-  if (document.getElementById('gt-script')) return;
-  const script = document.createElement('script');
-  script.id = 'gt-script';
-  script.src = 'https://google.com';
-  script.async = true;
-  document.body.appendChild(script);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadGoogleScript();
-
-  const savedLang = localStorage.getItem('user-portfolio-lang') || 'en';
-  const langSelect = document.getElementById('custom-lang-select');
+  let savedLang = localStorage.getItem('user-portfolio-lang');
+  if (!savedLang) {
+    savedLang = 'en';
+    localStorage.setItem('user-portfolio-lang', 'en');
+  }
   
+  const langSelect = document.getElementById('custom-lang-select');
   if (langSelect) {
     langSelect.value = savedLang;
   }
