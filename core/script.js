@@ -1,39 +1,64 @@
-function openPanel(panelId) {
-  document.querySelectorAll('.content-panel').forEach(panel => {
-    panel.classList.remove('active');
-  });
-
+function setActiveButton(clickedButton) {
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.remove('active');
   });
 
-  const activeSection = document.getElementById(`panel-${panelId}`);
-  if (activeSection) activeSection.classList.add('active');
-
-  if (event && event.target) {
-    event.target.classList.add('active');
+  if (clickedButton) {
+    clickedButton.classList.add('active');
   }
 }
 
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'pt',
-    includedLanguages: 'en,pt',
-    autoDisplay: false
-  }, 'google_translate_element');
+function openPanel(panelId, clickedButton = null) {
+  document.querySelectorAll('.content-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  const targetPanel = document.getElementById(`panel-${panelId}`);
+  if (targetPanel) {
+    targetPanel.classList.add('active');
+  }
+
+  setActiveButton(clickedButton);
 }
 
-const googleTranslateScript = document.createElement('script');
-googleTranslateScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-document.body.appendChild(googleTranslateScript);
-
 function changeLanguage(lang) {
-  const translateCombo = document.querySelector('.goog-te-combo');
-  if (!translateCombo) {
-    console.warn('O tradutor ainda não carregou.');
+  const combo = document.querySelector('.goog-te-combo');
+  if (!combo) {
+    console.warn('O Google Tradutor ainda não carregou.');
     return;
   }
 
-  translateCombo.value = lang;
-  translateCombo.dispatchEvent(new Event('change'));
+  combo.value = lang;
+  combo.dispatchEvent(new Event('change'));
 }
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'pt',
+      includedLanguages: 'en,pt',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+
+function loadGoogleTranslate() {
+  if (document.getElementById('google-translate-script')) return;
+
+  const script = document.createElement('script');
+  script.id = 'google-translate-script';
+  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  script.async = true;
+  document.body.appendChild(script);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadGoogleTranslate();
+
+  const firstButton = document.querySelector('.nav-btn.active');
+  if (firstButton) {
+    const activePanel = firstButton.getAttribute('onclick')?.match(/openPanel\('([^']+)'\)/)?.[1];
+    if (activePanel) openPanel(activePanel, firstButton);
+  }
+});
