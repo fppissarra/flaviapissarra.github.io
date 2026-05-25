@@ -12,23 +12,23 @@
         
         <aside class="sidebar">
             <div class="profile-section">
-                <img src="https://avatars.githubusercontent.com/u/66925367" alt="Flávia P. Pissarra" class="profile-avatar">
+                <img src="https://githubusercontent.com" alt="Flávia P. Pissarra" class="profile-avatar">
                 <h1 class="profile-name">Flávia P. Pissarra</h1>
                 <p class="profile-headline">Data Scientist & Translator</p>
             </div>
 
             <nav class="sidebar-nav">
-                <button class="nav-btn active">Business Intelligence</button>
-                <button class="nav-btn">Translation</button>
-                <button class="nav-btn">About me</button>
+                <button class="nav-btn active" data-panel="bi">Business Intelligence</button>
+                <button class="nav-btn" data-panel="translation">Translation</button>
+                <button class="nav-btn" data-panel="about">About me</button>
             </nav>
 
             <div class="language-picker">
-                <button class="lang-btn">ENG</button>
-                <button class="lang-btn">PTBR</button>
-                <button class="lang-btn">ESP</button>
-                <button class="lang-btn">KOR</button>
-                <button class="lang-btn">JAP</button>
+                <button class="lang-btn" data-lang="en">ENG</button>
+                <button class="lang-btn" data-lang="pt">PTBR</button>
+                <button class="lang-btn" data-lang="es">ESP</button>
+                <button class="lang-btn" data-lang="ko">KOR</button>
+                <button class="lang-btn" data-lang="ja">JAP</button>
             </div>
         </aside>
 
@@ -99,6 +99,6 @@
 
     <div id="google_translate_element" style="display:none;"></div>
 
-    <script src="script.js"></script>
+    <script src="../core/script.js"></script>
 </body>
 </html>
