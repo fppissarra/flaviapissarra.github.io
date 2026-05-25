@@ -1,17 +1,18 @@
 function toggleLanguage() {
     const btn = document.getElementById('lang-btn');
-    // Verifica qual é o idioma atual baseado no texto do botão
-    const currentLang = btn.innerText === 'Português' ? 'en' : 'pt';
+    if (!btn) return;
+
+    const currentText = btn.innerText.trim();
     
-    if (currentLang === 'en') {
-        btn.innerText = 'Português';
-        // Procura e traduz todos os elementos que possuem o atributo data-en
+    const nextLang = (currentText === 'Português' || currentText === 'Português') ? 'en' : 'pt';
+    
+    if (nextLang === 'en') {
+        btn.innerText = 'English';
         document.querySelectorAll('[data-en]').forEach(el => {
             el.innerText = el.getAttribute('data-en');
         });
     } else {
-        btn.innerText = 'English';
-        // Procura e traduz todos os elementos que possuem o atributo data-pt
+        btn.innerText = 'Português';
         document.querySelectorAll('[data-pt]').forEach(el => {
             el.innerText = el.getAttribute('data-pt');
         });
