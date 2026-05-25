@@ -74,6 +74,11 @@ function fetchAndApplyLanguage(langCode) {
       document.querySelector('#panel-about .section-title').textContent = data.title_about;
       document.querySelector('#panel-about .section-intro').textContent = data.intro_about;
 
+      /* Injeta os textos traduzidos dinamicamente nos links sociais */
+      document.getElementById('link-gh').textContent = data.link_github || "GitHub";
+      document.getElementById('link-ln').textContent = data.link_linkedin || "LinkedIn";
+      document.getElementById('link-em').textContent = data.link_email || "Mail me";
+
       renderCards('bi', data.projects_bi);
       renderCards('translation', data.projects_translation);
       renderCards('about', data.projects_about);
