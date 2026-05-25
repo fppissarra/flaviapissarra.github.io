@@ -1,12 +1,13 @@
 @import url('https://googleapis.com');
 
 :root {
+  --bg-gradient: linear-gradient(-45deg, #6366f1, #f43f5e, #10b981, #f59e0b);
   --font-heading: 'Bebas Neue', sans-serif;
   --font-main: 'Roboto', sans-serif;
-  --glass-bg: rgba(255, 255, 255, 0.45);
-  --glass-card-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.7);
-  --text-dark: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-card-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.45);
+  --text-dark: #1e293b;
   --text-muted: #334155;
 }
 
@@ -18,7 +19,9 @@
 
 body {
     font-family: var(--font-main);
-    background: #f1f5f9;
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
     color: var(--text-dark);
     min-height: 100vh;
     width: 100%;
@@ -27,6 +30,12 @@ body {
     align-items: flex-start;
     padding: 30px 20px;
     top: 0 !important; 
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .app-container {
@@ -39,6 +48,8 @@ body {
 
 .sidebar, .content-panel {
     background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-radius: 16px;
     border: var(--glass-border);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
@@ -137,7 +148,6 @@ body {
     background: rgba(255, 255, 255, 0.5);
 }
 
-/* glassy dropdown */
 .language-dropdown-wrapper {
     width: 100%;
     position: relative;
