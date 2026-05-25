@@ -1,28 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Flávia P. Pissarra | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="core/style.css">
 </head>
 <body>
 
-    <button onclick="toggleLanguage()" id="lang-btn" class="lang-btn" data-lang="en">Português</button>
-
     <div class="container">
-        <img src="https://avatars.githubusercontent.com/u/66925367" alt="Flávia P. Pissarra" class="profile-img">
-        
-        <h1 class="brand-main">Flávia P. Pissarra</h1>
-        <p class="subtitle" data-en="Data Scientist & Logistics Specialist" data-pt="Cientista de Dados & Especialista em Logística">Data Scientist & Logistics Specialist</p>
+        <aside class="sidebar">
+            <div class="profile-info">
+                <h1>Flávia P. Pissarra</h1>
+                <p class="headline">Data Scientist & Port Logistics</p>
+            </div>
+            
+            <nav class="menu-nav">
+                <button class="menu-btn active" onclick="openPanel('bi')">Business Intelligence</button>
+                <button class="menu-btn" onclick="openPanel('tra')">Tradução & Acadêmico</button>
+                <button class="menu-btn" onclick="openPanel('about')">Sobre Mim</button>
+            </nav>
 
-        <nav class="nav-links">
-            <a href="bi/index.html" class="btn" data-en="Business Intelligence" data-pt="Inteligência de Negócios">Business Intelligence</a>
-            <a href="tra/index.html" class="btn" data-en="Translation & Academic" data-pt="Tradução & Acadêmico">Translation & Academic</a>
-            <a href="https://github.com/fppissarra" target="_blank" class="btn">GitHub</a>
-        </nav>
+            <div class="sidebar-footer">
+                <button class="lang-btn" onclick="toggleLanguage()">EN / PT</button>
+            </div>
+        </aside>
+
+        <main class="content-panel">
+            
+            <section id="panel-bi" class="panel-section active">
+                <h2 class="section-title">Business Intelligence & Analytics</h2>
+                <p class="section-intro">Projetos voltados para otimização de cenários operacionais e tratamento de dados industriais.</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Dashboard PortoVix</h3>
+                        <p>Análise de fluxo de embarque e produtividade de berços portuários operados via SAP.</p>
+                        <button class="action-btn">Acessar Dashboard</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>Modelagem NLP</h3>
+                        <p>Processamento de Linguagem Natural aplicado à triagem de documentação aduaneira e de comércio exterior.</p>
+                        <button class="action-btn">Ver Projeto</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="panel-tra" class="panel-section">
+                <h2 class="section-title">Tradução & Trajetória Acadêmica</h2>
+                <p class="section-intro">Vivência linguística e acadêmica aplicada à terminologia técnica e logística.</p>
+                
+                <div class="info-box">
+                    <h3>Proficiência Avançada (C2)</h3>
+                    <p>Inglês e Espanhol voltados para ambientes corporativos e técnicos, com foco em comércio marítimo.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Formação Acadêmica</h3>
+                    <p>Trajetória estruturada em Informática e Letras (IFES / UFES), com foco em desenvolvimento e pesquisa computacional.</p>
+                </div>
+            </section>
+
+            <section id="panel-about" class="panel-section">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-container">
+                    <p>Técnica em informática com sólida transição para a área de engenharia de dados e inteligência de mercado voltada ao setor portuário de Vitória e Espírito Santo.</p>
+                    <p>Foco de atuação e conformidade com sistemas ERP integrados (SAP), monitoramento de CCO e analytics preditivo.</p>
+                </div>
+            </section>
+
+        </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="core/script.js"></script>
 </body>
 </html>
