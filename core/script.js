@@ -13,23 +13,24 @@ function openPanel(panelId, clickedButton = null) {
     activePanel.classList.remove('show');
     setTimeout(() => {
       activePanel.classList.remove('active');
-      switchPanel(targetPanel, clickedButton);
-    }, 350); 
+      targetPanel.classList.add('active');
+      targetPanel.scrollTop = 0;
+      
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          targetPanel.classList.add('show');
+        }, 30);
+      });
+    }, 400); 
   } else {
-    switchPanel(targetPanel, clickedButton);
+    targetPanel.classList.add('active');
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        targetPanel.classList.add('show');
+      }, 30);
+    });
   }
-}
-
-function switchPanel(targetPanel, clickedButton) {
-  targetPanel.classList.add('active');
-  targetPanel.scrollTop = 0;
   
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      targetPanel.classList.add('show');
-    }, 20);
-  });
-
   setActiveButton(clickedButton);
 }
 
