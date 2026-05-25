@@ -2,14 +2,22 @@
 
 :root {
   --bg-global: #f3f5f7;
-  --font-heading: 'Bebas Neue', sans-serif; /* variável para títulos */
+  --font-heading: 'Bebas Neue', sans-serif;
   --font-main: 'Roboto', sans-serif;
-  --pearl-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 248, 0.9) 50%, rgba(230, 238, 245, 0.9) 100%);
+  /* efeito pérola mais intenso: opacidade aumentada e múltiplas camadas de cor */
+  --pearl-gradient: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(243, 246, 250, 0.93) 35%,
+    rgba(230, 238, 245, 0.93) 70%,
+    rgba(245, 235, 250, 0.93) 100%
+  );
+  /* gradiente arco-íris para as bordas finas */
+  --rainbow-border: linear-gradient(90deg, #ff007f, #7f00ff, #00bfff, #00ff7f, #ff007f);
   --text-dark: #2c3e50;
   --text-muted: #627d98;
   --accent-color: #4a90e2;
-  --border-radius-main: 40px;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --border-radius-main: 24px; /* reduzido levemente para telas menores */
+  --shadow-soft: 0 15px 35px rgba(120, 130, 140, 0.15);
 }
 
 *, *::before, *::after {
@@ -18,245 +26,200 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-main);
     background-color: var(--bg-global);
     color: var(--text-dark);
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    overflow: hidden; /* impede barras de rolagem na tela inteira */
+    padding: 0;
 }
 
 .app-container {
     display: flex;
-    width: 100%;
-    max-width: 1400px;
-    min-height: 85vh;
-    height: auto;
-    gap: 25px;
+    width: 92vw;  /* 92% da largura da tela */
+    height: 90vh; /* 90% da altura da tela de forma fixa */
+    gap: 20px;
+    max-width: 1800px; /* expansão em monitores ultra-wide */
+}
+
+/* estilo base */
+.sidebar, .content-panel {
+    background: var(--pearl-gradient);
+    backdrop-filter: blur(20px); /* desfoque de fundo mais intenso */
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow-soft);
+    
+    /* borda fina arco-íris */
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+
+.sidebar::before, .content-panel::before {
+    content: '';
+    position: absolute;
+    top: -1px; bottom: -1px; left: -1px; right: -1px;
+    background: var(--rainbow-border);
+    border-radius: var(--border-radius-main);
+    z-index: -1;
+    opacity: 0.4; /* efeito arco-íris sutil e elegante */
 }
 
 .sidebar {
-    flex: 0 0 25%;
-    background: var(--pearl-gradient);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: var(--border-radius-main);
-    padding: 40px 30px;
+    flex: 0 0 22%; /* largura fixa ligeiramente menor para dar mais espaço ao conteúdo */
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    height: 100%;
+    overflow-y: auto; /* menu nunca quebra se a tela for muito baixa */
 }
 
 .profile-section {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .profile-name {
     font-family: var(--font-heading);
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     letter-spacing: 0.5px;
 }
 
 .profile-headline {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-weight: 400;
 }
 
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 15px;
+    flex-grow: 1; /* menu ocupa o espaço do meio */
 }
 
 .nav-btn {
     background: transparent;
     border: none;
     text-align: left;
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 12px 15px;
+    font-size: 0.95rem;
     font-family: var(--font-main);
     color: var(--text-dark);
     cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    border-radius: 14px;
+    transition: all 0.2s ease;
 }
 
 .nav-btn:hover,
 .nav-btn.active {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    padding-left: 25px;
-    font-weight: 500;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    padding-left: 20px;
 }
 
 .language-picker {
     display: flex;
-    gap: 10px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
 }
 
 .lang-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
     background: white;
     border: 1px solid rgba(0,0,0,0.05);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-family: var(--font-main);
-    font-size: 0.9rem;
-    font-weight: 500;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    transition: transform 0.2s, background-color 0.2s;
+    transition: all 0.2s;
 }
 
 .lang-btn:hover {
-    transform: translateY(-2px);
     background: var(--bg-global);
+    transform: translateY(-1px);
 }
 
 .main-content {
     flex: 1;
-    display: flex;
+    height: 100%;
 }
 
 .content-panel {
     display: none;
     width: 100%;
-    background: var(--pearl-gradient);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: var(--border-radius-main);
-    padding: 50px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    overflow-y: auto;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    height: 100%;
+    padding: 40px;
+    overflow-y: auto; /* rolagem apenas dentro do painel de conteúdo */
 }
 
 .content-panel.active {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem; /* ALL CAPS */
+    font-size: 3rem;
     line-height: 1;
-    margin-bottom: 15px;
-    letter-spacing: 0.5px;
+    margin-bottom: 10px;
 }
 
 .section-intro {
+    font-size: 0.95rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
-.project-card,
-.info-box {
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+.project-card, .info-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    padding: 25px;
 }
 
-.project-card h3,
-.info-box h3 {
+.project-card h3, .info-box h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
-.project-card p,
-.info-box p,
-.about-container p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.action-btn-link {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--text-dark);
-    background: white;
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-family: var(--font-main);
+.project-card p, .info-box p {
     font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    transition: transform 0.2s, background-color 0.2s;
+    line-height: 1.5;
 }
 
-.action-btn-link:hover {
-    transform: translateY(-2px);
-    background: var(--bg-global);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     body {
-        padding: 10px;
+        overflow: auto;
+        height: auto;
     }
-
     .app-container {
         flex-direction: column;
         height: auto;
-        min-height: auto;
-        gap: 15px;
+        width: 95vw;
+        padding: 20px 0;
     }
-
     .sidebar {
         flex: none;
         width: 100%;
-        padding: 25px 20px;
-        border-radius: 24px;
+        height: auto;
     }
-
     .content-panel {
-        padding: 25px;
-        border-radius: 24px;
         height: auto;
         overflow-y: visible;
-    }
-
-    .section-title {
-        font-size: 2.5rem; /* mobile */
     }
 }
