@@ -66,16 +66,9 @@ function loadGoogleTranslate() {
 document.addEventListener('DOMContentLoaded', () => {
   loadGoogleTranslate();
 
-  const panelMap = {
-    'business intelligence': 'bi',
-    'translation': 'translation',
-    'about me': 'about'
-  };
-
   document.querySelectorAll('.nav-btn').forEach(button => {
     button.addEventListener('click', () => {
-      const text = button.textContent.trim().toLowerCase();
-      const panelId = panelMap[text];
+      const panelId = button.getAttribute('data-panel');
       if (panelId) openPanel(panelId, button);
     });
   });
@@ -83,22 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
-      const langSelected = button.textContent.trim().toLowerCase();
-      let targetLang = 'en';
-
-      if (langSelected.includes('pt')) {
-        targetLang = 'pt';
-      } else if (langSelected.includes('es') || langSelected === 'esp') {
-        targetLang = 'es';
-      } else if (langSelected.includes('ko') || langSelected === 'kor') {
-        targetLang = 'ko';
-      } else if (langSelected.includes('ja') || langSelected === 'jap') {
-        targetLang = 'ja';
-      } else {
-        targetLang = 'en';
+      const targetLang = button.getAttribute('data-lang');
+      if (targetLang) {
+        changeLanguage(targetLang);
       }
-
-      changeLanguage(targetLang);
     });
   });
 
