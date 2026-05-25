@@ -1,27 +1,42 @@
-// --- 1. GERENCIAMENTO DE NAVEGAÇÃO E PAINÉIS ---
-
 function setActiveButton(clickedButton) {
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
   if (clickedButton) clickedButton.classList.add('active');
 }
 
 function openPanel(panelId, clickedButton = null) {
-  document.querySelectorAll('.content-panel').forEach(panel => panel.classList.remove('active'));
-
+  const activePanel = document.querySelector('.content-panel.active');
   const targetPanel = document.getElementById(`panel-${panelId}`);
-  if (targetPanel) {
-    targetPanel.classList.add('active');
-    targetPanel.scrollTop = 0; 
+
+  if (!targetPanel || activePanel === targetPanel) return;
+
+  if (activePanel) {
+    activePanel.classList.remove('show');
+    setTimeout(() => {
+      activePanel.classList.remove('active');
+      switchPanel(targetPanel, clickedButton);
+    }, 350); 
+  } else {
+    switchPanel(targetPanel, clickedButton);
   }
-  setActiveButton(clickedButton);
 }
 
-// --- 2. TRADUÇÃO SILENCIOSA ("POR BAIXO DOS PANOS") ---
+function switchPanel(targetPanel, clickedButton) {
+  targetPanel.classList.add('active');
+  targetPanel.scrollTop = 0;
+  
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      targetPanel.classList.add('show');
+    }, 20);
+  });
+
+  setActiveButton(clickedButton);
+}
 
 function changeLanguage(lang) {
   const combo = document.querySelector('.goog-te-combo');
   if (!combo) {
-    console.warn('O Google Tradutor está carregando em background...');
+    console.warn('Google Translation services initializing...');
     return;
   }
   combo.value = lang;
@@ -31,8 +46,8 @@ function changeLanguage(lang) {
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     { 
-      pageLanguage: 'pt', 
-      includedLanguages: 'en,pt,es,ko,ja', // Todos os 5 idiomas ativados aqui
+      pageLanguage: 'en', 
+      includedLanguages: 'en,pt,es,ko,ja', 
       autoDisplay: false 
     },
     'google_translate_element'
@@ -48,19 +63,15 @@ function loadGoogleTranslate() {
   document.body.appendChild(script);
 }
 
-// --- 3. INICIALIZAÇÃO DE EVENTOS ---
-
 document.addEventListener('DOMContentLoaded', () => {
   loadGoogleTranslate();
 
   const panelMap = {
-    'inteligência de negócios': 'bi',
     'business intelligence': 'bi',
-    'tradução': 'traducao',
-    'sobre mim': 'sobre'
+    'translation': 'translation',
+    'about me': 'about'
   };
 
-  // cliques dos painéis do menu lateral
   document.querySelectorAll('.nav-btn').forEach(button => {
     button.addEventListener('click', () => {
       const text = button.textContent.trim().toLowerCase();
@@ -69,35 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // cliques no seletor dinâmico de idiomas (PTBR / ENG / ESP / KOR / JAP)
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
       const langSelected = button.textContent.trim().toLowerCase();
-      
-      let targetLang = 'pt';
-      
-      if (langSelected.includes('en')) {
-        targetLang = 'en'; // ENG
-      } else if (langSelected.includes('es')) {
-        targetLang = 'es'; // ESP
-      } else if (langSelected.includes('ko')) {
-        targetLang = 'ko'; // KOR
-      } else if (langSelected.includes('ja')) {
-        targetLang = 'ja'; // JAP
-      } else if (langSelected.includes('pt')) {
-        targetLang = 'pt'; // PTBR
+      let targetLang = 'en';
+
+      if (langSelected.includes('pt')) {
+        targetLang = 'pt';
+      } else if (langSelected.includes('es') || langSelected === 'esp') {
+        targetLang = 'es';
+      } else if (langSelected.includes('ko') || langSelected === 'kor') {
+        targetLang = 'ko';
+      } else if (langSelected.includes('ja') || langSelected === 'jap') {
+        targetLang = 'ja';
+      } else {
+        targetLang = 'en';
       }
 
       changeLanguage(targetLang);
     });
   });
 
-  // ativa a primeira aba configurada automaticamente ao iniciar
-  const firstActiveButton = document.querySelector('.nav-btn.active');
-  if (firstActiveButton) {
-    const text = firstActiveButton.textContent.trim().toLowerCase();
-    const panelId = panelMap[text];
-    if (panelId) openPanel(panelId, firstActiveButton);
+  const firstActivePanel = document.querySelector('.content-panel.active');
+  if (firstActivePanel) {
+    setTimeout(() => { firstActivePanel.classList.add('show'); }, 100);
   }
 });
