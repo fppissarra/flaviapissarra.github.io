@@ -1,66 +1,3 @@
-const localTranslations = {
-  en: {
-    headline: "Data Scientist & Translator",
-    navBi: "Business Intelligence",
-    navTrad: "Translation",
-    navAbout: "About me",
-    titleBi: "Business Intelligence & Analytics",
-    introBi: "Data exploration, feature engineering, and strategic dashboard architecture.",
-    titleTrad: "Translation & Localization",
-    introTrad: "Technical translation, software localization, and cross-cultural versioning.",
-    titleAbout: "About me",
-    introAbout: "Discover my professional background, technical stack, and academic trajectory."
-  },
-  pt: {
-    headline: "Cientista de Dados e Tradutora",
-    navBi: "Inteligência de Negócios",
-    navTrad: "Tradução",
-    navAbout: "Sobre mim",
-    titleBi: "Inteligência de Negócios e Análise",
-    introBi: "Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.",
-    titleTrad: "Tradução e Localização",
-    introTrad: "Tradução técnica, localização de software e versionamento multicultural.",
-    titleAbout: "Sobre mim",
-    introAbout: "Descubra minha trajetória profissional, ferramentas técnicas e jornada acadêmica."
-  },
-  es: {
-    headline: "Científica de Datos y Traductora",
-    navBi: "Inteligencia de Negocios",
-    navTrad: "Traducción",
-    navAbout: "Sobre mí",
-    titleBi: "Inteligencia de Negocios y Analítica",
-    introBi: "Exploración de datos, ingeniería de características y arquitectura de tableros estratégicos.",
-    titleTrad: "Traducción y Localización",
-    introTrad: "Traducción técnica, localización de software y versiones interculturales.",
-    titleAbout: "Sobre mí",
-    introAbout: "Descubre mi trayectoria profesional, herramientas técnicas y trayectoria académica."
-  },
-  ko: {
-    headline: "데이터 과학자 및 번역가",
-    navBi: "비즈니스 인텔리전스",
-    navTrad: "번역",
-    navAbout: "소개",
-    titleBi: "비즈니스 인텔리전스 및 분석",
-    introBi: "데이터 탐색, 피처 엔지니어링 및 전략적 대시보드 아키텍처.",
-    titleTrad: "번역 및 현지화",
-    introTrad: "기술 번역, 소프트웨어 현지화 및 다문화 버전 관리.",
-    titleAbout: "소개",
-    introAbout: "나의 전문적인 배경, 기술 스택 및 학업 여정을 알아보세요."
-  },
-  ja: {
-    headline: "データサイエンティスト & 翻訳者",
-    navBi: "ビジネスインテリジェンス",
-    navTrad: "翻訳",
-    navAbout: "プロフィール",
-    titleBi: "ビジネスインテリジェンス & アナリティクス",
-    introBi: "データ探索, フィーチャーエンジニアリング, および戦略적ダッシュボードアーキテクチャ.",
-    titleTrad: "翻訳 & ローカライズ",
-    introTrad: "技術翻訳, ソフトウェアローカライズ, および異文化間バージョン管理.",
-    titleAbout: "プロフィール",
-    introAbout: "私の専門的な背景、技術スタック、および学術的な軌跡をご覧ください。"
-  }
-};
-
 function openPanel(panelId, clickedButton) {
   document.querySelectorAll('.content-panel').forEach(panel => panel.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -70,34 +7,61 @@ function openPanel(panelId, clickedButton) {
   if (clickedButton) clickedButton.classList.add('active');
 }
 
-function applyLocalFallback(langCode) {
-  const data = localTranslations[langCode];
-  if (!data) return;
+function renderCards(panelId, projectsArray) {
+  const gridElement = document.querySelector(`#panel-${panelId} .projects-grid`);
+  if (!gridElement) return;
 
-  document.querySelector('.profile-headline').textContent = data.headline;
-  document.querySelector('[data-panel="bi"]').textContent = data.navBi;
-  document.querySelector('[data-panel="translation"]').textContent = data.navTrad;
-  document.querySelector('[data-panel="about"]').textContent = data.navAbout;
+  gridElement.innerHTML = '';
   
-  document.querySelector('#panel-bi .section-title').textContent = data.titleBi;
-  document.querySelector('#panel-bi .section-intro').textContent = data.introBi;
-  
-  document.querySelector('#panel-translation .section-title').textContent = data.titleTrad;
-  document.querySelector('#panel-translation .section-intro').textContent = data.introTrad;
-  
-  document.querySelector('#panel-about .section-title').textContent = data.titleAbout;
-  document.querySelector('#panel-about .section-intro').textContent = data.introAbout;
+  projectsArray.forEach(proj => {
+    if (panelId === 'bi') {
+      gridElement.innerHTML += `
+        <a href="https://github.com" target="_blank" class="project-card">
+          <h3>${proj.title}</h3>
+          <p>${proj.desc}</p>
+        </a>`;
+    } else {
+      gridElement.innerHTML += `
+        <div class="project-card">
+          <h3>${proj.title}</h3>
+          <p>${proj.desc}</p>
+        </div>`;
+    }
+  });
 }
 
-function triggerGoogleTranslate(langCode) {
+function fetchAndApplyLanguage(langCode) {
   localStorage.setItem('user-portfolio-lang', langCode);
-  applyLocalFallback(langCode);
+
+  fetch(`core/lang/${langCode}.json`)
+    .then(response => {
+      if (!response.ok) throw new Error(`Erro ao ler arquivo core/lang/${langCode}.json`);
+      return response.json();
+    })
+    .then(data => {
+      document.querySelector('.profile-headline').textContent = data.headline;
+      document.querySelector('[data-panel="bi"]').textContent = data.nav_bi;
+      document.querySelector('[data-panel="translation"]').textContent = data.nav_translation;
+      document.querySelector('[data-panel="about"]').textContent = data.nav_about;
+      
+      document.querySelector('#panel-bi .section-title').textContent = data.title_bi;
+      document.querySelector('#panel-bi .section-intro').textContent = data.intro_bi;
+      
+      document.querySelector('#panel-translation .section-title').textContent = data.title_translation;
+      document.querySelector('#panel-translation .section-intro').textContent = data.intro_translation;
+      
+      document.querySelector('#panel-about .section-title').textContent = data.title_about;
+      document.querySelector('#panel-about .section-intro').textContent = data.intro_about;
+
+      renderCards('bi', data.projects_bi);
+      renderCards('translation', data.projects_translation);
+      renderCards('about', data.projects_about);
+    })
+    .catch(error => console.error('Erro na requisição do idioma:', error));
 
   const selectElement = document.querySelector('.goog-te-combo');
   if (selectElement) {
     selectElement.value = langCode;
-    
-    // Simulação completa de eventos humanos para forçar a execução do Google
     selectElement.dispatchEvent(new Event('focus', { bubbles: true }));
     selectElement.dispatchEvent(new Event('change', { bubbles: true }));
     selectElement.dispatchEvent(new Event('blur', { bubbles: true }));
@@ -112,7 +76,7 @@ function googleTranslateElementInit() {
   
   setTimeout(() => {
     const savedLang = localStorage.getItem('user-portfolio-lang') || 'en';
-    if (savedLang !== 'en') triggerGoogleTranslate(savedLang);
+    if (savedLang !== 'en') fetchAndApplyLanguage(savedLang);
   }, 800);
 }
 
@@ -130,12 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const savedLang = localStorage.getItem('user-portfolio-lang') || 'en';
   const langSelect = document.getElementById('custom-lang-select');
+  
   if (langSelect) {
     langSelect.value = savedLang;
-    if (savedLang !== 'en') {
-      applyLocalFallback(savedLang);
-    }
   }
+  
+  fetchAndApplyLanguage(savedLang);
 
   document.querySelectorAll('.nav-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -146,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (langSelect) {
     langSelect.addEventListener('change', (e) => {
-      triggerGoogleTranslate(e.target.value);
+      fetchAndApplyLanguage(e.target.value);
     });
   }
 });
