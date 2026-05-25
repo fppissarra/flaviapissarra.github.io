@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <button onclick="toggleLanguage()" id="lang-btn" class="lang-btn">Português</button>
+    <button onclick="toggleLanguage()" id="lang-btn" class="lang-btn" data-lang="en">Português</button>
 
     <div class="split-wrapper" id="split-container">
         
@@ -63,15 +63,15 @@
     <script>
         function openTab(tabId) {
             document.getElementById('split-container').classList.add('active-split');
-        
+            
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.style.display = 'none'; 
             });
-        
+            
             document.querySelectorAll('.nav-tab-btn').forEach(btn => {
                 btn.classList.remove('active-btn-highlight');
             });
-
+    
             const targetTab = document.getElementById('tab-' + tabId);
             if (targetTab) {
                 targetTab.style.display = 'block';
