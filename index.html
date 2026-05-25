@@ -1,86 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Portfólio</title>
-    <link rel="stylesheet" href="../core/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flávia P. Pissarra | Portfólio</title>
+  <link rel="stylesheet" href="./core/style.css" />
 </head>
 <body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="profile-section">
+        <h1 class="profile-name">Flávia P. Pissarra</h1>
+        <p class="profile-headline">Data Scientist & Translator</p>
+      </div>
 
-    <div class="app-container">
-        
-        <aside class="sidebar">
-            <div class="profile-section">
-                <h1 class="profile-name">Flávia P. Pissarra</h1>
-                <p class="profile-headline">Data Scientist & Translator</p>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <button class="nav-btn active" onclick="openPanel('bi')">Business Intelligence</button>
-                <button class="nav-btn" onclick="openPanel('traducao')">Tradução</button>
-                <button class="nav-btn" onclick="openPanel('sobre')">Sobre Mim</button>
-            </nav>
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" onclick="openPanel('bi')">Business Intelligence</button>
+        <button class="nav-btn" onclick="openPanel('traducao')">Tradução</button>
+        <button class="nav-btn" onclick="openPanel('sobre')">Sobre Mim</button>
+      </nav>
 
-            <div class="language-picker">
-                <div id="google_translate_element" style="display:none;"></div>
-                <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="changeLanguage('pt')">PT</button>
-            </div>
-        </aside>
+      <div class="language-picker">
+        <div id="google_translate_element" style="display:none;"></div>
+        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('pt')">PT</button>
+      </div>
+    </aside>
 
-        <main class="main-content">
-            
-            <section id="panel-bi" class="content-panel active">
-                <h2>Business Intelligence & Analytics</h2>
-                <p>Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
-                
-                <div class="sub-categories">
-                    <button class="filter-btn">Dashboards (Power BI)</button>
-                    <button class="filter-btn">NLP & Data Science</button>
-                    <button class="filter-btn">Logística Portuária</button>
-                </div>
+    <main class="main-content">
+      <section id="panel-bi" class="content-panel active">
+        <h2 class="section-title">Business Intelligence & Analytics</h2>
+        <p class="section-intro">Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
 
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Análise de Logística Portuária</h3>
-                        <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
-                    </div>
-                </div>
-            </section>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Análise de Logística Portuária</h3>
+            <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
+          </div>
+        </div>
+      </section>
 
-            <section id="panel-traducao" class="content-panel">
-                <h2>Tradução & Localização</h2>
-                <p>Serviços de tradução técnica, corporativa e localização de softwares.</p>
-                
-                <div class="translation-info">
-                    <div class="info-card">
-                        <h3>Pares de Idiomas</h3>
-                        <p>Inglês <> Português</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>Especialidades</h3>
-                        <p>Textos técnicos de informática, logística, relatórios de BI e documentação de sistemas.</p>
-                    </div>
-                </div>
-            </section>
+      <section id="panel-traducao" class="content-panel">
+        <h2 class="section-title">Tradução & Localização</h2>
+        <p class="section-intro">Serviços de tradução técnica, corporativa e localização de softwares.</p>
 
-            <section id="panel-sobre" class="content-panel">
-                <h2>Sobre Mim</h2>
-                <p>Profissional com base técnica sólida em Informática, transitando e conectando as áreas de Ciência de Dados, Logística e Tradução.</p>
-                
-                <div class="about-links">
-                    <a href="#" target="_blank" class="external-link">LinkedIn</a>
-                    <a href="#" target="_blank" class="external-link">Currículo Lattes</a>
-                    <a href="#" target="_blank" class="external-link">GitHub</a>
-                </div>
-            </section>
+        <div class="projects-grid">
+          <div class="info-box">
+            <h3>Pares de Idiomas</h3>
+            <p>Inglês <> Português</p>
+          </div>
 
-        </main>
-    </div>
+          <div class="info-box">
+            <h3>Especialidades</h3>
+            <p>Textos técnicos de informática, logística, relatórios de BI e documentação de sistemas.</p>
+          </div>
+        </div>
+      </section>
 
-    <div id="google_translate_anchor"></div>
+      <section id="panel-sobre" class="content-panel">
+        <h2 class="section-title">Sobre Mim</h2>
+        <p class="section-intro">Profissional com base técnica sólida em Informática, transitando e conectando as áreas de Ciência de Dados, Logística e Tradução.</p>
 
-    <script src="../core/script.js"></script>
+        <div class="about-container">
+          <a href="#" target="_blank" class="action-btn-link">LinkedIn</a>
+          <a href="#" target="_blank" class="action-btn-link">Currículo Lattes</a>
+          <a href="#" target="_blank" class="action-btn-link">GitHub</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./core/script.js"></script>
 </body>
 </html>
