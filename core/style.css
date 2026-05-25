@@ -1,11 +1,11 @@
 @import url('https://googleapis.com');
 
 :root {
-  --bg-global: #f4f7f6; /* tom levemente mais neutro e elegante */
+  --bg-global: #f4f7f6;
   --font-heading: 'Bebas Neue', sans-serif;
   --font-main: 'Roboto', sans-serif;
   
-  /* pérola real: tons suaves e sutis de madrepérola com alta opacidade branca */
+  /* madrepérola */
   --pearl-gradient: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.98) 0%, 
     rgba(248, 244, 248, 0.95) 40%, 
@@ -13,7 +13,7 @@
     rgba(255, 253, 245, 0.95) 100%
   );
   
-  /* borda holográfica minimalista e requintada */
+  /* borda holográfica sutil */
   --pearl-border: linear-gradient(135deg, 
     rgba(255, 60, 170, 0.25) 0%, 
     rgba(140, 40, 255, 0.2) 40%, 
@@ -45,8 +45,6 @@ body {
     align-items: center;
     overflow: hidden;
     padding: 0;
-    
-    /* remove recuo do Google Tradutor */
     top: 0 !important; 
 }
 
@@ -66,7 +64,6 @@ body {
     box-shadow: var(--shadow-soft);
     border: 1px solid transparent;
     
-    /* borda fina sofisticada */
     background-image: var(--pearl-gradient), var(--pearl-border);
     background-origin: border-box;
     background-clip: padding-box, border-box;
@@ -218,18 +215,15 @@ body {
     color: var(--text-muted);
 }
 
-/* tradutor */
+/* esconde injeções visuais do tradutor */
 .skiptranslate, 
 .goog-te-banner-frame, 
 #goog-gt-tt, 
 .goog-te-balloon-frame,
-.goog-te-gadget {
+.goog-te-gadget,
+.goog-te-banner {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
-}
-
-body {
-    top: 0 !important;
 }
