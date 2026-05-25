@@ -1,7 +1,7 @@
+/* VARIÁVEIS DO TEMA PEROLADO */
 :root {
     --bg-global: #f3f5f7;
     --font-main: 'Inter', sans-serif;
-    
     --pearl-gradient: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,244,248,0.9) 50%, rgba(230,238,245,0.9) 100%);
     --text-dark: #2c3e50;
     --text-muted: #627d98;
@@ -10,7 +10,7 @@
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,16 +27,17 @@ body {
     padding: 20px;
 }
 
-
+/* LAYOUT ESTRUTURAL */
 .container {
     display: flex;
     width: 100%;
     max-width: 1400px;
-    height: 85vh;
+    min-height: 85vh; /* Trocado para min-height para não quebrar no mobile */
+    height: auto;
     gap: 25px;
 }
 
-
+/* ASIDE - MENU LATERAL */
 .sidebar {
     flex: 0 0 25%;
     background: var(--pearl-gradient);
@@ -48,6 +49,17 @@ body {
     justify-content: space-between;
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ESTILO DA FOTO DE PERFIL */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .profile-info h1 {
@@ -67,7 +79,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: -40px;
+    margin-top: 20px;
 }
 
 .menu-btn {
@@ -90,7 +102,7 @@ body {
     font-weight: 500;
 }
 
-
+/* PAINEL CONTEÚDO DA DIREITA */
 .content-panel {
     flex: 1;
     background: var(--pearl-gradient);
@@ -100,10 +112,9 @@ body {
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(255, 255, 255, 0.6);
     overflow-y: auto;
-    position: relative;
 }
 
-
+/* LOGICA VISUAL SPA */
 .panel-section {
     display: none;
     opacity: 0;
@@ -128,7 +139,7 @@ body {
     margin-bottom: 40px;
 }
 
-
+/* GRIDS INTERNAS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -155,34 +166,60 @@ body {
     margin-bottom: 20px;
 }
 
-.action-btn, .lang-btn {
+/* BOTÕES E LINKS DE PROJETOS */
+.action-btn-link, .lang-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-dark);
     background: white;
     border: 1px solid rgba(0,0,0,0.05);
     padding: 10px 20px;
     border-radius: 30px;
     font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-.action-btn:hover, .lang-btn:hover {
+.action-btn-link:hover, .lang-btn:hover {
     transform: translateY(-2px);
     background: var(--bg-global);
 }
 
-
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        height: auto;
+/* 📱 REGRAS COMPLETAS DE RESPONSIVIDADE PARA CELULARES (Abaixo de 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
     }
+
+    .container {
+        flex-direction: column; /* Faz o menu ir para cima e o conteúdo para baixo */
+        height: auto;
+        min-height: auto;
+        gap: 15px;
+    }
+
     .sidebar {
         flex: none;
         width: 100%;
-        gap: 30px;
+        padding: 25px 20px;
+        border-radius: 24px; /* Suaviza as bordas na tela do celular */
     }
+
+    .menu-nav {
+        margin-top: 15px;
+    }
+
     .content-panel {
-        padding: 30px;
+        padding: 25px;
+        border-radius: 24px;
+        height: auto;
+        overflow-y: visible; /* Tira o scroll interno do painel no mobile */
+    }
+
+    .section-title {
+        font-size: 1.6rem;
     }
 }
