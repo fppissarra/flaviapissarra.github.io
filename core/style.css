@@ -1,23 +1,18 @@
 @import url('https://googleapis.com');
 
 :root {
-  /* Fundo estilo macOS/iOS vibrante para dar vida ao efeito de vidro */
-  --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 30%, #a1c4fd 70%, #c2e9fb 100%);
-  
+  --bg-gradient: linear-gradient(-45deg, #6366f1, #f43f5e, #10b981, #f59e0b);
   --font-heading: 'Bebas Neue', sans-serif;
   --font-main: 'Roboto', sans-serif;
   
-  /* Vidro Puro: Branco extremamente translúcido */
-  --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-card-bg: rgba(255, 255, 255, 0.15);
-  
-  /* Borda de vidro: Fina, branca e semitransparente, igual à da foto */
-  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-card-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.45);
 
   --text-dark: #1e293b;
   --text-muted: #475569;
   --border-radius-main: 24px;
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
 }
 
 *, *::before, *::after {
@@ -28,9 +23,9 @@
 
 body {
     font-family: var(--font-main);
-    background: var(--bg-gradient); /* Aplicado o fundo vibrante */
+    background: var(--bg-gradient);
     background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite; /* Movimento suave no fundo */
+    animation: gradientAnimation 12s ease infinite;
     color: var(--text-dark);
     height: 100vh;
     width: 100vw;
@@ -38,11 +33,9 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 0;
     top: 0 !important; 
 }
 
-/* Animação pro fundo mover levemente e dar mais efeito ao vidro */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -57,11 +50,10 @@ body {
     max-width: 1500px;
 }
 
-/* Aplicação do Glassmorphism Real nos painéis */
 .sidebar, .content-panel {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-radius: var(--border-radius-main);
     border: var(--glass-border);
     box-shadow: var(--shadow-glass);
@@ -80,7 +72,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 15px;
 }
 
 .profile-avatar {
@@ -90,7 +81,6 @@ body {
     object-fit: cover;
     margin-bottom: 12px;
     border: 1.5px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .profile-name {
@@ -126,18 +116,18 @@ body {
     color: var(--text-dark);
     cursor: pointer;
     border-radius: 10px;
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    padding-left: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 18px;
 }
 
 .nav-btn.active {
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-    padding-left: 16px;
+    padding-left: 18px;
     font-weight: 500;
 }
 
@@ -153,7 +143,7 @@ body {
     font-family: var(--font-main);
     font-size: 0.7rem;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-dark);
     cursor: pointer;
@@ -161,7 +151,7 @@ body {
 }
 
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.45);
 }
 
 .main-content {
@@ -176,11 +166,19 @@ body {
     height: 100%;
     padding: 35px;
     overflow: hidden;
+    opacity: 0;
+    will-change: opacity;
+    transform: translateZ(0);
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-panel.active {
     display: flex;
     flex-direction: column;
+}
+
+.content-panel.show {
+    opacity: 1;
 }
 
 .section-title {
@@ -207,15 +205,12 @@ body {
     padding-right: 5px;
 }
 
-.projects-grid::-webkit-scrollbar {
-    width: 4px;
-}
+.projects-grid::-webkit-scrollbar { width: 4px; }
 .projects-grid::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 }
 
-/* Cards internos como camadas extras de vidro */
 .project-card, .info-box {
     background: var(--glass-card-bg);
     backdrop-filter: blur(10px);
@@ -240,15 +235,13 @@ body {
     color: var(--text-muted);
 }
 
-/* Ocultação total do Google Tradutor */
-.skiptranslate, 
-.goog-te-banner-frame, 
-#goog-gt-tt, 
-.goog-te-balloon-frame,
-.goog-te-gadget,
-.goog-te-banner {
+.goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .skiptranslate:not(.goog-te-gadget) {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+}
+.goog-te-gadget {
+    position: absolute !important; top: -9999px !important; left: -9999px !important;
+    width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0 !important;
 }
