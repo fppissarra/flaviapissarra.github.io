@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --bg-global: #f3f5f7;
     --font-main: 'Inter', sans-serif;
@@ -13,6 +15,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -39,6 +45,7 @@ body {
     flex: 0 0 25%;
     background: var(--pearl-gradient);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: var(--border-radius-main);
     padding: 40px 30px;
     display: flex;
@@ -131,6 +138,7 @@ body {
     width: 100%;
     background: var(--pearl-gradient);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: var(--border-radius-main);
     padding: 50px;
     box-shadow: var(--shadow-soft);
