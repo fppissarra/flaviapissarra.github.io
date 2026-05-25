@@ -1,14 +1,14 @@
 {
   "headline": "Data Scientist & Technical Translator",
-  "nav_bi": "Experiences",
-  "nav_translation": "Academia",
-  "nav_about": "",
-  "title_bi": "Professional Experiences",
-  "intro_bi": "Data engineering pipelines, automated telemetry architectures, and professional website localization projects.",
-  "title_translation": "Academic Trajectory & Research",
-  "intro_translation": "Linguistic computing developments, continuous academic specializations, and published literary translations.",
-  "title_about": "",
-  "intro_about": "",
+  "nav_bi": "Business Intelligence",
+  "nav_translation": "Translation",
+  "nav_about": "Academia",
+  "title_bi": "Business Intelligence & Analytics Solutions",
+  "intro_bi": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry.",
+  "title_translation": "Technical Translation & Software Localization",
+  "intro_translation": "High-precision translation, software internationalization, and cross-cultural versioning for technology enterprises.",
+  "title_about": "Academic Trajectory & Research",
+  "intro_about": "Linguistic computing developments, continuous academic specializations, and published literary translations.",
   "projects_bi": [
     {
       "title": "Industrial Data Engineering (ArcelorMittal)",
@@ -17,7 +17,9 @@
     {
       "title": "Data Automation & Telemetry (Vale S.A.)",
       "desc": "Automated key performance indicators (KPIs) by constructing custom data workflows, deploying responsive data architectures directly into strategic corporate dashboards."
-    },
+    }
+  ],
+  "projects_translation": [
     {
       "title": "Web Localization (Leonardo Murakami's Platform)",
       "desc": "Executed end-to-end website localization, internationalization testing, and cross-cultural translation to adapt web assets for global users and ensure seamless multilingual deployment."
@@ -27,7 +29,7 @@
       "desc": "Partnered with international delegations (including Canadian and Mexican engineering groups), executing machine translation evaluation (MTPE) and cross-lingual technical documentation audits."
     }
   ],
-  "projects_translation": [
+  "projects_about": [
     {
       "title": "Linguistic Curation & AI Translation Research (CTecL)",
       "desc": "Coordinating CTecL as an independent initiative, investigating how large language models (LLMs) and advanced NLP tools handle poetic rhythm, meter, and cultural nuances across multilingual corpora."
@@ -40,6 +42,5 @@
       "title": "Continuous Specialized Education",
       "desc": "Operating gracefully where computational data meets human language. Holds a Computer Science Technical Diploma, a Licentiate degree in Letters, and a Graduate Certificate in Special Education Management from IFES."
     }
-  ],
-  "projects_about": []
+  ]
 }
