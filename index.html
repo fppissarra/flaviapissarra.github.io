@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra - Portfolio</title>
+    <title>Flávia P. Pissarra - Projects</title>
     <link rel="stylesheet" href="core/style.css">
 </head>
 <body>
@@ -18,44 +18,28 @@
             </div>
 
             <nav class="sidebar-nav">
-                <button class="nav-btn active" data-panel="bi"></button>
-                <button class="nav-btn" data-panel="translation"></button>
-                <button class="nav-btn" data-panel="about"></button>
+                <a href="index.html" class="nav-btn active" data-nav="bi"></a>
+                <a href="translation.html" class="nav-btn" data-nav="translation"></a>
+                <a href="about.html" class="nav-btn" data-nav="about"></a>
             </nav>
 
             <div class="social-footer">
-                <a href="https://www.github.com/fppissarra" target="_blank" class="social-link" id="link-gh"></a>
-                <a href="https://www.linkedin.com/in/fppissarra" target="_blank" class="social-link" id="link-ln"></a>
-                <a href="mailto:fppissarra@gmail.com" class="social-link" id="link-em"></a>
+                <a href="https://github.com" target="_blank" class="social-link" id="link-gh"></a>
+                <a href="https://linkedin.com" target="_blank" class="social-link" id="link-ln"></a>
+                <a href="mailto:flaviapissarra@gmail.com" class="social-link" id="link-em"></a>
             </div>
 
             <div class="language-dropdown-wrapper">
                 <select id="custom-lang-select" class="lang-select">
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                    <option value="it">Italiano</option>
-                    <option value="pt">Português</option>
-                    <option value="ko">한국어</option>
-                    <option value="ja">日本語</option>
+                    <option value="en">English (ENG)</option>
+                    <option value="pt">Português (PTBR)</option>
                 </select>
             </div>
         </aside>
 
         <main class="main-content">
             
-            <div id="panel-bi" class="content-panel active">
-                <h2 class="section-title"></h2>
-                <p class="section-intro"></p>
-                <div class="projects-grid"></div>
-            </div>
-
-            <div id="panel-translation" class="content-panel">
-                <h2 class="section-title"></h2>
-                <p class="section-intro"></p>
-                <div class="projects-grid"></div>
-            </div>
-
-            <div id="panel-about" class="content-panel">
+            <div id="panel-bi" class="content-panel active-page">
                 <h2 class="section-title"></h2>
                 <p class="section-intro"></p>
                 <div class="projects-grid"></div>
@@ -64,8 +48,8 @@
         </main>
     </div>
 
-    <!-- banner -->
-    <div class="construction-overlay">Website under construction</div>
+    <!-- BANNER DE CONSTRUÇÃO EM LINHA -->
+    <div class="construction-overlay">Website Under Construction</div>
 
     <style>
         .construction-overlay {
