@@ -27,12 +27,12 @@ body {
     background-size: 400% 400%;
     animation: gradientAnimation 12s ease infinite;
     color: var(--text-dark);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
     top: 0 !important; 
 }
 
@@ -61,22 +61,25 @@ body {
 
 .sidebar {
     flex: 0 0 24%;
-    padding: 25px 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     height: 100%;
+    text-align: center;
 }
 
 .profile-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
 }
 
 .profile-avatar {
-    width: 64px;
-    height: 64px;
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
@@ -101,15 +104,16 @@ body {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin: 20px 0;
-    flex-grow: 1;
+    gap: 6px;
+    width: 100%;
+    max-width: 220px;
+    margin: auto 0;
 }
 
 .nav-btn {
     background: transparent;
     border: none;
-    text-align: left;
+    text-align: center;
     padding: 10px 14px;
     font-size: 0.85rem;
     font-family: var(--font-main);
@@ -117,24 +121,26 @@ body {
     cursor: pointer;
     border-radius: 10px;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
 .nav-btn:hover {
     background: rgba(255, 255, 255, 0.15);
-    padding-left: 18px;
 }
 
 .nav-btn.active {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-    padding-left: 18px;
     font-weight: 500;
 }
 
 .language-picker {
     display: flex;
     gap: 4px;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .lang-btn {
@@ -197,8 +203,8 @@ body {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     overflow-y: auto;
     flex-grow: 1;
@@ -219,6 +225,7 @@ body {
     border-radius: 14px;
     padding: 20px;
     height: fit-content;
+    width: 100%;
 }
 
 .project-card h3, .info-box h3 {
@@ -244,4 +251,43 @@ body {
 .goog-te-gadget {
     position: absolute !important; top: -9999px !important; left: -9999px !important;
     width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0 !important;
+}
+
+@media (max-width: 992px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+        padding: 20px 0;
+    }
+
+    .app-container {
+        flex-direction: column;
+        height: auto;
+        width: 90vw;
+        gap: 15px;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 25px 20px;
+    }
+
+    .sidebar-nav {
+        margin: 20px 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .content-panel {
+        height: auto;
+        min-height: 400px;
+        padding: 25px;
+        overflow: visible;
+    }
+
+    .projects-grid {
+        overflow-y: visible;
+    }
 }
