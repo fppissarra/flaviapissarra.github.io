@@ -14,17 +14,38 @@ function renderCards(panelId, projectsArray) {
   gridElement.innerHTML = '';
   
   projectsArray.forEach(proj => {
+    let datePart = "";
+    let titlePart = proj.title;
+
+    if (proj.title.includes('|')) {
+      const parts = proj.title.split('|');
+      datePart = parts[0].trim();
+      titlePart = parts[1].trim();
+    }
+
+    const cardContent = `
+      <div class="project-card-inner" style="display: grid; grid-template-columns: 120px 1fr; gap: 20px; width: 100%;">
+        <div class="project-date" style="font-weight: 700; color: var(--text-muted); font-size: 0.9rem; padding-top: 2px;">
+          ${datePart}
+        </div>
+        <div class="project-details">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); letter-spacing: -0.2px;">
+            ${titlePart}
+          </h3>
+          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">${proj.desc}</p>
+        </div>
+      </div>
+    `;
+
     if (panelId === 'bi') {
       gridElement.innerHTML += `
         <a href="https://github.com" target="_blank" class="project-card">
-          <h3>${proj.title}</h3>
-          <p>${proj.desc}</p>
+          ${cardContent}
         </a>`;
     } else {
       gridElement.innerHTML += `
         <div class="project-card">
-          <h3>${proj.title}</h3>
-          <p>${proj.desc}</p>
+          ${cardContent}
         </div>`;
     }
   });
