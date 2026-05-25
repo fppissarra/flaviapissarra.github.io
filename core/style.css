@@ -2,7 +2,7 @@
 
 :root {
   --bg-global: #f3f5f7;
-  --font-heading: 'Bebas Neue', sans-serif;
+  --font-heading: 'Bebas Neue', sans-serif; /* variável para títulos */
   --font-main: 'Roboto', sans-serif;
   --pearl-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 248, 0.9) 50%, rgba(230, 238, 245, 0.9) 100%);
   --text-dark: #2c3e50;
@@ -61,10 +61,11 @@ body {
 }
 
 .profile-name {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    line-height: 1;
     margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.5px;
 }
 
 .profile-headline {
@@ -157,9 +158,11 @@ body {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-size: 3.5rem; /* ALL CAPS */
+    line-height: 1;
     margin-bottom: 15px;
-    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .section-intro {
@@ -184,8 +187,11 @@ body {
 
 .project-card h3,
 .info-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    line-height: 1.1;
     margin-bottom: 12px;
-    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .project-card p,
@@ -251,6 +257,6 @@ body {
     }
 
     .section-title {
-        font-size: 1.6rem;
+        font-size: 2.5rem; /* mobile */
     }
 }
