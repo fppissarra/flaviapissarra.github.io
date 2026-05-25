@@ -30,7 +30,7 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     { 
       pageLanguage: 'pt', 
-      includedLanguages: 'en,pt,es',
+      includedLanguages: 'en,pt,es,ko,ja',
       autoDisplay: false 
     },
     'google_translate_element'
