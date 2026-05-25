@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         targetLang = 'pt'; // rota para Português
       } else if (langSelected.includes('ko')) {
         targetLang = 'ko'; // rota para Coreano
+      } else if (langSelected.includes('jp')) {
+        targetLang = 'jp'; // rota para Japonês
       }
       
       changeLanguage(targetLang);
