@@ -1,0 +1,54 @@
+{
+  "headline": "Data Scientist & Translator",
+  "nav_bi": "Business Intelligence",
+  "nav_translation": "Translation",
+  "nav_about": "About me",
+  "title_bi": "Business Intelligence & Analytics",
+  "intro_bi": "Data exploration, feature engineering, and strategic dashboard architecture.",
+  "title_translation": "Translation & Localization",
+  "intro_translation": "Technical translation, software localization, and cross-cultural versioning.",
+  "title_about": "About me",
+  "intro_about": "Discover my professional background, technical stack, and academic trajectory.",
+  "projects_bi": [
+    {
+      "title": "Port Logistics Analysis",
+      "desc": "Vessel flow optimization and intelligent cargo tracking systems developed to monitor maritime operations in real time."
+    },
+    {
+      "title": "NLP & Data Science",
+      "desc": "Natural language processing models, advanced data curation pipelines, and automated text analysis diagnostics."
+    },
+    {
+      "title": "Power BI Dashboards",
+      "desc": "Strategic enterprise telemetry visualizations deployed for high-level corporate decision support and performance monitoring."
+    }
+  ],
+  "projects_translation": [
+    {
+      "title": "Software & UI Localization",
+      "desc": "Adapting digital interfaces, software documentation, and platform strings for absolute regional accuracy and a seamless user experience."
+    },
+    {
+      "title": "Technical & Scientific Versioning",
+      "desc": "High-precision translation of technical literature, academic papers, engineering schemas, and complex data science research documents."
+    },
+    {
+      "title": "Glossary & Terminology Curation",
+      "desc": "Building comprehensive translation memories, structured linguistic databases, and domain-specific glossaries to secure corporate brand consistency."
+    }
+  ],
+  "projects_about": [
+    {
+      "title": "Core Expertise",
+      "desc": "Operating gracefully at the precise intersection of data engineering and human language. Leveraging statistical computing to extract hidden insights while breaking complex communication barriers in global engineering environments."
+    },
+    {
+      "title": "Technical Stack",
+      "desc": "Expert processing in Python, SQL databases, Power BI architecture, Data Wrangling pipelines, NLP toolkits, Git orchestration, and Advanced Computer-Assisted Translation (CAT) software."
+    },
+    {
+      "title": "Academic & Professional Path",
+      "desc": "Continuous specialized development in Data Science, Information Engineering, and Linguistic Localization targeted at delivering robust, end-to-end strategic technological solutions."
+    }
+  ]
+}
