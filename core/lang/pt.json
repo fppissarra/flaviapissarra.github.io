@@ -2,7 +2,10 @@
   "headline": "Cientista de Dados e Tradutora",
   "nav_bi": "Inteligência de Negócios",
   "nav_translation": "Tradução",
-  "nav_about": "Sobre mim",
+  "nav_about": "Academia",
+  "link_github": "Meu GitHub",
+  "link_linkedin": "Meu LinkedIn",
+  "link_email": "Contate-me",
   "title_bi": "Inteligência de Negócios e Análise",
   "intro_bi": "Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.",
   "title_translation": "Tradução e Localização",
@@ -11,44 +14,36 @@
   "intro_about": "Descubra minha trajetória profissional, ferramentas técnicas e jornada acadêmica.",
   "projects_bi": [
     {
-      "title": "Análise de Logística Portuária",
-      "desc": "Otimização do fluxo de navios e sistemas inteligentes de rastreamento de carga desenvolvidos para monitorar operações marítimas em tempo real."
+      "title": "2024 - 2025 | Engenharia de Dados Industriais (ArcelorMittal)",
+      "desc": "Construção de pipelines automatizados de dados usando SQL e Python para extrair e processar mais de 10 mil linhas mensais de dados industriais brutos para auditoria operacional avançada."
     },
     {
-      "title": "NLP & Ciência de Dados",
-      "desc": "Modelos de processamento de linguagem natural, pipelines avançados de curadoria de dados e diagnósticos automatizados de análise de texto."
-    },
-    {
-      "title": "Painéis do Power BI",
-      "desc": "Visualizações estratégicas de telemetria corporativa implantadas para suporte a decisões de alto nível e monitoramento de desempenho."
+      "title": "2023 - 2024 | Automação de Dados & Telemetria (Vale S.A.)",
+      "desc": "Automação de indicadores-chave de desempenho (KPIs) por meio da construção de fluxos de dados personalizados, implantando arquiteturas responsivas diretamente em painéis corporativos estratégicos."
     }
   ],
   "projects_translation": [
     {
-      "title": "Localização de Software e UI",
-      "desc": "Adaptação de interfaces digital, documentação de software e strings de plataforma para precisão regional absoluta e uma experiência de usuário perfeita."
+      "title": "2025 - Pres. | Localização Web (Plataforma do Leonardo Murakami)",
+      "desc": "Execução de localização de sites de ponta a ponta, testes de internacionalização e tradução intercultural para adaptar ativos web para usuários globais e garantir uma implantação multilíngue perfeita."
     },
     {
-      "title": "Versão Técnica e Científica",
-      "desc": "Tradução de alta precisão de literatura técnica, artigos acadêmicos, esquemas de engenharia e documentos complexos de pesquisa em ciência de dados."
-    },
-    {
-      "title": "Curadoria de Glossário e Terminologia",
-      "desc": "Construção de memórias de tradução abrangentes, bancos de dados linguísticos estruturados e glossários específicos do domínio para garantir a consistência da marca corporativa."
+      "title": "2015 - Pres. | Localização Técnica & Parcerias",
+      "desc": "Parceria com delegações internacionais (incluindo grupos de engenharia canadenses e mexicanos), executando avaliação de tradução automática (MTPE) e auditorias de documentação técnica multilíngue."
     }
   ],
   "projects_about": [
     {
-      "title": "Experiência Principal",
-      "desc": "Operando com maestria na interseção precisa entre engenharia de dados e linguagem humana. Aproveitando a computação estatística para extrair insights ocultos enquanto quebra barreiras de comunicação complexas em ambientes globais de engenharia."
+      "title": "2023 - Pres. | Pesquisa em Tradução de IA (CTecL)",
+      "desc": "Coordenação do CTecL como uma iniciativa independente, investigando como grandes modelos de linguagem (LLMs) e ferramentas avançadas de NLP lidam com ritmo poético, métrica e nuances culturais em corpora multilíngues."
     },
     {
-      "title": "Stack Técnico",
-      "desc": "Processamento avançado em Python, bancos de dados SQL, arquitetura Power BI, pipelines de Data Wrangling, toolkits de NLP, orquestração Git e softwares avançados de Tradução Assistida por Computador (CAT)."
+      "title": "2025 | Tradução Literária Publicada",
+      "desc": "Co-tradução e publicação do livro 'Ora ga haru: minha primavera' (2025), aplicando estruturas linguísticas avançadas para preservar estilos estruturais e rítmicos."
     },
     {
-      "title": "Trajetória Acadêmica e Profissional",
-      "desc": "Desenvolvimento especializado contínuo em Ciência de Dados, Engenharia da Informação e Localização Linguística focado na entrega de soluções tecnológicas estratégicas ponta a ponta."
+      "title": "2012 - 2023 | Educação Especializada Contínua (IFES)",
+      "desc": "Operando com maestria onde os dados computacionais encontram a linguagem humana. Possui Diploma Técnico em Informática, Licenciatura em Letras e Pós-Graduação em Gestão da Educação Especial pelo IFES."
     }
   ]
 }
