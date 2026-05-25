@@ -28,11 +28,12 @@ body {
     animation: gradientAnimation 16s ease infinite;
     color: var(--text-dark);
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    padding: 20px;
     top: 0 !important; 
 }
 
@@ -44,10 +45,10 @@ body {
 
 .app-container {
     display: flex;
-    width: 94vw;
-    height: 90vh;
+    width: 100%;
+    max-width: 1400px;
+    height: 85vh;
     gap: 20px;
-    max-width: 1500px;
 }
 
 .sidebar, .content-panel {
@@ -60,8 +61,8 @@ body {
 }
 
 .sidebar {
-    flex: 0 0 22%;
-    padding: 30px 20px;
+    flex: 0 0 24%;
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +107,6 @@ body {
     flex-direction: column;
     gap: 6px;
     width: 100%;
-    max-width: 220px;
     margin: auto 0;
 }
 
@@ -120,7 +120,7 @@ body {
     color: var(--text-dark);
     cursor: pointer;
     border-radius: 10px;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
     width: 100%;
 }
 
@@ -206,7 +206,7 @@ body {
     opacity: 0;
     will-change: opacity;
     transform: translateZ(0);
-    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.35s ease;
 }
 
 .content-panel.active {
@@ -263,13 +263,12 @@ a.project-card {
     text-decoration: none;
     display: block;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s ease;
 }
 
 a.project-card:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
 }
 
 .project-card h3, .info-box h3 {
@@ -301,13 +300,13 @@ a.project-card:hover {
     body {
         height: auto;
         overflow-y: auto;
-        padding: 20px 0;
+        padding: 15px;
     }
 
     .app-container {
         flex-direction: column;
         height: auto;
-        width: 90vw;
+        width: 100%;
         gap: 15px;
     }
 
@@ -319,14 +318,11 @@ a.project-card:hover {
     }
 
     .sidebar-nav {
-        margin: 20px 0;
-        max-width: 100%;
-        width: 100%;
+        margin: 15px 0;
     }
 
     .content-panel {
         height: auto;
-        min-height: 400px;
         padding: 25px;
         overflow: visible;
     }
