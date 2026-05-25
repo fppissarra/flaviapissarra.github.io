@@ -1,3 +1,4 @@
+// gerenciamento de nav e paineis
 function setActiveButton(clickedButton) {
   document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
   if (clickedButton) clickedButton.classList.add('active');
@@ -27,7 +28,11 @@ function changeLanguage(lang) {
 
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
-    { pageLanguage: 'pt', includedLanguages: 'en,pt', autoDisplay: false },
+    { 
+      pageLanguage: 'pt', 
+      includedLanguages: 'en,pt,es',
+      autoDisplay: false 
+    },
     'google_translate_element'
   );
 }
@@ -41,6 +46,7 @@ function loadGoogleTranslate() {
   document.body.appendChild(script);
 }
 
+// inicialização de eventos
 document.addEventListener('DOMContentLoaded', () => {
   loadGoogleTranslate();
 
@@ -51,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'sobre mim': 'sobre'
   };
 
-  // cliques nos painéis
+  // cliques dos paineis do menu
   document.querySelectorAll('.nav-btn').forEach(button => {
     button.addEventListener('click', () => {
       const text = button.textContent.trim().toLowerCase();
@@ -60,19 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // cliques nos seletores de idioma customizados
+  // cliques no seletor dinâmico de idiomas
   document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
-      const langSelected = button.textContent.trim().toLowerCase(); // 'en' ou 'pt'
+      const langSelected = button.textContent.trim().toLowerCase();
       
-      // mapeia para o padrão esperado pelo Google Combobox ('en' ou 'pt')
-      const targetLang = langSelected.includes('pt') ? 'pt' : 'en';
+      let targetLang = 'pt';
+      if (langSelected.includes('en')) {
+        targetLang = 'en'; // rota para Inglês
+      } else if (langSelected.includes('es')) {
+        targetLang = 'es'; // rota para Espanhol
+      } else if (langSelected.includes('pt')) {
+        targetLang = 'pt'; // rota para Português
+      } else if (langSelected.includes('ko')) {
+        targetLang = 'ko'; // rota para Coreano
+      }
+      
       changeLanguage(targetLang);
     });
   });
 
-  // inicializa o primeiro painel ativo
+  // ativa a primeira aba configurada
   const firstActiveButton = document.querySelector('.nav-btn.active');
   if (firstActiveButton) {
     const text = firstActiveButton.textContent.trim().toLowerCase();
