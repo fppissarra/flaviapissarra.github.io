@@ -26,17 +26,15 @@ body {
     padding: 20px;
 }
 
-/* LAYOUT ESTRUTURAL */
-.container {
+.app-container {
     display: flex;
     width: 100%;
     max-width: 1400px;
-    min-height: 85vh; /* Trocado para min-height para não quebrar no mobile */
+    min-height: 85vh;
     height: auto;
     gap: 25px;
 }
 
-/* ASIDE - MENU LATERAL */
 .sidebar {
     flex: 0 0 25%;
     background: var(--pearl-gradient);
@@ -50,38 +48,31 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* ESTILO DA FOTO DE PERFIL */
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.profile-section {
+    margin-bottom: 20px;
 }
 
-.profile-info h1 {
+.profile-name {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 8px;
     letter-spacing: -0.5px;
 }
 
-.profile-info .headline {
+.profile-headline {
     font-size: 0.9rem;
     color: var(--text-muted);
     font-weight: 400;
 }
 
-.menu-nav {
+.sidebar-nav {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
 }
 
-.menu-btn {
+.nav-btn {
     background: transparent;
     border: none;
     text-align: left;
@@ -94,16 +85,50 @@ body {
     transition: all 0.3s ease;
 }
 
-.menu-btn:hover, .menu-btn.active {
+.nav-btn:hover,
+.nav-btn.active {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     padding-left: 25px;
     font-weight: 500;
 }
 
-/* PAINEL CONTEÚDO DA DIREITA */
-.content-panel {
+.language-picker {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.lang-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-dark);
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    background: var(--bg-global);
+}
+
+.main-content {
     flex: 1;
+    display: flex;
+}
+
+.content-panel {
+    display: none;
+    width: 100%;
     background: var(--pearl-gradient);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius-main);
@@ -111,17 +136,12 @@ body {
     box-shadow: var(--shadow-soft);
     border: 1px solid rgba(255, 255, 255, 0.6);
     overflow-y: auto;
-}
-
-/* LOGICA VISUAL SPA */
-.panel-section {
-    display: none;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.panel-section.active {
+.content-panel.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
@@ -138,14 +158,14 @@ body {
     margin-bottom: 40px;
 }
 
-/* GRIDS INTERNAS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-.project-card, .info-box {
+.project-card,
+.info-box {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 24px;
@@ -153,20 +173,28 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.01);
 }
 
-.project-card h3, .info-box h3 {
+.project-card h3,
+.info-box h3 {
     margin-bottom: 12px;
     font-weight: 500;
 }
 
-.project-card p, .info-box p, .about-container p {
+.project-card p,
+.info-box p,
+.about-container p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* BOTÕES E LINKS DE PROJETOS */
-.action-btn-link, .lang-btn {
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.action-btn-link {
     display: inline-block;
     text-decoration: none;
     color: var(--text-dark);
@@ -182,19 +210,18 @@ body {
     transition: transform 0.2s, background-color 0.2s;
 }
 
-.action-btn-link:hover, .lang-btn:hover {
+.action-btn-link:hover {
     transform: translateY(-2px);
     background: var(--bg-global);
 }
 
-/* 📱 REGRAS COMPLETAS DE RESPONSIVIDADE PARA CELULARES (Abaixo de 768px) */
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
 
-    .container {
-        flex-direction: column; /* Faz o menu ir para cima e o conteúdo para baixo */
+    .app-container {
+        flex-direction: column;
         height: auto;
         min-height: auto;
         gap: 15px;
@@ -204,18 +231,14 @@ body {
         flex: none;
         width: 100%;
         padding: 25px 20px;
-        border-radius: 24px; /* Suaviza as bordas na tela do celular */
-    }
-
-    .menu-nav {
-        margin-top: 15px;
+        border-radius: 24px;
     }
 
     .content-panel {
         padding: 25px;
         border-radius: 24px;
         height: auto;
-        overflow-y: visible; /* Tira o scroll interno do painel no mobile */
+        overflow-y: visible;
     }
 
     .section-title {
