@@ -1,96 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flávia P. Pissarra | Portfólio</title>
-  <link rel="stylesheet" href="./core/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <aside class="sidebar">
-      <div class="profile-section">
-        <h1 class="profile-name">Flávia P. Pissarra</h1>
-        <p class="profile-headline">Data Scientist & Translator</p>
-      </div>
 
-      <nav class="sidebar-nav">
-        <button class="nav-btn active" onclick="openPanel('bi', this)">Business Intelligence</button>
-        <button class="nav-btn" onclick="openPanel('traducao', this)">Tradução</button>
-        <button class="nav-btn" onclick="openPanel('sobre', this)">Sobre mim</button>
-      </nav>
+    <div class="app-container">
+        
+        <!-- menu lateral -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <h1 class="profile-name">Flávia P. Pissarra</h1>
+                <p class="profile-headline">Cientista de Dados e Tradutora</p>
+            </div>
 
-      <div class="language-picker">
-        <div id="google_translate_element" style="display:none;"></div>
-        <button class="lang-btn" onclick="changeLanguage('en')">ENG</button>
-        <button class="lang-btn" onclick="changeLanguage('pt')">PTBR</button>
-      </div>
-    </aside>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active">Inteligência de Negócios</button>
+                <button class="nav-btn">Tradução</button>
+                <button class="nav-btn">Sobre mim</button>
+            </nav>
 
-    <main class="main-content">
-      <section id="panel-bi" class="content-panel active">
-        <h2 class="section-title">Business Intelligence & Analytics</h2>
-        <p class="section-intro">
-          Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.
-        </p>
+            <!-- seletores de idioma -->
+            <div class="language-picker">
+                <button class="lang-btn">PTBR</button>
+                <button class="lang-btn">ENG</button>
+                <button class="lang-btn">ESP</button>
+            </div>
+        </aside>
+      
+        <main class="main-content">
+            
+            <!-- PowerBI -->
+            <div id="panel-bi" class="content-panel active">
+                <h2 class="section-title">Inteligência de Negócios e Análise</h2>
+                <p class="section-intro">Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Análise de Logística Portuária</h3>
+                        <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>NLP & Ciência de Dados</h3>
+                        <p>Projetos com linguagem natural, organization de dados e automação de análises.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Painéis do Power BI</h3>
+                        <p>Visualizações para acompanhamento estratégico e apoio à tomada de decisão.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Análise de Logística Portuária</h3>
-            <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
-          </div>
+            <!-- tradução -->
+            <div id="panel-traducao" class="content-panel">
+                <h2 class="section-title">Tradução</h2>
+                <p class="section-intro">Serviços de tradução técnica, versão e localização de software.</p>
+            </div>
 
-          <div class="project-card">
-            <h3>NLP & Data Science</h3>
-            <p>Projetos com linguagem natural, organização de dados e automação de análises.</p>
-          </div>
+            <!-- sobre mim -->
+            <div id="panel-sobre" class="content-panel">
+                <h2 class="section-title">Sobre mim</h2>
+                <p class="section-intro">Conheça mais sobre minha trajetória profissional e acadêmica.</p>
+            </div>
 
-          <div class="project-card">
-            <h3>Dashboards Power BI</h3>
-            <p>Visualizações para acompanhamento estratégico e apoio à tomada de decisão.</p>
-          </div>
-        </div>
-      </section>
+        </main>
+    </div>
 
-      <section id="panel-traducao" class="content-panel">
-        <h2 class="section-title">Tradução & Localização</h2>
-        <p class="section-intro">
-          Serviços de tradução técnica, corporativa e localização de softwares.
-        </p>
+    <!-- elemento base invisível necessário para o funcionamento do motor google -->
+    <div id="google_translate_element" style="display:none;"></div>
 
-        <div class="projects-grid">
-          <div class="info-box">
-            <h3>Pares de Idiomas</h3>
-            <p>Inglês &lt;&gt; Português</p>
-          </div>
-
-          <div class="info-box">
-            <h3>Especialidades</h3>
-            <p>Textos técnicos de informática, logística, relatórios de BI e documentação de sistemas.</p>
-          </div>
-
-          <div class="info-box">
-            <h3>Tipos de Projeto</h3>
-            <p>Tradução, revisão, adaptação terminológica e localização de conteúdo digital.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="panel-sobre" class="content-panel">
-        <h2 class="section-title">Sobre Mim</h2>
-        <p class="section-intro">
-          Profissional com base técnica sólida em Informática, conectando Ciência de Dados, Logística e Tradução.
-        </p>
-
-        <div class="about-container">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">Currículo Lattes</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">GitHub</a>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script src="./core/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
