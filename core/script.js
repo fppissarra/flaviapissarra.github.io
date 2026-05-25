@@ -69,8 +69,16 @@ function fetchAndApplyLanguage(langCode) {
 }
 
 function googleTranslateElementInit() {
+  const langSelect = document.getElementById('custom-lang-select');
+  let allowedLanguages = 'en,pt,es,ko,ja,it';
+  
+  if (langSelect) {
+    const options = Array.from(langSelect.options).map(opt => opt.value);
+    allowedLanguages = options.join(',');
+  }
+
   new google.translate.TranslateElement(
-    { pageLanguage: 'en', includedLanguages: 'en,pt,es,ko,ja', autoDisplay: false },
+    { pageLanguage: 'en', includedLanguages: allowedLanguages, autoDisplay: false },
     'google_translate_element'
   );
   
