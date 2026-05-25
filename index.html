@@ -15,9 +15,9 @@
       </div>
 
       <nav class="sidebar-nav">
-        <button class="nav-btn active" onclick="openPanel('bi')">Business Intelligence</button>
-        <button class="nav-btn" onclick="openPanel('traducao')">Tradução</button>
-        <button class="nav-btn" onclick="openPanel('sobre')">Sobre Mim</button>
+        <button class="nav-btn active" onclick="openPanel('bi', this)">Business Intelligence</button>
+        <button class="nav-btn" onclick="openPanel('traducao', this)">Tradução</button>
+        <button class="nav-btn" onclick="openPanel('sobre', this)">Sobre Mim</button>
       </nav>
 
       <div class="language-picker">
@@ -30,41 +30,62 @@
     <main class="main-content">
       <section id="panel-bi" class="content-panel active">
         <h2 class="section-title">Business Intelligence & Analytics</h2>
-        <p class="section-intro">Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.</p>
+        <p class="section-intro">
+          Exploração de dados, engenharia de recursos e construção de dashboards estratégicos.
+        </p>
 
         <div class="projects-grid">
           <div class="project-card">
             <h3>Análise de Logística Portuária</h3>
             <p>Otimização de fluxo de navios e tracking de mercadorias.</p>
           </div>
+
+          <div class="project-card">
+            <h3>NLP & Data Science</h3>
+            <p>Projetos com linguagem natural, organização de dados e automação de análises.</p>
+          </div>
+
+          <div class="project-card">
+            <h3>Dashboards Power BI</h3>
+            <p>Visualizações para acompanhamento estratégico e apoio à tomada de decisão.</p>
+          </div>
         </div>
       </section>
 
       <section id="panel-traducao" class="content-panel">
         <h2 class="section-title">Tradução & Localização</h2>
-        <p class="section-intro">Serviços de tradução técnica, corporativa e localização de softwares.</p>
+        <p class="section-intro">
+          Serviços de tradução técnica, corporativa e localização de softwares.
+        </p>
 
         <div class="projects-grid">
           <div class="info-box">
             <h3>Pares de Idiomas</h3>
-            <p>Inglês <> Português</p>
+            <p>Inglês &lt;&gt; Português</p>
           </div>
 
           <div class="info-box">
             <h3>Especialidades</h3>
             <p>Textos técnicos de informática, logística, relatórios de BI e documentação de sistemas.</p>
           </div>
+
+          <div class="info-box">
+            <h3>Tipos de Projeto</h3>
+            <p>Tradução, revisão, adaptação terminológica e localização de conteúdo digital.</p>
+          </div>
         </div>
       </section>
 
       <section id="panel-sobre" class="content-panel">
         <h2 class="section-title">Sobre Mim</h2>
-        <p class="section-intro">Profissional com base técnica sólida em Informática, transitando e conectando as áreas de Ciência de Dados, Logística e Tradução.</p>
+        <p class="section-intro">
+          Profissional com base técnica sólida em Informática, conectando Ciência de Dados, Logística e Tradução.
+        </p>
 
         <div class="about-container">
-          <a href="#" target="_blank" class="action-btn-link">LinkedIn</a>
-          <a href="#" target="_blank" class="action-btn-link">Currículo Lattes</a>
-          <a href="#" target="_blank" class="action-btn-link">GitHub</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">Currículo Lattes</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="action-btn-link">GitHub</a>
         </div>
       </section>
     </main>
