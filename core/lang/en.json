@@ -1,54 +1,45 @@
 {
   "headline": "Data Scientist & Technical Translator",
-  "nav_bi": "Business Intelligence",
-  "nav_translation": "Translation",
-  "nav_about": "About me",
-  "title_bi": "Business Intelligence & Analytics Solutions",
-  "intro_bi": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry.",
-  "title_translation": "Technical Translation & Software Localization",
-  "intro_translation": "High-precision translation, software internationalization, and cross-cultural versioning for technology enterprises.",
-  "title_about": "About Flávia P. Pissarra",
-  "intro_about": "Discover my professional background, technical core stack, and academic trajectory operating at the intersection of data and language.",
+  "nav_bi": "Experiences",
+  "nav_translation": "Academia",
+  "nav_about": "",
+  "title_bi": "Professional Experiences",
+  "intro_bi": "Data engineering pipelines, automated telemetry architectures, and professional website localization projects.",
+  "title_translation": "Academic Trajectory & Research",
+  "intro_translation": "Linguistic computing developments, continuous academic specializations, and published literary translations.",
+  "title_about": "",
+  "intro_about": "",
   "projects_bi": [
     {
-      "title": "Port Logistics & Maritime Supply Chain Analysis",
-      "desc": "Vessel flow optimization models and intelligent cargo tracking systems developed to monitor complex port operations, reduce queue bottlenecks, and stream telemetry in real time."
+      "title": "Industrial Data Engineering (ArcelorMittal)",
+      "desc": "Engineered automated data pipelines using SQL and Python to extract and process over 10k monthly rows of raw industrial data for advanced operational auditing."
     },
     {
-      "title": "Natural Language Processing (NLP) Diagnostics",
-      "desc": "Advanced linguistic algorithms, data curation pipelines, and automated text analysis diagnostics deployed to parse unstructured global data repositories."
+      "title": "Data Automation & Telemetry (Vale S.A.)",
+      "desc": "Automated key performance indicators (KPIs) by constructing custom data workflows, deploying responsive data architectures directly into strategic corporate dashboards."
     },
     {
-      "title": "Strategic Executive Telemetry Visualization",
-      "desc": "Interactive Power BI architecture and advanced DAX modeling built to provide high-level corporate decision support, revenue monitoring, and KPI auditing."
+      "title": "Web Localization (Leonardo Murakami's Platform)",
+      "desc": "Executed end-to-end website localization, internationalization testing, and cross-cultural translation to adapt web assets for global users and ensure seamless multilingual deployment."
+    },
+    {
+      "title": "Technical Localization & Partnerships (Senior Translator)",
+      "desc": "Partnered with international delegations (including Canadian and Mexican engineering groups), executing machine translation evaluation (MTPE) and cross-lingual technical documentation audits."
     }
   ],
   "projects_translation": [
     {
-      "title": "Software, UI & Product Localization",
-      "desc": "Adapting digital applications, software documentation, and interface strings for absolute regional compliance, linguistic fluency, and a native user experience (UX)."
+      "title": "Linguistic Curation & AI Translation Research (CTecL)",
+      "desc": "Coordinating CTecL as an independent initiative, investigating how large language models (LLMs) and advanced NLP tools handle poetic rhythm, meter, and cultural nuances across multilingual corpora."
     },
     {
-      "title": "Linguistic Curation & Technical Versioning",
-      "desc": "High-precision conversion of engineering blueprints, data science literature, scientific publications, and legal data privacy frameworks."
+      "title": "Published Literary & Poetic Translation",
+      "desc": "Co-translated and published the book 'Ora ga haru: minha primavera' (2025), applying advanced linguistic frameworks to preserve structural and rhythmic styles."
     },
     {
-      "title": "Terminology Management & Translation Memories",
-      "desc": "Building structured translation memories, comprehensive enterprise databases, and domain-specific glossaries to enforce global brand consistency."
+      "title": "Continuous Specialized Education",
+      "desc": "Operating gracefully where computational data meets human language. Holds a Computer Science Technical Diploma, a Licentiate degree in Letters, and a Graduate Certificate in Special Education Management from IFES."
     }
   ],
-  "projects_about": [
-    {
-      "title": "Core Multi-Disciplinary Expertise",
-      "desc": "Operating gracefully where computational data engineering meets human language. Leveraging statistical models to decode hidden patterns while eliminating complex communication friction in global corporate environments."
-    },
-    {
-      "title": "Advanced Technology Core Stack",
-      "desc": "Expert data orchestration leveraging Python, SQL databases, Git version control, tailored NLP pipelines, advanced Power BI modeling, and state-of-the-art Computer-Assisted Translation (CAT) suites."
-    },
-    {
-      "title": "Academic Trajectory & Vision",
-      "desc": "Continuous research and development in Information Systems, Advanced Data Analytics, and Translation Technologies to design end-to-end strategic solutions for international markets."
-    }
-  ]
+  "projects_about": []
 }
