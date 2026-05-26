@@ -1,9 +1,9 @@
-// Seus dados formatados como um Array (Substitui o arquivo JSON)
+// Seus dados "chumbados" no código. Seguro, rápido e à prova de bugs.
 const portfolioData = [
     {
         title: "Flávia P. Pissarra",
         subtitle: "Apresentação",
-        desc: "Bem-vinda ao meu portfólio. Sou especialista em transição para áreas de dados e logística portuária. Clique em 'Avançar' para explorar minhas experiências."
+        desc: "Bem-vinda ao meu portfólio. Sou especialista em transição para áreas de dados e logística portuária. Navegue para explorar minhas experiências."
     },
     {
         title: "Operação Portuária",
@@ -24,28 +24,27 @@ const portfolioData = [
 
 let currentIndex = 0;
 
-// Captura os elementos da tela
+// Elementos da interface
 const titleEl = document.getElementById('title');
 const subtitleEl = document.getElementById('subtitle');
 const descEl = document.getElementById('desc');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-// Função que atualiza a tela
+// Função de atualização da tela
 function updateScreen() {
     const currentItem = portfolioData[currentIndex];
 
-    // Atualiza os textos
     titleEl.innerText = currentItem.title;
     subtitleEl.innerText = currentItem.subtitle;
     descEl.innerText = currentItem.desc;
 
-    // Gerencia o estado dos botões
+    // Desativa o botão "Voltar" no início e "Avançar" no final
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === (portfolioData.length - 1);
 }
 
-// Ações dos Botões
+// Ações de clique
 prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
@@ -60,5 +59,5 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-// Inicializa a primeira tela
+// Inicia o programa
 updateScreen();
