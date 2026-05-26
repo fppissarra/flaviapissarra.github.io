@@ -1,49 +1,43 @@
 {
-  "headline": "Data Scientist & Traduttrice",
-  "nav_bi": "Business Intelligence",
-  "nav_translation": "Traduzione",
-  "nav_about": "Accademia",
-  "link_github": "Il mio GitHub",
-  "link_linkedin": "Il mio LinkedIn",
-  "link_email": "Contattami",
-  "title_bi": "Business Intelligence & Analytics",
-  "intro_bi": "Esplorazione dei dati, ingegneria delle caratteristiche e architettura di dashboard strategiche.",
-  "title_translation": "Traduzione & Localizzazione",
-  "intro_translation": "Traduzione tecnica, localizzazione di software e versionamento cross-culturale.",
-  "title_about": "Su di me",
-  "intro_about": "Scopri il mio percorso professionale, il mio stack tecnico e la mia traiettoria accademica.",
-  "projects_bi": [
-    {
-      "title": "2024 - 2025 | Analisi della Logistica Portuale (ArcelorMittal)",
-      "desc": "Ingegnerizzazione di pipeline automatizzate di dati utilizzando SQL e Python per estrarre e elaborare oltre 10.000 righe mensili di dati industriali grezzi per audit operativi avanzati."
+  "meta": {
+    "title": "Flávia P. Pissarra | Data Scientist & Logistica Portuaria",
+    "description": "Portfolio professionale di Flávia P. Pissarra, Data Scientist specializzata in Business Intelligence, Logistica Portuaria e traduzioni tecniche."
+  },
+  "nav": {
+    "home": "Home",
+    "bi": "Business Intelligence",
+    "translation": "Traduzione",
+    "about": "Chi Sono",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "title": "Flávia P. Pissarra",
+    "subtitle": "Data Scientist",
+    "tagline": "Trasformare dati complessi in decisioni strategiche per il settore portuale e logistico.",
+    "cta_portfolio": "Vedi Portfolio",
+    "cta_contact": "Contattami"
+  },
+  "sections": {
+    "bi": {
+      "title": "Business Intelligence & Analisi Dati",
+      "description": "Sviluppo di dashboard interattive e modelli di elaborazione del linguaggio naturale (NLP) focalizzati sull'ottimizzazione operativa.",
+      "sub_panels": "Dashboard & Report",
+      "sub_nlp": "Natural Language Processing"
     },
-    {
-      "title": "2023 - 2024 | Automazione dei Dati e Telemetria (Vale S.A.)",
-      "desc": "Automazione degli indicatori chiave di prestazione (KPI) tramite la creazione di workflow di dati personalizzati, implementando architetture responsive direttamente su dashboard aziendali strategiche."
+    "translation": {
+      "title": "Traduzione & Localizzazione",
+      "description": "Servizi di traduzione tecnica e scientifica tra inglese, portoghese e italiano, garantendo precisione terminologica.",
+      "sub_tech": "Tecnica & Ingegneria",
+      "sub_academic": "Accademica & Scientifica"
+    },
+    "about": {
+      "title": "Chi Sono",
+      "p1": "Sono una scienziata dei dati con un solido background tecnico in informatica e attualmente focalizzata sulla transizione verso il settore logistico e portuale.",
+      "p2": "La mia esperienza unisce l'analisi predittiva, lo sviluppo di soluzioni di BI e la capacità di lavorare con team multinazionali grazie alle mie competenze linguistiche."
     }
-  ],
-  "projects_translation": [
-    {
-      "title": "2025 - Pres. | Localizzazione Web (Piattaforma di Leonardo Murakami)",
-      "desc": "Esecuzione di localizzazione di siti web end-to-end, test di internazionalizzazione e traduzione cross-culturale per adattare gli asset web per utenti globali e garantire un'implementazione multilingue perfetta."
-    },
-    {
-      "title": "2015 - Pres. | Localizzazione Tecnica & Partnership",
-      "desc": "Collaborazione con delegazioni internazionali (inclusi gruppi di ingegneria canadesi e messicani), eseguendo valutazione della traduzione automatica (MTPE) e audit di documentazione tecnica multilingue."
-    }
-  ],
-  "projects_about": [
-    {
-      "title": "2023 - Pres. | Ricerca sulla Traduzione di IA (CTecL)",
-      "desc": "Coordinamento del CTecL come iniziativa indipendente, studiando come i grandi modelli linguistici (LLM) e gli strumenti avanzati di NLP gestiscono il ritmo poetico, la metrica e le sfumature culturali in corpora multilingue."
-    },
-    {
-      "title": "2025 | Traduzione Letteraria Pubblicata",
-      "desc": "Co-traduzione e pubblicazione del libro 'Ora ga haru: minha primavera' (2025), applicando framework linguistici avanzati per preservare gli stili strutturali e ritmici."
-    },
-    {
-      "title": "2012 - 2023 | Educazione Specializzata Continua (IFES)",
-      "desc": "Opero con precisione dove i dati computazionali incontrano il linguaggio umano. Possiede un Diploma Tecnico in Informatica, Laurea in Letras e Master post-laurea in Gestione dell'Educazione Speciale presso l'IFES."
-    }
-  ]
+  },
+  "footer": {
+    "rights": "© 2026 Flávia P. Pissarra. Tutti i diritti riservati.",
+    "built_with": "Sviluppato con HTML, CSS (Madrepore Effect) e JavaScript."
+  }
 }
