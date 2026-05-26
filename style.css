@@ -1,15 +1,18 @@
+/* Painel Naval - Design System
+   Focado em ergonomia visual estilo Ubuntu e Dark Mode Industrial
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-  /* Cores do Painel Naval */
-  --ocean-depths: #040d1a;      /* Azul quase preto para o fundo */
-  --radar-cyan: #00f0ff;        /* Ciano neon para destaques e links */
-  --sonar-green: #00ff66;       /* Verde para botões e dados positivos */
-  --panel-bg: rgba(10, 25, 47, 0.85); /* Fundo do visor de vidro/metal */
-  --panel-border: 1px solid rgba(0, 240, 255, 0.3); /* Borda brilhante suave */
-  
-  --text-main: #e6f1ff;         /* Texto claro para contraste */
-  --text-muted: #8892b0;        /* Texto secundário (cinza azulado) */
+  --ocean-depths: #040d1a;      /* Fundo profundo */
+  --panel-bg: rgba(10, 25, 47, 0.85); /* Fundo dos visores */
+  --radar-cyan: #00f0ff;        /* Cor de destaque */
+  --sonar-green: #00ff66;       /* Cor de ação */
+  --text-main: #e6f1ff;         
+  --text-muted: #8892b0;        
+  --border-radius-main: 16px;   /* Arredondamento ergonómico */
+  --transition-speed: 0.3s;
 }
 
 * {
@@ -21,11 +24,10 @@
 
 body {
   background-color: var(--ocean-depths);
-  /* Textura de grade de radar naval */
   background-image: 
     linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px; 
+  background-size: 40px 40px;
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
@@ -34,33 +36,21 @@ body {
   padding: 20px;
 }
 
-/* A Div Central Principal */
+/* O Painel Principal (Visor) */
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
   background: var(--panel-bg);
-  border: var(--panel-border);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.05), inset 0 0 20px rgba(0, 240, 255, 0.02);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: var(--border-radius-main);
+  padding: 45px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 240, 255, 0.1);
+  backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
 }
 
-/* Efeito de varredura de radar sutil no topo do painel */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--radar-cyan), transparent);
-  opacity: 0.5;
-}
-
-/* Tipografia Técnica */
+/* Tipografia */
 h1, h2, h3 {
   color: var(--radar-cyan);
   text-transform: uppercase;
@@ -76,40 +66,45 @@ p {
   margin-bottom: 20px;
 }
 
-/* Botões do Painel (Avançar/Voltar e Ações) */
+/* Botões - Smooth como butter */
 button, .btn {
-  background: transparent;
-  border: 1px solid var(--radar-cyan);
-  color: var(--radar-cyan);
-  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 12px;
+  padding: 14px 28px;
   margin: 5px;
-  border-radius: 4px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
-  position: relative;
+  color: var(--radar-cyan);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover, .btn:hover {
-  background: rgba(0, 240, 255, 0.1);
-  box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.3), 0 0 10px rgba(0, 240, 255, 0.2);
-  text-shadow: 0 0 8px var(--radar-cyan);
+  background: rgba(0, 240, 255, 0.15);
+  border-color: var(--radar-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
 }
 
-/* Destaques (Ex: Seus idiomas ou dados focais) */
-.highlight {
-  color: var(--sonar-green);
-  font-weight: 600;
+/* Gestão de Conteúdo (SPA) */
+.content-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
-/* Ajuste para telas de celular */
+.content-panel.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Responsividade Ubuntu-Style */
 @media (max-width: 600px) {
   .container {
     padding: 25px;
   }
-  
   button, .btn {
     width: 100%;
     margin: 10px 0;
