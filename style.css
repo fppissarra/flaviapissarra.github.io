@@ -1,6 +1,5 @@
 :root {
     --bg-color: #050a10;
-    /* Fundo dos painéis com transparência (o segredo do glass) */
     --panel-bg: rgba(255, 255, 255, 0.03); 
     --accent: #5f9ea0;
     --text: #e0e6ed;
@@ -9,89 +8,84 @@
 
 body {
     background-color: var(--bg-color);
-    /* Adicionando um leve gradiente radial para profundidade */
     background-image: radial-gradient(circle at 50% 50%, #0d1b2a 0%, #050a10 100%);
     color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    padding: 20px;
 }
 
 .app-wrapper {
     display: flex;
-    gap: 40px;
-    width: 85%;
-    max-width: 1100px;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-start;
 }
 
-.profile-panel, .display-panel {
-    /* Glassmorphism aplicado */
+.profile-panel {
+    flex: 1 1 350px; 
     background: var(--panel-bg);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: var(--border);
-    padding: 50px;
-    border-radius: 20px; /* Bordas arredondadas dão o toque "pérola" */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: 0.5s ease;
+    padding: 40px;
+    border-radius: 20px;
 }
 
-.profile-panel { width: 350px; }
+.display-panel {
+    flex: 2 1 500px;
+    background: var(--panel-bg);
+    backdrop-filter: blur(15px);
+    border: var(--border);
+    padding: 40px;
+    border-radius: 20px;
+}
 
 h1 {
     font-weight: 200;
-    letter-spacing: 4px;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    /* Gradiente sutil no texto para parecer perolado */
-    background: linear-gradient(to right, #ffffff, var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .btn {
-    display: block;
     width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text);
-    text-align: left;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-size: 0.8rem;
     cursor: pointer;
     border-radius: 10px;
     transition: 0.3s;
+    text-align: left;
 }
 
 .btn:hover {
-    background: rgba(95, 158, 160, 0.15);
+    background: rgba(95, 158, 160, 0.2);
     border-color: var(--accent);
     color: var(--accent);
-    padding-left: 25px;
-}
-
-.display-panel {
-    flex-grow: 1;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hidden { display: none; }
 
 iframe { 
     width: 100%; 
-    height: 450px; 
+    height: 400px; 
     border: none; 
-    margin-top: 20px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
-@media (max-width: 900px) {
-    .app-wrapper { flex-direction: column; }
-    .profile-panel, .display-panel { width: 100%; padding: 30px; }
+@media (max-width: 600px) {
+    .profile-panel, .display-panel { padding: 20px; }
+    h1 { font-size: 1.2rem; }
 }
