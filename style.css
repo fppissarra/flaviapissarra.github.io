@@ -1,28 +1,45 @@
 :root {
     --bg-color: #0a192f;
     --panel-bg: #112240;
-    --accent: #4af626; /* Verde Radar */
+    --accent: #4af626;
     --text: #e6f1ff;
 }
 
 body {
     background-color: var(--bg-color);
-    background-image: radial-gradient(var(--panel-bg) 1px, transparent 1px);
-    background-size: 30px 30px; /* Efeito de grade de monitor */
     color: var(--text);
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
 }
 
 .profile-panel, .display-panel {
+    background: var(--panel-bg);
+    padding: 30px;
     border: 1px solid var(--accent);
-    box-shadow: 0 0 15px rgba(74, 246, 38, 0.2);
-    border-radius: 0; /* Borda quadrada remete a consoles industriais */
 }
 
+.hidden { display: none; }
+
 .btn {
-    border: 1px solid var(--accent);
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
     background: transparent;
+    border: 1px solid var(--accent);
     color: var(--accent);
-    font-family: 'Courier New', monospace; /* Fonte estilo terminal */
+    cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
