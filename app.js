@@ -8,6 +8,8 @@ function renderContent(lang, tab) {
     const data = i18nData[lang];
     const container = document.getElementById('experience-container');
     const fragment = document.createDocumentFragment();
+    
+    /* FIX: Changed data.experience to data.tabs to match your translations.json */
     const activeExperiences = data.tabs[tab] || [];
 
     activeExperiences.forEach(exp => {
