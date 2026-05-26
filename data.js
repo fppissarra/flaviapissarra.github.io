@@ -1,16 +1,10 @@
 const portfolioData = {
-    bi: {
-        title: "Business Intelligence",
-        items: [
-            { id: "dashboard", title: "Power BI Portfolio", content: "Dashboards de análise estratégica..." },
-            { id: "pipelines", title: "Data Pipelines", content: "Automação de fluxos com SQL e Python..." }
-        ]
+    "bi": {
+        "title": "Business Intelligence",
+        "content": "Power BI Portfolio - Dashboards de análise estratégica."
     },
-    
-    translation: {
-        title: "Translation",
-        items: [
-            { id: "tech", title: "Technical Projects", content: "Traduções técnicas especializadas..." }
-        ]
+    "translation": {
+        "title": "Translation",
+        "content": "Technical Projects - Traduções técnicas especializadas."
     }
 };
