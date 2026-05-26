@@ -1,49 +1,72 @@
 {
+  "profile_image": "https://avatars.githubusercontent.com/u/66925367?v=4",
   "headline": "Científica de Datos y Traductora",
-  "nav_bi": "Inteligencia de Negocios",
+  "nav_bi": "Proyectos",
   "nav_translation": "Traducción",
   "nav_about": "Academia",
   "link_github": "Mi GitHub",
   "link_linkedin": "Mi LinkedIn",
   "link_email": "Contáctame",
-  "title_bi": "Inteligencia de Negocios y Analítica",
-  "intro_bi": "Exploración de datos, ingeniería de características y arquitectura de tableros estratégicos.",
-  "title_translation": "Traducción y Localización",
-  "intro_translation": "Traducción técnica, localización de software y versiones interculturales.",
-  "title_about": "Sobre mí",
-  "intro_about": "Descubre mi trayectoria profesional, herramientas técnicas y trayectoria académica.",
+  "title_bi": "Proyectos de Ciencia de Datos y Analítica",
+  "intro_bi": "Exploración de datos de extremo a extremo, ingeniería de características y arquitectura de tableros estratégicos personalizados para telemetría corporativa.",
+  "title_translation": "Traducción Técnica y Localización de Software",
+  "intro_translation": "Traducción de alta precisión, internacionalización de software y adaptaciones interculturales para empresas de base tecnológica.",
+  "title_about": "Cursos y Certificaciones",
+  "intro_about": "Una lista detallada de mi trayectoria académica, cursos profesionales y formación técnica computacional.",
   "projects_bi": [
     {
-      "title": "2024 - 2025 | Ingeniería de Datos Industriales (ArcelorMittal)",
-      "desc": "Construcción de pipelines automatizados de datos usando SQL y Python para extraer y procesar más de 10 mil líneas mensuales de datos industriales brutos para auditoría operativa avanzada."
+      "date": "2026",
+      "title": "Ingeniera de Logística Predictiva",
+      "desc": "DESARROLLO: Diseñando marcos operativos de última generación combinando inteligencia de logística portuaria avanzada con seguimiento dinámico de tuberías. EXPLICACIÓN: Este proyecto utiliza telemetría de flujo en tiempo real para mitigar los cuellos de botella en las colas marítimas portuarias y predecir los ciclos de entrega de la cadena de suministro."
     },
     {
-      "title": "2023 - 2024 | Automatización de Datos y Telemetría (Vale S.A.)",
-      "desc": "Automatización de indicadores clave de rendimiento (KPIs) mediante la construcción de flujos de datos personalizados, desplegando arquitecturas responsivas directamente en tableros corporativos estratégicos."
+      "date": "2019",
+      "title": "Ingeniera de Sistemas Web y Datos (ArcelorMittal)",
+      "desc": "DESARROLLO: Construcción de pipelines automatizados de datos para extraer y procesar datos industriales brutos para auditoría operacional. EXPLICACIÓN: Creación de scripts de automatización con Python y SQL para procesar más de 10 mil líneas mensuales, optimizando los tiempos de consolidación en un 30%."
+    },
+    {
+      "date": "2018",
+      "title": "Analista de Automatización y Telemetría (Vale S.A.)",
+      "desc": "DESARROLLO: Automatización de indicadores clave de rendimiento (KPIs) mediante la construcción de flujos de datos personalizados y estructuras de datos visuales responsivas. EXPLICACIÓN: Despliegue de tableros de telemetria corporativa en tiempo real usando Python, R y Power BI para el soporte de decisiones ejecutivas de alto nivel."
     }
   ],
   "projects_translation": [
     {
-      "title": "2025 - Pres. | Localización Web (Plataforma de Leonardo Murakami)",
-      "desc": "Ejecución de localización de sitios web de extremo a extremo, pruebas de internacionalización y traducción intercultural para adaptar activos web para usuarios globales y garantizar una implementación bilingüe perfecta."
+      "date": "2020",
+      "title": "Especialista en Localización Web (Plataforma Murakami)",
+      "desc": "DESARROLLO: Ejecución de localización de sitios web, pruebas de internacionalización y traducción intercultural de interfaz de usuario. EXPLICACIÓN: Adaptación de activos digitales complejos y documentación de productos para garantizar una experiencia de usuario (UX) nativa en despliegues multilingües."
     },
     {
-      "title": "2015 - Pres. | Localización Técnica y Alianzas",
-      "desc": "Colaboración con delegaciones internacionales (incluyendo grupos de ingeniería canadienses y mexicanos), ejecutando evaluación de traducción automática (MTPE) y auditorías de documentación técnica multilingüe."
+      "date": "2023",
+      "title": "Coordinadora de Traducción de IA y LLM (CTecL)",
+      "desc": "DESARROLLO: Investigación de cómo los grandes modelos de lenguaje (LLMs) y las herramientas avanzadas de NLP manejan el ritmo y la métrica poética en corpora multilingües. EXPLICACIÓN: Gestión de conjuntos de datos lingüísticos computacionales independientes para evaluar los resultados de la traducción automática y mitigar los sesgos del modelo."
+    },
+    {
+      "date": "2024",
+      "title": "Evaluadora de Datos y Especialista en MTPE (CTecL)",
+      "desc": "DESARROLLO: Ejecución de flujos de trabajo de Post-Edición de Traducción Automática (MTPE) de alto volumen y anotación lingüística estructurada. EXPLICACIÓN: Curaduría de conjuntos de datos trilíngues (EN/ES/PT) para garantizar una precisión terminológica absoluta en marcos de documentación técnica y jurídica."
     }
   ],
   "projects_about": [
     {
-      "title": "2023 - Pres. | Investigación en Traducción de IA (CTecL)",
-      "desc": "Coordinación de CTecL como una iniciativa independiente, investigando cómo los grandes modelos de lenguaje (LLMs) y herramientas avanzadas de NLP manejan el ritmo poético, la métrica y las variantes culturales en corpora multilingües."
+      "date": "2025",
+      "title": "Coautora y Traductora Literaria Publicada",
+      "desc": "DESARROLLO: Co-traducción y publicación del libro de poesía tradicional 'Ora ga haru: minha primavera' (2025). EXPLICACIÓN: Aplicación de marcos de traducción intercultural avanzados para preservar delicados estilos estructurales, rítmicos y semánticos en los mercados literarios internacionales."
     },
     {
-      "title": "2025 | Traducción Literaria Publicada",
-      "desc": "Co-traducción y publicación del libro 'Ora ga haru: minha primavera' (2025), aplicando estructuras lingüísticas avanzadas para preservar estilos estructurales y rítmicos."
+      "date": "2022",
+      "title": "Ingeniera de Investigación en NLP (Proyecto Haikai Data)",
+      "desc": "DESARROLLO: Desarrollo de algoritmos personalizados de análisis de texto y bases de datos lingüísticas estructuradas para la extracción de patrones de texto. EXPLICACIÓN: Ingeniería de pipelines de procesamiento de texto con Python (Pandas/NumPy) para analizar grandes volúmenes de datos creativos no estructurados."
     },
     {
-      "title": "2012 - 2023 | Educación Especializada Continua (IFES)",
-      "desc": "Operando con maestría donde los datos computacionales se encuentran con el lenguaje humano. Posee un Diploma Técnico en Informática, Licenciatura en Letras y Postgrado en Gestión de la Educación Especial por el IFES."
+      "date": "2021",
+      "title": "Desarrolladora de Pipelines de Datos (Framework Reler & Fazer)",
+      "desc": "DESARROLLO: Construcción de pipelines automatizados de procesamiento de datos textuales y mantenimiento de métricas de bases de datos relacionales. EXPLICACIÓN: Uso de tecnologías web completas como JavaScript, PHP y MySQL para optimizar la entrega de contenido académico multidisciplinar."
+    },
+    {
+      "date": "2012 - 2023",
+      "title": "Títulos Académicos y Diplomas (IFES)",
+      "desc": "DESARROLLO: Conclusión de certificaciones multidisciplinarias oficiales, incluyendo el Diploma Técnico en Informática, Licenciatura en Letras y Postgrado en Gestión de la Educación Especial. EXPLICACIÓN: Construcción de una base especializada doble, equilibrando sistemas de datos informáticos con procesamiento lingüístico avanzado de textos."
     }
   ]
 }
