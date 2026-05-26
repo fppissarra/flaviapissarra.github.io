@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('data.json');
         const data = await response.json();
 
-        // Header
         document.getElementById('header-title').textContent = data.header.title;
         document.getElementById('header-subtitle').textContent = data.header.subtitle;
         document.getElementById('profile-img').src = data.header.avatar_url;
 
-        // Menu
         const menu = document.getElementById('menu-hub');
         menu.innerHTML = '';
 
