@@ -102,4 +102,8 @@ iframe {
         margin-left: 0; /* remove margem lateral */
         order: 2; /* garante que fique abaixo do perfil */
     }
+
+    iframe {
+        height: 300px; /* pro dashboard caber melhor no mobile */
+    }
 }
