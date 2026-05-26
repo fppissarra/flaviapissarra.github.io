@@ -1,1 +1,50 @@
-# página inicial dos projetos de b.i.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>COMMAND CENTER | PROJECTS</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { background-image: none; display: block; padding: 40px; }
+        .project-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-top: 40px; 
+        }
+        .card { 
+            border: var(--border); 
+            padding: 30px; 
+            background: var(--panel-bg); 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>OPERATIONAL PROJECTS</h1>
+        <p>Selecione uma unidade operacional para monitoramento:</p>
+    </header>
+
+    <div class="project-grid">
+        <div class="card">
+            <h3>PORTO VIX</h3>
+            <p>Análise de dados portuários e automação logística.</p>
+            <br>
+            <a href="porto-vix/" class="btn">ACESSAR DADOS</a>
+        </div>
+        
+        <div class="card">
+            <h3>LOG-TRANS</h3>
+            <p>Monitoramento de transporte ferroviário de cargas.</p>
+            <br>
+            <button class="btn" disabled>EM DESENVOLVIMENTO</button>
+        </div>
+    </div>
+
+    <br><br>
+    <a href="../" class="btn" style="width: auto;">VOLTAR AO HUB PRINCIPAL</a>
+
+</body>
+</html>
