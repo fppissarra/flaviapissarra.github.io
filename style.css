@@ -6,39 +6,42 @@
     --accent: #ff6a00; 
 }
 
-body { margin: 0; height: 100vh; display: flex; background: #0a0e14; font-family: 'Inter', sans-serif; color: white; overflow: hidden; }
+body { margin: 0; min-height: 100vh; background: #0a0e14; font-family: 'Inter', sans-serif; color: white; }
 
-#menu-container {
-    width: 350px;
-    height: 100vh;
+/* O Header centralizado na página */
+#main-header {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: transparent;
+}
+
+/* Efeito de subir ao passar o mouse em qualquer item */
+#main-header:has(.btn:hover) {
+    min-height: auto;
+    padding-top: 20px;
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
-    border-right: 1px solid var(--glass-border);
-    z-index: 10;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-#menu-container:hover {
-    justify-content: flex-start;
-    padding-top: 50px;
-}
-
-#menu-content { width: 80%; text-align: center; }
+#header-content { text-align: center; width: 350px; }
 
 #profile-img { width: 120px; border-radius: 50%; border: 2px solid var(--accent); margin-bottom: 20px; }
 
+/* Painel de Conteúdo escondido inicialmente */
 #display-panel {
-    flex: 1;
+    width: 90%;
+    height: 70vh;
+    margin: 20px auto;
     opacity: 0;
     transition: opacity 0.5s ease;
-    padding: 30px;
-    display: flex;
 }
 
-#menu-container:hover + #display-panel { opacity: 1; }
+#main-header:has(.btn:hover) + #display-panel { opacity: 1; }
 
 #frame-content { width: 100%; height: 100%; border: none; border-radius: 16px; background: rgba(0, 0, 0, 0.2); }
 
@@ -52,8 +55,6 @@ body { margin: 0; height: 100vh; display: flex; background: #0a0e14; font-family
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s;
-    text-align: left;
-    font-family: 'Inter', sans-serif;
 }
 
 .btn:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.1); }
