@@ -82,3 +82,24 @@ iframe {
     border: 1px solid var(--accent); 
     margin-top: 20px; 
 }
+
+/* tela < 900px */
+@media (max-width: 900px) {
+    .app-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+        padding-left: 0 !important; /* remove deslocamento lateral */
+    }
+
+    .profile-panel {
+        width: 90%; /* ocupa a largura quase total */
+        margin-bottom: 20px;
+    }
+
+    .display-panel {
+        width: 90%;
+        margin-left: 0; /* remove margem lateral */
+        order: 2; /* garante que fique abaixo do perfil */
+    }
+}
