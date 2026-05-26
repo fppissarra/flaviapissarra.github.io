@@ -1,32 +1,25 @@
-/* Painel Naval - Design System
-   Focado em ergonomia visual estilo Ubuntu e Dark Mode Industrial
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-  --ocean-depths: #040d1a;      /* Fundo profundo */
-  --panel-bg: rgba(10, 25, 47, 0.85); /* Fundo dos visores */
-  --radar-cyan: #00f0ff;        /* Cor de destaque */
-  --sonar-green: #00ff66;       /* Cor de ação */
-  --text-main: #e6f1ff;         
-  --text-muted: #8892b0;        
-  --border-radius-main: 16px;   /* Arredondamento ergonómico */
-  --transition-speed: 0.3s;
+  --bg-color: #040d1a;
+  --panel-bg: rgba(10, 25, 47, 0.85);
+  --accent-cyan: #00f0ff;
+  --text-main: #e6f1ff;
+  --text-muted: #8892b0;
+  --border-radius: 16px;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Inter', sans-serif; 
 }
 
 body {
-  background-color: var(--ocean-depths);
-  background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 240, 255, 0.05) 1px, transparent 0);
   background-size: 40px 40px;
   color: var(--text-main);
   min-height: 100vh;
@@ -36,77 +29,63 @@ body {
   padding: 20px;
 }
 
-/* O Painel Principal (Visor) */
 .container {
   width: 100%;
-  max-width: 850px;
+  max-width: 800px;
   background: var(--panel-bg);
   border: 1px solid rgba(0, 240, 255, 0.3);
-  border-radius: var(--border-radius-main);
-  padding: 45px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 240, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 40px;
   backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0, 240, 255, 0.1);
 }
 
-/* Tipografia */
-h1, h2, h3 {
-  color: var(--radar-cyan);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+h1, h2 { 
+  color: var(--accent-cyan); 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-bottom: 20px; 
   border-bottom: 1px solid rgba(0, 240, 255, 0.2);
   padding-bottom: 10px;
 }
 
-p {
-  color: var(--text-muted);
+p { 
+  color: var(--text-muted); 
+  margin-bottom: 20px; 
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
-/* Botões - Smooth como butter */
 button, .btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(0, 240, 255, 0.2);
   border-radius: 12px;
-  padding: 14px 28px;
-  margin: 5px;
+  padding: 12px 24px;
+  color: var(--accent-cyan);
   cursor: pointer;
+  transition: all 0.3s var(--transition);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--radar-cyan);
-  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 5px;
 }
 
-button:hover, .btn:hover {
-  background: rgba(0, 240, 255, 0.15);
-  border-color: var(--radar-cyan);
+button:hover, .btn:hover { 
+  background: rgba(0, 240, 255, 0.15); 
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
 }
 
-/* Gestão de Conteúdo (SPA) */
-.content-panel {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+.content-panel { display: none; }
+
+.content-panel.active { 
+  display: block; 
+  animation: fadeIn 0.4s ease-in-out; 
 }
 
-.content-panel.active {
-  display: block;
-  opacity: 1;
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(10px); } 
+  to { opacity: 1; transform: translateY(0); } 
 }
 
-/* Responsividade Ubuntu-Style */
 @media (max-width: 600px) {
-  .container {
-    padding: 25px;
-  }
-  button, .btn {
-    width: 100%;
-    margin: 10px 0;
-  }
+  .container { padding: 25px; }
+  button, .btn { width: 100%; margin: 10px 0; }
 }
