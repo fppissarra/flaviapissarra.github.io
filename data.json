@@ -19,9 +19,9 @@
     "title": "About Me",
     "text": "Data professional transitioning into the maritime industry, combining expertise in port processes with data analysis and automation.",
     "links": [
-      { "name": "LinkedIn", "url": "#" },
-      { "name": "Lattes", "url": "#" },
-      { "name": "GitHub", "url": "#" }
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/fppissarra" },
+      { "name": "Lattes", "url": "https://lattes.cnpq.br/7945109731847519" },
+      { "name": "GitHub", "url": "https://github.com/fppissarra" }
     ]
   }
 }
