@@ -1,19 +1,27 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body, html { height: 100%; width: 100%; overflow: hidden; font-family: sans-serif; }
+
 .app-wrapper {
     display: flex;
     width: 100vw;
     height: 100vh;
-    overflow-x: auto; /* Permite scroll horizontal se abrir muitas camadas */
     flex-direction: row;
+    overflow-x: auto;
 }
 
 .panel {
-    flex: 1; /* Faz com que todos os painéis dividam o espaço igualmente */
-    border-right: 1px solid #eee;
-    padding: 40px;
+    border-right: 1px solid #e0e0e0;
     overflow-y: auto;
+    padding: 2rem;
+    background: #ffffff;
+    flex: 1; 
 }
 
 .menu-panel {
-    flex: 0 0 25%; /* Fixa o menu lateral em 25% */
-    background: #f9f9f9;
+    flex: 0 0 25%; /* Menu sempre em 25% */
+    background: #fdfdfd;
 }
+
+/* Garante que a foto não estoure o layout */
+.avatar-container { width: 120px; height: 120px; margin: 0 auto 20px; }
+.avatar-image { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
