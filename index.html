@@ -2,28 +2,25 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Flávia P. Pissarra</title>
+    <title>Flávia P. Pissarra | Maritime Data Command</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-wrapper" id="main-wrapper">
         <aside class="profile-panel">
-            <h1>FLÁVIA P. PISSARRA</h1>
-            <p>Data Scientist | Foreign Trade & Port Logistics | Multilingual (PT/EN/ES/IT/JP/KO)</p>
-            <nav id="menu-hub">
-                <button class="btn" onclick="openCategory('projects')">OPERATIONAL BERTHS</button>
-                <button class="btn" onclick="openCategory('translations')">COMMUNICATION HUB</button>
-                <button class="btn" onclick="openCategory('about')">NAVIGATION BRIDGE</button>
-            </nav>
+            <h1 id="header-title"></h1>
+            <p id="header-subtitle"></p>
+            <nav id="menu-hub"></nav>
         </aside>
+
         <main id="display-area" class="display-panel hidden">
             <h2 id="display-title"></h2>
             <p id="display-description"></p>
             <div id="sub-links-container"></div>
-            <button class="btn" onclick="goBack()">DISCONNECT</button>
+            
+            <button class="btn disconnect-btn" onclick="goBack()">DISCONNECT</button>
         </main>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
