@@ -1,0 +1,14 @@
+{
+    "bi": {
+        "titulo": "Business Intelligence",
+        "texto": "Dashboards de logística e análise de dados portuários."
+    },
+    "traducao": {
+        "titulo": "Tradução",
+        "texto": "Projetos de localização técnica e tradução especializada."
+    },
+    "sobre": {
+        "titulo": "Sobre Mim",
+        "texto": "Trajetória acadêmica e profissional voltada a dados e comércio exterior."
+    }
+}
