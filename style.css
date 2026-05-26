@@ -48,7 +48,7 @@ body {
     height: 100vh;
     z-index: 10;
     flex-shrink: 0;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
 .sidebar::-webkit-scrollbar {
@@ -199,6 +199,38 @@ body {
     max-width: 850px;
 }
 
+.dashboard-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: start;
+    width: 100%;
+}
+
+.experience-feed-column {
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+.experience-feed-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.experience-feed-column::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.experience-feed-column::-webkit-scrollbar-thumb {
+    background: rgba(216, 27, 96, 0.2);
+    border-radius: 10px;
+}
+
+.experience-feed-column::-webkit-scrollbar-thumb:hover {
+    background: rgba(216, 27, 96, 0.4);
+}
+
 .experience-card {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(16px);
@@ -209,8 +241,8 @@ body {
     margin-bottom: 24px;
     box-shadow: 0 10px 35px 0 rgba(31, 38, 135, 0.04);
     display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 20px;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
@@ -244,6 +276,81 @@ body {
     font-size: 0.98rem;
     color: #455a64;
     line-height: 1.6;
+}
+
+.powerbi-showcase-column {
+    width: 100%;
+    position: sticky;
+    top: 60px;
+}
+
+.bi-preview-card {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 35px 0 rgba(31, 38, 135, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.bi-icon-wrapper {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.bi-preview-card h3 {
+    font-size: 1.4rem;
+    color: #1a252f;
+    font-weight: 700;
+}
+
+.bi-preview-card p {
+    font-size: 0.95rem;
+    color: #546e7a;
+    line-height: 1.6;
+    max-width: 320px;
+    margin-bottom: 12px;
+}
+
+.bi-view-button {
+    display: inline-block;
+    text-decoration: none;
+    background: #d81b60;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(216, 27, 96, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bi-view-button:hover {
+    background: #c2185b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+}
+
+@media (max-width: 1200px) {
+    .dashboard-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .experience-feed-column {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+    .powerbi-showcase-column {
+        position: relative;
+        top: 0;
+    }
 }
 
 @media (max-width: 900px) {
