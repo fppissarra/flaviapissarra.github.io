@@ -1,92 +1,380 @@
 {
   "en": {
-    "profile": { "name": "Flávia P. Pissarra", "title": "Data Scientist & Technical Translator" },
-    "menu": { "bi": "Business Intelligence", "translation": "Translation", "academia": "Academia" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "Data Scientist & Technical Translator"
+    },
+    "menu": {
+      "bi": "Business Intelligence",
+      "translation": "Translation",
+      "academia": "Academia"
+    },
     "section": {
-      "bi": { "title": "Business Intelligence & Analytics Solutions", "subtitle": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry." },
-      "translation": { "title": "Technical Translation & Localization", "subtitle": "Specialized translation, post-editing, and linguistic analysis balancing technical accuracy and cultural nuance." },
-      "academia": { "title": "Academic Production & Research", "subtitle": "Scientific investigations, computational linguistics research, and academic contributions." }
+      "bi": {
+        "title": "Business Intelligence & Analytics Solutions",
+        "subtitle": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry."
+      },
+      "translation": {
+        "title": "Technical Translation & Localization",
+        "subtitle": "Specialized translation, machine translation post-editing (MTPE), and linguistic analysis balancing technical accuracy and cultural nuance."
+      },
+      "academia": {
+        "title": "Academic Production & Research",
+        "subtitle": "Scientific investigations, computational linguistics projects, and academic contributions to the research community."
+      }
     },
     "tabs": {
       "bi": [
-        { "year": "2024 - 2025", "role": "Industrial Data Engineering", "company": "ArcelorMittal", "description": "Engineered automated data pipelines using SQL and Python to extract and process over 10k monthly rows of raw industrial data." },
-        { "year": "2023 - 2024", "role": "Data Automation & Telemetry", "company": "Vale S.A.", "description": "Automated key performance indicators (KPIs) by constructing custom data workflows, deploying responsive data architectures." }
+        {
+          "year": "2019",
+          "role": "Data Scientist (Intern)",
+          "company": "ArcelorMittal",
+          "description": "Engineered automated data pipelines using SQL and Python to extract and process raw industrial data for advanced operational auditing and business intelligence reporting."
+        },
+        {
+          "year": "2018",
+          "role": "Data Scientist (Intern)",
+          "company": "Vale",
+          "description": "Automated key performance indicators (KPIs) by constructing custom data workflows, deploying responsive data architectures directly into strategic corporate monitoring dashboards."
+        }
       ],
-      "translation": [],
-      "academia": []
+      "translation": [
+        {
+          "year": "2025 - Present",
+          "role": "Technical Translator & Post-Editor",
+          "company": "Freelance",
+          "description": "Providing high-accuracy technical translation and machine translation post-editing (MTPE). Specialized in refining software documentation, engineering reports, and academic research papers, ensuring terminology precision."
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - Present",
+          "role": "Lab Coordinator & Lead Researcher",
+          "company": "CTecL",
+          "description": "Running CTecL (AI-Assisted Poetic Translation Lab) as an independent research initiative. Exploring how machine translation and language models handle poetic rhythm, evaluation, and cultural nuance in multilingual texts."
+        },
+        {
+          "year": "2025",
+          "role": "Postgraduate Researcher",
+          "company": "Special Education Management",
+          "description": "Conducted academic research focused on data tracking, institutional accessibility mappings, and policy optimizations for inclusive practices and special education management."
+        }
+      ]
     }
   },
   "pt": {
-    "profile": { "name": "Flávia P. Pissarra", "title": "Cientista de Dados & Tradutora Técnica" },
-    "menu": { "bi": "Business Intelligence", "translation": "Tradução", "academia": "Academia" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "Cientista de Dados & Tradutora Técnica"
+    },
+    "menu": {
+      "bi": "Business Intelligence",
+      "translation": "Tradução",
+      "academia": "Academia"
+    },
     "section": {
-      "bi": { "title": "Soluções de Business Intelligence & Analytics", "subtitle": "Exploração de dados de ponta a ponta, engenharia de recursos e arquitetura de dashboard estratégica." },
-      "translation": { "title": "Tradução Técnica & Localização", "subtitle": "Tradução especializada, pós-edição e análise linguística equilibrando precisão técnica e nuances culturais." },
-      "academia": { "title": "Produção Acadêmica & Pesquisa", "subtitle": "Investigações científicas, pesquisa em linguística computacional e contribuições acadêmicas." }
+      "bi": {
+        "title": "Soluções de Business Intelligence & Analytics",
+        "subtitle": "Exploração de dados de ponta a ponta, engenharia de recursos e arquitetura estratégica de dashboards sob medida para telemetria corporativa."
+      },
+      "translation": {
+        "title": "Tradução Técnica & Localização",
+        "subtitle": "Tradução especializada, pós-edição de tradução automática (MTPE) e análise linguística equilibrando precisão técnica e nuances culturais."
+      },
+      "academia": {
+        "title": "Produção Acadêmica & Pesquisa",
+        "subtitle": "Investigações científicas, projetos em linguística computacional e contribuições acadêmicas para a comunidade de pesquisa."
+      }
     },
     "tabs": {
       "bi": [
-        { "year": "2024 - 2025", "role": "Engenharia de Dados Industriais", "company": "ArcelorMittal", "description": "Desenvolvimento de pipelines de dados automatizados usando SQL e Python para extrair e processar dados." },
-        { "year": "2023 - 2024", "role": "Automação de Dados & Telemetria", "company": "Vale S.A.", "description": "Automatização de indicadores-chave de desempenho (KPIs) através da construção de fluxos de trabalho personalizados." }
+        {
+          "year": "2019",
+          "role": "Cientista de Dados (Estágio)",
+          "company": "ArcelorMittal",
+          "description": "Desenvolvimento de pipelines de dados automatizados usando SQL e Python para extração e processamento de dados industriais brutos voltados para auditoria operacional avançada e relatórios de BI."
+        },
+        {
+          "year": "2018",
+          "role": "Cientista de Dados (Estágio)",
+          "company": "Vale",
+          "description": "Automatização de indicadores-chave de desempenho (KPIs) através da construção de fluxos de trabalho personalizados, implantando arquiteturas de dados diretamente em painéis de monitoramento estratégico corporativo."
+        }
       ],
-      "translation": [],
-      "academia": []
+      "translation": [
+        {
+          "year": "2025 - Pres.",
+          "role": "Tradutora Técnica & Pós-Editora",
+          "company": "Autônomo",
+          "description": "Prestação de serviços de tradução técnica de alta precisão e pós-edição de tradução automática (MTPE). Especialização no refinamento de documentações de software, relatórios de engenharia e artigos acadêmicos."
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - Pres.",
+          "role": "Coordenadora & Pesquisadora Líder",
+          "company": "CTecL",
+          "description": "Coordenação do CTecL (Laboratório de Tradução Poética Assistida por Inteligência Artificial) como uma iniciativa de pesquisa independente. Investigação de como a tradução automática e modelos de linguagem lidam com ritmo poético, avaliação e nuances culturais."
+        },
+        {
+          "year": "2025",
+          "role": "Pesquisadora de Pós-Graduação",
+          "company": "Gestão de Educação Especial",
+          "description": "Desenvolvimento de pesquisas acadêmicas focadas em análise de dados, mapeamento de acessibilidade institucional e otimização de diretrizes para gestão de práticas inclusivas."
+        }
+      ]
     }
   },
   "es": {
-    "profile": { "name": "Flávia P. Pissarra", "title": "Científica de Datos & Traductora Técnica" },
-    "menu": { "bi": "Business Intelligence", "translation": "Traducción", "academia": "Academia" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "Científica de Datos & Traductora Técnica"
+    },
+    "menu": {
+      "bi": "Business Intelligence",
+      "translation": "Traducción",
+      "academia": "Academia"
+    },
     "section": {
-      "bi": { "title": "Soluciones de Business Intelligence & Analytics", "subtitle": "Exploración de datos de extremo a extremo, ingeniería de atributos y arquitectura estratégica de tableros." },
-      "translation": { "title": "Traducción Técnica y Localización", "subtitle": "Traducción especializada, posedición y análisis lingüístico combinando precisión técnica y matices culturales." },
-      "academia": { "title": "Producción Académica e Investigación", "subtitle": "Investigaciones científicas, lingüística computacional y contribuciones académicas." }
+      "bi": {
+        "title": "Soluciones de Business Intelligence & Analytics",
+        "subtitle": "Exploración de datos de extremo a extremo, ingeniería de atributos y arquitectura estratégica de tableros corporativos."
+      },
+      "translation": {
+        "title": "Traducción Técnica y Localización",
+        "subtitle": "Traducción especializada, posedición de traducción automática (MTPE) y análisis lingüístico combinando precisión técnica y matices culturales."
+      },
+      "academia": {
+        "title": "Producción Académica e Investigación",
+        "subtitle": "Investigaciones científicas, proyectos de lingüística computacional y contribuciones académicas para la comunidad científica."
+      }
     },
     "tabs": {
-      "bi": [],
-      "translation": [],
-      "academia": []
+      "bi": [
+        {
+          "year": "2019",
+          "role": "Científica de Datos (Práctica)",
+          "company": "ArcelorMittal",
+          "description": "Desarrollo de pipelines de datos automatizados con SQL y Python para la extracción y procesamiento de datos industriales complejos destinados a auditorías operativas avanzadas."
+        },
+        {
+          "year": "2018",
+          "role": "Científica de Datos (Práctica)",
+          "company": "Vale",
+          "description": "Automatización de indicadores clave de rendimiento (KPIs) mediante el diseño de flujos de trabajo de datos optimizados e integración en tableros de control estratégico."
+        }
+      ],
+      "translation": [
+        {
+          "year": "2025 - Presente",
+          "role": "Traductora Técnica y Poseditora",
+          "company": "Freelance",
+          "description": "Servicios de traducción técnica y posedición de traducción automática (MTPE) con alta precisión para documentación de software, informes de ingeniería y artículos científicos."
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - Presente",
+          "role": "Coordinadora de Laboratorio e Investigadora",
+          "company": "CTecL",
+          "description": "Dirección de CTecL (Laboratorio de Traducción Poética Asistida por IA) como iniciativa independiente. Investigación sobre el procesamiento del ritmo poético, evaluación y matices culturales en modelos de lenguaje."
+        },
+        {
+          "year": "2025",
+          "role": "Investigadora de Posgrado",
+          "company": "Gestión de la Educación Especial",
+          "description": "Investigación académica enfocada en el análisis de datos institucionales, mapeo de accesibilidad y optimización de prácticas inclusivas."
+        }
+      ]
     }
   },
   "it": {
-    "profile": { "name": "Flávia P. Pissarra", "title": "Data Scientist & Traduttrice Tecnica" },
-    "menu": { "bi": "Business Intelligence", "translation": "Traduzione", "academia": "Accademia" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "Data Scientist & Traduttrice Tecnica"
+    },
+    "menu": {
+      "bi": "Business Intelligence",
+      "translation": "Traduzione",
+      "academia": "Accademia"
+    },
     "section": {
-      "bi": { "title": "Soluzioni di Business Intelligence & Analytics", "subtitle": "Esplorazione dei dati end-to-end, feature engineering e architettura strategica di dashboard." },
-      "translation": { "title": "Traduzione Tecnica e Localizzazione", "subtitle": "Traduzione specializzata, post-editing e analisi linguistica tra accuratezza tecnica e sfumature culturali." },
-      "academia": { "title": "Produzione Accademica e Ricerca", "subtitle": "Ricerche scientifiche, linguistica computazionale e contributi accademici." }
+      "bi": {
+        "title": "Soluzioni di Business Intelligence & Analytics",
+        "subtitle": "Esplorazione dei dati end-to-end, feature engineering e architettura di dashboard strategiche per la telemetria aziendale."
+      },
+      "translation": {
+        "title": "Traduzione Tecnica e Localizzazione",
+        "subtitle": "Traduzione specializzata, post-editing di traduzione automatica (MTPE) e analisi linguistica tra accuratezza tecnica e sfumature culturali."
+      },
+      "academia": {
+        "title": "Produzione Accademica e Ricerca",
+        "subtitle": "Ricerche scientifiche, progetti di linguistica computazionale e contributi accademici alla comunità di ricerca."
+      }
     },
     "tabs": {
-      "bi": [],
-      "translation": [],
-      "academia": []
+      "bi": [
+        {
+          "year": "2019",
+          "role": "Data Scientist (Tirocinio)",
+          "company": "ArcelorMittal",
+          "description": "Sviluppo di pipeline di dati automatizzate utilizzando SQL e Python per l'estrazione e l'elaborazione di dati industriali grezzi per l'auditing operativo."
+        },
+        {
+          "year": "2018",
+          "role": "Data Scientist (Tirocinio)",
+          "company": "Vale",
+          "description": "Automazione di indicatori chiave di prestazione (KPI) tramite la creazione di workflow di dati personalizzati e implementazione in dashboard di monitoraggio aziendale."
+        }
+      ],
+      "translation": [
+        {
+          "year": "2025 - Presente",
+          "role": "Traduttrice Tecnica & Post-Editor",
+          "company": "Freelance",
+          "description": "Servizi di traduzione tecnica e post-editing (MTPE) ad alta precisione per documentazione software, report ingegneristici e articoli accademici."
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - Presente",
+          "role": "Coordinatrice di Laboratorio & Ricercatrice",
+          "company": "CTecL",
+          "description": "Gestione del CTecL (Laboratorio di Traduzione Poetica Assistita da IA) come iniziativa di ricerca indipendente, analizzando la gestione del ritmo poetico e delle sfumature culturali nei modelli linguistici."
+        },
+        {
+          "year": "2025",
+          "role": "Ricercatrice Postgraduate",
+          "company": "Gestione dell'Educazione Speciale",
+          "description": "Ricerca accademica incentrata sull'analisi dei dati di accessibilità istituzionale e sull'ottimizzazione delle pratiche inclusive nella gestione educativa."
+        }
+      ]
     }
   },
   "ko": {
-    "profile": { "name": "플라비아·피사하", "title": "데이터 사이언티스트 & 전문 번역가" },
-    "menu": { "bi": "비즈니스 인텔리전스", "translation": "번역", "academia": "학계" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "데이터 사이언티스트 & 전문 번역가"
+    },
+    "menu": {
+      "bi": "비즈니스 인텔리전스",
+      "translation": "번역",
+      "academia": "학계"
+    },
     "section": {
-      "bi": { "title": "비즈니스 인텔리전스 & 분석 솔루션", "subtitle": "엔드투엔드 데이터 탐색, 피처 엔지니어링 및 기업 원격 측정을 위한 전략적 대시보드 아키텍처." },
-      "translation": { "title": "기술 번역 및 로컬라이제이션", "subtitle": "기술적 정확성과 문화적 뉘앙스의 균형을 맞춘 전문 번역, 사후 편집 및 언어 분석." },
-      "academia": { "title": "학술 생산 및 연구", "subtitle": "과학적 조사, 컴퓨터 언어학 연구 및 학술적 기여." }
+      "bi": {
+        "title": "비즈니스 인텔리전스 및 분석 솔루션",
+        "subtitle": "전사적 원격 측정을 위한 엔드투엔드 데이터 탐색, 피처 엔지니어링 및 전략적 대시보드 아키텍처."
+      },
+      "translation": {
+        "title": "기술 번역 및 로컬라이제이션",
+        "subtitle": "기술적 정확성과 문화적 뉘앙스의 균형을 맞춘 전문 번역, 기계 번역 사후 편집(MTPE) 및 언어 분석."
+      },
+      "academia": {
+        "title": "학술 생산 및 연구",
+        "subtitle": "과학적 조사, 컴퓨터 언어학 프로젝트 및 연구 커뮤니티에 대한 학술적 기여."
+      }
     },
     "tabs": {
-      "bi": [],
-      "translation": [],
-      "academia": []
+      "bi": [
+        {
+          "year": "2019",
+          "role": "데이터 사이언티스트 (인턴)",
+          "company": "ArcelorMittal",
+          "description": "고도화된 운영 감사 및 BI 보고서를 위해 SQL과 Python을 사용하여 산업용 원시 데이터를 추출하고 처리하는 자동화된 데이터 파이프라인을 구축했습니다."
+        },
+        {
+          "year": "2018",
+          "role": "데이터 사이언티스트 (인턴)",
+          "company": "Vale",
+          "description": "맞춤형 데이터 워크플로우를 설계하여 핵심성과지표(KPI)를 자동화하고, 이를 전략적 기업 모니터링 대시보드에 직접 배포했습니다."
+        }
+      ],
+      "translation": [
+        {
+          "year": "2025 - 현재",
+          "role": "기술 번역가 및 사후 편집자",
+          "company": "프리랜서",
+          "description": "소프트웨어 문서, 엔지니어링 보고서, 학술 연구 논문의 용어 정확성을 보장하는 고정밀 기술 번역 및 기계 번역 사후 편집(MTPE) 서비스를 제공합니다."
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - 현재",
+          "role": "연구소 총괄 및 수석 연구원",
+          "company": "CTecL",
+          "description": "독립 연구 이니셔티브로 CTecL(인공지능 지원 시 번역 연구소)을 운영하고 있습니다. 기계 번역과 대형 언어 모델이 다국어 텍스트의 시적 리듬, 평가 및 문화적 뉘앙스를 처리하는 방식을 연구합니다."
+        },
+        {
+          "year": "2025",
+          "role": "대학원 연구원",
+          "company": "특수 교육 관리",
+          "description": "인클루시브 교육 실천 및 특수 교육 관리를 위한 데이터 추적, 기관 접근성 매핑 및 정책 최적화에 중점을 둔 학술 연구를 수행했습니다."
+        }
+      ]
     }
   },
   "ja": {
-    "profile": { "name": "フラビア·ピサハ", "title": "データサイエンティスト＆技術翻訳者" },
-    "menu": { "bi": "ビジネスインテリジェンス", "translation": "翻訳", "academia": "アカデミア" },
+    "profile": {
+      "name": "Flávia P. Pissarra",
+      "title": "データサイエンティスト＆技術翻訳者"
+    },
+    "menu": {
+      "bi": "ビジネスインテリジェンス",
+      "translation": "翻訳",
+      "academia": "アカデミア"
+    },
     "section": {
-      "bi": { "title": "ビジネスインテリジェンス＆アナリティクスソリューション", "subtitle": "エンドツーエンド의 데이터 탐색、フィーチャーエンジニアリング、および企業テレメトリ向けの戦略的ダッシュボードアーキテクチャ。" },
-      "translation": { "title": "技術翻訳＆ローカライズ", "subtitle": "技術的な正確さと文化的なニュアンスのバランスをとった専門翻訳、ポストエディット、および言語分析。" },
-      "academia": { "title": "学術生産＆研究", "subtitle": "科学的調査、計算言語学研究、および学術的貢献。" }
+      "bi": {
+        "title": "ビジネスインテリジェンス＆アナリティクスソリューション",
+        "subtitle": "企業テレメトリ向けのエンドツーエンドのデータ探索、フィーチャーエンジニアリング、および戦略的ダッシュボードアーキテクチャ。"
+      },
+      "translation": {
+        "title": "技術翻訳＆ローカライズ",
+        "subtitle": "技術的な正確さと文化的なニュアンスのバランスをとった専門翻訳、機械翻訳ポストエディット（MTPE）、および言語分析。"
+      },
+      "academia": {
+        "title": "学術生産＆研究",
+        "subtitle": "科学的調査、計算言語学プロジェクト、および研究コミュニティへの学術的貢献。"
+      }
     },
     "tabs": {
-      "bi": [],
-      "translation": [],
-      "academia": []
+      "bi": [
+        {
+          "year": "2019",
+          "role": "データサイエンティスト（インターン）",
+          "company": "ArcelorMittal",
+          "description": "SQLとPythonを用いて自動化データパイプラインを構築し、高度な業務監査やBIレポートのための産業用未加工データの抽出・処理を担当しました。"
+        },
+        {
+          "year": "2018",
+          "role": "データサイエンティスト（インターン）",
+          "company": "Vale",
+          "description": "カスタムデータワークフローの構築により重要業績評価指標（KPI）を自動化し、戦略的な企業モニタリングダッシュボードに直接反映するデータアキテクチャを展開しました。"
+        }
+      ],
+      "translation": [
+        {
+          "year": "2025 - 現在",
+          "role": "技術翻訳者＆ポストエディター",
+          "company": "フリーランス",
+          "description": "ソフトウェア文書、エンジニアリングレポート、学術研究論文の専門用語の正確性を保証する、高精度な技術翻訳および機械翻訳ポストエディット（MTPE）を提供しています。"
+        }
+      ],
+      "academia": [
+        {
+          "year": "2025 - 現在",
+          "role": "研究室コーディネーター＆筆头研究員",
+          "company": "CTecL",
+          "description": "独立した研究イニシアチブとしてCTecL（AI支援詩翻訳研究室）を主宰。機械翻訳や大規模言語モデルが、多言語テキストにおける詩的リズム、評価、および文化的ニュアンスをどのように処理するかを探求しています。"
+        },
+        {
+          "year": "2025",
+          "role": "大学院研究員",
+          "company": "特殊教育管理",
+          "description": "インクルーシブな実践と特殊教育管理のためのデータ追跡、教育機関のアクセシビリティマッピング、および政策最適化に焦点を当てた学術研究を行いました。"
+        }
+      ]
     }
   }
 }
