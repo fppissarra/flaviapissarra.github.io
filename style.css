@@ -1,13 +1,16 @@
 :root {
     --bg-color: #050a10;
-    --panel-bg: rgba(10, 20, 35, 0.9);
+    /* Fundo dos painéis com transparência (o segredo do glass) */
+    --panel-bg: rgba(255, 255, 255, 0.03); 
     --accent: #5f9ea0;
     --text: #e0e6ed;
-    --border: 1px solid #1a3045;
+    --border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body {
     background-color: var(--bg-color);
+    /* Adicionando um leve gradiente radial para profundidade */
+    background-image: radial-gradient(circle at 50% 50%, #0d1b2a 0%, #050a10 100%);
     color: var(--text);
     font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
@@ -19,15 +22,20 @@ body {
 
 .app-wrapper {
     display: flex;
-    gap: 60px;
+    gap: 40px;
     width: 85%;
     max-width: 1100px;
 }
 
 .profile-panel, .display-panel {
+    /* Glassmorphism aplicado */
     background: var(--panel-bg);
-    padding: 50px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: var(--border);
+    padding: 50px;
+    border-radius: 20px; /* Bordas arredondadas dão o toque "pérola" */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: 0.5s ease;
 }
 
@@ -38,6 +46,10 @@ h1 {
     letter-spacing: 4px;
     font-size: 1.8rem;
     margin-bottom: 30px;
+    /* Gradiente sutil no texto para parecer perolado */
+    background: linear-gradient(to right, #ffffff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .btn {
@@ -45,17 +57,41 @@ h1 {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background: transparent;
-    border: 1px solid #1a3045;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text);
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
     cursor: pointer;
+    border-radius: 10px;
     transition: 0.3s;
 }
 
 .btn:hover {
+    background: rgba(95, 158, 160, 0.15);
     border-color: var(--accent);
-    color:
+    color: var(--accent);
+    padding-left: 25px;
+}
+
+.display-panel {
+    flex-grow: 1;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hidden { display: none; }
+
+iframe { 
+    width: 100%; 
+    height: 450px; 
+    border: none; 
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .app-wrapper { flex-direction: column; }
+    .profile-panel, .display-panel { width: 100%; padding: 30px; }
+}
