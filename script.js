@@ -1,29 +1,28 @@
-async function loadData() {
-    try {
-        const response = await fetch('info.json');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Erro ao carregar dados:', error);
-    }
+const order = ['bi', 'traducao', 'sobre'];
+let currentIndex = 0;
+let siteData = {};
+
+fetch('info.json').then(r => r.json()).then(data => siteData = data);
+
+function showPanel(id) {
+    currentIndex = order.indexOf(id);
+    const contentBox = document.getElementById('content-box');
+    
+    document.getElementById('content-title').textContent = siteData[id].titulo;
+    document.getElementById('content-text').textContent = siteData[id].texto;
+    
+    contentBox.classList.add('active');
+    document.getElementById('main-nav').style.display = 'none';
 }
 
-async function openPanel(panelId) {
-    const data = await loadData();
-    const displayArea = document.getElementById('display-area');
-    
-    const panels = document.querySelectorAll('.content-panel');
-    panels.forEach(panel => panel.classList.remove('active'));
-
-    let target = document.getElementById(panelId);
-    
-    if (target && data[panelId]) {
-        target.querySelector('h2').textContent = data[panelId].titulo;
-        target.querySelector('p').textContent = data[panelId].texto;
-        target.classList.add('active');
+function navigate(dir) {
+    currentIndex += dir;
+    if (currentIndex < 0) {
+        document.getElementById('content-box').classList.remove('active');
+        document.getElementById('main-nav').style.display = 'block';
+    } else if (currentIndex < order.length) {
+        showPanel(order[currentIndex]);
+    } else {
+        currentIndex = order.length - 1;
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    openPanel('bi');
-});
