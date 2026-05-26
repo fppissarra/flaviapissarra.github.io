@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Control Center</title>
+    <title>Flávia P. Pissarra | Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header id="header-area">
-            <h1>Flávia P. Pissarra</h1>
+
+    <div class="app-wrapper" id="main-wrapper">
+        
+        <aside class="profile-panel">
+            <div class="radar-pic-container">
+                <img src="foto.jpg" alt="Flávia P. Pissarra" class="profile-pic">
+            </div>
+            <h1>FLÁVIA P. PISSARRA</h1>
             <p>Data Scientist | Port Logistics</p>
-        </header>
-        <nav id="menu-hub">
-            <button class="btn" onclick="openCategory('bi')">Business Intelligence</button>
-            <button class="btn" onclick="openCategory('traducao')">Technical Translation</button>
-            <button class="btn" onclick="openCategory('sobre')">About Me</button>
-        </nav>
-        <main id="display-area" class="hidden">
-            <h2 id="display-title"></h2>
-            <p id="display-text"></p>
+            
+            <nav id="menu-hub">
+                <button class="btn" onclick="openCategory('projects')">OPERATIONAL BERTHS</button>
+                <button class="btn" onclick="openCategory('translations')">COMMUNICATION HUB</button>
+                <button class="btn" onclick="openCategory('about')">NAVIGATION BRIDGE</button>
+            </nav>
+        </aside>
+
+        <main id="display-area" class="display-panel hidden">
+            <header class="display-header">
+                <h2 id="display-title"></h2>
+                <p id="display-description"></p>
+            </header>
+            
             <div id="sub-links-container"></div>
-            <button class="btn-small" onclick="goBack()">Back to Main</button>
+            
+            <footer class="display-footer">
+                <button class="btn-small" onclick="goBack()">DISCONNECT</button>
+            </footer>
         </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
