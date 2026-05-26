@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     Object.keys(data).forEach(key => {
         if (key === 'header') return;
         
-        // Adiciona título da categoria
-        const title = document.createElement('div');
-        title.innerHTML = `<h4 style="color:var(--accent); font-size:0.7rem; margin-top:20px;">${data[key].title}</h4>`;
-        menu.appendChild(title);
-
         data[key].items.forEach(item => {
             const btn = document.createElement('button');
             btn.className = 'btn';
