@@ -1,28 +1,33 @@
-const order = ['bi', 'traducao', 'sobre'];
-let currentIndex = 0;
-let siteData = {};
+const data = {
+    bi: { title: "Business Intelligence", text: "Developing analytical dashboards for monitoring port KPIs, optimizing cargo flow, and predictive berthing analysis.", links: [{name: "Port Dashboard", url: "#"}, {name: "Logistics NLP", url: "#"}] },
+    traducao: { title: "Technical Translation", text: "Localization of port equipment manuals and technical documentation (English-Portuguese) for international logistics.", links: [{name: "Equipment Manual A", url: "#"}, {name: "Logistics Glossary", url: "#"}] },
+    sobre: { title: "About Me", text: "Data professional transitioning into the industry, combining expertise in port processes with data analysis and automation.", links: [{name: "LinkedIn", url: "#"}, {name: "Lattes", url: "#"}, {name: "GitHub", url: "#"}] }
+};
 
-fetch('info.json').then(r => r.json()).then(data => siteData = data);
+function openCategory(cat) {
+    document.getElementById('menu-hub').style.display = 'none';
+    document.getElementById('header-area').style.display = 'none';
+    const display = document.getElementById('display-area');
+    display.classList.remove('hidden');
 
-function showPanel(id) {
-    currentIndex = order.indexOf(id);
-    const contentBox = document.getElementById('content-box');
+    document.getElementById('display-title').textContent = data[cat].title;
+    document.getElementById('display-text').textContent = data[cat].text;
+
+    const container = document.getElementById('sub-links-container');
+    container.innerHTML = '';
     
-    document.getElementById('content-title').textContent = siteData[id].titulo;
-    document.getElementById('content-text').textContent = siteData[id].texto;
-    
-    contentBox.classList.add('active');
-    document.getElementById('main-nav').style.display = 'none';
+    data[cat].links.forEach(l => {
+        const btn = document.createElement('a');
+        btn.href = l.url;
+        btn.textContent = l.name;
+        btn.className = 'btn';
+        btn.target = "_blank";
+        container.appendChild(btn);
+    });
 }
 
-function navigate(dir) {
-    currentIndex += dir;
-    if (currentIndex < 0) {
-        document.getElementById('content-box').classList.remove('active');
-        document.getElementById('main-nav').style.display = 'block';
-    } else if (currentIndex < order.length) {
-        showPanel(order[currentIndex]);
-    } else {
-        currentIndex = order.length - 1;
-    }
+function goBack() {
+    document.getElementById('menu-hub').style.display = 'block';
+    document.getElementById('header-area').style.display = 'block';
+    document.getElementById('display-area').classList.add('hidden');
 }
