@@ -1,24 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Hub</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Flávia P. Pissarra | Painel de Controle Naval</title>
+    <link rel="stylesheet" href="./core/css/style.css">
 </head>
 <body>
-    <main class="hub-container">
-        <div class="profile-header">
-            <h1>FLÁVIA P. PISSARRA</h1>
-            <p>Data Science | International Trade & Logistics</p>
-        </div>
+
+    <div class="dashboard-container">
         
-        <nav class="button-group">
-            <a href="bi/" class="hub-btn">DATA ASSETS</a>
-            <a href="t/" class="hub-btn">TECHNICAL LINGUISTICS</a>
-            <a href="e/ind/" class="hub-btn">TECHNICAL PROFILE</a>
-            <a href="e/acad/" class="hub-btn">ACCREDITATIONS</a>
-        </nav>
-    </main>
+        <aside class="nav-sidebar">
+            <div class="profile-header">
+                <h1 data-i18n="profile.name">Flávia P. Pissarra</h1>
+                <p data-i18n="profile.headline">Logística Portuária & Ciência de Dados</p>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-target="home" data-i18n="menu.home">Início</button>
+                <button class="nav-btn" data-target="bi" data-i18n="menu.bi">Business Intelligence</button>
+                <button class="nav-btn" data-target="translation" data-i18n="menu.translation">Traduções</button>
+                <button class="nav-btn" data-target="expertise" data-i18n="menu.expertise">Educação & Expertise</button>
+            </nav>
+
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="pt">PT</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            
+            <section id="view-home" class="spa-view active">
+                <h2 data-i18n="home.title">Painel de Comando Central</h2>
+                <p data-i18n="home.welcome">Bem-vinda ao hub integrado de engenharia de dados e monitoramento logístico.</p>
+            </section>
+
+            <section id="view-bi" class="spa-view">
+                <h2 data-i18n="bi.title">Dashboards Industriais & Operacionais</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>PortoVix Operations</h3>
+                        <p>Análise de fluxo de navios e permanência em berço.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-translation" class="spa-view">
+                <h2 data-i18n="translation.title">Projetos de Tradução Técnica</h2>
+                <p data-i18n="translation.desc">Documentação técnica e localização de sistemas.</p>
+            </section>
+
+            <section id="view-expertise" class="spa-view">
+                <h2 data-i18n="expertise.title">Formação Acadêmica & Experiência</h2>
+                <p data-i18n="expertise.desc">Base teórica e experiências na indústria portuária.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="./core/js/app.js"></script>
 </body>
 </html>
