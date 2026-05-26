@@ -1,299 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-* {
+/* 1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 1.2px;
 }
 
-body, html {
-    width: 100%;
-    height: 100%;
-    color: #263238;
-    background: linear-gradient(-45deg, #4caf50, #b0bec5, #ef9a9a, #81c784);
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2c3e50;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+
+    /* Gradiente Perolado / Iridescente Base */
+    background: linear-gradient(
+        135deg, 
+        #ffdfec 0%,   /* Rosa madrepérola */
+        #f3e7ff 25%,  /* Violeta soft */
+        #e3f2fd 50%,  /* Azul bebê */
+        #e8f5e9 75%,  /* Verde menta sutil */
+        #fff3e0 100%  /* Toque dourado/champanhe */
+    );
     background-size: 400% 400%;
-    animation: fluidoEfeitoSol 15s ease infinite;
-    overflow: hidden;
+    animation: pearlGlow 18s ease infinite;
 }
 
-@keyframes fluidoEfeitoSol {
+/* Animação suave para mover o gradiente simulando o reflexo da pérola */
+@keyframes pearlGlow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.app-container {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+/* 2. ESTRUTURA DO LAYOUT (GRID PRINCIPAL)
+   ========================================================================== */
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+    width: 100%;
 }
 
+/* 3. BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
 .sidebar {
-    width: 320px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 40px 24px;
     display: flex;
     flex-direction: column;
-    padding: 30px 24px;
-    flex-shrink: 0;
+    align-items: center;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    z-index: 10;
 }
 
+/* Perfil e Títulos */
 .profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
-.avatar {
-    width: 70px;
-    height: 70px;
+.avatar-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    padding: 3px;
+    background: linear-gradient(135deg, #ff8da1, #b3e5fc);
+    box-shadow: 0 8px 24px rgba(216, 27, 96, 0.15);
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: #fff;
 }
 
 .profile-name {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #1a237e;
-    line-height: 1.1;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a252f;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
 }
 
-.profile-headline {
-    font-size: 1.2rem;
-    color: #37474f;
-    margin-top: 8px;
+.profile-title {
+    font-size: 0.85rem;
+    color: #546e7a;
+    font-weight: 500;
 }
 
-.menu-container {
+/* Navegação por Abas */
+.nav-menu {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 30px;
+    margin-bottom: auto; /* Empurra os links sociais para o rodapé */
 }
 
-.menu-item {
+.nav-button {
     width: 100%;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 0 16px;
-    text-align: left;
-    font-size: 1.3rem;
-    color: #212121;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.menu-item:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateX(4px);
-}
-
-.menu-item.active {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: #2e7d32;
-}
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
-}
-
-.social-links a {
-    font-size: 1.1rem;
-    color: #1a237e;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: background 0.2s;
-}
-
-.social-links a:hover {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.lang-selector-container {
-    margin-top: auto;
-}
-
-.lang-dropdown {
-    width: 100%;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 8px;
-    padding: 0 10px;
-    font-size: 1.1rem;
-    color: #212121;
-    outline: none;
-    cursor: pointer;
-}
-
-.main-content {
-    flex-grow: 1;
-    height: 100%;
-    overflow-y: auto;
-    padding: 40px;
-    position: relative;
-}
-
-.viewport-panel {
-    display: none;
-    animation: painelFade 0.3s ease-in-out forwards;
-}
-
-.viewport-panel.active {
-    display: block;
-}
-
-.viewport-panel h2 {
-    font-size: 2.8rem;
-    margin-bottom: 12px;
-    color: #1a237e;
-}
-
-.viewport-panel p {
-    font-size: 1.4rem;
-    line-height: 1.4;
-    color: #37474f;
-    margin-bottom: 24px;
-    max-width: 800px;
-}
-
-.projects-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 24px;
+    padding: 14px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.01);
-}
-
-.project-date {
-    font-size: 1.1rem;
-    color: #2e7d32;
-}
-
-.project-title {
-    font-size: 1.6rem;
-    margin: 6px 0 12px 0;
-    color: #212121;
-}
-
-.project-desc {
-    font-size: 1.2rem;
-    line-height: 1.4;
-    color: #37474f;
-}
-
-.construction-text {
-    font-size: 5.5rem;
-    color: rgba(211, 47, 47, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.35);
+    color: #455a64;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-align: center;
-    margin-top: 20vh;
-    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes painelFade {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #1a252f;
 }
 
-@media (max-width: 868px) {
-    .app-container {
-        flex-direction: column;
+/* Estado Ativo (Ex: Business Intelligence selecionado) */
+.nav-button.active {
+    background: rgba(255, 255, 255, 0.85);
+    color: #d81b60; /* Destaque elegante em rosa profundo */
+    font-weight: 600;
+    border-color: rgba(216, 27, 96, 0.2);
+    box-shadow: 0 8px 20px rgba(216, 27, 96, 0.08);
+}
+
+/* Links Rodapé (GitHub, LinkedIn, etc) */
+.social-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link {
+    color: #546e7a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: #d81b60;
+}
+
+/* Seletor de Idioma */
+.lang-selector {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    color: #546e7a;
+    text-align: center;
+}
+
+/* 4. CONTEÚDO PRINCIPAL (PAINEL DIREITO)
+   ========================================================================== */
+.main-content {
+    margin-left: 300px; /* Alinha com a largura da sidebar fixa */
+    padding: 60px 50px;
+    max-width: 1100px;
+}
+
+/* Cabeçalho da Seção */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a252f;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: #546e7a;
+    font-weight: 400;
+}
+
+/* 5. CARDS DE EXPERIÊNCIA (GLASSMORPHISM)
+   ========================================================================== */
+.experience-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 35px 0 rgba(31, 38, 135, 0.04);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 14px 40px 0 rgba(31, 38, 135, 0.07);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Detalhes internos do Card */
+.exp-year {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #78909c;
+    padding-top: 2px;
+}
+
+.exp-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a252f;
+    margin-bottom: 8px;
+}
+
+.exp-company {
+    color: #d81b60; /* Destaca a empresa em tom sofisticado */
+    font-weight: 600;
+}
+
+.exp-description {
+    font-size: 0.98rem;
+    color: #455a64;
+    line-height: 1.6;
+}
+
+/* 6. RESPONSIVIDADE (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
     }
 
     .sidebar {
+        position: relative;
         width: 100%;
         height: auto;
+        padding: 30px 20px;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        padding: 20px 16px;
-    }
-
-    .profile-section {
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 16px;
-    }
-
-    .avatar {
-        margin-bottom: 0;
-        width: 55px;
-        height: 55px;
-    }
-
-    .menu-container {
-        flex-direction: row;
-        overflow-x: auto;
-        white-space: nowrap;
-        gap: 8px;
-        margin-bottom: 16px;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .menu-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .menu-item {
-        width: auto;
-        height: 38px;
-        padding: 0 14px;
-        font-size: 1.1rem;
-    }
-
-    .menu-item:hover {
-        transform: none;
-    }
-
-    .social-links {
-        margin-bottom: 16px;
-        gap: 8px;
-    }
-
-    .social-links a {
-        font-size: 1rem;
-        padding: 5px 10px;
-    }
-
-    .lang-selector-container {
-        margin-top: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .main-content {
-        padding: 24px 16px;
-        height: calc(100vh - 260px);
+        margin-left: 0;
+        padding: 40px 20px;
     }
 
-    .construction-text {
-        font-size: 3.5rem;
-        margin-top: 8vh;
+    .experience-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 24px;
     }
     
-    .projects-list {
-        grid-template-columns: 1fr;
+    .exp-year {
+        margin-bottom: 5px;
     }
 }
