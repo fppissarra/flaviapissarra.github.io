@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Flávia P. Pissarra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <div class="glass-card">
-        <div class="content-display">
+    <div class="ubuntu-window">
+        <div class="window-header">
+            <div class="window-controls">
+                <span class="dot close"></span>
+                <span class="dot minimize"></span>
+                <span class="dot maximize"></span>
+            </div>
+            <span class="window-title">flavia@portfolio: ~</span>
+        </div>
+        
+        <div class="window-body">
             <h1 id="title">Carregando...</h1>
             <h3 id="subtitle"></h3>
             <p id="desc"></p>
         </div>
         
-        <div class="controls">
+        <div class="window-footer">
             <button id="prevBtn" class="btn" disabled>❮ Voltar</button>
             <button id="nextBtn" class="btn">Avançar ❯</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
