@@ -80,3 +80,33 @@ iframe { width: 100%; height: 100%; border: none; border-radius: 10px; }
     .profile-panel { width: 100%; }
     .display-panel { height: 50vh; }
 }
+
+.app-wrapper {
+    transition: all 0.5s ease;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.app-wrapper.project-mode .profile-panel {
+    width: 250px;
+}
+
+.app-wrapper.project-mode .display-panel {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+.back-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.app-wrapper.project-mode .back-btn { display: block; }
