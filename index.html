@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra | Controle Marítimo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Flávia P. Pissarra | Control Center</title>
+    <style>
+        :root { --bg-color: #040d1a; --panel-bg: rgba(10, 25, 47, 0.95); --accent-cyan: #00f0ff; --text-main: #e6f1ff; }
+        body { background: var(--bg-color); color: var(--text-main); font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .container { width: 100%; max-width: 500px; text-align: center; background: var(--panel-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--accent-cyan); }
+        .btn { display: block; width: 100%; padding: 18px; margin: 12px 0; background: transparent; border: 1px solid var(--accent-cyan); color: var(--accent-cyan); border-radius: 12px; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: var(--accent-cyan); color: var(--bg-color); }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-
     <div class="container">
-        <header>
+        <header id="header-area">
             <h1>Flávia P. Pissarra</h1>
-            <p>Data Scientist | Logística Portuária</p>
+            <p>Data Scientist | Port Logistics</p>
         </header>
-
-        <nav id="main-nav">
-            <button class="btn" onclick="showPanel('bi')">Business Intelligence</button>
-            <button class="btn" onclick="showPanel('traducao')">Tradução</button>
-            <button class="btn" onclick="showPanel('sobre')">Sobre</button>
+        <nav id="menu-hub">
+            <button class="btn" onclick="openCategory('bi')">Business Intelligence</button>
+            <button class="btn" onclick="openCategory('traducao')">Technical Translation</button>
+            <button class="btn" onclick="openCategory('sobre')">About Me</button>
         </nav>
-
-        <main id="display-area">
-            <div id="content-box" class="content-panel">
-                <h2 id="content-title"></h2>
-                <p id="content-text"></p>
-                
-                <div class="nav-footer">
-                    <button id="prev-btn" class="btn-small" onclick="navigate(-1)">Anterior</button>
-                    <button id="next-btn" class="btn-small" onclick="navigate(1)">Próximo</button>
-                </div>
-            </div>
+        <main id="display-area" class="hidden">
+            <h2 id="display-title"></h2>
+            <p id="display-text"></p>
+            <div id="sub-links-container"></div>
+            <button class="btn" onclick="goBack()" style="margin-top:20px;">Back to Main</button>
         </main>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
