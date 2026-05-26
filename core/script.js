@@ -74,5 +74,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Executa a inicialização automática com o seu idioma padrão
-    carregarIdioma("pt");
+    carregarIdioma("en");
 });
