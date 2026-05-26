@@ -1,119 +1,27 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body, html { height: 100%; overflow: hidden; }
 
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    color: #2c3e50;
-    min-height: 100vh;
-    overflow-x: hidden;
-    line-height: 1.6;
-    background: linear-gradient(
-        135deg, 
-        #ffdfec 0%,   
-        #f3e7ff 25%,  
-        #e3f2fd 50%,  
-        #e8f5e9 75%,  
-        #fff3e0 100%  
-    );
-    background-size: 400% 400%;
-    animation: pearlGlow 18s ease infinite;
-}
-
-@keyframes pearlGlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.container {
+.app-wrapper {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-}
-
-.sidebar {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 40px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    width: 300px;
+    width: 100vw;
     height: 100vh;
-    z-index: 10;
-    flex-shrink: 0;
-    overflow-y: auto; 
+    flex-direction: row;
 }
 
-.sidebar::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+.panel {
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+    padding: 2rem;
+    transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    flex: 1; /* Todas as colunas dinâmicas são flexíveis */
 }
 
-.sidebar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+/* O Menu nunca muda de tamanho */
+.menu-panel {
+    flex: 0 0 25%;
+    background: #fdfdfd;
 }
 
-.profile-section {
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.avatar-container {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    margin: 0 auto 16px;
-    padding: 3px;
-    background: linear-gradient(135deg, #ff8da1, #b3e5fc);
-    box-shadow: 0 8px 24px rgba(216, 27, 96, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.avatar-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-.profile-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #1a252f;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-}
-
-.profile-title {
-    font-size: 0.85rem;
-    color: #546e7a;
-    font-weight: 500;
-}
-
-.nav-menu {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: auto;
-}
-
-.nav-button {
-    width: 100%;
-    padding: 14px 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(25
+/* Scroll horizontal se houver muitas colunas */
+.app-wrapper { overflow-x: auto; }
