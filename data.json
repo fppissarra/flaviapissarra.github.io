@@ -1,26 +1,45 @@
 {
   "projects": {
     "title": "OPERATIONAL BERTHS",
-    "description": "Análise de dados portuários, automação de KPIs e dashboards de fluxo logístico.",
+    "description": "Industrial automation, data analytics, and operational workflow optimization.",
     "items": [
-      { "name": "PBI1 - PORT DASHBOARD", "url": "https://www.google.com/search?q=a", "type": "embed" },
-      { "name": "PBI2 - LOGISTICS", "url": "https://www.google.com/search?q=b", "type": "embed" }
+      { 
+        "name": "PORT KPI DASHBOARD", 
+        "url": "LINK_HERE", 
+        "type": "embed",
+        "context": "Automated production reporting using Power BI, Python, and SQL, replacing legacy Excel macros with real-time data integration."
+      },
+      { 
+        "name": "RAILWAY MAINTENANCE LOGS", 
+        "url": "LINK_HERE", 
+        "type": "embed",
+        "context": "Monitoring of locomotive workshop assets and railway flow control using SAP and CCO tools."
+      }
     ]
   },
   "translations": {
     "title": "COMMUNICATION HUB",
-    "description": "Documentação técnica, glossários logísticos e tradução especializada.",
+    "description": "Technical translation and intercultural mediation in industrial and port environments.",
     "items": [
-      { "name": "PTT1 - EQUIPMENT MANUAL", "url": "https://www.google.com/search?q=c", "type": "link" },
-      { "name": "PTT2 - LOGISTICS GLOSSARY", "url": "https://www.google.com/search?q=d", "type": "link" }
+      { 
+        "name": "EQUIPMENT MANUAL (PT-EN)", 
+        "url": "#", 
+        "type": "link",
+        "context": "Bilingual technical support for locomotive workshops, mediating complex engineering communications."
+      },
+      { 
+        "name": "LOGISTICS GLOSSARY", 
+        "url": "#", 
+        "type": "link",
+        "context": "Specialized terminology for port operations, cargo handling, and international trade."
+      }
     ]
   },
   "about": {
     "title": "NAVIGATION BRIDGE",
-    "description": "Informações profissionais, trajetórias e contatos.",
+    "description": "Data Scientist transitioning to Port Operations. Proficient in SAP, SQL, Python, and 6 languages (PT/EN/ES/IT/JP/KO).",
     "items": [
       { "name": "LINKEDIN", "url": "https://linkedin.com/in/fppissarra", "type": "link" },
-      { "name": "LATTES", "url": "https://lattes.cnpq.br/7945109731847519", "type": "link" },
       { "name": "GITHUB", "url": "https://github.com/fppissarra", "type": "link" },
       { "name": "EMAIL", "url": "mailto:fppissarra@gmail.com", "type": "link" }
     ]
