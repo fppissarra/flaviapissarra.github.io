@@ -6,6 +6,7 @@ const portfolioData = {
             { id: "pipelines", title: "Data Pipelines", content: "Automação de fluxos com SQL e Python..." }
         ]
     },
+    
     translation: {
         title: "Translation",
         items: [
