@@ -8,7 +8,7 @@ async function init() {
     const menu = document.getElementById('menu-hub');
     menu.innerHTML = '';
     
-    ['projects', 'translations', 'about', 'certifications'].forEach(key => {
+    Object.keys(data).filter(key => key !== 'header').forEach(key => {
         const btn = document.createElement('button');
         btn.className = 'btn';
         btn.textContent = data[key].title;
