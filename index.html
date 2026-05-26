@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLÁVIA P. PISSARRA</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en">
 <body>
-    <header id="main-header" class="header-full">
-        <div class="profile-card">
-            <img id="profile-img" alt="Flávia P. Pissarra" class="profile-img">
-            <h1 id="header-title"></h1>
-            <p id="header-subtitle"></p>
-        </div>
+    <aside class="profile-panel">
+        <img id="profile-img" class="profile-img">
+        <h1 id="header-title"></h1>
+        <p id="header-subtitle"></p>
         <nav id="menu-hub"></nav>
-    </header>
-
-    <main id="view-content" class="content-hidden">
-        <button class="back-btn" onclick="resetLayout()">← VOLTAR AO INÍCIO</button>
-        <h2 id="view-title"></h2>
-        <div id="display-area"></div>
+    </aside>
+    <main class="display-panel">
+        <iframe id="frame-content" src="about:blank"></iframe>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>
