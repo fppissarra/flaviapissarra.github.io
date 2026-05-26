@@ -8,7 +8,6 @@
 
 body { margin: 0; min-height: 100vh; background: #0a0e14; font-family: 'Inter', sans-serif; color: white; }
 
-/* O Header centralizado na página */
 #main-header {
     width: 100%;
     min-height: 100vh;
@@ -19,7 +18,6 @@ body { margin: 0; min-height: 100vh; background: #0a0e14; font-family: 'Inter', 
     background: transparent;
 }
 
-/* Efeito de subir ao passar o mouse em qualquer item */
 #main-header:has(.btn:hover) {
     min-height: auto;
     padding-top: 20px;
@@ -32,7 +30,6 @@ body { margin: 0; min-height: 100vh; background: #0a0e14; font-family: 'Inter', 
 
 #profile-img { width: 120px; border-radius: 50%; border: 2px solid var(--accent); margin-bottom: 20px; }
 
-/* Painel de Conteúdo escondido inicialmente */
 #display-panel {
     width: 90%;
     height: 70vh;
