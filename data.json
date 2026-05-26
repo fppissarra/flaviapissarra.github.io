@@ -48,5 +48,13 @@
       { "name": "GITHUB", "url": "https://github.com/fppissarra", "type": "link" },
       { "name": "EMAIL", "url": "mailto:fppissarra@gmail.com", "type": "link" }
     ]
+  },
+  "certifications": {
+    "title": "CERTIFICATIONS",
+    "description": "Professional courses and academic background.",
+    "items": [
+      { "name": "DATA SCIENCE CERT", "url": "link.pdf", "type": "link" },
+      { "name": "PORT LOGISTICS SEMINAR", "url": "link.pdf", "type": "link" }
+    ]
   }
 }
