@@ -2,25 +2,29 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Flávia P. Pissarra | Maritime Data Command</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLÁVIA P. PISSARRA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-wrapper" id="main-wrapper">
+    <div class="app-wrapper">
         <aside class="profile-panel">
-            <h1 id="header-title"></h1>
-            <p id="header-subtitle"></p>
-            <nav id="menu-hub"></nav>
+            <header class="profile-header">
+                <img id="profile-img" alt="Flávia P. Pissarra" class="profile-img">
+                <div class="profile-info">
+                    <h1 id="header-title"></h1>
+                    <p id="header-subtitle"></p>
+                </div>
+            </header>
+            <div id="menu-hub"></div>
         </aside>
 
-        <main id="display-area" class="display-panel hidden">
-            <h2 id="display-title"></h2>
-            <p id="display-description"></p>
-            <div id="sub-links-container"></div>
-            
-            <button class="btn disconnect-btn" onclick="goBack()">back</button>
+        <main class="display-panel" id="display-area">
+            <h2 id="view-title">SELECIONE UMA OPÇÃO</h2>
+            <div id="view-content"></div>
         </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
