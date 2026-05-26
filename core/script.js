@@ -1,78 +1,107 @@
 document.addEventListener("DOMContentLoaded", () => {
     const langSelector = document.getElementById("lang-selector");
-    const menuContainer = document.getElementById("dynamic-menu");
-    const contentPlaceholder = document.getElementById("content-placeholder");
+    
+    const domMap = {
+        navBi: document.getElementById("nav-bi"),
+        navTranslation: document.getElementById("nav-translation"),
+        navAbout: document.getElementById("nav-about"),
+        profileHeadline: document.getElementById("profile-headline"),
+        linkGithub: document.getElementById("link-github"),
+        linkLinkedin: document.getElementById("link-linkedin"),
+        linkEmail: document.getElementById("link-email"),
+        constructionMessage: document.getElementById("construction-message"),
+        titleBi: document.getElementById("title-bi"),
+        introBi: document.getElementById("intro-bi"),
+        titleTranslation: document.getElementById("title-translation"),
+        introTranslation: document.getElementById("intro-translation"),
+        titleAbout: document.getElementById("title-about"),
+        introAbout: document.getElementById("intro-about")
+    };
 
-    // Função assíncrona para carregar o idioma e injetar o menu
-    async function carregarIdioma(idioma) {
-        const urlJson = `./core/lang/${idioma}.json`;
+    const profileImg = document.getElementById("profile-img");
+
+    async function carregarDinamicoJSON(idioma) {
+        const path = `./core/lang/${idioma}.json`;
 
         try {
-            const response = await fetch(urlJson);
-            if (!response.ok) {
-                throw new Error(`Não foi possível carregar o arquivo: ${urlJson}`);
-            }
-
-            const dados = await response.json();
+            const response = await fetch(path);
+            if (!response.ok) throw new Error(`Não foi possível ler: ${path}`);
             
-            // Renderiza o menu usando os mapeamentos nativos do seu JSON
-            renderizarMenu(dados);
-            atualizarTextosGerais(dados);
+            const dados = await response.json();
 
-        } catch (erro) {
-            console.error("Erro ao carregar ficheiro de tradução:", erro);
-            menuContainer.innerHTML = `<div class="menu-error">Error loading menu (${idioma})</div>`;
-        }
-    }
-
-    // Função que constrói as divs mapeando as suas chaves nativas diretamente
-    function renderizarMenu(dados) {
-        menuContainer.innerHTML = ""; // Limpa o estado anterior
-
-        // Mapeamento direto entre a propriedade do JSON e o ID do painel correspondente
-        const mapeamentoMenu = [
-            { chave: "nav_bi", texto: dados.nav_bi, painel: "projects_bi" },
-            { chave: "nav_translation", texto: dados.nav_translation, painel: "projects_translation" },
-            { chave: "nav_about", texto: dados.nav_about, painel: "projects_about" }
-        ];
-
-        // Cria as divs dinamicamente apenas se o texto existir no JSON correspondente
-        mapeamentoMenu.forEach(item => {
-            if (item.texto) {
-                const itemMenu = document.createElement("div");
-                itemMenu.className = "menu-item";
-                itemMenu.setAttribute("data-panel", item.painel);
-                itemMenu.textContent = item.texto;
-
-                // Evento de clique para gerir os estados ativos na SPA
-                itemMenu.addEventListener("click", () => {
-                    document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("active"));
-                    itemMenu.classList.add("active");
-                    console.log(`Trocar para o painel de dados: ${item.painel}`);
-                });
-
-                menuContainer.appendChild(itemMenu);
+            if (dados.profile_image && profileImg) {
+                profileImg.src = dados.profile_image;
+                profileImg.style.display = "block";
             }
-        });
-    }
 
-    // Atualiza mensagens adicionais na interface
-    function atualizarTextosGerais(dados) {
-        if (dados.constructionMessage) {
-            contentPlaceholder.textContent = dados.constructionMessage;
-        } else if (dados.headline) {
-            // Fallback caso prefira usar o headline como texto principal provisório
-            contentPlaceholder.textContent = dados.constructionMessage || "WEBSITE UNDER CONSTRUCTION";
+            if (domMap.navBi) domMap.navBi.textContent = dados.nav_bi || "";
+            if (domMap.navTranslation) domMap.navTranslation.textContent = dados.nav_translation || "";
+            if (domMap.navAbout) domMap.navAbout.textContent = dados.nav_about || "";
+            if (domMap.profileHeadline) domMap.profileHeadline.textContent = dados.headline || "";
+            if (domMap.linkGithub) domMap.linkGithub.textContent = dados.link_github || "GitHub";
+            if (domMap.linkLinkedin) domMap.linkLinkedin.textContent = dados.link_linkedin || "LinkedIn";
+            if (domMap.linkEmail) domMap.linkEmail.textContent = dados.link_email || "Mail me";
+            
+            if (domMap.constructionMessage) {
+                domMap.constructionMessage.textContent = dados.constructionMessage || "WEBSITE UNDER CONSTRUCTION";
+            }
+
+            if (domMap.titleBi) domMap.titleBi.textContent = dados.title_bi || "";
+            if (domMap.introBi) domMap.introBi.textContent = dados.intro_bi || "";
+            if (domMap.titleTranslation) domMap.titleTranslation.textContent = dados.title_translation || "";
+            if (domMap.introTranslation) domMap.introTranslation.textContent = dados.intro_translation || "";
+            if (domMap.titleAbout) domMap.titleAbout.textContent = dados.title_about || "";
+            if (domMap.introAbout) domMap.introAbout.textContent = dados.intro_about || "";
+
+            processarSubLista("container-projects-bi", dados.projects_bi);
+            processarSubLista("container-projects-translation", dados.projects_translation);
+            processarSubLista("container-projects-about", dados.projects_about);
+
+        } catch (error) {
+            console.error("Falha crítica na injeção assíncrona:", error);
         }
     }
 
-    // Escuta a alteração no seletor do HTML (Dropdown)
+    function processarSubLista(targetId, arrayProjetos) {
+        const container = document.getElementById(targetId);
+        if (!container) return;
+        container.innerHTML = "";
+
+        if (arrayProjetos && Array.isArray(arrayProjetos)) {
+            arrayProjetos.forEach(proj => {
+                const card = document.createElement("div");
+                card.className = "project-card";
+                card.innerHTML = `
+                    <span class="project-date">${proj.date}</span>
+                    <h4 class="project-title">${proj.title}</h4>
+                    <p class="project-desc">${proj.desc}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+    }
+
+    document.querySelectorAll(".menu-item").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".menu-item").forEach(b => b.classList.remove("active"));
+            document.querySelectorAll(".viewport-panel").forEach(p => p.classList.remove("active"));
+            
+            btn.classList.add("active");
+            const targetId = btn.getAttribute("data-target");
+            const targetPanel = document.getElementById(targetId);
+            
+            const constPanel = document.getElementById("construction-panel");
+            if (constPanel) constPanel.classList.remove("active");
+            
+            if (targetPanel) targetPanel.classList.add("active");
+        });
+    });
+
     if (langSelector) {
         langSelector.addEventListener("change", (e) => {
-            carregarIdioma(e.target.value);
+            carregarDinamicoJSON(e.target.value);
         });
     }
 
-    // Executa a inicialização automática com o seu idioma padrão
-    carregarIdioma("en");
+    carregarDinamicoJSON("pt");
 });
