@@ -1,0 +1,39 @@
+{
+  "header": {
+    "title": "FLÁVIA P. PISSARRA",
+    "subtitle": "Data Science | International Trade & Logistics",
+    "avatar_url": "https://github.com/fppissarra.png"
+  },
+  "data_science": {
+    "title": "DATA SCIENCE & ANALYTICS",
+    "items": [
+      { "name": "PE1: PRODUCTION SYSTEMS DASHBOARD", "url": "/p/production-dashboard/" },
+      { "name": "PE2: ASSET MANAGEMENT OPTIMIZATION", "url": "/p/asset-management/" },
+      { "name": "TERMINAL SIMULATION MODEL", "url": "/p/terminal-simulation/" },
+      { "name": "PREDICTIVE MAINTENANCE ANALYSIS", "url": "/p/predictive-maintenance/" }
+    ]
+  },
+  "linguistics_research": {
+    "title": "TECHNICAL LINGUISTICS",
+    "items": [
+      { "name": "CTecL LAB RESEARCH", "url": "/p/ctecl" },
+      { "name": "SPECIALIZED GLOSSARIES ARCHIVE", "url": "/p/glossaries/" },
+      { "name": "INTERNATIONAL TRADE TERMINOLOGY", "url": "/p/trade-terms/" }
+    ]
+  },
+  "professional_links": {
+    "title": "TECHNICAL PROFILE",
+    "items": [
+      { "name": "LINKEDIN", "url": "https://linkedin.com/in/fppissarra" },
+      { "name": "GITHUB REPOSITORIES", "url": "https://github.com/fppissarra" },
+      { "name": "LATTES CURRICULUM", "url": "https://lattes.cnpq.br/7945109731847519" }
+    ]
+  },
+  "accreditations": {
+    "title": "ACCREDITATIONS",
+    "items": [
+      { "name": "DATA SCIENCE CERTIFICATION", "url": "/p/certs/ds/" },
+      { "name": "LOGISTICS SPECIALIZATION", "url": "/p/certs/logistics/" }
+    ]
+  }
+}
