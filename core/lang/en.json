@@ -1,9 +1,11 @@
 {
+  "menu": {
+    "nav_bi": "Projects",
+    "nav_translation": "Translation",
+    "nav_about": "Academia"
+  },
   "profile_image": "https://avatars.githubusercontent.com/u/66925367?v=4",
   "headline": "Data Scientist & Technical Translator",
-  "nav_bi": "Projects",
-  "nav_translation": "Translation",
-  "nav_about": "Academia",
   "link_github": "GitHub",
   "link_linkedin": "LinkedIn",
   "link_email": "Mail me",
@@ -13,6 +15,7 @@
   "intro_translation": "High-precision translation, software internationalization, and cross-cultural versioning for technology enterprises.",
   "title_about": "Courses & Certifications",
   "intro_about": "A comprehensive list of my academic path, professional courses, and computational technical training.",
+  "constructionMessage": "WEBSITE UNDER CONSTRUCTION",
   "projects_bi": [
     {
       "date": "2026",
