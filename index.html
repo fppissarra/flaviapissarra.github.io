@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra | Control Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header id="header-area">
+            <h1>Flávia P. Pissarra</h1>
+            <p>Data Scientist | Port Logistics</p>
+        </header>
+        <nav id="menu-hub">
+            <button class="btn" onclick="openCategory('bi')">Business Intelligence</button>
+            <button class="btn" onclick="openCategory('traducao')">Technical Translation</button>
+            <button class="btn" onclick="openCategory('sobre')">About Me</button>
+        </nav>
+        <main id="display-area" class="hidden">
+            <h2 id="display-title"></h2>
+            <p id="display-text"></p>
+            <div id="sub-links-container"></div>
+            <button class="btn-small" onclick="goBack()">Back to Main</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
