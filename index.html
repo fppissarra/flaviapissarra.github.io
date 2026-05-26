@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <aside id="menu-container">
-        <img id="profile-img" style="width: 100px; border-radius: 50%;">
-        <h1 id="header-title"></h1>
-        <nav id="menu-hub"></nav>
+        <div id="menu-content">
+            <img id="profile-img" alt="Profile">
+            <h1 id="header-title"></h1>
+            <nav id="menu-hub"></nav>
+        </div>
     </aside>
-    <main style="flex:1; padding:20px;">
-        <iframe id="frame-content" style="width:100%; height:100%; border:none;"></iframe>
+
+    <main id="display-panel">
+        <iframe id="frame-content" src="about:blank"></iframe>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
