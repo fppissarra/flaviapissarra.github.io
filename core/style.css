@@ -29,6 +29,7 @@ body {
     align-items: center;
     overflow: hidden;
     padding: 15px;
+    top: 0 !important;
 }
 
 @keyframes gradientAnimation {
