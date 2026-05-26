@@ -1,17 +1,18 @@
 :root {
     --bg-color: #050b14;
-    --panel-bg: rgba(17, 34, 64, 0.7);
+    --panel-bg: rgba(17, 34, 64, 0.85);
     --accent: #4af626;
     --text: #e6f1ff;
     --border: 1px solid #233554;
+    --danger: #ff4444;
 }
 
 body {
     background-color: var(--bg-color);
     background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px);
-    background-size: 30px 30px; /* grade de sonar */
+    background-size: 30px 30px;
     color: var(--text);
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Courier New', monospace;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -36,13 +37,16 @@ body {
 
 .profile-panel, .display-panel {
     background: var(--panel-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     padding: 40px;
     border: var(--border);
     transition: 0.6s;
 }
 
-.profile-panel { width: 350px; }
+.profile-panel { 
+    width: 350px; 
+    z-index: 10;
+}
 
 .display-panel {
     width: 60%;
@@ -56,17 +60,20 @@ body {
     pointer-events: all;
 }
 
+.hidden { display: none; }
+
 .btn {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
+    margin: 10px 0;
     background: transparent;
     border: 1px solid var(--accent);
     color: var(--accent);
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -74,7 +81,16 @@ body {
     color: var(--bg-color);
 }
 
-.hidden { display: none; }
+.disconnect-btn {
+    border-color: var(--danger);
+    color: var(--danger);
+    margin-top: 30px;
+}
+
+.disconnect-btn:hover {
+    background: var(--danger);
+    color: white;
+}
 
 iframe { 
     width: 100%; 
@@ -83,27 +99,26 @@ iframe {
     margin-top: 20px; 
 }
 
-/* tela < 900px */
+/* Responsividade: Mobile First */
 @media (max-width: 900px) {
     .app-wrapper {
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 20px;
-        padding-left: 0 !important; /* remove deslocamento lateral */
+        padding-left: 0 !important;
     }
 
     .profile-panel {
-        width: 90%; /* ocupa a largura quase total */
+        width: 85%;
         margin-bottom: 20px;
     }
 
     .display-panel {
-        width: 90%;
-        margin-left: 0; /* remove margem lateral */
-        order: 2; /* garante que fique abaixo do perfil */
+        width: 85%;
+        margin-left: 0;
     }
 
     iframe {
-        height: 300px; /* pro dashboard caber melhor no mobile */
+        height: 300px;
     }
 }
