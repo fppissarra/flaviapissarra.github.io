@@ -1,23 +1,66 @@
-cat.items.forEach(item => {
-    const btn = document.createElement('button');
-    btn.className = 'btn';
-    btn.textContent = item.name;
+async function init() {
+    const response = await fetch('data.json');
+    const data = await response.json();
     
-    btn.onclick = (e) => {
-        // Prevent the click from bubbling up to parent elements
-        e.stopPropagation(); 
+    document.getElementById('header-title').textContent = data.header.title;
+    document.getElementById('header-subtitle').textContent = data.header.subtitle;
+    
+    const menu = document.getElementById('menu-hub');
+    menu.innerHTML = '';
+    
+    ['projects', 'translations', 'about'].forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.textContent = data[key].title;
+        btn.onclick = () => openCategory(key);
+        menu.appendChild(btn);
+    });
+}
+
+async function openCategory(catKey) {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    const cat = data[catKey];
+
+    document.getElementById('main-wrapper').classList.add('is-open');
+    const display = document.getElementById('display-area');
+    display.classList.remove('hidden');
+
+    document.getElementById('display-title').textContent = cat.title;
+    document.getElementById('display-description').textContent = cat.description;
+
+    const container = document.getElementById('sub-links-container');
+    container.innerHTML = '';
+    
+    cat.items.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.textContent = item.name;
         
-        // Only clear the sub-links if you want to show the context/iframe
-        container.innerHTML = `<p style="font-style: italic; margin-bottom: 15px;">${item.context || ''}</p>`;
-        
-        if (item.type === 'embed') {
-            const ifr = document.createElement('iframe');
-            ifr.src = item.url;
-            container.appendChild(ifr);
-        } else if (item.type === 'link') {
-            // Simply open in a new tab, DO NOT call goBack() or clear everything
-            window.open(item.url, '_blank');
-        }
-    };
-    container.appendChild(btn);
-});
+        btn.onclick = (e) => {
+            e.stopPropagation();
+            if (item.type === 'embed') {
+                container.innerHTML = `<p style="font-style: italic; margin-bottom: 15px;">${item.context || ''}</p>`;
+                const ifr = document.createElement('iframe');
+                ifr.src = item.url;
+                container.appendChild(ifr);
+            } else {
+                window.open(item.url, '_blank');
+            }
+        };
+        container.appendChild(btn);
+    });
+    
+    setTimeout(() => display.classList.add('active'), 300);
+}
+
+function goBack() {
+    const display = document.getElementById('display-area');
+    display.classList.remove('active');
+    setTimeout(() => {
+        display.classList.add('hidden');
+        document.getElementById('main-wrapper').classList.remove('is-open');
+    }, 500);
+}
+
+window.onload = init;
