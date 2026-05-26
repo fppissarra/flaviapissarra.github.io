@@ -1,17 +1,6 @@
-:root {
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.15);
-    --accent: #ff6a00;
-}
+:root { --glass-bg: rgba(255, 255, 255, 0.08); --glass-border: rgba(255, 255, 255, 0.15); --accent: #ff6a00; }
 
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    background: #0a0e14;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-}
+body { margin: 0; height: 100vh; display: flex; background: #0a0e14; font-family: 'Segoe UI', sans-serif; color: white; }
 
 #menu-container {
     width: 350px;
