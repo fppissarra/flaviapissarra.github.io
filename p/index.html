@@ -2,49 +2,41 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>COMMAND CENTER | PROJECTS</title>
+    <title>PROJETO | COMMAND CENTER</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        body { background-image: none; display: block; padding: 40px; }
-        .project-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
-            margin-top: 40px; 
-        }
-        .card { 
-            border: var(--border); 
-            padding: 30px; 
-            background: var(--panel-bg); 
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-
-    <header>
-        <h1>OPERATIONAL PROJECTS</h1>
-        <p>Selecione uma unidade operacional para monitoramento:</p>
-    </header>
-
-    <div class="project-grid">
-        <div class="card">
-            <h3>PORTO VIX</h3>
-            <p>Análise de dados portuários e automação logística.</p>
-            <br>
-            <a href="porto-vix/" class="btn">ACESSAR DADOS</a>
-        </div>
-        
-        <div class="card">
-            <h3>LOG-TRANS</h3>
-            <p>Monitoramento de transporte ferroviário de cargas.</p>
-            <br>
-            <button class="btn" disabled>EM DESENVOLVIMENTO</button>
-        </div>
+    <div id="project-container" style="padding: 40px;">
+        <h1 id="p-title">Carregando...</h1>
+        <p id="p-desc"></p>
+        <div id="p-content"></div>
+        <br>
+        <a href="../" class="btn" style="width: auto;">VOLTAR AO HUB</a>
     </div>
 
-    <br><br>
-    <a href="../" class="btn" style="width: auto;">VOLTAR AO HUB PRINCIPAL</a>
+    <script>
+        // Função para ler o parâmetro da URL
+        async function loadProject() {
+            const params = new URLSearchParams(window.location.search);
+            const pName = params.get('project'); // Pega "porto-vix"
+            
+            if (!pName) return;
 
+            // Busca os dados do seu arquivo data.json na raiz
+            const response = await fetch('../data.json');
+            const data = await response.json();
+            
+            // Procura o projeto correspondente no JSON
+            const project = data.projects.items.find(i => i.slug === pName);
+
+            if (project) {
+                document.getElementById('p-title').textContent = project.name;
+                document.getElementById('p-desc').textContent = project.context;
+                // Carrega o conteúdo (ou iframe)
+                document.getElementById('p-content').innerHTML = `<iframe src="${project.url}"></iframe>`;
+            }
+        }
+        loadProject();
+    </script>
 </body>
 </html>
