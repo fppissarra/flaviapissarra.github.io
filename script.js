@@ -1,7 +1,7 @@
 const data = {
-    bi: { title: "Business Intelligence", text: "Developing analytical dashboards for monitoring port KPIs, optimizing cargo flow, and predictive berthing analysis.", links: [{name: "Port Dashboard", url: "#"}, {name: "Logistics NLP", url: "#"}] },
-    traducao: { title: "Technical Translation", text: "Localization of port equipment manuals and technical documentation (English-Portuguese) for international logistics.", links: [{name: "Equipment Manual A", url: "#"}, {name: "Logistics Glossary", url: "#"}] },
-    sobre: { title: "About Me", text: "Data professional transitioning into the industry, combining expertise in port processes with data analysis and automation.", links: [{name: "LinkedIn", url: "#"}, {name: "Lattes", url: "#"}, {name: "GitHub", url: "#"}] }
+    bi: { title: "Business Intelligence", text: "Analytical dashboards for logistics.", links: [{name: "Port Dashboard", url: "#"}, {name: "NLP Logistics", url: "#"}] },
+    traducao: { title: "Technical Translation", text: "Localization and documentation.", links: [{name: "Manual A", url: "#"}] },
+    sobre: { title: "About Me", text: "Expertise in data and port processes.", links: [{name: "LinkedIn", url: "#"}, {name: "Lattes", url: "#"}] }
 };
 
 function openCategory(cat) {
