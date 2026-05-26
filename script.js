@@ -1,3 +1,24 @@
+async function init() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    
+    // atualiza o header
+    document.getElementById('header-title').textContent = data.header.title;
+    document.getElementById('header-subtitle').textContent = data.header.subtitle;
+    
+    // cria os botões do menu dinamicamente no <nav id="menu-hub">
+    const menu = document.getElementById('menu-hub');
+    menu.innerHTML = '';
+    
+    ['projects', 'translations', 'about'].forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.textContent = data[key].title;
+        btn.onclick = () => openCategory(key);
+        menu.appendChild(btn);
+    });
+}
+
 async function openCategory(catKey) {
     const response = await fetch('data.json');
     const data = await response.json();
@@ -12,21 +33,25 @@ async function openCategory(catKey) {
 
     const container = document.getElementById('sub-links-container');
     container.innerHTML = '';
+    
     cat.items.forEach(item => {
         const btn = document.createElement('button');
         btn.className = 'btn';
         btn.textContent = item.name;
         btn.onclick = () => {
-            container.innerHTML = '';
+            container.innerHTML = `<p style="font-style: italic; margin-bottom: 15px;">${item.context || ''}</p>`;
+            
             if (item.type === 'embed') {
                 const ifr = document.createElement('iframe');
                 ifr.src = item.url;
                 container.appendChild(ifr);
-            } else { window.open(item.url, '_blank'); }
+            } else {
+                window.open(item.url, '_blank');
+            }
         };
         container.appendChild(btn);
     });
-
+    
     setTimeout(() => display.classList.add('active'), 300);
 }
 
@@ -38,3 +63,5 @@ function goBack() {
         document.getElementById('main-wrapper').classList.remove('is-open');
     }, 500);
 }
+
+window.onload = init;
