@@ -1,100 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra - Portfolio</title>
-    <link rel="stylesheet" href="core/style.css">
+    <title>Flávia P. Pissarra</title>
+    <link rel="stylesheet" href="./core/style.css">
+    <script src="./core/script.js" defer></script>
 </head>
 <body>
 
     <div class="app-container">
-        
         <aside class="sidebar">
             <div class="profile-section">
-                <img src="" alt="Flávia P. Pissarra" class="profile-avatar">
+                <div class="avatar-holder">Flávia P. Pissarra</div>
                 <h1 class="profile-name">Flávia P. Pissarra</h1>
-                <p class="profile-headline"></p>
             </div>
 
-            <!-- Menu sempre fixo e estático no HTML -->
-            <nav class="sidebar-nav">
-                <button class="nav-btn active" data-panel="bi"></button>
-                <button class="nav-btn" data-panel="translation"></button>
-                <button class="nav-btn" data-panel="about"></button>
-            </nav>
+            <nav id="dynamic-menu" class="menu-container"></nav>
 
-            <div class="social-footer">
-                <a href="https://github.com/fppissarra" target="_blank" class="social-link" id="link-gh"></a>
-                <a href="https://linkedin.com/in/fppissarra" target="_blank" class="social-link" id="link-ln"></a>
-                <a href="mailto:fppissarra@gmail.com" class="social-link" id="link-em"></a>
-            </div>
-
-            <div class="language-dropdown-wrapper">
-                <select id="custom-lang-select" class="lang-select">
+            <div class="lang-selector-container">
+                <select id="lang-selector" class="lang-dropdown">
+                    <option value="pt">Português (PTB)</option>
                     <option value="en">English (ENG)</option>
-                    <option value="pt">Português (PTBR)</option>
                     <option value="es">Español (ESP)</option>
                     <option value="it">Italiano (ITA)</option>
-                    <option value="ko">한국어 (KOR)</option>
                     <option value="ja">日本語 (JAP)</option>
+                    <option value="ko">한국어 (KOR)</option>
                 </select>
             </div>
         </aside>
 
         <main class="main-content">
-            
-            <div id="panel-bi" class="content-panel active">
-                <h2 class="section-title"></h2>
-                <p class="section-intro"></p>
-                <!-- cixas criadas dinamicamente -->
-                <div class="projects-grid"></div>
+            <div class="construction-overlay">
+                <span class="construction-text" id="content-placeholder">WEBSITE UNDER CONSTRUCTION</span>
             </div>
-
-            <div id="panel-translation" class="content-panel">
-                <h2 class="section-title"></h2>
-                <p class="section-intro"></p>
-                <!-- caixas criadas dinamicamente -->
-                <div class="projects-grid"></div>
-            </div>
-
-            <div id="panel-about" class="content-panel">
-                <h2 class="section-title"></h2>
-                <p class="section-intro"></p>
-                <!-- caixas criadas dinamicamente -->
-                <div class="projects-grid"></div>
-            </div>
-
         </main>
     </div>
 
-    <!-- BANNER DE CONSTRUÇÃO EM LINHA -->
-    <div class="construction-overlay">Website under construction</div>
-
-    <style>
-        .construction-overlay {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            background-color: rgba(255, 0, 0, 0.15) !important;
-            color: rgba(255, 0, 0, 0.35) !important;
-            font-family: sans-serif !important;
-            font-size: clamp(3rem, 8vw, 7rem) !important;
-            font-weight: 800 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 2px !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            text-align: center !important;
-            z-index: 999999 !important;
-            pointer-events: none !important;
-            user-select: none !important;
-        }
-    </style>
-
-    <script src="core/script.js"></script>
 </body>
 </html>
