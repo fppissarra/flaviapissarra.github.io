@@ -26,9 +26,15 @@ async function openCategory(catKey) {
         };
         container.appendChild(btn);
     });
+
+    setTimeout(() => display.classList.add('active'), 300);
 }
 
 function goBack() {
-    document.getElementById('display-area').classList.add('hidden');
-    document.getElementById('main-wrapper').classList.remove('is-open');
+    const display = document.getElementById('display-area');
+    display.classList.remove('active');
+    setTimeout(() => {
+        display.classList.add('hidden');
+        document.getElementById('main-wrapper').classList.remove('is-open');
+    }, 500);
 }
