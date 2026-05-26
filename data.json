@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "FLÁVIA P. PISSARRA",
+    "title": "FLÁVIA PORCU PISSARRA",
     "subtitle": "Data Scientist | Foreign Trade & Port Logistics Professional"
   },
   "projects": {
@@ -8,16 +8,16 @@
     "description": "Industrial automation, data analytics, and operational workflow optimization.",
     "items": [
       { 
-        "name": "PORT KPI DASHBOARD", 
-        "url": "#", 
+        "name": "PRODUCTION DASHBOARD", 
+        "url": "https://www.google.com/search?q=a", 
         "type": "embed",
-        "context": "Automated production reporting using Power BI, Python, and SQL, replacing legacy Excel macros with real-time data integration."
+        "context": "Automated daily production reporting at ArcelorMittal using Power BI, Python, and SQL, replacing manual Excel macros with real-time data integration."
       },
       { 
-        "name": "RAILWAY MAINTENANCE LOGS", 
-        "url": "#", 
+        "name": "RAILWAY ASSET CONTROL", 
+        "url": "https://www.google.com/search?q=b", 
         "type": "embed",
-        "context": "Monitoring of locomotive workshop assets and railway flow control using SAP and CCO tools."
+        "context": "Monitoring of locomotive workshop assets and railway flow control at Vale using SAP and CCO systems."
       }
     ]
   },
@@ -26,24 +26,25 @@
     "description": "Technical translation and intercultural mediation in industrial and port environments.",
     "items": [
       { 
-        "name": "EQUIPMENT MANUAL (PT-EN)", 
-        "url": "#", 
+        "name": "TECHNICAL INTERPRETING", 
+        "url": "https://www.google.com/search?q=c", 
         "type": "link",
-        "context": "Bilingual technical support for locomotive workshops, mediating complex engineering communications."
+        "context": "Bilingual technical support at Tubarão, mediating complex engineering communications between international and local teams during locomotive maintenance."
       },
       { 
-        "name": "LOGISTICS GLOSSARY", 
-        "url": "#", 
+        "name": "LOGISTICS TERMINOLOGY", 
+        "url": "https://www.google.com/search?q=d", 
         "type": "link",
-        "context": "Specialized terminology for port operations, cargo handling, and international trade."
+        "context": "Expertise in specialized terminology for port operations, cargo handling, and international trade compliance."
       }
     ]
   },
   "about": {
     "title": "NAVIGATION BRIDGE",
-    "description": "Data Scientist transitioning to Port Operations. Proficient in SAP, SQL, Python, and 6 languages (PT/EN/ES/IT/JP/KO).",
+    "description": "Data Scientist in career transition to Port Operations. Proficient in SAP, SQL, Python, DAX, and 6 languages (PT/EN/ES/IT/JP/KO).",
     "items": [
       { "name": "LINKEDIN", "url": "https://linkedin.com/in/fppissarra", "type": "link" },
+      { "name": "LATTES", "url": "https://lattes.cnpq.br/7945109731847519", "type": "link"},
       { "name": "GITHUB", "url": "https://github.com/fppissarra", "type": "link" },
       { "name": "EMAIL", "url": "mailto:fppissarra@gmail.com", "type": "link" }
     ]
