@@ -3,67 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia Porcu Pissarra</title>
-    <link rel="stylesheet" href="./core/style.css">
-    <script src="./core/script.js" defer></script>
+    <title>Flávia P. Pissarra - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="app-container">
+    <div class="container">
         <aside class="sidebar">
             <div class="profile-section">
-                <img id="profile-img" class="avatar" src="" alt="Profile Image" style="display:none;">
-                <h1 class="profile-name">Flávia P. Pissarra</h1>
-                <p id="profile-headline" class="profile-headline"></p>
+                <div class="avatar-container">
+                    <div class="avatar-placeholder"></div>
+                </div>
+                <h1 id="profile-name" class="profile-name">Loading...</h1>
+                <p id="profile-title" class="profile-title">Loading...</p>
             </div>
 
-            <nav class="menu-container">
-                <button id="nav-bi" class="menu-item active" data-target="panel-bi"></button>
-                <button id="nav-translation" class="menu-item" data-target="panel-translation"></button>
-                <button id="nav-about" class="menu-item" data-target="panel-about"></button>
+            <nav class="nav-menu">
+                <button id="btn-bi" class="nav-button active">Business Intelligence</button>
+                <button id="btn-translation" class="nav-button">Translation</button>
+                <button id="btn-academia" class="nav-button">Academia</button>
             </nav>
 
             <div class="social-links">
-                <a id="link-github" href="https://github.com/fppissarra" target="_blank" rel="noopener"></a>
-                <a id="link-linkedin" href="https://linkedin.com" target="_blank" rel="noopener"></a>
-                <a id="link-email" href="mailto:seu-email@provedor.com"></a>
-            </div>
-
-            <div class="lang-selector-container">
-                <select id="lang-selector" class="lang-dropdown">
-                    <option value="pt" selected>Português (PT)</option>
-                    <option value="en">English (ENG)</option>
-                    <option value="es">Español (ESP)</option>
-                    <option value="it">Italiano (ITA)</option>
-                    <option value="ja">日本語 (JA)</option>
-                    <option value="ko">한국어 (KO)</option>
+                <a href="https://github.com/fppissarra" target="_blank" class="social-link">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+                <a href="mailto:seuemail@provedor.com" class="social-link">Mail me</a>
+                
+                <select id="lang-select" class="lang-selector">
+                    <option value="en" selected>English (ENG)</option>
+                    <option value="pt">Português (PT)</option>
                 </select>
             </div>
         </aside>
 
         <main class="main-content">
-            <div id="construction-panel" class="viewport-panel active">
-                <h2 id="construction-message" class="construction-text"></h2>
-            </div>
+            <header class="section-header">
+                <h2 id="section-title" class="section-title">Loading...</h2>
+                <p id="section-subtitle" class="section-subtitle">Loading...</p>
+            </header>
 
-            <div id="panel-bi" class="viewport-panel">
-                <h2 id="title-bi"></h2>
-                <p id="intro-bi"></p>
-                <div id="container-projects-bi" class="projects-list"></div>
-            </div>
-
-            <div id="panel-translation" class="viewport-panel">
-                <h2 id="title-translation"></h2>
-                <p id="intro-translation"></p>
-                <div id="container-projects-translation" class="projects-list"></div>
-            </div>
-
-            <div id="panel-about" class="viewport-panel">
-                <h2 id="title-about"></h2>
-                <p id="intro-about"></p>
-                <div id="container-projects-about" class="projects-list"></div>
-            </div>
+            <div id="experience-container"></div>
         </main>
     </div>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
