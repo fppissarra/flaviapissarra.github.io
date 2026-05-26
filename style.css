@@ -1,27 +1,19 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body, html { height: 100%; overflow: hidden; }
-
 .app-wrapper {
     display: flex;
     width: 100vw;
     height: 100vh;
+    overflow-x: auto; /* Permite scroll horizontal se abrir muitas camadas */
     flex-direction: row;
 }
 
 .panel {
-    border-right: 1px solid #e0e0e0;
+    flex: 1; /* Faz com que todos os painéis dividam o espaço igualmente */
+    border-right: 1px solid #eee;
+    padding: 40px;
     overflow-y: auto;
-    padding: 2rem;
-    transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    background: #ffffff;
-    flex: 1; /* Todas as colunas dinâmicas são flexíveis */
 }
 
-/* O Menu nunca muda de tamanho */
 .menu-panel {
-    flex: 0 0 25%;
-    background: #fdfdfd;
+    flex: 0 0 25%; /* Fixa o menu lateral em 25% */
+    background: #f9f9f9;
 }
-
-/* Scroll horizontal se houver muitas colunas */
-.app-wrapper { overflow-x: auto; }
