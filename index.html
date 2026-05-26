@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra - Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Flávia P. Pissarra</title>
 </head>
 <body>
-
     <div id="app-wrapper" class="app-wrapper">
-        
         <aside class="panel menu-panel">
-            <div class="profile-header">
-                <h2>Flávia P. Pissarra</h2>
-                <p>Data Scientist & Translator</p>
+            <div class="avatar-container">
+                <img src="sua-foto.jpg" alt="Flávia P. Pissarra" class="avatar-image">
             </div>
-            
-            <nav class="main-nav">
+            <h2>Flávia P. Pissarra</h2>
+            <nav id="main-nav">
                 <button class="nav-btn" onclick="openColumn('bi')">Business Intelligence</button>
                 <button class="nav-btn" onclick="openColumn('translation')">Translation</button>
             </nav>
+            <select class="lang-selector">
+                <option value="en">English (ENG)</option>
+                <option value="pt">Português (PT)</option>
+            </select>
         </aside>
-
-        </div>
-
-    <script src="./data.js"></script>
-    <script src="./app.js"></script>
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
