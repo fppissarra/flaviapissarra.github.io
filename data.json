@@ -1,60 +1,62 @@
 {
   "header": {
     "title": "FLÁVIA P. PISSARRA",
-    "subtitle": "Data Scientist | Foreign Trade & Port Logistics Professional"
+    "subtitle": "Data Science | International Trade & Logistics"
   },
-  "projects": {
-    "title": "OPERATIONAL BERTHS",
-    "description": "Industrial automation, data analytics, and operational workflow optimization.",
+  "analytics": {
+    "title": "DATA ASSETS",
+    "description": "Industrial data integration, process automation, and analytical modeling.",
     "items": [
       { 
-        "name": "PRODUCTION DASHBOARD", 
+        "name": "PRODUCTION SYSTEMS", 
         "url": "https://www.google.com/search?q=a", 
         "type": "embed",
-        "context": "Automated daily production reporting at ArcelorMittal using Power BI, Python, and SQL, replacing manual Excel macros with real-time data integration."
+        "context": "Automated reporting and data pipeline implementation for industrial throughput."
       },
       { 
-        "name": "RAILWAY ASSET CONTROL", 
+        "name": "ASSET MANAGEMENT", 
         "url": "https://www.google.com/search?q=b", 
         "type": "embed",
-        "context": "Monitoring of locomotive workshop assets and railway flow control at Vale using SAP and CCO systems."
+        "context": "Control and predictive maintenance monitoring for heavy logistics machinery."
       }
     ]
   },
-  "translations": {
-    "title": "COMMUNICATION HUB",
-    "description": "Technical translation and intercultural mediation in industrial and port environments.",
+  "linguistics": {
+    "title": "TECHNICAL LINGUISTICS",
+    "description": "Translation, terminology management, and research in AI-assisted linguistics.",
     "items": [
       { 
-        "name": "TECHNICAL INTERPRETING", 
+        "name": "CTecL RESEARCH LAB", 
         "url": "https://www.google.com/search?q=c", 
-        "type": "link",
-        "context": "Bilingual technical support at Tubarão, mediating complex engineering communications between international and local teams during locomotive maintenance."
+        "type": "embed",
+        "context": "Independent lab initiative: AI-assisted methodology for technical and poetic translation."
       },
       { 
-        "name": "LOGISTICS TERMINOLOGY", 
+        "name": "SPECIALIZED GLOSSARIES", 
         "url": "https://www.google.com/search?q=d", 
         "type": "link",
-        "context": "Expertise in specialized terminology for port operations, cargo handling, and international trade compliance."
+        "context": "Standardization of port terminology and regulatory documentation."
       }
     ]
   },
-  "about": {
-    "title": "NAVIGATION BRIDGE",
-    "description": "Data Scientist in career transition to Port Operations. Proficient in SAP, SQL, Python, DAX, and 6 languages (PT/EN/ES/IT/JP/KO).",
+  "profile": {
+    "title": "TECHNICAL PROFILE",
+    "description": "Background in Applied Computing and Education. Technical proficiency: SAP, SQL, Python, DAX.",
     "items": [
       { "name": "LINKEDIN", "url": "https://linkedin.com/in/fppissarra", "type": "link" },
       { "name": "LATTES", "url": "https://lattes.cnpq.br/7945109731847519", "type": "link"},
       { "name": "GITHUB", "url": "https://github.com/fppissarra", "type": "link" },
-      { "name": "EMAIL", "url": "mailto:fppissarra@gmail.com", "type": "link" }
+      { "name": "MAIL", "url": "mailto:fppissarra@gmail.com", "type": "link"}
     ]
   },
-  "certifications": {
-    "title": "CERTIFICATIONS",
-    "description": "Professional courses and academic background.",
+  "accreditations": {
+    "title": "ACCREDITATIONS",
+    "description": "Academic and professional certifications.",
     "items": [
-      { "name": "DATA SCIENCE CERT", "url": "link.pdf", "type": "link" },
-      { "name": "PORT LOGISTICS SEMINAR", "url": "link.pdf", "type": "link" }
+      { "name": "SPECIAL EDUCATION", "url": "https://www.linkedin.com/in/fppissarra/details/education/", "type": "link" },
+      { "name": "TESOL", "url": "https://www.linkedin.com/in/fppissarra/details/education/", "type": "link" },
+      { "name": "TECHNICAL PORTS", "url": "https://www.linkedin.com/in/fppissarra/details/education/", "type": "link" },
+      { "name": "INFORMATICS", "url": "https://www.linkedin.com/in/fppissarra/details/education/", "type": "link" }
     ]
   }
 }
