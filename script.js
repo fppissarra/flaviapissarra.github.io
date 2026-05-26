@@ -1,39 +1,19 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('data.json');
-        const data = await response.json();
+    const res = await fetch('data.json');
+    const data = await res.json();
 
-        document.getElementById('header-title').textContent = data.header.title;
-        document.getElementById('header-subtitle').textContent = data.header.subtitle;
-        document.getElementById('profile-img').src = data.header.avatar_url;
+    document.getElementById('header-title').textContent = data.header.title;
+    document.getElementById('profile-img').src = data.header.avatar_url;
 
-        const menu = document.getElementById('menu-hub');
-        menu.innerHTML = '';
-
-        Object.keys(data).forEach(key => {
-            if (key === 'header') return;
-
-            const section = data[key];
-            const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'menu-section';
-            sectionDiv.innerHTML = `<h4 class="section-title">${section.title}</h4>`;
-
-            section.items.forEach(item => {
-                const btn = document.createElement('button');
-                btn.className = 'btn';
-                btn.textContent = item.name;
-                btn.onclick = () => {
-                    if (item.url.startsWith('http')) {
-                        window.open(item.url, '_blank');
-                    } else {
-                        document.getElementById('frame-content').src = item.url;
-                    }
-                };
-                sectionDiv.appendChild(btn);
-            });
-            menu.appendChild(sectionDiv);
+    const menu = document.getElementById('menu-hub');
+    Object.keys(data).forEach(key => {
+        if (key === 'header') return;
+        data[key].items.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.textContent = item.name;
+            btn.onclick = () => document.getElementById('frame-content').src = item.url;
+            menu.appendChild(btn);
         });
-    } catch (err) {
-        console.error("Erro ao carregar dados:", err);
-    }
+    });
 });
