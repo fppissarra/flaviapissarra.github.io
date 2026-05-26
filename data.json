@@ -5,13 +5,13 @@
     "items": [
       { 
         "name": "PORT KPI DASHBOARD", 
-        "url": "LINK_HERE", 
+        "url": "https://app.powebi.com/", 
         "type": "embed",
         "context": "Automated production reporting using Power BI, Python, and SQL, replacing legacy Excel macros with real-time data integration."
       },
       { 
         "name": "RAILWAY MAINTENANCE LOGS", 
-        "url": "LINK_HERE", 
+        "url": "https://app.powebi.com/", 
         "type": "embed",
         "context": "Monitoring of locomotive workshop assets and railway flow control using SAP and CCO tools."
       }
@@ -29,7 +29,7 @@
       },
       { 
         "name": "LOGISTICS GLOSSARY", 
-        "url": "#", 
+        "url": "https://app.powebi.com/", 
         "type": "link",
         "context": "Specialized terminology for port operations, cargo handling, and international trade."
       }
