@@ -91,11 +91,8 @@ function fetchAndApplyLanguage(langCode) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  let savedLang = localStorage.getItem('user-portfolio-lang');
-  if (!savedLang) {
-    savedLang = 'en';
-    localStorage.setItem('user-portfolio-lang', 'en');
-  }
+  const savedLang = 'en';
+  localStorage.setItem('user-portfolio-lang', 'en');
   
   const langSelect = document.getElementById('custom-lang-select');
   if (langSelect) {
