@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra | Painel de Controle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Flávia P. Pissarra</h1>
+            <p>Data Scientist | Logística Portuária</p>
+        </header>
+
+        <nav>
+            <button class="btn" onclick="openPanel('bi')">Business Intelligence</button>
+            <button class="btn" onclick="openPanel('traducao')">Tradução</button>
+            <button class="btn" onclick="openPanel('sobre')">Sobre</button>
+        </nav>
+
+        <main id="display-area">
+            <div id="bi" class="content-panel">
+                <h2>Business Intelligence</h2>
+                <p>Aqui você encontrará seus dashboards e análises de logística.</p>
+            </div>
+
+            <div id="traducao" class="content-panel">
+                <h2>Tradução</h2>
+                <p>Projetos de tradução técnica e localização.</p>
+            </div>
+
+            <div id="sobre" class="content-panel">
+                <h2>Sobre Mim</h2>
+                <p>Trajetória em transição para dados e logística.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
