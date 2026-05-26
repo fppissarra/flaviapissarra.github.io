@@ -51,3 +51,41 @@ function handleNavigation(item) {
         contentEl.innerHTML = `<p style="color:var(--text-muted);">Conteúdo em desenvolvimento.</p>`;
     }
 }
+
+// Função para carregar conteúdo e transicionar o layout
+function handleNavigation(item) {
+    const wrapper = document.querySelector('.app-wrapper');
+    const contentEl = document.getElementById('view-content');
+    const titleEl = document.getElementById('view-title');
+
+    // Se for link externo, abre em nova aba e NÃO altera layout
+    if (item.url.startsWith('http')) {
+        window.open(item.url, '_blank');
+        return;
+    }
+
+    // Se for projeto, ativa o modo transição
+    wrapper.classList.add('project-mode');
+    titleEl.textContent = item.name;
+    
+    // Adiciona botão de voltar se não existir
+    if (!document.querySelector('.back-btn')) {
+        const back = document.createElement('button');
+        back.className = 'back-btn';
+        back.textContent = '← VOLTAR';
+        back.onclick = resetLayout;
+        document.querySelector('.profile-panel').prepend(back);
+    }
+
+    contentEl.innerHTML = `<iframe src="${item.url}" title="${item.name}"></iframe>`;
+}
+
+// Função para resetar o layout
+function resetLayout() {
+    const wrapper = document.querySelector('.app-wrapper');
+    wrapper.classList.remove('project-mode');
+    document.getElementById('view-content').innerHTML = '';
+    document.getElementById('view-title').textContent = '';
+    const back = document.querySelector('.back-btn');
+    if (back) back.remove();
+}
