@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (key === 'header') return;
         
         const section = document.createElement('div');
-        section.innerHTML = `<h4 style="color:var(--accent); margin-top:20px;">${data[key].title}</h4>`;
+        section.innerHTML = '<h4 style="color:var(--accent); margin-top:20px;">${data[key].title}</h4>';
         
         data[key].items.forEach(item => {
             const btn = document.createElement('button');
