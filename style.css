@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    /* Fundo escuro profundo inspirado no design */
+    background-color: #0d1117;
+    background-image: radial-gradient(circle at top right, #161b22, #0d1117);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* O Card Único (Glassmorphism) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 600px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Tipografia */
+.content-display {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 { 
+    font-size: 2rem; 
+    color: #ffffff; 
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h3 { 
+    font-size: 0.85rem; 
+    color: #2dd4bf; 
+    margin-bottom: 24px; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 500;
+}
+
+p { 
+    font-size: 1.05rem; 
+    color: #94a3b8; 
+    line-height: 1.6; 
+    font-weight: 300;
+}
+
+/* Botões de Navegação */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover:not(:disabled) {
+    background: #21262d;
+    border-color: #8b949e;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
