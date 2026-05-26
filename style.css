@@ -48,6 +48,17 @@ body {
     height: 100vh;
     z-index: 10;
     flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .profile-section {
