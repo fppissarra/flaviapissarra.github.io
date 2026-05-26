@@ -1,14 +1,14 @@
 {
-    "bi": {
-        "titulo": "Business Intelligence",
-        "texto": "Dashboards de logística e análise de dados portuários."
-    },
-    "traducao": {
-        "titulo": "Tradução",
-        "texto": "Projetos de localização técnica e tradução especializada."
-    },
-    "sobre": {
-        "titulo": "Sobre Mim",
-        "texto": "Trajetória acadêmica e profissional voltada a dados e comércio exterior."
-    }
+  "bi": {
+    "titulo": "Business Intelligence",
+    "texto": "Desenvolvimento de dashboards analíticos para monitoramento de KPIs portuários, otimização de fluxo de carga e análise preditiva de atracação."
+  },
+  "traducao": {
+    "titulo": "Tradução Técnica",
+    "texto": "Localização de manuais de equipamentos portuários e tradução de documentação técnica (Inglês-Português) para o setor de logística internacional."
+  },
+  "sobre": {
+    "titulo": "Sobre Mim",
+    "texto": "Profissional em transição para a área de Dados, unindo expertise em processos portuários com análise técnica e automação de fluxos."
+  }
 }
