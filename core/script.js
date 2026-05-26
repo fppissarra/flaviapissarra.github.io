@@ -1,97 +1,70 @@
-function openPanel(panelId, clickedButton) {
-  document.querySelectorAll('.content-panel, .nav-btn').forEach(el => el.classList.remove('active'));
-  
-  const targetPanel = document.getElementById(`panel-${panelId}`);
-  if (targetPanel) targetPanel.classList.add('active');
-  if (clickedButton) clickedButton.classList.add('active');
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const langSelector = document.getElementById("lang-selector");
+    const menuContainer = document.getElementById("dynamic-menu");
+    const contentPlaceholder = document.getElementById("content-placeholder");
 
-function renderCards(panelId, projectsArray) {
-  const gridElement = document.querySelector(`#panel-${panelId} .projects-grid`);
-  if (!gridElement) return;
+    // Função assíncrona principal para carregar o idioma e montar o menu
+    async function carregarIdioma(idioma) {
+        // Caminho corrigido refletindo a arquitetura do GitHub Pages
+        const urlJson = `./core/lang/${idioma}.json`;
 
-  gridElement.innerHTML = '';
-  if (!projectsArray || projectsArray.length === 0) return;
-  
-  projectsArray.forEach(proj => {
-    const cardContent = `
-      <div class="project-card-inner" style="display: grid; grid-template-columns: 120px 1fr; gap: 20px; width: 100%;">
-        <div class="project-date" style="font-weight: 700; color: var(--text-muted); font-size: 0.9rem; padding-top: 2px;">
-          ${proj.date || ""}
-        </div>
-        <div class="project-details">
-          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); letter-spacing: -0.2px;">
-            ${proj.title || ""}
-          </h3>
-          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">${proj.desc || ""}</p>
-        </div>
-      </div>
-    `;
+        try {
+            const response = await fetch(urlJson);
+            if (!response.ok) {
+                throw new Error(`Não foi possível carregar o arquivo: ${urlJson} (Status: ${response.status})`);
+            }
 
-    gridElement.innerHTML += (panelId === 'bi') 
-      ? `<a href="https://github.com" target="_blank" class="project-card">${cardContent}</a>` 
-      : `<div class="project-card">${cardContent}</div>`;
-  });
-}
+            const dados = await response.json();
+            
+            // Renderiza o menu e atualiza os placeholders
+            renderizarMenu(dados.menu);
+            atualizarTextosGerais(dados);
 
-function applyData(data) {
-  const avatarImg = document.querySelector('.profile-avatar');
-  if (avatarImg && data.profile_image) avatarImg.src = data.profile_image;
+        } catch (erro) {
+            console.error("Erro crítico ao processar o JSON de translação:", erro);
+            // Fallback visual simples caso o arquivo falhe (ex: erro de sintaxe no JSON)
+            menuContainer.innerHTML = `<div class="menu-error">Error loading menu (${idioma})</div>`;
+        }
+    }
 
-  document.querySelector('.profile-headline').textContent = data.headline || "";
-  document.querySelector('[data-panel="bi"]').textContent = data.nav_bi || "";
-  document.querySelector('[data-panel="translation"]').textContent = data.nav_translation || "";
-  document.querySelector('[data-panel="about"]').textContent = data.nav_about || "";
-  
-  ['bi', 'translation', 'about'].forEach(id => {
-    document.querySelector(`#panel-${id} .section-title`).textContent = data[`title_${id}`] || "";
-    document.querySelector(`#panel-${id} .section-intro`).textContent = data[`intro_${id}`] || "";
-  });
+    // Função responsável por gerar as divs filhas dentro do container do menu
+    function renderizarMenu(menuDados) {
+        // Limpa o esqueleto ou o menu antigo para evitar duplicidade
+        menuContainer.innerHTML = "";
 
-  document.getElementById('link-gh').textContent = data.link_github || "GitHub";
-  document.getElementById('link-ln').textContent = data.link_linkedin || "LinkedIn";
-  document.getElementById('link-em').textContent = data.link_email || "Mail me";
+        // Garante que o JSON possui a estrutura de menu esperada
+        if (!menuDados) return;
 
-  renderCards('bi', data.projects_bi || []);
-  renderCards('translation', data.projects_translation || []);
-  renderCards('about', data.projects_about || []);
-}
+        // Passa por cada chave do objeto "menu" do seu JSON
+        Object.entries(menuDados).forEach(([chave, texto]) => {
+            const itemMenu = document.createElement("div");
+            itemMenu.className = "menu-item";
+            itemMenu.setAttribute("data-key", chave);
+            itemMenu.textContent = texto;
 
-function fetchAndApplyLanguage(langCode) {
-  localStorage.setItem('user-portfolio-lang', langCode);
+            // Evento para navegação futura da SPA
+            itemMenu.addEventListener("click", () => {
+                document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("active"));
+                itemMenu.classList.add("active");
+                console.log(`Navegando para o painel: ${chave}`);
+            });
 
-  /* rota fixa pro json */
-  fetch(`https://github.io{langCode}.json`)
-    .then(response => {
-      if (!response.ok) throw new Error("JSON loading failed");
-      return response.json();
-    })
-    .then(data => applyData(data))
-    .catch(error => {
-      console.error("Erro crítico ao tentar carregar o arquivo online do idioma:", error);
+            menuContainer.appendChild(itemMenu);
+        });
+    }
+
+    // Atualiza outros textos estáticos fora do menu que estejam mapeados no seu JSON
+    function atualizarTextosGerais(dados) {
+        if (dados.constructionMessage) {
+            contentPlaceholder.textContent = dados.constructionMessage;
+        }
+    }
+
+    // Escuta a mudança de seleção de idioma no dropdown
+    langSelector.addEventListener("change", (e) => {
+        carregarIdioma(e.target.value);
     });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  /* inicialização master sempre em eng */
-  const defaultLang = 'en';
-  localStorage.setItem('user-portfolio-lang', defaultLang);
-  
-  const langSelect = document.getElementById('custom-lang-select');
-  if (langSelect) langSelect.value = defaultLang;
-  
-  fetchAndApplyLanguage(defaultLang);
-
-  document.querySelectorAll('.nav-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const panelId = button.getAttribute('data-panel');
-      if (panelId) openPanel(panelId, button);
-    });
-  });
-
-  if (langSelect) {
-    langSelect.addEventListener('change', (e) => {
-      fetchAndApplyLanguage(e.target.value);
-    });
-  }
+    // Inicializa o site carregando o idioma padrão (Português)
+    carregarIdioma("pt");
 });
