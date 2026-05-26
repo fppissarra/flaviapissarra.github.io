@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Menu
         const menu = document.getElementById('menu-hub');
-        menu.innerHTML = ''; // Limpa antes de popular
+        menu.innerHTML = '';
 
         Object.keys(data).forEach(key => {
             if (key === 'header') return;
