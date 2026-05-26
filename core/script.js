@@ -3,68 +3,76 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuContainer = document.getElementById("dynamic-menu");
     const contentPlaceholder = document.getElementById("content-placeholder");
 
-    // Função assíncrona principal para carregar o idioma e montar o menu
+    // Função assíncrona para carregar o idioma e injetar o menu
     async function carregarIdioma(idioma) {
-        // Caminho corrigido refletindo a arquitetura do GitHub Pages
         const urlJson = `./core/lang/${idioma}.json`;
 
         try {
             const response = await fetch(urlJson);
             if (!response.ok) {
-                throw new Error(`Não foi possível carregar o arquivo: ${urlJson} (Status: ${response.status})`);
+                throw new Error(`Não foi possível carregar o arquivo: ${urlJson}`);
             }
 
             const dados = await response.json();
             
-            // Renderiza o menu e atualiza os placeholders
-            renderizarMenu(dados.menu);
+            // Renderiza o menu usando os mapeamentos nativos do seu JSON
+            renderizarMenu(dados);
             atualizarTextosGerais(dados);
 
         } catch (erro) {
-            console.error("Erro crítico ao processar o JSON de translação:", erro);
-            // Fallback visual simples caso o arquivo falhe (ex: erro de sintaxe no JSON)
+            console.error("Erro ao carregar ficheiro de tradução:", erro);
             menuContainer.innerHTML = `<div class="menu-error">Error loading menu (${idioma})</div>`;
         }
     }
 
-    // Função responsável por gerar as divs filhas dentro do container do menu
-    function renderizarMenu(menuDados) {
-        // Limpa o esqueleto ou o menu antigo para evitar duplicidade
-        menuContainer.innerHTML = "";
+    // Função que constrói as divs mapeando as suas chaves nativas diretamente
+    function renderizarMenu(dados) {
+        menuContainer.innerHTML = ""; // Limpa o estado anterior
 
-        // Garante que o JSON possui a estrutura de menu esperada
-        if (!menuDados) return;
+        // Mapeamento direto entre a propriedade do JSON e o ID do painel correspondente
+        const mapeamentoMenu = [
+            { chave: "nav_bi", texto: dados.nav_bi, painel: "projects_bi" },
+            { chave: "nav_translation", texto: dados.nav_translation, painel: "projects_translation" },
+            { chave: "nav_about", texto: dados.nav_about, painel: "projects_about" }
+        ];
 
-        // Passa por cada chave do objeto "menu" do seu JSON
-        Object.entries(menuDados).forEach(([chave, texto]) => {
-            const itemMenu = document.createElement("div");
-            itemMenu.className = "menu-item";
-            itemMenu.setAttribute("data-key", chave);
-            itemMenu.textContent = texto;
+        // Cria as divs dinamicamente apenas se o texto existir no JSON correspondente
+        mapeamentoMenu.forEach(item => {
+            if (item.texto) {
+                const itemMenu = document.createElement("div");
+                itemMenu.className = "menu-item";
+                itemMenu.setAttribute("data-panel", item.painel);
+                itemMenu.textContent = item.texto;
 
-            // Evento para navegação futura da SPA
-            itemMenu.addEventListener("click", () => {
-                document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("active"));
-                itemMenu.classList.add("active");
-                console.log(`Navegando para o painel: ${chave}`);
-            });
+                // Evento de clique para gerir os estados ativos na SPA
+                itemMenu.addEventListener("click", () => {
+                    document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("active"));
+                    itemMenu.classList.add("active");
+                    console.log(`Trocar para o painel de dados: ${item.painel}`);
+                });
 
-            menuContainer.appendChild(itemMenu);
+                menuContainer.appendChild(itemMenu);
+            }
         });
     }
 
-    // Atualiza outros textos estáticos fora do menu que estejam mapeados no seu JSON
+    // Atualiza mensagens adicionais na interface
     function atualizarTextosGerais(dados) {
         if (dados.constructionMessage) {
             contentPlaceholder.textContent = dados.constructionMessage;
+        } else if (dados.headline) {
+            // Fallback caso prefira usar o headline como texto principal provisório
+            contentPlaceholder.textContent = dados.constructionMessage || "WEBSITE UNDER CONSTRUCTION";
         }
     }
 
-    // Escuta a mudança de seleção de idioma no dropdown
-    langSelector.addEventListener("change", (e) => {
-        carregarIdioma(e.target.value);
-    });
+    // Escuta a alteração no seletor do HTML (Dropdown)
+    if (langSelector) {
+        langSelector.addEventListener("change", (e) => {
+            carregarIdioma(e.target.value);
+        });
+    }
 
-    // Inicializa o site carregando o idioma padrão (Português)
+    // Executa a inicialização automática com o seu idioma padrão
     carregarIdioma("pt");
 });
