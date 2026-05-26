@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia P. Pissarra - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <title>Flávia P. Pissarra</title>
 </head>
 <body>
+
     <div id="app-wrapper" class="app-wrapper">
+        
         <aside class="panel menu-panel">
-            <h2>Flávia P. Pissarra</h2>
-            <nav id="main-nav">
-                <button onclick="openLevel2('bi')">Business Intelligence</button>
-                <button onclick="openLevel2('translation')">Translation</button>
+            <div class="profile-header">
+                <h2>Flávia P. Pissarra</h2>
+                <p>Data Scientist & Translator</p>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="nav-btn" onclick="openColumn('bi')">Business Intelligence</button>
+                <button class="nav-btn" onclick="openColumn('translation')">Translation</button>
             </nav>
         </aside>
 
         </div>
+
+    <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
