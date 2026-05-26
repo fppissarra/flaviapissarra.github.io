@@ -1,27 +1,28 @@
 {
-  "bi": {
-    "title": "Business Intelligence",
-    "text": "Analytical dashboards for monitoring port KPIs, cargo flow optimization, and predictive berthing analysis.",
-    "links": [
-      { "name": "Port Dashboard", "url": "#" },
-      { "name": "Logistics NLP", "url": "#" }
+  "projects": {
+    "title": "OPERATIONAL BERTHS",
+    "description": "Análise de dados portuários, automação de KPIs e dashboards de fluxo logístico.",
+    "items": [
+      { "name": "PBI1 - PORT DASHBOARD", "url": "https://www.google.com/search?q=a", "type": "embed" },
+      { "name": "PBI2 - LOGISTICS", "url": "https://www.google.com/search?q=b", "type": "embed" }
     ]
   },
-  "traducao": {
-    "title": "Technical Translation",
-    "text": "Localization of port equipment manuals and technical documentation (English-Portuguese) for international trade.",
-    "links": [
-      { "name": "Equipment Manual A", "url": "#" },
-      { "name": "Logistics Glossary", "url": "#" }
+  "translations": {
+    "title": "COMMUNICATION HUB",
+    "description": "Documentação técnica, glossários logísticos e tradução especializada.",
+    "items": [
+      { "name": "PTT1 - EQUIPMENT MANUAL", "url": "https://www.google.com/search?q=c", "type": "link" },
+      { "name": "PTT2 - LOGISTICS GLOSSARY", "url": "https://www.google.com/search?q=d", "type": "link" }
     ]
   },
-  "sobre": {
-    "title": "About Me",
-    "text": "Data professional transitioning into the maritime industry, combining expertise in port processes with data analysis and automation.",
-    "links": [
-      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/fppissarra" },
-      { "name": "Lattes", "url": "https://lattes.cnpq.br/7945109731847519" },
-      { "name": "GitHub", "url": "https://github.com/fppissarra" }
+  "about": {
+    "title": "NAVIGATION BRIDGE",
+    "description": "Informações profissionais, trajetórias e contatos.",
+    "items": [
+      { "name": "LINKEDIN", "url": "https://linkedin.com/in/fppissarra", "type": "link" },
+      { "name": "LATTES", "url": "https://lattes.cnpq.br/7945109731847519", "type": "link" },
+      { "name": "GITHUB", "url": "https://github.com/fppissarra", "type": "link" },
+      { "name": "EMAIL", "url": "mailto:fppissarra@gmail.com", "type": "link" }
     ]
   }
 }
