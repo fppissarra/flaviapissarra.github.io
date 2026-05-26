@@ -2,22 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flávia P. Pissarra | Hub</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="app-wrapper" id="main-wrapper">
-        
         <aside class="profile-panel">
-            <div class="radar-pic-container">
-                <img src="foto.jpg" alt="Flávia P. Pissarra" class="profile-pic">
-            </div>
             <h1>FLÁVIA P. PISSARRA</h1>
             <p>Data Scientist | Port Logistics</p>
-            
             <nav id="menu-hub">
                 <button class="btn" onclick="openCategory('projects')">OPERATIONAL BERTHS</button>
                 <button class="btn" onclick="openCategory('translations')">COMMUNICATION HUB</button>
@@ -26,19 +18,12 @@
         </aside>
 
         <main id="display-area" class="display-panel hidden">
-            <header class="display-header">
-                <h2 id="display-title"></h2>
-                <p id="display-description"></p>
-            </header>
-            
+            <h2 id="display-title"></h2>
+            <p id="display-description"></p>
             <div id="sub-links-container"></div>
-            
-            <footer class="display-footer">
-                <button class="btn-small" onclick="goBack()">DISCONNECT</button>
-            </footer>
+            <button class="btn" onclick="goBack()">DISCONNECT</button>
         </main>
     </div>
-
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
