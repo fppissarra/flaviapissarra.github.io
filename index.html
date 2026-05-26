@@ -14,26 +14,21 @@
             <p>Data Scientist | Logística Portuária</p>
         </header>
 
-        <nav>
-            <button class="btn" onclick="openPanel('bi')">Business Intelligence</button>
-            <button class="btn" onclick="openPanel('traducao')">Tradução</button>
-            <button class="btn" onclick="openPanel('sobre')">Sobre</button>
+        <nav id="main-nav">
+            <button class="btn" onclick="showPanel('bi')">Business Intelligence</button>
+            <button class="btn" onclick="showPanel('traducao')">Tradução</button>
+            <button class="btn" onclick="showPanel('sobre')">Sobre</button>
         </nav>
 
         <main id="display-area">
-            <div id="bi" class="content-panel">
-                <h2>Business Intelligence</h2>
-                <p>Dashboards de logística e análise de dados portuários.</p>
-            </div>
-
-            <div id="traducao" class="content-panel">
-                <h2>Tradução</h2>
-                <p>Projetos de localização técnica e tradução especializada.</p>
-            </div>
-
-            <div id="sobre" class="content-panel">
-                <h2>Sobre Mim</h2>
-                <p>Trajetória acadêmica e profissional voltada a dados e comércio exterior.</p>
+            <div id="content-box" class="content-panel">
+                <h2 id="content-title"></h2>
+                <p id="content-text"></p>
+                
+                <div class="nav-footer">
+                    <button id="prev-btn" class="btn-small" onclick="navigate(-1)">Anterior</button>
+                    <button id="next-btn" class="btn-small" onclick="navigate(1)">Próximo</button>
+                </div>
             </div>
         </main>
     </div>
