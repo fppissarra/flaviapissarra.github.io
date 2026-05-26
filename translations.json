@@ -1,0 +1,92 @@
+{
+  "en": {
+    "profile": { "name": "Flávia P. Pissarra", "title": "Data Scientist & Technical Translator" },
+    "menu": { "bi": "Business Intelligence", "translation": "Translation", "academia": "Academia" },
+    "section": {
+      "bi": { "title": "Business Intelligence & Analytics Solutions", "subtitle": "End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry." },
+      "translation": { "title": "Technical Translation & Localization", "subtitle": "Specialized translation, post-editing, and linguistic analysis balancing technical accuracy and cultural nuance." },
+      "academia": { "title": "Academic Production & Research", "subtitle": "Scientific investigations, computational linguistics research, and academic contributions." }
+    },
+    "tabs": {
+      "bi": [
+        { "year": "2024 - 2025", "role": "Industrial Data Engineering", "company": "ArcelorMittal", "description": "Engineered automated data pipelines using SQL and Python to extract and process over 10k monthly rows of raw industrial data." },
+        { "year": "2023 - 2024", "role": "Data Automation & Telemetry", "company": "Vale S.A.", "description": "Automated key performance indicators (KPIs) by constructing custom data workflows, deploying responsive data architectures." }
+      ],
+      "translation": [],
+      "academia": []
+    }
+  },
+  "pt": {
+    "profile": { "name": "Flávia P. Pissarra", "title": "Cientista de Dados & Tradutora Técnica" },
+    "menu": { "bi": "Business Intelligence", "translation": "Tradução", "academia": "Academia" },
+    "section": {
+      "bi": { "title": "Soluções de Business Intelligence & Analytics", "subtitle": "Exploração de dados de ponta a ponta, engenharia de recursos e arquitetura de dashboard estratégica." },
+      "translation": { "title": "Tradução Técnica & Localização", "subtitle": "Tradução especializada, pós-edição e análise linguística equilibrando precisão técnica e nuances culturais." },
+      "academia": { "title": "Produção Acadêmica & Pesquisa", "subtitle": "Investigações científicas, pesquisa em linguística computacional e contribuições acadêmicas." }
+    },
+    "tabs": {
+      "bi": [
+        { "year": "2024 - 2025", "role": "Engenharia de Dados Industriais", "company": "ArcelorMittal", "description": "Desenvolvimento de pipelines de dados automatizados usando SQL e Python para extrair e processar dados." },
+        { "year": "2023 - 2024", "role": "Automação de Dados & Telemetria", "company": "Vale S.A.", "description": "Automatização de indicadores-chave de desempenho (KPIs) através da construção de fluxos de trabalho personalizados." }
+      ],
+      "translation": [],
+      "academia": []
+    }
+  },
+  "es": {
+    "profile": { "name": "Flávia P. Pissarra", "title": "Científica de Datos & Traductora Técnica" },
+    "menu": { "bi": "Business Intelligence", "translation": "Traducción", "academia": "Academia" },
+    "section": {
+      "bi": { "title": "Soluciones de Business Intelligence & Analytics", "subtitle": "Exploración de datos de extremo a extremo, ingeniería de atributos y arquitectura estratégica de tableros." },
+      "translation": { "title": "Traducción Técnica y Localización", "subtitle": "Traducción especializada, posedición y análisis lingüístico combinando precisión técnica y matices culturales." },
+      "academia": { "title": "Producción Académica e Investigación", "subtitle": "Investigaciones científicas, lingüística computacional y contribuciones académicas." }
+    },
+    "tabs": {
+      "bi": [],
+      "translation": [],
+      "academia": []
+    }
+  },
+  "it": {
+    "profile": { "name": "Flávia P. Pissarra", "title": "Data Scientist & Traduttrice Tecnica" },
+    "menu": { "bi": "Business Intelligence", "translation": "Traduzione", "academia": "Accademia" },
+    "section": {
+      "bi": { "title": "Soluzioni di Business Intelligence & Analytics", "subtitle": "Esplorazione dei dati end-to-end, feature engineering e architettura strategica di dashboard." },
+      "translation": { "title": "Traduzione Tecnica e Localizzazione", "subtitle": "Traduzione specializzata, post-editing e analisi linguistica tra accuratezza tecnica e sfumature culturali." },
+      "academia": { "title": "Produzione Accademica e Ricerca", "subtitle": "Ricerche scientifiche, linguistica computazionale e contributi accademici." }
+    },
+    "tabs": {
+      "bi": [],
+      "translation": [],
+      "academia": []
+    }
+  },
+  "ko": {
+    "profile": { "name": "플라비아·피사하", "title": "데이터 사이언티스트 & 전문 번역가" },
+    "menu": { "bi": "비즈니스 인텔리전스", "translation": "번역", "academia": "학계" },
+    "section": {
+      "bi": { "title": "비즈니스 인텔리전스 & 분석 솔루션", "subtitle": "엔드투엔드 데이터 탐색, 피처 엔지니어링 및 기업 원격 측정을 위한 전략적 대시보드 아키텍처." },
+      "translation": { "title": "기술 번역 및 로컬라이제이션", "subtitle": "기술적 정확성과 문화적 뉘앙스의 균형을 맞춘 전문 번역, 사후 편집 및 언어 분석." },
+      "academia": { "title": "학술 생산 및 연구", "subtitle": "과학적 조사, 컴퓨터 언어학 연구 및 학술적 기여." }
+    },
+    "tabs": {
+      "bi": [],
+      "translation": [],
+      "academia": []
+    }
+  },
+  "ja": {
+    "profile": { "name": "フラビア·ピサハ", "title": "データサイエンティスト＆技術翻訳者" },
+    "menu": { "bi": "ビジネスインテリジェンス", "translation": "翻訳", "academia": "アカデミア" },
+    "section": {
+      "bi": { "title": "ビジネスインテリジェンス＆アナリティクスソリューション", "subtitle": "エンドツーエンド의 데이터 탐색、フィーチャーエンジニアリング、および企業テレメトリ向けの戦略的ダッシュボードアーキテクチャ。" },
+      "translation": { "title": "技術翻訳＆ローカライズ", "subtitle": "技術的な正確さと文化的なニュアンスのバランスをとった専門翻訳、ポストエディット、および言語分析。" },
+      "academia": { "title": "学術生産＆研究", "subtitle": "科学的調査、計算言語学研究、および学術的貢献。" }
+    },
+    "tabs": {
+      "bi": [],
+      "translation": [],
+      "academia": []
+    }
+  }
+}
