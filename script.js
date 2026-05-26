@@ -3,7 +3,7 @@ async function init() {
         const response = await fetch('data.json');
         const data = await response.json();
         
-        // header e foto
+        // Header e Foto
         document.getElementById('header-title').textContent = data.header.title;
         document.getElementById('header-subtitle').textContent = data.header.subtitle;
         document.getElementById('profile-img').src = data.header.avatar_url;
@@ -11,7 +11,7 @@ async function init() {
         const menu = document.getElementById('menu-hub');
         menu.innerHTML = '';
         
-        // renderização dinâmica
+        // Renderização Dinâmica
         Object.keys(data).forEach(key => {
             if (key !== 'header') {
                 const section = data[key];
@@ -32,7 +32,7 @@ async function init() {
             }
         });
     } catch (err) {
-        console.error("Error:", err);
+        console.error("Erro ao processar dados:", err);
     }
 }
 
