@@ -2,69 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia P. Pissarra - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <title>Flávia P. Pissarra</title>
 </head>
 <body>
-
-    <div class="container">
-        <aside class="sidebar">
-            <div class="profile-section">
-                <div class="avatar-container">
-                    <img src="https://avatars.githubusercontent.com/u/66925367?v=4" alt="Flávia P. Pissarra" class="avatar-image">
-                </div>
-                <h2 id="profile-name" class="profile-name">Flávia P. Pissarra</h2>
-                <p id="profile-title" class="profile-title">Data Scientist & Technical Translator</p>
-            </div>
-
-            <nav class="nav-menu">
-                <button id="btn-bi" class="nav-button active">Industry</button>
-                <button id="btn-translation" class="nav-button">Translations</button>
-                <button id="btn-academia" class="nav-button">Academia</button>
+    <div id="app-wrapper" class="app-wrapper">
+        <aside class="panel menu-panel">
+            <h2>Flávia P. Pissarra</h2>
+            <nav id="main-nav">
+                <button onclick="openLevel2('bi')">Business Intelligence</button>
+                <button onclick="openLevel2('translation')">Translation</button>
             </nav>
-
-            <div class="social-links">
-                <a href="https://github.com/fppissarra" target="_blank" class="social-link">GitHub</a>
-                <a href="https://linkedin.com/in/fppissarra" target="_blank" class="social-link">LinkedIn</a>
-                <a href="mailto:fppissarra@gmail.com" class="social-link">eMail</a>
-                
-                <select id="lang-select" class="lang-selector">
-                    <option value="en" selected>English (ENG)</option>
-                    <option value="pt">Português (PTB)</option>
-                    <option value="es">Español (ESP)</option>
-                    <option value="it">Italiano (ITA)</option>
-                    <option value="ko">한국어 (KOR)</option>
-                    <option value="ja">日本語 (JAP)</option>
-                </select>
-            </div>
         </aside>
 
-        <main class="main-content">
-            <div class="section-header">
-                <h1 id="section-title" class="section-title">Business Intelligence & Analytics Solutions</h1>
-                <p id="section-subtitle" class="section-subtitle">End-to-end data exploration, feature engineering, and strategic dashboard architecture tailored for corporate telemetry.</p>
-            </div>
-
-            <div class="dashboard-split-layout">
-                <div class="experience-feed-column">
-                    <div id="experience-container"></div>
-                </div>
-
-                <div class="powerbi-showcase-column">
-                    <div class="bi-preview-card">
-                        <div class="bi-icon-wrapper">📊</div>
-                        <h3>Power BI Portfolio</h3>
-                        <p>Access the complete repository of analytical dashboards, data engineering pipelines, and interactive strategic reports.</p>
-                        <a href="https://seu-link-do-powerbi-aqui.com" target="_blank" class="bi-view-button">
-                            View Dashboards
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
+        </div>
     <script src="app.js"></script>
 </body>
 </html>
