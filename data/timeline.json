@@ -4,7 +4,6 @@
     "type": "experience",
     "date": "2018–2024",
     "title": "Language & Communications Educator",
-    "subtitle": "Public & Private Institutions",
     "description": "Developed cross-cultural communication curricula. Honed skills in knowledge transfer, public speaking, and multilingual facilitation.",
     "icon": "📚"
   },
@@ -13,7 +12,6 @@
     "type": "education",
     "date": "2023",
     "title": "Technical Translation Certification",
-    "subtitle": "Specialization in Logistics & Trade",
     "description": "Advanced training in CAT tools, terminology management, and legal/technical localization standards.",
     "icon": "🎓"
   },
@@ -22,16 +20,14 @@
     "type": "education",
     "date": "2024",
     "title": "Business Intelligence & Data Analysis",
-    "subtitle": "Power BI, SQL, Python",
     "description": "Built end-to-end dashboards for supply chain and education metrics. Focused on data storytelling and actionable insights.",
-    "icon": "📊"
+    "icon": ""
   },
   {
     "id": "trade-logistics",
     "type": "education",
     "date": "2025–Present",
     "title": "International Foreign Trades & Logistics",
-    "subtitle": "University / Professional Program",
     "description": "Studying port operations, customs compliance, INCOTERMS, and global supply chain finance. Preparing for diplomatic & trade analysis pathways.",
     "icon": "🚢"
   },
@@ -40,7 +36,6 @@
     "type": "experience",
     "date": "2023–Present",
     "title": "Freelance Technical Translator & Interpreter",
-    "subtitle": "Logistics, Trade, Publishing",
     "description": "Delivering precise, culturally adapted translations for SMEs, publishers, and logistics firms. Maintaining strict confidentiality protocols.",
     "icon": "⚓"
   }
