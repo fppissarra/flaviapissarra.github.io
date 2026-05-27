@@ -6,22 +6,17 @@
   <title>Flávia Pissarra | BI Analyst & Technical Translator</title>
   <meta name="description" content="Portfolio of Flávia Pissarra: Business Intelligence, Technical Translation, and International Trade & Logistics.">
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+  <!-- Mobile Menu Controls -->
   <button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
   <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
   <div class="app-container">
-    
-    <!-- LEFT SIDEBAR (Navigation) -->
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="logo" onclick="switchTab('hero'); return false;">FP</a>
@@ -30,20 +25,21 @@
       
       <nav class="sidebar-nav">
         <button class="nav-btn active" data-target="hero">🏠 Home</button>
-        <button class="nav-btn" data-target="projects">️ Projects</button>
+        <button class="nav-btn" data-target="projects">🗺️ Projects</button>
         <button class="nav-btn" data-target="translation">⚓ Translation</button>
         <button class="nav-btn" data-target="timeline">🧭 Trajectory</button>
-        <button class="nav-btn" data-target="contact">📬 Contact</button>
+        <button class="nav-btn" data-target="contact"> Contact</button>
       </nav>
 
       <div class="sidebar-footer">
-        <p>&copy; 2026 Flávia Pissarra</p>
+        <p>&copy; <span id="year"></span> Flávia Pissarra</p>
       </div>
     </aside>
 
     <!-- RIGHT CONTENT AREA -->
     <main class="content-area">
       
+      <!-- HERO -->
       <section id="hero" class="content-section active">
         <div class="inner-card">
           <h1 class="hero-title">Charting Data, Language & Global Trade</h1>
@@ -56,8 +52,52 @@
         </div>
       </section>
 
+      <!-- PROJECTS -->
       <section id="projects" class="content-section hidden">
         <div class="inner-card">
           <h2 class="section-title">🗺️ BI Projects</h2>
           <div class="filters">
-            <button class="filter-btn active
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="logistics">Logistics</button>
+            <button class="filter-btn" data-filter="trade">Trade</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+          </div>
+          <div id="projects-grid" class="grid projects-grid"></div>
+        </div>
+      </section>
+
+      <!-- TRANSLATION -->
+      <section id="translation" class="content-section hidden">
+        <div class="inner-card">
+          <h2 class="section-title">⚓ Translation & Interpretation</h2>
+          <p class="intro-text">Bridging technical precision with cultural nuance.</p>
+          <div id="translation-grid" class="grid translation-grid"></div>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section id="timeline" class="content-section hidden">
+        <div class="inner-card">
+          <h2 class="section-title">🧭 Dual Currents: Study & Practice</h2>
+          <div id="timeline-container" class="timeline"></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="content-section hidden">
+        <div class="inner-card text-center">
+          <h2 class="section-title">📬 Let's Connect</h2>
+          <p>Preparing for foreign service & trade analysis roles. Open to collaborations, translation projects, and BI opportunities.</p>
+          <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
