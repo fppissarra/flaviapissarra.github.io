@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flávia Pissarra | BI Analyst & Technical Translator</title>
+  <meta name="description" content="Portfolio of Flávia Pissarra: Business Intelligence, Technical Translation, and International Trade & Logistics.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  
+  <!-- Styles (Order matters for cascade) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="#" class="logo">FP</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#translation">Translation</a></li>
+        <li><a href="#timeline">Education & Experience</a></li>
+        <li><a href="#contact" class="btn-nav">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1 class="hero-title">Charting Data, Language & Global Trade</h1>
+        <p class="hero-subtitle">BI Analyst · Technical Translator · Future Diplomat</p>
+        <p class="hero-text">Navigating a career transition from education to international logistics, data intelligence, and multilingual communication.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#timeline" class="btn btn-secondary">My Trajectory</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">🗺️ BI Projects: Navigating Data</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="logistics">Logistics</button>
+          <button class="filter-btn" data-filter="trade">Foreign Trade</button>
+          <button class="filter-btn" data-filter="education">Education</button>
+        </div>
+        <div id="projects-grid" class="grid projects-grid">
+          <p class="loading-text">Loading projects...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="translation" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">⚓ Translation & Interpretation</h2>
+        <div class="translation-intro">
+          <p>Bridging technical precision with cultural nuance. Specializing in logistics, trade compliance, and literary/technical texts.</p>
+        </div>
+        <div id="translation-grid" class="grid translation-grid">
+          <p class="loading-text">Loading translation domains...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 class="section-title">🧭 Dual Currents: Study & Practice</h2>
+        <div id="timeline-container" class="timeline">
+          <p class="loading-text">Loading trajectory...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container text-center">
+        <h2 class="section-title">📬 Let's Connect</h2>
+        <p class="contact-text">Preparing for foreign service & trade analysis roles. Open to collaborations, translation projects, and BI opportunities.</p>
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>&copy; <span id="year"></span> Flávia Pissarra. Built with precision & purpose.</p>
+      <p class="footer-note">Portfolio code is public; detailed project samples & translation excerpts available upon request for confidentiality.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year & mobile nav toggle
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Placeholder for data-loader.js (next step)
+    // document.addEventListener('DOMContentLoaded', () => { loadProjects(); loadTranslations(); loadTimeline(); });
+  </script>
+</body>
+</html>
