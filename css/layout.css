@@ -1,159 +1,230 @@
-/* Base Reset & Typography */
+/* Base Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; overflow: hidden; }
+
+html { font-size: 16px; }
 
 body {
   font-family: var(--font-body);
-  color: var(--cabin-wood);
-  background-color: var(--deep-sea);
+  color: var(--ubuntu-text);
+  background-color: var(--ubuntu-light);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--deep-sea);
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-}
+/* Load Ubuntu Font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
-p { margin-bottom: var(--spacing-sm); }
-a { color: var(--deep-sea); text-decoration: none; transition: var(--transition); }
-a:hover { color: var(--brass); }
-
-/* APP CONTAINER: Split Screen */
+/* APP CONTAINER */
 .app-container {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* LEFT SIDEBAR (25%) */
+/* SIDEBAR - Responsive */
 .sidebar {
-  width: 25%;
-  min-width: 220px;
-  max-width: 280px;
-  background-color: var(--foam);
-  border-right: var(--border-rope);
+  width: 260px;
+  background: var(--ubuntu-white);
+  border-right: var(--border-light);
+  padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-md);
-  z-index: 10;
-  box-shadow: 4px 0 12px rgba(0,0,0,0.05);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.3s ease;
 }
 
 .sidebar-header {
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--ubuntu-orange);
   margin-bottom: var(--spacing-lg);
-  text-align: center;
-  border-bottom: 1px solid var(--shore);
-  padding-bottom: var(--spacing-sm);
 }
 
 .logo {
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
-  color: var(--deep-sea);
+  color: var(--ubuntu-orange);
   display: block;
+  text-decoration: none;
 }
 
 .role-title {
   font-size: 0.85rem;
-  color: var(--brass);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 0.5rem;
+  color: var(--ubuntu-warm-grey);
+  margin-top: 0.25rem;
+  font-weight: 300;
 }
 
+/* Navigation */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-  flex-grow: 1;
 }
 
 .nav-btn {
   background: transparent;
   border: none;
   text-align: left;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--cabin-wood);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ubuntu-text);
   cursor: pointer;
-  border-radius: var(--radius-card);
-  transition: var(--transition);
-  border-left: 3px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.nav-btn:hover { background-color: var(--pearl); color: var(--deep-sea); }
+.nav-btn:hover {
+  background: var(--ubuntu-light);
+  color: var(--ubuntu-orange);
+}
+
 .nav-btn.active {
-  background-color: var(--shore);
-  color: var(--deep-sea);
-  border-left-color: var(--brass);
-  font-weight: 600;
+  background: var(--ubuntu-gradient);
+  color: white;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
 }
 
 .sidebar-footer {
-  font-size: 0.75rem;
-  color: var(--brass);
-  text-align: center;
   margin-top: auto;
+  padding-top: var(--spacing-md);
+  font-size: 0.8rem;
+  color: var(--ubuntu-warm-grey);
+  text-align: center;
+  border-top: var(--border-light);
 }
 
-/* RIGHT CONTENT AREA (75%) */
+/* MAIN CONTENT AREA */
 .content-area {
-  flex-grow: 1;
-  background-color: var(--pearl);
-  background-image: var(--pearl-glow);
-  padding: var(--spacing-md);
-  overflow-y: auto;
-  position: relative;
+  flex: 1;
+  margin-left: 260px;
+  padding: var(--spacing-lg);
+  background: var(--ubuntu-light);
+  min-height: 100vh;
 }
 
-/* Inner Card Container */
+/* Inner Card - Ubuntu Style */
 .inner-card {
   max-width: 900px;
   margin: 0 auto;
-  background: var(--foam);
-  border: var(--border-rope);
-  border-radius: var(--radius-card);
+  background: var(--ubuntu-white);
+  border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
-  box-shadow: var(--shadow-hover);
-  min-height: 80vh;
-  animation: fadeIn 0.35s ease-in-out;
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Visibility Logic */
+/* Section Visibility */
 .content-section { display: none; }
 .content-section.active { display: block; }
 .hidden { display: none !important; }
 
-/* Responsive: Mobile Stack */
-@media (max-width: 768px) {
-  .app-container { flex-direction: column; }
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--ubuntu-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 300;
+  background: var(--ubuntu-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--ubuntu-orange);
+  margin-bottom: var(--spacing-md);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    min-height: auto;
-    max-width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    border-right: none;
-    border-bottom: var(--border-rope);
+    width: 220px;
   }
-  .sidebar-header { margin-bottom: 0; border-bottom: none; text-align: left; padding: 0; }
-  .sidebar-nav { display: none; } /* Simplified for mobile; can add toggle later */
-  .content-area { padding: var(--spacing-sm); }
-  .inner-card { padding: var(--spacing-md); min-height: auto; }
-  .hero-title { font-size: 1.75rem; }
+  .content-area {
+    margin-left: 220px;
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .content-area {
+    margin-left: 0;
+    padding: var(--spacing-sm);
+  }
+  
+  .inner-card {
+    padding: var(--spacing-md);
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    z-index: 200;
+    background: var(--ubuntu-gradient);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Overlay for mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
+.sidebar-overlay.active {
+  display: block;
 }
