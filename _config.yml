@@ -1,0 +1,5 @@
+# _config.yml
+collections:
+  projetos:
+    output: true
+    permalink: /p/:title/
