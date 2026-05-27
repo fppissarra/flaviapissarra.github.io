@@ -1,21 +1,17 @@
-/* =========================================
-   MAIN.JS - Portfolio Logic & Data Loader
-   ========================================= */
-
-// Tornar funções acessíveis globalmente (para onclick inline no HTML)
+// Global functions for inline HTML onclick
 window.toggleSidebar = function() {
   document.querySelector('.sidebar').classList.toggle('open');
   document.querySelector('.sidebar-overlay').classList.toggle('active');
 };
 
 window.switchTab = function(targetId) {
-  // Atualiza botões da sidebar
+  // Update sidebar buttons
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.remove('active');
     if (btn.dataset.target === targetId) btn.classList.add('active');
   });
 
-  // Atualiza seções de conteúdo
+  // Update content sections
   document.querySelectorAll('.content-section').forEach(section => {
     section.classList.remove('active');
     section.classList.add('hidden');
@@ -26,7 +22,7 @@ window.switchTab = function(targetId) {
     targetSection.classList.remove('hidden');
     targetSection.classList.add('active');
     
-    // Fecha menu mobile ao trocar de aba
+    // Close mobile menu on tab switch
     if (window.innerWidth <= 768) {
       document.querySelector('.sidebar').classList.remove('open');
       document.querySelector('.sidebar-overlay').classList.remove('active');
@@ -34,7 +30,7 @@ window.switchTab = function(targetId) {
   }
 };
 
-// Helper para fetch JSON
+// JSON Fetch Helper
 async function fetchJSON(path) {
   try {
     const res = await fetch(path);
@@ -46,7 +42,7 @@ async function fetchJSON(path) {
   }
 }
 
-// 🗺️ Carrega Projetos + Filtros
+// 🗺️ Projects Loader + Filters
 async function loadProjects() {
   const data = await fetchJSON('data/projects.json');
   const container = document.getElementById('projects-grid');
@@ -72,9 +68,8 @@ async function loadProjects() {
     }).join('');
   };
 
-  renderProjects(); // Render inicial
+  renderProjects();
 
-  // Event delegation para filtros
   document.querySelector('.filters')?.addEventListener('click', e => {
     if (!e.target.classList.contains('filter-btn')) return;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -83,7 +78,7 @@ async function loadProjects() {
   });
 }
 
-// ⚓ Carrega Traduções
+// ⚓ Translation Loader
 async function loadTranslations() {
   const data = await fetchJSON('data/translations.json');
   const container = document.getElementById('translation-grid');
@@ -103,7 +98,7 @@ async function loadTranslations() {
   `).join('');
 }
 
-// 🧭 Carrega Timeline
+//  Timeline Loader
 async function loadTimeline() {
   const data = await fetchJSON('data/timeline.json');
   const container = document.getElementById('timeline-container');
@@ -117,7 +112,7 @@ async function loadTimeline() {
       <div class="timeline-marker">${item.icon}</div>
       <div class="timeline-content">
         <span class="timeline-date">${item.date}</span>
-        <span class="timeline-tag">${item.type === 'education' ? '🎓 Education' : ' Experience'}</span>
+        <span class="timeline-tag">${item.type === 'education' ? ' Education' : '💼 Experience'}</span>
         <h3 style="font-size:1.05rem; margin:0.25rem 0; font-weight:500;">${item.title}</h3>
         <p style="font-size:0.9rem; margin:0; line-height:1.5;">${item.description}</p>
       </div>
@@ -125,19 +120,41 @@ async function loadTimeline() {
   `).join('');
 }
 
-// Inicialização
+// 🌐 Languages Loader
+async function loadLanguages() {
+  const data = await fetchJSON('data/languages.json');
+  const container = document.getElementById('languages-grid');
+  if (!data) {
+    container.innerHTML = '<p class="loading-text">Languages loading...</p>';
+    return;
+  }
+
+  container.innerHTML = data.map(l => `
+    <article class="card language-card">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+        <span style="font-size:1.5rem;">${l.icon}</span>
+        <h3 style="margin:0; font-size:1.1rem;">${l.lang}</h3>
+      </div>
+      <span style="display:inline-block; background:var(--ubuntu-orange); color:white; padding:0.2rem 0.6rem; border-radius:12px; font-size:0.8rem; font-weight:500; margin-bottom:0.5rem;">${l.level}</span>
+      <p style="margin:0; font-size:0.9rem; color:var(--ubuntu-text); line-height:1.4;">${l.details}</p>
+    </article>
+  `).join('');
+}
+
+// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Bind sidebar buttons
+  // Bind sidebar navigation
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => switchTab(btn.dataset.target));
   });
 
-  // Carrega dados
+  // Load all data sections
   loadProjects();
   loadTranslations();
   loadTimeline();
+  loadLanguages();
 
-  // Garante que menu mobile feche ao redimensionar para desktop
+  // Reset mobile menu on window resize to desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
       document.querySelector('.sidebar').classList.remove('open');
