@@ -1,0 +1,19 @@
+/* --- Dark Mode Palette --- */
+body.dark-mode {
+    --primary-color: #f0f0f0;    /* Texto claro */
+    --accent-color: #3498db;     /* O azul ainda destaca bem */
+    --text-color: #cccccc;       /* Texto suave */
+    --bg-color: #121212;         /* Fundo escuro */
+    --white: #1e1e1e;            /* Elementos sobrepostos */
+}
+
+/* Aplicação das cores no Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2 {
+    color: var(--primary-color);
+}
