@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flávia Pissarra | CV</title>
-  <meta name="description" content="Portfolio of Flávia Pissarra: Business Intelligence, Technical Translation, and International Trade and Logistics.">
-  
-  <!-- CSS -->
+  <meta name="description" content="Portfolio of Flávia Pissarra: Business Intelligence, Technical Translation, and International Trade & Logistics.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- Mobile Controls -->
+  <!-- Mobile Menu Controls -->
   <button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
   <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
@@ -21,16 +26,16 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="logo" onclick="switchTab('hero'); return false;">FP</a>
-        <p class="role-title">BI & Translation ⚓</p>
+        <p class="role-title">BI & Translation</p>
       </div>
       
       <nav class="sidebar-nav">
-        <button class="nav-btn active" data-target="hero">Home</button>
-        <button class="nav-btn" data-target="projects">Projects</button>
-        <button class="nav-btn" data-target="translation">Translation</button>
-        <button class="nav-btn" data-target="timeline">Trajectory</button>
-        <button class="nav-btn" data-target="languages">Languages</button>
-        <button class="nav-btn" data-target="contact">Contact</button>
+        <button class="nav-btn active" data-target="hero">🏠 Home</button>
+        <button class="nav-btn" data-target="projects">🗺️ Projects</button>
+        <button class="nav-btn" data-target="translation">⚓ Translation</button>
+        <button class="nav-btn" data-target="timeline">🧭 Trajectory</button>
+        <button class="nav-btn" data-target="languages"> Languages</button>
+        <button class="nav-btn" data-target="contact">📬 Contact</button>
       </nav>
 
       <div class="sidebar-footer">
@@ -57,7 +62,7 @@
       <!-- PROJECTS -->
       <section id="projects" class="content-section hidden">
         <div class="inner-card">
-          <h2 class="section-title">BI Projects</h2>
+          <h2 class="section-title">🗺️ BI Projects</h2>
           <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="logistics">Logistics</button>
@@ -71,7 +76,7 @@
       <!-- TRANSLATION -->
       <section id="translation" class="content-section hidden">
         <div class="inner-card">
-          <h2 class="section-title">Translation & Interpretation</h2>
+          <h2 class="section-title">⚓ Translation & Interpretation</h2>
           <p class="intro-text">Bridging technical precision with cultural nuance.</p>
           <div id="translation-grid" class="grid translation-grid"></div>
         </div>
@@ -80,7 +85,7 @@
       <!-- TIMELINE -->
       <section id="timeline" class="content-section hidden">
         <div class="inner-card">
-          <h2 class="section-title">Study & Practice</h2>
+          <h2 class="section-title">🧭 Dual Currents: Study & Practice</h2>
           <div id="timeline-container" class="timeline"></div>
         </div>
       </section>
@@ -88,7 +93,7 @@
       <!-- LANGUAGES -->
       <section id="languages" class="content-section hidden">
         <div class="inner-card">
-          <h2 class="section-title">Language Proficiency</h2>
+          <h2 class="section-title"> Language Proficiency</h2>
           <p class="intro-text">Continuously expanding my polyglot journey toward diplomatic fluency.</p>
           <div id="languages-grid" class="grid languages-grid"></div>
         </div>
@@ -97,7 +102,7 @@
       <!-- CONTACT -->
       <section id="contact" class="content-section hidden">
         <div class="inner-card text-center">
-          <h2 class="section-title">Let's Connect</h2>
+          <h2 class="section-title">📬 Let's Connect</h2>
           <p>Preparing for foreign service & trade analysis roles. Open to collaborations, translation projects, and BI opportunities.</p>
           <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
         </div>
