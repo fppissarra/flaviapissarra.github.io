@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /js/
+Disallow: /css/
+Sitemap: https://fppissarra.github.io/sitemap.xml
