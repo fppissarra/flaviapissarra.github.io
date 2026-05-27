@@ -1,230 +1,45 @@
-/* Reset */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { font-size: 16px; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--ubuntu-text);
-  background-color: var(--ubuntu-light);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Load Ubuntu Font */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-/* APP CONTAINER */
-.app-container {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* SIDEBAR - Responsive */
-.sidebar {
-  width: 260px;
-  background: var(--ubuntu-white);
-  border-right: var(--border-light);
-  padding: var(--spacing-md);
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  height: 100vh;
-  overflow-y: auto;
-  z-index: 100;
-  transition: transform 0.3s ease;
-}
-
-.sidebar-header {
-  padding-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--ubuntu-orange);
-  margin-bottom: var(--spacing-lg);
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--ubuntu-orange);
-  display: block;
-  text-decoration: none;
-}
-
-.role-title {
-  font-size: 0.85rem;
-  color: var(--ubuntu-warm-grey);
-  margin-top: 0.25rem;
-  font-weight: 300;
-}
-
-/* Navigation */
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.nav-btn {
-  background: transparent;
-  border: none;
-  text-align: left;
-  padding: 0.875rem 1rem;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--ubuntu-text);
-  cursor: pointer;
-  border-radius: var(--radius-md);
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.nav-btn:hover {
-  background: var(--ubuntu-light);
-  color: var(--ubuntu-orange);
-}
-
-.nav-btn.active {
-  background: var(--ubuntu-gradient);
-  color: white;
-  font-weight: 500;
-  box-shadow: var(--shadow-sm);
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: var(--spacing-md);
-  font-size: 0.8rem;
-  color: var(--ubuntu-warm-grey);
-  text-align: center;
-  border-top: var(--border-light);
-}
-
-/* MAIN CONTENT AREA */
-.content-area {
-  flex: 1;
-  margin-left: 260px;
-  padding: var(--spacing-lg);
-  background: var(--ubuntu-light);
-  min-height: 100vh;
-}
-
-/* Inner Card - Ubuntu Style */
-.inner-card {
-  max-width: 900px;
-  margin: 0 auto;
-  background: var(--ubuntu-white);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-md);
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Section Visibility */
-.content-section { display: none; }
-.content-section.active { display: block; }
-.hidden { display: none !important; }
-
-/* Typography */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  color: var(--ubuntu-dark);
-  margin-bottom: var(--spacing-sm);
-}
-
-.hero-title {
-  font-size: 2.25rem;
-  font-weight: 300;
-  background: var(--ubuntu-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-title {
-  font-size: 1.75rem;
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 3px solid var(--ubuntu-orange);
-  margin-bottom: var(--spacing-md);
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 220px;
-  }
-  .content-area {
-    margin-left: 220px;
-    padding: var(--spacing-md);
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    width: 260px;
-  }
+:root {
+  /* Ubuntu Palette */
+  --ubuntu-orange: #E95420;
+  --ubuntu-aubergine: #772953;
+  --ubuntu-dark: #2C001E;
+  --ubuntu-warm-grey: #AEA79F;
+  --ubuntu-light: #F7F7F7;
+  --ubuntu-white: #FFFFFF;
+  --ubuntu-text: #333333;
   
-  .sidebar.open {
-    transform: translateX(0);
-  }
+  /* Gradient */
+  --ubuntu-gradient: linear-gradient(135deg, #E95420 0%, #772953 100%);
   
-  .content-area {
-    margin-left: 0;
-    padding: var(--spacing-sm);
-  }
+  /* Typography */
+  --font-heading: 'Ubuntu', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Ubuntu', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
   
-  .inner-card {
-    padding: var(--spacing-md);
-  }
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
   
-  .hero-title {
-    font-size: 1.75rem;
-  }
-  
-  /* Mobile Menu Toggle */
-  .menu-toggle {
-    display: block;
-    position: fixed;
-    top: var(--spacing-sm);
-    left: var(--spacing-sm);
-    z-index: 200;
-    background: var(--ubuntu-gradient);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    box-shadow: var(--shadow-md);
-  }
+  /* Shadows & Borders */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-light: 1px solid #E0E0E0;
 }
 
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none;
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ubuntu-light: #2D2D2D;
+    --ubuntu-white: #1A1A1A;
+    --ubuntu-text: #E0E0E0;
+    --ubuntu-warm-grey: #5A5A5A;
+    --border-light: 1px solid #3A3A3A;
   }
-}
-
-/* Overlay for mobile */
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 99;
-}
-
-.sidebar-overlay.active {
-  display: block;
 }
