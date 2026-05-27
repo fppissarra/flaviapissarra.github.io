@@ -42,12 +42,10 @@
   margin-top: var(--spacing-md);
 }
 
-.projects-grid {
+.projects-grid,
+.translation-grid,
+.languages-grid {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-}
-
-.translation-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .card {
@@ -213,6 +211,15 @@
   flex-wrap: wrap;
 }
 
+/* Languages Specific */
+.language-card {
+  border-left: 4px solid var(--ubuntu-aubergine);
+}
+
+.language-card:hover {
+  border-left-color: var(--ubuntu-orange);
+}
+
 /* Utilities */
 .text-center { text-align: center; }
 .loading-text {
@@ -220,6 +227,13 @@
   color: var(--ubuntu-warm-grey);
   font-style: italic;
   padding: var(--spacing-md);
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--ubuntu-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
 }
 
 /* Mobile Responsiveness */
