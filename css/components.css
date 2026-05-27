@@ -1,130 +1,247 @@
-/* Buttons */
+/* Buttons - Ubuntu Style */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
   font-weight: 500;
   cursor: pointer;
-  transition: var(--transition);
-  border: 2px solid transparent;
-  font-family: var(--font-body);
-}
-.btn-primary { background-color: var(--deep-sea); color: var(--foam); }
-.btn-primary:hover { background-color: var(--brass); color: var(--cabin-wood); transform: translateY(-2px); }
-.btn-secondary { background-color: transparent; border-color: var(--deep-sea); color: var(--deep-sea); }
-.btn-secondary:hover { background-color: var(--deep-sea); color: var(--foam); }
-
-/* Section Titles */
-.section-title {
-  font-size: 1.85rem;
-  margin-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--brass);
-  padding-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
-/* Grids */
-.grid { display: grid; gap: var(--spacing-md); margin-top: var(--spacing-md); }
-.projects-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-.translation-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.btn-primary {
+  background: var(--ubuntu-orange);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
 
-/* Cards */
+.btn-primary:hover {
+  background: #C74516;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--ubuntu-orange);
+  color: var(--ubuntu-orange);
+}
+
+.btn-secondary:hover {
+  background: var(--ubuntu-orange);
+  color: white;
+}
+
+/* Cards - Ubuntu Style */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.translation-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .card {
-  background: var(--pearl);
-  border: 1px solid var(--shore);
-  border-radius: var(--radius-card);
+  background: var(--ubuntu-white);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
   padding: var(--spacing-md);
-  transition: var(--transition);
-  position: relative;
+  transition: all 0.2s ease;
+  border-left: 4px solid var(--ubuntu-orange);
 }
-.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); border-color: var(--brass); }
-.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--ubuntu-aubergine);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--ubuntu-dark);
+}
+
 .card-meta {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--brass);
+  color: var(--ubuntu-orange);
   margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.card p { font-size: 0.95rem; color: var(--cabin-wood); margin-bottom: var(--spacing-md); }
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--ubuntu-text);
+  margin-bottom: var(--spacing-sm);
+}
+
 .card-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--deep-sea);
+  font-weight: 500;
+  color: var(--ubuntu-orange);
+  text-decoration: none;
+  margin-top: 0.5rem;
 }
-.card-link::after { content: '→'; transition: transform 0.2s ease; }
-.card-link:hover::after { transform: translateX(4px); }
+
+.card-link:hover {
+  color: var(--ubuntu-aubergine);
+}
 
 /* Filters */
-.filters { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); margin-bottom: var(--spacing-md); }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
 .filter-btn {
-  background: var(--shore);
-  border: 1px solid var(--brass);
-  padding: 0.4rem 0.9rem;
+  background: var(--ubuntu-white);
+  border: 2px solid var(--ubuntu-warm-grey);
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--deep-sea);
-  transition: var(--transition);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--ubuntu-text);
+  transition: all 0.2s ease;
 }
-.filter-btn:hover, .filter-btn.active { background: var(--deep-sea); color: var(--foam); border-color: var(--deep-sea); }
 
-/* Timeline */
-.timeline { position: relative; padding-left: 10px; }
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--ubuntu-orange);
+  border-color: var(--ubuntu-orange);
+  color: white;
+}
+
+/* Timeline - Ubuntu Style */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
 .timeline::before {
   content: '';
   position: absolute;
-  left: 15px; top: 8px; bottom: 0;
+  left: 15px;
+  top: 0;
+  bottom: 0;
   width: 3px;
-  background: var(--brass);
+  background: var(--ubuntu-gradient);
   border-radius: 3px;
 }
-.timeline-item { position: relative; padding-left: 45px; margin-bottom: var(--spacing-md); }
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
 .timeline-marker {
   position: absolute;
-  left: 0; top: 4px;
-  width: 34px; height: 34px;
-  background: var(--foam);
-  border: 3px solid var(--brass);
+  left: -32px;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  background: var(--ubuntu-white);
+  border: 3px solid var(--ubuntu-orange);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  z-index: 1;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-sm);
 }
+
 .timeline-content {
-  background: var(--pearl);
-  border: 1px solid var(--shore);
-  border-radius: var(--radius-card);
-  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--ubuntu-white);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--ubuntu-aubergine);
 }
+
 .timeline-date {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--brass);
-  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--ubuntu-orange);
   display: block;
+  margin-bottom: 0.25rem;
 }
+
 .timeline-tag {
   display: inline-block;
-  padding: 0.2rem 0.5rem;
-  background: var(--shore);
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--deep-sea);
+  padding: 0.25rem 0.75rem;
+  background: var(--ubuntu-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ubuntu-dark);
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero-subtitle {
+  font-family: var(--font-mono);
+  color: var(--ubuntu-warm-grey);
+  font-size: 0.95rem;
+  margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  color: var(--ubuntu-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 /* Utilities */
 .text-center { text-align: center; }
-.loading-text { text-align: center; color: var(--brass); font-style: italic; padding: var(--spacing-md); }
-.intro-text { font-size: 1.05rem; color: var(--cabin-wood); margin-bottom: var(--spacing-sm); }
+.loading-text {
+  text-align: center;
+  color: var(--ubuntu-warm-grey);
+  font-style: italic;
+  padding: var(--spacing-md);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.35rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
