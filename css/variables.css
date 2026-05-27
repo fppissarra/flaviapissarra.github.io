@@ -1,0 +1,47 @@
+:root {
+  /* Core Palette */
+  --pearl: #F7F9FC;
+  --shore: #E8DCC8;
+  --cabin-wood: #4A3728;
+  --deep-sea: #1B3A5C;
+  --brass: #B89B5A;
+  --foam: #FFFFFF;
+  --shadow-soft: 0 4px 12px rgba(27, 58, 92, 0.08);
+  --shadow-hover: 0 8px 24px rgba(27, 58, 92, 0.15);
+
+  /* Iridescent Mother-of-Pearl Gradient */
+  --pearl-glow: linear-gradient(135deg, #F7F9FC 0%, #E6EEF4 35%, #E8DCC8 65%, #F2EDE4 100%);
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing & Layout */
+  --container-max: 1200px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Borders & Radius */
+  --radius-card: 12px;
+  --radius-porthole: 50%;
+  --border-rope: 2px dashed var(--brass);
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pearl: #121826;
+    --shore: #2A3547;
+    --cabin-wood: #E8DCC8;
+    --deep-sea: #0F1A28;
+    --brass: #C9A962;
+    --foam: #1A2332;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --pearl-glow: linear-gradient(135deg, #121826 0%, #1A2332 35%, #2A3547 65%, #243041 100%);
+  }
+}
