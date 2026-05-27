@@ -3,3 +3,4 @@ collections:
   projects:
     output: true
     permalink: /p/:title/
+# force update
