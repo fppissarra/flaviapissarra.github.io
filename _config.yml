@@ -1,6 +1,6 @@
 lang: "en-GB"
 
 collections:
-  projetos:
+  projects:
     output: true
     permalink: /p/:title/
