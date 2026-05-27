@@ -1,4 +1,5 @@
-# _config.yml
+lang: "en-GB"
+
 collections:
   projetos:
     output: true
