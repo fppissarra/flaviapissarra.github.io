@@ -1,47 +1,45 @@
 :root {
-  /* Core Palette */
-  --pearl: #F7F9FC;
-  --shore: #E8DCC8;
-  --cabin-wood: #4A3728;
-  --deep-sea: #1B3A5C;
-  --brass: #B89B5A;
-  --foam: #FFFFFF;
-  --shadow-soft: 0 4px 12px rgba(27, 58, 92, 0.08);
-  --shadow-hover: 0 8px 24px rgba(27, 58, 92, 0.15);
-
-  /* Iridescent Mother-of-Pearl Gradient */
-  --pearl-glow: linear-gradient(135deg, #F7F9FC 0%, #E6EEF4 35%, #E8DCC8 65%, #F2EDE4 100%);
-
+  /* Ubuntu Color Palette */
+  --ubuntu-orange: #E95420;
+  --ubuntu-aubergine: #772953;
+  --ubuntu-dark: #2C001E;
+  --ubuntu-warm-grey: #AEA79F;
+  --ubuntu-light: #F7F7F7;
+  --ubuntu-white: #FFFFFF;
+  --ubuntu-text: #333333;
+  
+  /* Gradients */
+  --ubuntu-gradient: linear-gradient(135deg, #E95420 0%, #772953 100%);
+  
   /* Typography */
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  /* Spacing & Layout */
-  --container-max: 1200px;
+  --font-heading: 'Ubuntu', 'Segoe UI', sans-serif;
+  --font-body: 'Ubuntu', 'Segoe UI', sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
+  
+  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 6rem;
-
-  /* Borders & Radius */
-  --radius-card: 12px;
-  --radius-porthole: 50%;
-  --border-rope: 2px dashed var(--brass);
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+  
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-light: 1px solid #E0E0E0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --pearl: #121826;
-    --shore: #2A3547;
-    --cabin-wood: #E8DCC8;
-    --deep-sea: #0F1A28;
-    --brass: #C9A962;
-    --foam: #1A2332;
-    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --pearl-glow: linear-gradient(135deg, #121826 0%, #1A2332 35%, #2A3547 65%, #243041 100%);
+    --ubuntu-light: #2D2D2D;
+    --ubuntu-white: #1A1A1A;
+    --ubuntu-text: #E0E0E0;
+    --ubuntu-warm-grey: #5A5A5A;
   }
 }
