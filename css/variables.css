@@ -33,7 +33,7 @@
   --border-light: 1px solid #E0E0E0;
 }
 
-/* Dark Mode Support */
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --ubuntu-light: #2D2D2D;
