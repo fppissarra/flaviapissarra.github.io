@@ -3,7 +3,7 @@
 
 <n>This repository is just the surface. To explore the full trajectory — from Industry to Research, and Teaching to Data Science — access the official link below:
 
-🌐 https://fppissarra.github.io/
+🌐 https://flaviapissarra.github.io/
 
 Highlights:
 - TESOL Certified
