@@ -3,4 +3,4 @@ Allow: /
 Disallow: /data/
 Disallow: /js/
 Disallow: /css/
-Sitemap: https://fppissarra.github.io/sitemap.xml
+Sitemap: https://flaviapissarra.github.io/sitemap.xml
